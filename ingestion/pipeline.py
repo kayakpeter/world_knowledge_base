@@ -32,17 +32,29 @@ from config.settings import (
 from ingestion.fetchers.base import Observation
 from ingestion.fetchers.world_bank import WorldBankFetcher
 from ingestion.fetchers.fred import FredFetcher
+from ingestion.fetchers.imf import ImfFetcher
+from ingestion.fetchers.oecd import OecdFetcher
+from ingestion.fetchers.bis import BisFetcher
+from ingestion.fetchers.eia import EiaFetcher
 
 logger = logging.getLogger(__name__)
 
 # Per-host concurrency limits
 _WB_CONCURRENCY = 3    # World Bank tolerates ~3 concurrent connections
 _FRED_CONCURRENCY = 8  # FRED tolerates ~8 concurrent connections
+_IMF_CONCURRENCY = 5   # IMF DataMapper — one call per indicator (all countries), light
+_OECD_CONCURRENCY = 3  # OECD stats.oecd.org — conservative
+_BIS_CONCURRENCY = 5   # BIS API — well-behaved public API
+_EIA_CONCURRENCY = 5   # EIA API — rate limits but generous for free tier
 
 # How many days before we re-fetch data from each provider type
 _STALENESS_DAYS: dict[str, int] = {
     "world_bank": 30,  # Annual data — no point fetching daily
     "fred": 1,         # Monthly/daily series — always check
+    "imf": 30,         # Annual fiscal data — monthly refresh is fine
+    "oecd": 30,        # Annual social/tax data
+    "bis": 1,          # Daily policy rates — always check
+    "eia": 30,         # Annual energy data
     "default": 7,
 }
 
@@ -62,6 +74,7 @@ class IngestionPipeline:
     def __init__(
         self,
         fred_api_key: Optional[str] = None,
+        eia_api_key: Optional[str] = None,
         output_dir: Optional[Path] = None,
         start_year: int = 2020,
         end_year: int = 2026,
@@ -69,6 +82,10 @@ class IngestionPipeline:
         # 15s timeout — fail fast and log the error rather than blocking everything
         self._wb = WorldBankFetcher(timeout=15.0)
         self._fred = FredFetcher(api_key=fred_api_key, timeout=15.0)
+        self._imf = ImfFetcher(timeout=20.0)
+        self._oecd = OecdFetcher(timeout=20.0)
+        self._bis = BisFetcher(timeout=15.0)
+        self._eia = EiaFetcher(api_key=eia_api_key, timeout=15.0)
         self._output_dir = output_dir or DEV_RAW_DIR
         self._output_dir.mkdir(parents=True, exist_ok=True)
         self._start_year = start_year
@@ -77,6 +94,10 @@ class IngestionPipeline:
         # Semaphores created in run() to bind to the correct event loop
         self._wb_sem: Optional[asyncio.Semaphore] = None
         self._fred_sem: Optional[asyncio.Semaphore] = None
+        self._imf_sem: Optional[asyncio.Semaphore] = None
+        self._oecd_sem: Optional[asyncio.Semaphore] = None
+        self._bis_sem: Optional[asyncio.Semaphore] = None
+        self._eia_sem: Optional[asyncio.Semaphore] = None
 
         # Thread-safe accumulators — multiple coroutines write concurrently
         self._observations: list[dict] = []
@@ -100,6 +121,10 @@ class IngestionPipeline:
         """
         self._wb_sem = asyncio.Semaphore(_WB_CONCURRENCY)
         self._fred_sem = asyncio.Semaphore(_FRED_CONCURRENCY)
+        self._imf_sem = asyncio.Semaphore(_IMF_CONCURRENCY)
+        self._oecd_sem = asyncio.Semaphore(_OECD_CONCURRENCY)
+        self._bis_sem = asyncio.Semaphore(_BIS_CONCURRENCY)
+        self._eia_sem = asyncio.Semaphore(_EIA_CONCURRENCY)
 
         staleness_cache = self._load_staleness_cache() if not skip_cache else {}
 
@@ -133,7 +158,11 @@ class IngestionPipeline:
             "Fetch tasks: %d launched, %d skipped (fresh cache)",
             self._total, skipped,
         )
-        logger.info("Concurrency: WB=%d  FRED=%d  Timeout=15s", _WB_CONCURRENCY, _FRED_CONCURRENCY)
+        logger.info(
+            "Concurrency: WB=%d  FRED=%d  IMF=%d  OECD=%d  BIS=%d  EIA=%d  Timeout=15-20s",
+            _WB_CONCURRENCY, _FRED_CONCURRENCY, _IMF_CONCURRENCY,
+            _OECD_CONCURRENCY, _BIS_CONCURRENCY, _EIA_CONCURRENCY,
+        )
         logger.info("=" * 70)
 
         start_ts = datetime.now(timezone.utc)
@@ -191,7 +220,15 @@ class IngestionPipeline:
         iso3: str,
     ) -> None:
         """Acquire the provider semaphore, fetch, append results under lock."""
-        sem = self._fred_sem if stat.api_provider == "fred" else self._wb_sem
+        sem_map = {
+            "fred":       self._fred_sem,
+            "world_bank": self._wb_sem,
+            "imf":        self._imf_sem,
+            "oecd":       self._oecd_sem,
+            "bis":        self._bis_sem,
+            "eia":        self._eia_sem,
+        }
+        sem = sem_map.get(stat.api_provider or "", self._wb_sem)
 
         async with sem:
             try:
@@ -249,23 +286,59 @@ class IngestionPipeline:
 
         elif stat.api_provider == "fred" and stat.fred_series:
             series_id = stat.fred_series.get(iso3)
-            if not series_id:
-                # Many FRED series are US-only — not an error for other countries
-                return []
-            return await self._fred.fetch_indicator(
+            if series_id:
+                return await self._fred.fetch_indicator(
+                    country_iso3=iso3,
+                    indicator=series_id,
+                    start_year=self._start_year,
+                    end_year=self._end_year,
+                )
+            # No FRED series for this country — try BIS fallback if available
+            if stat.bis_indicator:
+                return await self._bis.fetch_indicator(
+                    country_iso3=iso3,
+                    indicator=stat.bis_indicator,
+                    start_year=self._start_year,
+                    end_year=self._end_year,
+                )
+            return []
+
+        elif stat.api_provider == "imf" and stat.imf_indicator:
+            return await self._imf.fetch_indicator(
                 country_iso3=iso3,
-                indicator=series_id,
+                indicator=stat.imf_indicator,
                 start_year=self._start_year,
                 end_year=self._end_year,
             )
 
-        elif stat.api_provider in ("imf", "oecd", "bis", "eia"):
-            # Fetchers not yet implemented — logged at debug level, not error
-            logger.debug(
-                "Pending fetcher: %s for %s/%s", stat.api_provider, iso3, stat.name
+        elif stat.api_provider == "oecd" and stat.oecd_indicator:
+            return await self._oecd.fetch_indicator(
+                country_iso3=iso3,
+                indicator=stat.oecd_indicator,
+                start_year=self._start_year,
+                end_year=self._end_year,
             )
-            return []
 
+        elif stat.api_provider == "bis" and stat.bis_indicator:
+            return await self._bis.fetch_indicator(
+                country_iso3=iso3,
+                indicator=stat.bis_indicator,
+                start_year=self._start_year,
+                end_year=self._end_year,
+            )
+
+        elif stat.api_provider == "eia" and stat.eia_indicator:
+            return await self._eia.fetch_indicator(
+                country_iso3=iso3,
+                indicator=stat.eia_indicator,
+                start_year=self._start_year,
+                end_year=self._end_year,
+            )
+
+        logger.debug(
+            "No fetcher configured: provider=%s stat=%s (missing indicator field?)",
+            stat.api_provider, stat.name,
+        )
         return []
 
     # ─── Staleness Cache ──────────────────────────────────────────────────────

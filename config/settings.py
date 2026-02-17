@@ -76,6 +76,9 @@ class StatDefinition:
     fred_series: Optional[dict] = None  # country_iso3 -> FRED series ID
     wb_indicator: Optional[str] = None  # World Bank indicator code
     imf_indicator: Optional[str] = None
+    oecd_indicator: Optional[str] = None  # stat_name passed to OecdFetcher.fetch_indicator()
+    bis_indicator: Optional[str] = None   # stat_name passed to BisFetcher as fallback
+    eia_indicator: Optional[str] = None   # "productId:activityId" for EIA API
     unit: str = "percent"
     description: str = ""
     derive_from: list[str] = field(default_factory=list)  # stat names needed for derivation
@@ -99,7 +102,7 @@ STAT_REGISTRY: list[StatDefinition] = [
     StatDefinition(
         stat_id=3, name="primary_deficit", category="Macro/Solvency",
         source_type="api", primary_source="IMF",
-        api_provider="imf", imf_indicator="GGXONLB_NGDP",
+        api_provider="imf", imf_indicator="GGXONLB_G01_GDP_PT",
         unit="percent_gdp", description="Primary net lending/borrowing as % of GDP",
     ),
     StatDefinition(
@@ -123,26 +126,26 @@ STAT_REGISTRY: list[StatDefinition] = [
     StatDefinition(
         stat_id=7, name="entitlement_spend", category="Macro/Solvency",
         source_type="api", primary_source="OECD SOCX",
-        api_provider="oecd",
+        api_provider="oecd", oecd_indicator="entitlement_spend",
         unit="percent_gdp", description="Public social expenditure as % of GDP",
     ),
     StatDefinition(
         stat_id=8, name="tax_to_gdp", category="Macro/Solvency",
-        source_type="api", primary_source="OECD Revenue Statistics",
-        api_provider="oecd",
-        unit="percent_gdp", description="Total tax revenue as % of GDP",
+        source_type="api", primary_source="World Bank / OECD Revenue Statistics",
+        api_provider="world_bank", wb_indicator="GC.TAX.TOTL.GD.ZS",
+        unit="percent_gdp", description="Tax revenue as % of GDP",
     ),
     StatDefinition(
         stat_id=9, name="public_investment_ratio", category="Macro/Solvency",
-        source_type="api", primary_source="IMF Investment & Capital Stock",
-        api_provider="imf", imf_indicator="GGX_NGDP",
-        unit="percent_gdp", description="General government capital expenditure as % of GDP",
+        source_type="api", primary_source="World Bank / IMF",
+        api_provider="world_bank", wb_indicator="NE.GDI.TOTL.ZS",
+        unit="percent_gdp", description="Gross capital formation as % of GDP (proxy for investment capacity)",
     ),
     StatDefinition(
         stat_id=10, name="output_gap", category="Macro/Solvency",
         source_type="api", primary_source="IMF WEO",
-        api_provider="imf", imf_indicator="NGAP_NPGDP",
-        unit="percent", description="Output gap as % of potential GDP",
+        api_provider="imf", imf_indicator="GGXCNL_NGDP",
+        unit="percent", description="Overall fiscal balance as % of GDP (WEO; output gap via LLM where DataMapper unavailable)",
     ),
 
     # ── Monetary/Price (11-20) ───────────────────────────────────────────
@@ -159,14 +162,32 @@ STAT_REGISTRY: list[StatDefinition] = [
     ),
     StatDefinition(
         stat_id=12, name="policy_rate", category="Monetary/Price",
-        source_type="api", primary_source="BIS / FRED",
+        source_type="api", primary_source="BIS / FRED / OECD",
         api_provider="fred",
         fred_series={
-            "USA": "DFEDTARU",
-            "GBR": "BOERUKM",
-            "JPN": "IRSTCB01JPM156N",
-            "CAN": "IRSTCB01CAM156N",
+            # G7 + primary central banks — dedicated FRED series
+            "USA": "DFEDTARU",         # Fed funds target rate upper bound
+            "GBR": "BOERUKM",          # Bank of England base rate
+            "JPN": "IRSTCB01JPM156N",  # Bank of Japan
+            "CAN": "IRSTCB01CAM156N",  # Bank of Canada
+            # ECB member states — all use the ECB main refinancing rate
+            "DEU": "ECBMLFR",          # ECB Main Lending Facility Rate (covers all €-zone)
+            "FRA": "ECBMLFR",
+            "ITA": "ECBMLFR",
+            "ESP": "ECBMLFR",
+            "NLD": "ECBMLFR",
+            # Other G20 — OECD/FRED interbank overnight rates (track policy closely)
+            "AUS": "IRSTCB01AUM156N",  # Reserve Bank of Australia
+            "KOR": "IRSTCB01KRM156N",  # Bank of Korea
+            "MEX": "IRSTCB01MXM156N",  # Banco de México
+            "TUR": "IRSTCB01TRM156N",  # Central Bank of Turkey
+            "POL": "IRSTCB01PLM156N",  # National Bank of Poland
+            "CHN": "IRSTCB01CNM156N",  # PBoC (overnight interbank proxy)
+            "IND": "IRSTCB01INM156N",  # Reserve Bank of India
+            "BRA": "IRSTCB01BRM156N",  # Banco Central do Brasil (SELIC proxy)
+            # IDN, RUS, SAU: no reliable FRED series; BIS fallback when API stabilises
         },
+        bis_indicator="policy_rate",  # BIS fallback for IDN, RUS, SAU when API available
         unit="percent", description="Central bank policy rate",
     ),
     StatDefinition(
