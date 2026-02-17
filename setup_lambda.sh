@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # setup_lambda.sh — One-shot environment setup for Lambda Labs GPU instances
 #
-# IMPORTANT: Request an instance with ≥48GB VRAM to run Llama-3.1-70B AWQ-INT4.
-#   Recommended: gpu_1x_a6000 (RTX A6000 48GB, $0.80/hr)  ← best value
-#               gpu_1x_a100_sxm4_80gb (A100 80GB, $1.99/hr) ← fastest
+# TARGET INSTANCE: gpu_1x_h100_sxm5 (H100 80GB SXM5, 26vCPUs, 225 GiB RAM, 2.8 TiB SSD)
+#   H100 SXM5 runs 70B AWQ-INT4 with ~38GB model weights + ample KV cache headroom.
+#   Fallback for ≥48GB but <80GB instances: A6000 (48GB) — still runs 70B, less headroom.
 #   DO NOT use: gpu_1x_a100 (A100 40GB) — cannot hold 70B model + KV cache
 #
 # Workflow for a pre-fetched data run (fastest, avoids Lambda IP throttling):
@@ -44,17 +44,22 @@ GPU_MEM=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/d
 GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | head -1 || echo "unknown")
 echo "  GPU: ${GPU_NAME} (${GPU_MEM} MiB)"
 
-if [ "${GPU_MEM:-0}" -ge 48000 ]; then
-    # A6000 48GB (49152 MiB) or A100 80GB (81920 MiB) — can run 70B AWQ-INT4
+if [ "${GPU_MEM:-0}" -ge 78000 ]; then
+    # H100 80GB SXM5 (81920 MiB) — primary target; plenty of headroom for 70B + KV cache
+    MODEL="hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"
+    echo "  ✓ H100 80GB detected — will use Llama-3.1-70B-Instruct AWQ-INT4"
+    echo "  Note: ~37GB model weights, ~40GB KV cache headroom"
+elif [ "${GPU_MEM:-0}" -ge 48000 ]; then
+    # A6000 48GB (49152 MiB) — can run 70B AWQ-INT4, tighter on KV cache
     MODEL="hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"
     echo "  ✓ GPU has ≥48GB VRAM — will use Llama-3.1-70B-Instruct AWQ-INT4"
-    echo "  Note: ~37GB model weights, ~10GB KV cache headroom"
+    echo "  Note: ~37GB model weights, ~10GB KV cache headroom (tight)"
+    echo "  Preferred: gpu_1x_h100_sxm5 (80GB) for full KV cache headroom"
 else
     # A100 40GB (40960 MiB) — 70B does NOT fit; 70B AWQ needs ≥48GB
     MODEL="hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4"
-    echo "  ⚠ GPU has <48GB VRAM — falling back to Llama-3.1-8B-Instruct AWQ-INT4"
-    echo "  For 70B quality, request: gpu_1x_a6000 (48GB, \$0.80/hr)"
-    echo "                         or gpu_1x_a100_sxm4_80gb (80GB, \$1.99/hr)"
+    echo "  ✗ GPU has <48GB VRAM — falling back to Llama-3.1-8B-Instruct AWQ-INT4"
+    echo "  For full 70B quality, request: gpu_1x_h100_sxm5 (80GB)"
 fi
 
 # ── 3. Python virtualenv (required — system TF conflicts with vLLM's numpy 2.x) ──
@@ -109,13 +114,15 @@ echo "  First run downloads model weights (~37GB for 70B, ~5GB for 8B)"
 echo "  Allow 10-20 min for download on first run"
 echo ""
 
+# H100 80GB can support 32k context with 70B AWQ-INT4 at 90% utilization.
+# Increase max-model-len for richer reasoning on complex economic prompts.
 # Launch with stdin from /dev/null so nohup doesn't hold the terminal
 nohup ~/venv/bin/python -m vllm.entrypoints.openai.api_server \
     --model "${MODEL}" \
     --host 0.0.0.0 \
     --port 8000 \
-    --max-model-len 8192 \
-    --gpu-memory-utilization 0.90 \
+    --max-model-len 32768 \
+    --gpu-memory-utilization 0.92 \
     --dtype auto \
     < /dev/null > ~/vllm_server.log 2>&1 &
 
