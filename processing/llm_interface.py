@@ -135,7 +135,7 @@ class LocalModelProvider(BaseLLMProvider):
     def __init__(
         self,
         base_url: str = "http://localhost:8000/v1",
-        model: str = "meta-llama/Llama-3.3-70B-Instruct",
+        model: str = "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
         api_key: str = "not-needed",
     ):
         self._base_url = base_url

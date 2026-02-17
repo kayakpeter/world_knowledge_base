@@ -713,13 +713,18 @@ async def main() -> None:
     build_start = time.time()
 
     # ── Phase 1: Ingestion ─────────────────────────────────────────────────────
-    if args.skip_ingestion and args.resume:
+    if args.skip_ingestion:
+        # Load the most recently written observations parquet (pre-fetched on home machine)
         obs_files = sorted(DEV_RAW_DIR.glob("observations_*.parquet"), reverse=True)
         if obs_files:
             observations_df = pl.read_parquet(obs_files[0])
-            logger.info("Using existing observations: %s (%d rows)", obs_files[0].name, len(observations_df))
+            logger.info("SKIP INGESTION: Loaded %s (%d rows)", obs_files[0].name, len(observations_df))
         else:
-            logger.error("--skip-ingestion specified but no observations parquet found in %s", DEV_RAW_DIR)
+            logger.error(
+                "--skip-ingestion: no observations_*.parquet found in %s\n"
+                "  Run ingestion locally first, then rsync data/raw/ to Lambda.",
+                DEV_RAW_DIR,
+            )
             sys.exit(1)
     else:
         observations_df = await phase1_ingestion(fred_key, resume=args.resume)

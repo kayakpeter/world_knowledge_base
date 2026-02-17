@@ -1,18 +1,28 @@
 #!/usr/bin/env bash
-# setup_lambda.sh — One-shot environment setup for Lambda Labs A6000/A100
+# setup_lambda.sh — One-shot environment setup for Lambda Labs GPU instances
 #
-# Run once after spinning up a new Lambda instance:
+# IMPORTANT: Request an instance with ≥48GB VRAM to run Llama-3.1-70B AWQ-INT4.
+#   Recommended: gpu_1x_a6000 (RTX A6000 48GB, $0.80/hr)  ← best value
+#               gpu_1x_a100_sxm4_80gb (A100 80GB, $1.99/hr) ← fastest
+#   DO NOT use: gpu_1x_a100 (A100 40GB) — cannot hold 70B model + KV cache
+#
+# Workflow for a pre-fetched data run (fastest, avoids Lambda IP throttling):
+#
+#   # Step 1 (home machine): fetch all API data
+#   cd global_financial_kb
+#   FRED_API_KEY=xxx python build_initial_kb.py --skip-llm
+#
+#   # Step 2: upload code + pre-fetched data
+#   rsync -avz --exclude='*.pyc' --exclude='__pycache__' --exclude='*.tar.gz' \
+#       --exclude='.git' \
+#       /path/to/global_financial_kb/ ubuntu@{LAMBDA_IP}:~/global_financial_kb/
+#
+#   # Step 3 (Lambda): LLM phases only (~5-10 min, ~$0.10)
 #   bash setup_lambda.sh
-#
-# Then set your API keys and run the build:
-#   export FRED_API_KEY=your_key
-#   export LLM_MODE=local           # use local Llama-70B (recommended on GPU)
-#   python build_initial_kb.py
-#
-# Or to use Claude API instead of local model:
-#   export LLM_MODE=claude
-#   export ANTHROPIC_API_KEY=your_key
-#   python build_initial_kb.py
+#   export FRED_API_KEY=xxx
+#   export LLM_MODE=local
+#   cd ~/global_financial_kb
+#   python build_initial_kb.py --skip-ingestion
 
 set -euo pipefail
 
@@ -23,17 +33,49 @@ echo "============================================================"
 
 # ── 1. System packages ────────────────────────────────────────────────────────
 echo ""
-echo "[1/5] Installing system packages..."
+echo "[1/6] Installing system packages..."
 sudo apt-get update -qq
-sudo apt-get install -y -qq git rsync htop nvtop curl
+sudo apt-get install -y -qq git rsync htop nvtop curl python3-venv
 
-# ── 2. Python environment ─────────────────────────────────────────────────────
+# ── 2. Check GPU VRAM (fail fast if wrong instance type) ─────────────────────
 echo ""
-echo "[2/5] Setting up Python environment..."
+echo "[2/6] Checking GPU..."
+GPU_MEM=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -1 || echo "0")
+GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | head -1 || echo "unknown")
+echo "  GPU: ${GPU_NAME} (${GPU_MEM} MiB)"
 
-# Lambda instances have Python 3.10+ and pip pre-installed
+if [ "${GPU_MEM:-0}" -ge 48000 ]; then
+    # A6000 48GB (49152 MiB) or A100 80GB (81920 MiB) — can run 70B AWQ-INT4
+    MODEL="hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"
+    echo "  ✓ GPU has ≥48GB VRAM — will use Llama-3.1-70B-Instruct AWQ-INT4"
+    echo "  Note: ~37GB model weights, ~10GB KV cache headroom"
+else
+    # A100 40GB (40960 MiB) — 70B does NOT fit; 70B AWQ needs ≥48GB
+    MODEL="hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4"
+    echo "  ⚠ GPU has <48GB VRAM — falling back to Llama-3.1-8B-Instruct AWQ-INT4"
+    echo "  For 70B quality, request: gpu_1x_a6000 (48GB, \$0.80/hr)"
+    echo "                         or gpu_1x_a100_sxm4_80gb (80GB, \$1.99/hr)"
+fi
+
+# ── 3. Python virtualenv (required — system TF conflicts with vLLM's numpy 2.x) ──
+echo ""
+echo "[3/6] Creating isolated Python virtualenv..."
+
+# Lambda's system Python has TensorFlow compiled against numpy 1.x.
+# vLLM requires numpy 2.x. Must isolate in a venv to avoid the conflict.
+python3 -m venv ~/venv
+source ~/venv/bin/activate
+
+echo "  ✓ Virtualenv created at ~/venv"
+echo "  ✓ Activated: $(which python)"
+
+# ── 4. Python dependencies ────────────────────────────────────────────────────
+echo ""
+echo "[4/6] Installing Python dependencies..."
+
 pip install --quiet --upgrade pip
 
+# Core dependencies first
 pip install --quiet \
     polars \
     networkx \
@@ -42,82 +84,77 @@ pip install --quiet \
     hmmlearn \
     anthropic \
     pyarrow \
-    python-dotenv
+    python-dotenv \
+    scipy \
+    scikit-learn
 
 echo "  ✓ Core dependencies installed"
 
-# ── 3. vLLM for local inference (GPU mode) ────────────────────────────────────
-echo ""
-echo "[3/5] Installing vLLM for local model inference..."
-
-# vLLM requires CUDA — pre-installed on Lambda instances
+# vLLM: installs numpy 2.x, torch, transformers — isolated in venv from system TF
+echo "  Installing vLLM (this takes ~3-5 min)..."
 pip install --quiet vllm
 
 echo "  ✓ vLLM installed"
 
-# ── 4. Create data directories ────────────────────────────────────────────────
+# ── 5. Create data directories ────────────────────────────────────────────────
 echo ""
-echo "[4/5] Creating data directories..."
-
+echo "[5/6] Creating data directories..."
 mkdir -p ~/global_financial_kb/data/{raw,processed,graph,build/{checkpoints,snapshots},briefings}
-
 echo "  ✓ Directories created at ~/global_financial_kb/"
 
-# ── 5. Start vLLM server (background) ────────────────────────────────────────
+# ── 6. Start vLLM server (background) ────────────────────────────────────────
 echo ""
-echo "[5/5] Starting vLLM server with Llama-3.3-70B-Instruct (4-bit AWQ)..."
-echo "  Note: First run downloads the model (~35GB) — allow 10-15 min"
+echo "[6/6] Starting vLLM server: ${MODEL}"
+echo "  First run downloads model weights (~37GB for 70B, ~5GB for 8B)"
+echo "  Allow 10-20 min for download on first run"
 echo ""
 
-# Check available VRAM
-GPU_MEM=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -1 || echo "0")
-echo "  GPU memory: ${GPU_MEM} MiB"
-
-if [ "${GPU_MEM:-0}" -ge 40000 ]; then
-    # A6000 48GB or A100 80GB — can run 70B in 4-bit
-    MODEL="hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"
-    echo "  Using Llama-3.1-70B-Instruct (AWQ 4-bit) — fits in ${GPU_MEM}MiB"
-else
-    # Smaller GPU — fall back to Mistral 7B
-    MODEL="mistralai/Mistral-7B-Instruct-v0.3"
-    echo "  GPU < 40GB — falling back to Mistral-7B-Instruct"
-fi
-
-# Start vLLM in background, log to file
-nohup python -m vllm.entrypoints.openai.api_server \
+# Launch with stdin from /dev/null so nohup doesn't hold the terminal
+nohup ~/venv/bin/python -m vllm.entrypoints.openai.api_server \
     --model "${MODEL}" \
     --host 0.0.0.0 \
     --port 8000 \
     --max-model-len 8192 \
     --gpu-memory-utilization 0.90 \
     --dtype auto \
-    > ~/vllm_server.log 2>&1 &
+    < /dev/null > ~/vllm_server.log 2>&1 &
 
 VLLM_PID=$!
-echo "  vLLM server starting (PID ${VLLM_PID})..."
-echo "  Logs: ~/vllm_server.log"
-echo "  Monitor: tail -f ~/vllm_server.log"
+echo "  vLLM PID: ${VLLM_PID}"
+echo "  Logs:     tail -f ~/vllm_server.log"
 
-# Wait for server to be ready (model download + load)
+# Wait for server ready (health endpoint returns 200)
 echo ""
-echo "  Waiting for vLLM server to be ready (this may take 10-15 min)..."
-MAX_WAIT=900  # 15 minutes
+echo "  Waiting for vLLM server (up to 25 min for model download + load)..."
+MAX_WAIT=1500  # 25 minutes
 ELAPSED=0
+LAST_LOG_LINE=""
+
 while [ $ELAPSED -lt $MAX_WAIT ]; do
     if curl -s http://localhost:8000/health > /dev/null 2>&1; then
-        echo "  ✓ vLLM server is ready!"
+        echo ""
+        echo "  ✓ vLLM server is ready! (${ELAPSED}s)"
         break
     fi
+
+    # Print last log line every 30s so you can see what's happening
+    if [ $((ELAPSED % 30)) -eq 0 ] && [ $ELAPSED -gt 0 ]; then
+        CURRENT_LOG=$(tail -1 ~/vllm_server.log 2>/dev/null || echo "")
+        if [ "${CURRENT_LOG}" != "${LAST_LOG_LINE}" ]; then
+            echo "  [${ELAPSED}s] ${CURRENT_LOG}"
+            LAST_LOG_LINE="${CURRENT_LOG}"
+        fi
+    fi
+
     sleep 10
     ELAPSED=$((ELAPSED + 10))
-    printf "  Waited ${ELAPSED}s...\r"
 done
 
 if [ $ELAPSED -ge $MAX_WAIT ]; then
     echo ""
     echo "  ⚠ vLLM server not ready after ${MAX_WAIT}s"
-    echo "  Check logs: tail -50 ~/vllm_server.log"
-    echo "  You can start the build with --skip-llm and run LLM phases separately"
+    echo "  Check: tail -50 ~/vllm_server.log"
+    echo "  You can still run with LLM_MODE=claude if server fails to start"
 fi
 
 # ── Done ──────────────────────────────────────────────────────────────────────
@@ -125,19 +162,28 @@ echo ""
 echo "============================================================"
 echo "  Setup complete. Next steps:"
 echo ""
-echo "  1. Set your API keys:"
-echo "     export FRED_API_KEY=b2745248eb3b33033a84db7c91f3a860"
-echo "     export LLM_MODE=local"
+echo "  Activate the venv in any new shell:"
+echo "    source ~/venv/bin/activate"
 echo ""
-echo "  2. Run the build (from the project directory):"
-echo "     cd ~/global_financial_kb"
-echo "     python build_initial_kb.py"
+echo "  Set API keys:"
+echo "    export FRED_API_KEY=<your_fred_key>"
+echo "    export LLM_MODE=local"
+echo "    # Only if using Claude API instead of local model:"
+echo "    # export LLM_MODE=claude"
+echo "    # export ANTHROPIC_API_KEY=<your_anthropic_key>"
 echo ""
-echo "  3. Or resume if interrupted:"
-echo "     python build_initial_kb.py --resume"
+echo "  Run the build (pre-fetched data path — fastest):"
+echo "    cd ~/global_financial_kb"
+echo "    python build_initial_kb.py --skip-ingestion"
 echo ""
-echo "  4. Download the snapshot when done:"
-echo "     rsync -avz --progress \\"
-echo "       lambda:~/global_financial_kb/data/build/snapshots/ \\"
-echo "       /media/peter/fast-storage/projects/world_knowledge_base/snapshots/"
+echo "  Run the build (full ingestion on Lambda — slower due to IP throttling):"
+echo "    python build_initial_kb.py"
+echo ""
+echo "  Or resume if interrupted:"
+echo "    python build_initial_kb.py --skip-ingestion --resume"
+echo ""
+echo "  Download the snapshot when done:"
+echo "    rsync -avz --progress \\"
+echo "      ubuntu@<LAMBDA_IP>:~/global_financial_kb/data/build/snapshots/ \\"
+echo "      /media/peter/fast-storage/projects/world_knowledge_base/snapshots/"
 echo "============================================================"
