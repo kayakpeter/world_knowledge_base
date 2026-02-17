@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.env
+
+# Data files — track structure not runtime data
+data/raw/*.parquet
+data/processed/*.parquet
+data/graph/financial_kg.json
+
+# Lambda upload package
+*.tar.gz
+lambda_package/
