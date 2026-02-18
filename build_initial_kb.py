@@ -25,6 +25,7 @@ Phases:
     4. Graph construction     — build full typed NetworkX graph with all data
     5. HMM training          — Baum-Welch per country, save learned parameters
     6. Snapshot export        — pack all outputs into a single tar.gz
+    7. Build report          — diff against previous snapshot, write markdown report
 """
 from __future__ import annotations
 
@@ -653,22 +654,319 @@ def phase6_export_snapshot(
     }
     (snapshot_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
-    # 6f: Pack everything into a single tar.gz
+    # 6f: Pack everything into a single tar.gz (will be repacked after Phase 7)
     tarball_path = SNAPSHOT_DIR / f"kb_snapshot_{date_str}.tar.gz"
     with tarfile.open(tarball_path, "w:gz") as tar:
         tar.add(snapshot_dir, arcname=f"kb_{date_str}")
 
     size_mb = tarball_path.stat().st_size / 1_048_576
-    logger.info("")
-    logger.info("=" * 70)
-    logger.info("  SNAPSHOT READY: %s (%.1f MB)", tarball_path, size_mb)
-    logger.info("  Download with:")
-    logger.info("    rsync -avz --progress \\")
-    logger.info("      lambda:~/global_financial_kb/data/build/snapshots/%s \\", tarball_path.name)
-    logger.info("      /media/peter/fast-storage/projects/world_knowledge_base/")
-    logger.info("=" * 70)
+    logger.info("  ✓ Initial tarball: %s (%.1f MB)", tarball_path.name, size_mb)
 
-    return tarball_path
+    return tarball_path, snapshot_dir
+
+
+# ─── Phase 7: Build Report ───────────────────────────────────────────────────
+
+def phase7_build_report(
+    snapshot_dir: Path,
+    builder: KnowledgeGraphBuilder,
+    observations_df: pl.DataFrame,
+    llm_stats_df: pl.DataFrame,
+    edge_weights: list[dict],
+    build_elapsed: float,
+) -> Path:
+    phase_header("7", "Build Comparison Report")
+
+    date_str = snapshot_dir.name  # "kb_20260218"
+    raw_date = date_str.replace("kb_", "")
+    fmt_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
+
+    # ── 7a: Save current HMM states for future diffs ──────────────────────────
+    current_states: dict[str, dict] = {}
+    for country in COUNTRIES:
+        node_data = builder.graph.nodes.get(country, {})
+        current_states[country] = {
+            "state": node_data.get("markov_state", "Unknown"),
+            "state_probs": node_data.get("state_probs", {}),
+        }
+    (snapshot_dir / "hmm_states.json").write_text(
+        json.dumps(current_states, indent=2, default=str)
+    )
+
+    # ── 7b: Load current manifest ─────────────────────────────────────────────
+    manifest = json.loads((snapshot_dir / "manifest.json").read_text())
+
+    # ── 7c: Find most recent previous snapshot ────────────────────────────────
+    all_snaps = sorted(
+        [d for d in SNAPSHOT_DIR.iterdir() if d.is_dir() and d.name.startswith("kb_") and d != snapshot_dir],
+        key=lambda d: d.name,
+    )
+    prev_snap: Path | None = all_snaps[-1] if all_snaps else None
+
+    prev_manifest: dict | None = None
+    prev_states: dict[str, dict] = {}
+    prev_ew_df = pl.DataFrame()
+    prev_llm_df = pl.DataFrame()
+
+    if prev_snap:
+        logger.info("  Comparing against: %s", prev_snap.name)
+        pm = prev_snap / "manifest.json"
+        if pm.exists():
+            prev_manifest = json.loads(pm.read_text())
+        ps = prev_snap / "hmm_states.json"
+        if ps.exists():
+            prev_states = json.loads(ps.read_text())
+        pew = prev_snap / "edge_weights.parquet"
+        if pew.exists():
+            prev_ew_df = pl.read_parquet(pew)
+        pllm = prev_snap / "llm_stats.parquet"
+        if pllm.exists():
+            prev_llm_df = pl.read_parquet(pllm)
+    else:
+        logger.info("  No previous snapshot — this is the first build.")
+
+    # ── 7d: Assemble report ───────────────────────────────────────────────────
+    lines: list[str] = []
+
+    lines += [
+        f"# KB Build Report — {fmt_date}",
+        "",
+        f"**Built at:** {manifest['built_at']}  ",
+        f"**Build time:** {build_elapsed / 60:.1f} minutes  ",
+    ]
+    if prev_snap:
+        prev_raw = prev_snap.name.replace("kb_", "")
+        prev_fmt = f"{prev_raw[:4]}-{prev_raw[4:6]}-{prev_raw[6:]}"
+        lines.append(f"**Compared to:** `{prev_snap.name}` ({prev_fmt})  ")
+    else:
+        lines.append("**Compared to:** *(first build — no prior snapshot)*  ")
+    lines.append("")
+
+    # Summary table
+    def _d(curr: int, prev_val: int | None) -> str:
+        if prev_val is None:
+            return "—"
+        d = curr - prev_val
+        return f"+{d:,}" if d > 0 else (f"{d:,}" if d < 0 else "0")
+
+    def _f(v: int | None) -> str:
+        return f"{v:,}" if v is not None else "—"
+
+    pm = prev_manifest or {}
+    lines += [
+        "## Summary",
+        "",
+        "| Metric | Previous | Current | Delta |",
+        "|--------|----------|---------|-------|",
+        f"| Graph nodes      | {_f(pm.get('graph_nodes'))}      | {_f(manifest['graph_nodes'])}      | {_d(manifest['graph_nodes'], pm.get('graph_nodes'))} |",
+        f"| Graph edges      | {_f(pm.get('graph_edges'))}      | {_f(manifest['graph_edges'])}      | {_d(manifest['graph_edges'], pm.get('graph_edges'))} |",
+        f"| API observations | {_f(pm.get('api_observations'))} | {_f(manifest['api_observations'])} | {_d(manifest['api_observations'], pm.get('api_observations'))} |",
+        f"| LLM observations | {_f(pm.get('llm_observations'))} | {_f(manifest['llm_observations'])} | {_d(manifest['llm_observations'], pm.get('llm_observations'))} |",
+        f"| Edge weights     | {_f(pm.get('edge_weights'))}     | {_f(manifest['edge_weights'])}     | {_d(manifest['edge_weights'], pm.get('edge_weights'))} |",
+        "",
+    ]
+
+    # HMM regime changes
+    lines += ["## Economic Regime Changes (HMM)", ""]
+    if not prev_states:
+        lines += [
+            "*(First build — current states below)*",
+            "",
+            "| Country | State |",
+            "|---------|-------|",
+        ]
+        for country in COUNTRIES:
+            state = current_states.get(country, {}).get("state", "Unknown")
+            lines.append(f"| {country} | {state} |")
+    else:
+        changes = [
+            (c, prev_states.get(c, {}).get("state", "Unknown"), current_states.get(c, {}).get("state", "Unknown"))
+            for c in COUNTRIES
+            if prev_states.get(c, {}).get("state") != current_states.get(c, {}).get("state")
+        ]
+        stable = [
+            (c, current_states.get(c, {}).get("state", "Unknown"))
+            for c in COUNTRIES
+            if c not in {ch[0] for ch in changes}
+        ]
+
+        if changes:
+            lines += [
+                f"**{len(changes)} regime change(s) detected:**",
+                "",
+                "| Country | Previous | Current |",
+                "|---------|----------|---------|",
+            ]
+            for country, prev_s, curr_s in changes:
+                lines.append(f"| {country} | {prev_s} | **{curr_s}** |")
+        else:
+            lines.append(f"No regime changes — all {len(COUNTRIES)} countries stable.")
+
+        if stable:
+            lines += [
+                "",
+                f"<details><summary>Stable ({len(stable)} countries)</summary>",
+                "",
+                "| Country | State |",
+                "|---------|-------|",
+            ]
+            for country, state in stable:
+                lines.append(f"| {country} | {state} |")
+            lines += ["", "</details>"]
+    lines.append("")
+
+    # Edge weight movers
+    lines += ["## Top Edge Weight Movers", ""]
+    if edge_weights and not prev_ew_df.is_empty():
+        curr_ew_df = pl.DataFrame(edge_weights)
+        joined = (
+            curr_ew_df
+            .join(
+                prev_ew_df.select(["edge_key", pl.col("weight").alias("prev_weight")]),
+                on="edge_key",
+                how="left",
+            )
+            .filter(pl.col("prev_weight").is_not_null())
+            .with_columns(
+                (pl.col("weight") - pl.col("prev_weight")).alias("delta"),
+                (pl.col("weight") - pl.col("prev_weight")).abs().alias("abs_delta"),
+            )
+            .sort("abs_delta", descending=True)
+            .head(10)
+        )
+        if not joined.is_empty():
+            lines += [
+                "| Corridor | Stat Pair | Previous | Current | Δ |",
+                "|----------|-----------|----------|---------|---|",
+            ]
+            for row in joined.iter_rows(named=True):
+                d = row["delta"]
+                d_str = f"+{d:.3f}" if d > 0 else f"{d:.3f}"
+                lines.append(
+                    f"| {row['source_country']} → {row['target_country']} "
+                    f"| {row['source_stat']} → {row['target_stat']} "
+                    f"| {row['prev_weight']:.3f} | {row['weight']:.3f} | {d_str} |"
+                )
+
+        prev_keys = set(prev_ew_df["edge_key"].to_list())
+        curr_keys = {r["edge_key"] for r in edge_weights}
+        new_n, drop_n = len(curr_keys - prev_keys), len(prev_keys - curr_keys)
+        if new_n or drop_n:
+            lines.append("")
+            if new_n:
+                lines.append(f"**{new_n} new edge(s) added.**")
+            if drop_n:
+                lines.append(f"**{drop_n} edge(s) removed.**")
+
+    elif edge_weights:
+        lines += [
+            "*(No previous edge weights — showing top 10 by weight)*",
+            "",
+            "| Corridor | Stat Pair | Weight | Confidence |",
+            "|----------|-----------|--------|------------|",
+        ]
+        for row in pl.DataFrame(edge_weights).sort("weight", descending=True).head(10).iter_rows(named=True):
+            lines.append(
+                f"| {row['source_country']} → {row['target_country']} "
+                f"| {row['source_stat']} → {row['target_stat']} "
+                f"| {row['weight']:.3f} | {row['confidence']:.2f} |"
+            )
+    else:
+        lines.append("*(API-only run — no LLM edge weights)*")
+    lines.append("")
+
+    # Observation count by country
+    lines += ["## Observations by Country", ""]
+    if not observations_df.is_empty():
+        if prev_manifest:
+            delta = manifest["api_observations"] - prev_manifest.get("api_observations", 0)
+            lines.append(
+                f"**{manifest['api_observations']:,} total** "
+                f"({'+' if delta >= 0 else ''}{delta:,} vs previous)  "
+            )
+        else:
+            lines.append(f"**{manifest['api_observations']:,} total** (first build)  ")
+        lines += [
+            "",
+            "| Country | Rows |",
+            "|---------|------|",
+        ]
+        by_country = (
+            observations_df
+            .group_by("country")
+            .len()
+            .sort("len", descending=True)
+        )
+        for row in by_country.iter_rows(named=True):
+            lines.append(f"| {row['country']} | {row['len']:,} |")
+    lines.append("")
+
+    # LLM stat changes (full runs only)
+    if not llm_stats_df.is_empty() and not prev_llm_df.is_empty():
+        lines += ["## LLM Stat Changes (Top 10 by magnitude)", ""]
+        try:
+            # Deduplicate on cache_key (keep latest retrieved_at) before diffing
+            def _dedup(df: pl.DataFrame) -> pl.DataFrame:
+                return (
+                    df.sort("retrieved_at", descending=True)
+                    .unique(subset=["cache_key"], keep="first")
+                )
+            curr_llm_dedup = _dedup(llm_stats_df)
+            prev_llm_dedup = _dedup(prev_llm_df)
+
+            joined_llm = (
+                curr_llm_dedup
+                .select(["cache_key", "country", "stat_name", pl.col("value").alias("curr_value")])
+                .join(
+                    prev_llm_dedup.select(["cache_key", pl.col("value").alias("prev_value")]),
+                    on="cache_key",
+                    how="inner",
+                )
+                .with_columns(
+                    (pl.col("curr_value") - pl.col("prev_value")).alias("delta"),
+                    (pl.col("curr_value") - pl.col("prev_value")).abs().alias("abs_delta"),
+                    (
+                        (pl.col("curr_value") - pl.col("prev_value"))
+                        / (pl.col("prev_value").abs() + 1e-9)
+                        * 100
+                    ).alias("pct"),
+                )
+                .sort("abs_delta", descending=True)
+                .head(10)
+            )
+            if not joined_llm.is_empty():
+                lines += [
+                    "| Country | Stat | Previous | Current | Δ% |",
+                    "|---------|------|----------|---------|-----|",
+                ]
+                for row in joined_llm.iter_rows(named=True):
+                    pct = row["pct"]
+                    pct_str = f"+{pct:.1f}%" if pct >= 0 else f"{pct:.1f}%"
+                    lines.append(
+                        f"| {row['country']} | {row['stat_name']} "
+                        f"| {row['prev_value']:.3f} | {row['curr_value']:.3f} | {pct_str} |"
+                    )
+                lines.append("")
+        except Exception as exc:
+            lines += [f"*(LLM stat diff failed: {exc})*", ""]
+
+    elif not llm_stats_df.is_empty():
+        lines += [
+            "## LLM Stats (First Full Build)",
+            "",
+            f"**{len(llm_stats_df):,} inferred observations** "
+            f"across {llm_stats_df['country'].n_unique()} countries.",
+            "",
+        ]
+
+    lines += ["---", f"*Generated by build_initial_kb.py — {manifest['built_at']}*", ""]
+
+    # ── 7e: Write report ──────────────────────────────────────────────────────
+    report_path = snapshot_dir / f"build_report_{fmt_date}.md"
+    report_path.write_text("\n".join(lines))
+    logger.info("  ✓ Report written: %s", report_path.name)
+
+    return report_path
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -749,14 +1047,35 @@ async def main() -> None:
     hmm_models = phase5_hmm_training(builder, observations_df)
 
     # ── Phase 6: Export ────────────────────────────────────────────────────────
-    snapshot_path = phase6_export_snapshot(
+    snapshot_path, snapshot_dir = phase6_export_snapshot(
         builder, hmm_models, observations_df, llm_stats_df, edge_weights
     )
+
+    # ── Phase 7: Build Report ─────────────────────────────────────────────────
+    build_elapsed = time.time() - build_start
+    report_path = phase7_build_report(
+        snapshot_dir, builder, observations_df, llm_stats_df, edge_weights,
+        build_elapsed=build_elapsed,
+    )
+
+    # Repack tarball to include hmm_states.json + build report
+    with tarfile.open(snapshot_path, "w:gz") as tar:
+        tar.add(snapshot_dir, arcname=snapshot_dir.name)
+    size_mb = snapshot_path.stat().st_size / 1_048_576
+    logger.info("")
+    logger.info("=" * 70)
+    logger.info("  SNAPSHOT READY: %s (%.1f MB)", snapshot_path.name, size_mb)
+    logger.info("  Download with:")
+    logger.info("    rsync -avz --progress \\")
+    logger.info("      lambda:~/global_financial_kb/data/build/snapshots/%s \\", snapshot_path.name)
+    logger.info("      /media/peter/fast-storage/projects/world_knowledge_base/")
+    logger.info("=" * 70)
 
     total_elapsed = time.time() - build_start
     logger.info("")
     logger.info("TOTAL BUILD TIME: %.1f minutes", total_elapsed / 60)
     logger.info("SNAPSHOT: %s", snapshot_path)
+    logger.info("REPORT:   %s", report_path)
 
 
 if __name__ == "__main__":
