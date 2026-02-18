@@ -4,7 +4,7 @@
 # Runs Phase 1 (parallel API fetch) + graph construction + HMM training.
 # LLM phases (edge weight re-inference) are left for the weekly Lambda run.
 #
-# Cron: 0 12 * * 1-5 /path/to/run_daily_ingestion.sh   (7am ET, weekdays)
+# Cron: 0 */6 * * * /path/to/run_daily_ingestion.sh   (every 6 hours)
 
 set -euo pipefail
 
