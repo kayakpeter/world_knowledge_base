@@ -316,10 +316,13 @@ ACTOR_REGISTRY: list[Actor] = [
 
     # ── South Korea ──────────────────────────────────────────────────────
     Actor(
-        actor_id="KOR_PRES", name="Han Duck-soo", role="Acting President",
+        actor_id="KOR_PRES", name="Lee Jae Myung", role="President",
         role_type="head_of_state", country="South Korea", country_iso3="KOR",
         influence_domains=["Macro/Solvency", "Trade/External"],
-        notes="Political transition. Semiconductor coordination with US.",
+        term_end="2030-06",
+        notes="21st President. Sworn in 2025-06-04 after Yoon Suk-yeol impeachment. "
+              "Democratic Party. Pro-China engagement, cautious on USFK. "
+              "Semiconductor/battery industrial policy focus.",
     ),
     Actor(
         actor_id="KOR_BOK", name="Rhee Chang-yong", role="Governor, Bank of Korea",
