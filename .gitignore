@@ -15,3 +15,4 @@ data/graph/financial_kg.json
 # Lambda upload package
 *.tar.gz
 lambda_package/
+.worktrees/
