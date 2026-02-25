@@ -169,3 +169,14 @@ def test_get_company_trading_profile_unknown_ticker():
     profile = b.get_company_trading_profile("UNKN")
     assert profile["risk_tier"] == "MICRO_OP"
     assert profile["size_multiplier"] == 0.75
+
+
+# ── GraphMetrics counts test ──────────────────────────────────────────────────
+
+def test_metrics_counts_company_nodes():
+    """GraphMetrics.company_nodes reflects actual company count."""
+    b = _builder_with_company()
+    metrics = b.get_metrics()
+    assert metrics.company_nodes == 2
+    assert metrics.sector_nodes == len(b.graph.nodes) - metrics.sovereign_nodes \
+           - metrics.statistic_nodes - metrics.company_nodes
