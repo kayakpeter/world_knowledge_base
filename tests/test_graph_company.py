@@ -36,3 +36,86 @@ def test_add_sector_nodes_exposed_to_edges():
         if d.get("edge_type") == "EXPOSED_TO"
     ]
     assert len(exposed) > 0
+
+
+# ── Company node tests ────────────────────────────────────────────────────────
+
+from pathlib import Path
+import polars as pl
+from knowledge_base.company_schema import CompanyNode
+
+
+def test_add_company_nodes_from_dataframe():
+    """add_company_nodes() adds Company nodes + edges to graph."""
+    b = _empty_builder()
+    b.add_sector_nodes()
+
+    seed_df = pl.DataFrame({
+        "ticker":               ["FFIE"],
+        "name":                 ["Faraday Future"],
+        "exchange":             ["NASDAQ"],
+        "sector":               ["EV"],
+        "country_iso3":         ["USA"],
+        "employee_count":       [400],
+        "location_count":       [2],
+        "location_type":        ["multi_site"],
+        "named_customers_count":[1],
+        "has_shipped_product":  [False],
+        "auditor":              ["Deloitte"],
+        "auditor_tier":         ["big4"],
+        "years_operating":      [8.0],
+        "ceo_verifiable":       [True],
+        "reality_score":        [0.45],
+        "risk_tier":            ["MICRO_OP"],
+    })
+    b.add_company_nodes(seed_df)
+
+    assert "FFIE" in b.graph
+    assert b.graph.nodes["FFIE"]["node_type"] == "Company"
+    assert b.graph.nodes["FFIE"]["risk_tier"] == "MICRO_OP"
+
+    # LISTED_IN edge to United States sovereign
+    listed_in = [
+        v for u, v, d in b.graph.edges(data=True)
+        if u == "FFIE" and d.get("edge_type") == "LISTED_IN"
+    ]
+    assert "United States" in listed_in
+
+    # BELONGS_TO edge to EV sector
+    belongs = [
+        v for u, v, d in b.graph.edges(data=True)
+        if u == "FFIE" and d.get("edge_type") == "BELONGS_TO"
+    ]
+    assert "EV" in belongs
+
+
+def test_add_company_nodes_trading_profile():
+    """Company node contains correct trading profile attributes."""
+    b = _empty_builder()
+    b.add_sector_nodes()
+
+    seed_df = pl.DataFrame({
+        "ticker":               ["GTII"],
+        "name":                 ["Global Arena Holding"],
+        "exchange":             ["OTC"],
+        "sector":               ["Other"],
+        "country_iso3":         ["USA"],
+        "employee_count":       [0],
+        "location_count":       [1],
+        "location_type":        ["registered_agent"],
+        "named_customers_count":[0],
+        "has_shipped_product":  [False],
+        "auditor":              ["unknown"],
+        "auditor_tier":         ["unknown"],
+        "years_operating":      [0.5],
+        "ceo_verifiable":       [False],
+        "reality_score":        [0.0],
+        "risk_tier":            ["SHELL"],
+    })
+    b.add_company_nodes(seed_df)
+
+    node = b.graph.nodes["GTII"]
+    assert node["size_multiplier"] == 0.25
+    assert node["target_pct"] == 5.0
+    assert node["reversal_pct"] == 1.5
+    assert node["trading_note"] == "Take the money and run"
