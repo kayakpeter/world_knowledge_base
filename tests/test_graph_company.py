@@ -119,3 +119,53 @@ def test_add_company_nodes_trading_profile():
     assert node["target_pct"] == 5.0
     assert node["reversal_pct"] == 1.5
     assert node["trading_note"] == "Take the money and run"
+
+
+# ── Trading profile query tests ───────────────────────────────────────────────
+
+def _builder_with_company() -> KnowledgeGraphBuilder:
+    b = _empty_builder()
+    b.add_sector_nodes()
+    seed_df = pl.DataFrame({
+        "ticker":               ["GTII", "GFAI"],
+        "name":                 ["Global Arena", "Guardforce AI"],
+        "exchange":             ["OTC", "NASDAQ"],
+        "sector":               ["Other", "Tech"],
+        "country_iso3":         ["USA", "USA"],
+        "employee_count":       [0, 900],
+        "location_count":       [1, 8],
+        "location_type":        ["registered_agent", "multi_site"],
+        "named_customers_count":[0, 15],
+        "has_shipped_product":  [False, True],
+        "auditor":              ["unknown", "Marcum"],
+        "auditor_tier":         ["unknown", "mid"],
+        "years_operating":      [0.5, 8.0],
+        "ceo_verifiable":       [False, True],
+        "reality_score":        [0.0, 0.90],
+        "risk_tier":            ["SHELL", "REAL"],
+    })
+    b.add_company_nodes(seed_df)
+    return b
+
+
+def test_get_company_trading_profile_known_shell():
+    b = _builder_with_company()
+    profile = b.get_company_trading_profile("GTII")
+    assert profile["risk_tier"] == "SHELL"
+    assert profile["size_multiplier"] == 0.25
+    assert profile["target_pct"] == 5.0
+
+
+def test_get_company_trading_profile_known_real():
+    b = _builder_with_company()
+    profile = b.get_company_trading_profile("GFAI")
+    assert profile["risk_tier"] == "REAL"
+    assert profile["size_multiplier"] == 1.0
+
+
+def test_get_company_trading_profile_unknown_ticker():
+    """Unknown ticker falls back to MICRO_OP defaults."""
+    b = _builder_with_company()
+    profile = b.get_company_trading_profile("UNKN")
+    assert profile["risk_tier"] == "MICRO_OP"
+    assert profile["size_multiplier"] == 0.75
