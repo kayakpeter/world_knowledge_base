@@ -24,6 +24,11 @@ from config.settings import (
     FULL_STAT_REGISTRY,
     StatDefinition,
 )
+from knowledge_base.company_schema import (
+    CompanyNode,
+    derive_trading_profile,
+    TIER_CONFIG,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -84,6 +89,38 @@ CONTAGION_CHANNELS: list[tuple[str, str, str, str, float, str]] = [
 ]
 
 
+# ─── Sector Definitions ──────────────────────────────────────────────────────
+# (sector_name, [stat_node_ids it's exposed to, weight])
+SECTORS: list[tuple[str, list[tuple[str, float]]]] = [
+    ("Biotech",   [("USA_policy_rate", 0.60), ("USA_yield_spread_10y3m", 0.40)]),
+    ("Pharma",    [("USA_policy_rate", 0.50), ("USA_yield_spread_10y3m", 0.35)]),
+    ("Energy",    [("SAU_crude_output", 0.80), ("USA_wti_brent_spread", 0.70), ("USA_policy_rate", 0.30)]),
+    ("Mining",    [("CHN_real_gdp_growth", 0.65), ("USA_policy_rate", 0.35)]),
+    ("Tech",      [("USA_policy_rate", 0.55), ("USA_yield_spread_10y3m", 0.50)]),
+    ("Cannabis",  [("USA_policy_rate", 0.40)]),
+    ("EV",        [("CHN_real_gdp_growth", 0.50), ("USA_policy_rate", 0.45)]),
+    ("Defense",   [("USA_real_gdp_growth", 0.40)]),
+    ("Financial", [("USA_policy_rate", 0.75), ("USA_yield_spread_10y3m", 0.80)]),
+    ("Retail",    [("USA_real_gdp_growth", 0.60), ("USA_policy_rate", 0.40)]),
+    ("Other",     [("USA_policy_rate", 0.30)]),
+]
+
+# ── ISO-3 → full country name (for LISTED_IN edges) ──────────────────────────
+ISO3_TO_COUNTRY: dict[str, str] = {
+    codes.get("iso3", ""): country
+    for country, codes in COUNTRY_CODES.items()
+}
+
+# ── MICRO_OP fallback trading profile ────────────────────────────────────────
+_MICRO_OP_DEFAULT: dict = {
+    "risk_tier":       "MICRO_OP",
+    "size_multiplier": 0.75,
+    "target_pct":      10.0,
+    "reversal_pct":    2.0,
+    "trading_note":    "Normal, slight caution",
+}
+
+
 @dataclass
 class GraphMetrics:
     """Summary statistics for the knowledge graph."""
@@ -91,6 +128,8 @@ class GraphMetrics:
     sovereign_nodes: int = 0
     statistic_nodes: int = 0
     scenario_nodes: int = 0
+    company_nodes: int = 0
+    sector_nodes: int = 0
     total_edges: int = 0
     monitors_edges: int = 0
     contagion_edges: int = 0
@@ -113,7 +152,11 @@ class KnowledgeGraphBuilder:
         self.graph = nx.DiGraph()
         self._built = False
 
-    def build_from_observations(self, observations_df: pl.DataFrame) -> nx.DiGraph:
+    def build_from_observations(
+        self,
+        observations_df: pl.DataFrame,
+        company_seed_path: Path | None = None,
+    ) -> nx.DiGraph:
         """
         Build the full knowledge graph from ingested observations.
 
@@ -121,6 +164,8 @@ class KnowledgeGraphBuilder:
             observations_df: Polars DataFrame from the ingestion pipeline
                 Expected columns: country, country_iso3, stat_name, category,
                 value, period, node_id
+            company_seed_path: Optional path to company_seeds.parquet.
+                If provided, Company and Sector nodes are added to the graph.
 
         Returns:
             The populated NetworkX DiGraph
@@ -131,12 +176,20 @@ class KnowledgeGraphBuilder:
         self._add_trade_edges()
         self._add_statistic_nodes(observations_df)
         self._add_contagion_edges()
+        self.add_sector_nodes()
+        if company_seed_path is not None:
+            from knowledge_base.company_schema import load_company_seeds
+            seeds = load_company_seeds(company_seed_path)
+            if not seeds.is_empty():
+                self.add_company_nodes(seeds)
         self._built = True
 
         metrics = self.get_metrics()
         logger.info(
-            "Graph built: %d nodes (%d sovereign, %d stats), %d edges (density=%.4f)",
+            "Graph built: %d nodes (%d sovereign, %d stats, %d companies, %d sectors), "
+            "%d edges (density=%.4f)",
             metrics.total_nodes, metrics.sovereign_nodes, metrics.statistic_nodes,
+            metrics.company_nodes, metrics.sector_nodes,
             metrics.total_edges, metrics.density,
         )
 
@@ -273,11 +326,90 @@ class KnowledgeGraphBuilder:
                         target_country=tc,
                     )
 
+    def add_sector_nodes(self) -> None:
+        """Add Sector nodes and EXPOSED_TO edges to relevant Statistic nodes."""
+        for sector_name, exposures in SECTORS:
+            self.graph.add_node(sector_name, node_type="Sector")
+            for stat_node_id, weight in exposures:
+                if stat_node_id in self.graph:
+                    self.graph.add_edge(
+                        sector_name, stat_node_id,
+                        edge_type="EXPOSED_TO",
+                        weight=weight,
+                    )
+
+    def add_company_nodes(self, seed_df: "pl.DataFrame") -> None:
+        """
+        Add Company nodes from a seed DataFrame (output of load_company_seeds).
+
+        Each row becomes a node; edges added: LISTED_IN → Sovereign,
+        BELONGS_TO → Sector.
+        """
+        for row in seed_df.iter_rows(named=True):
+            ticker    = row["ticker"]
+            risk_tier = row.get("risk_tier", "MICRO_OP")
+            profile   = derive_trading_profile(risk_tier)
+
+            attrs = {
+                "node_type":             "Company",
+                "name":                  row.get("name", ""),
+                "exchange":              row.get("exchange", "OTC"),
+                "sector":                row.get("sector", "Other"),
+                "country_iso3":          row.get("country_iso3", "USA"),
+                "employee_count":        row.get("employee_count", 0),
+                "location_count":        row.get("location_count", 1),
+                "location_type":         row.get("location_type", "registered_agent"),
+                "named_customers_count": row.get("named_customers_count", 0),
+                "has_shipped_product":   row.get("has_shipped_product", False),
+                "auditor":               row.get("auditor", "unknown"),
+                "auditor_tier":          row.get("auditor_tier", "unknown"),
+                "years_operating":       row.get("years_operating", 0.0),
+                "ceo_verifiable":        row.get("ceo_verifiable", False),
+                "reality_score":         row.get("reality_score", 0.0),
+                "risk_tier":             risk_tier,
+                "reality_source":        row.get("reality_source", "seed"),
+                "reality_updated":       row.get("reality_updated", ""),
+                **profile,
+            }
+            self.graph.add_node(ticker, **attrs)
+
+            # LISTED_IN → Sovereign
+            country = ISO3_TO_COUNTRY.get(row.get("country_iso3", ""))
+            if country and country in self.graph:
+                self.graph.add_edge(ticker, country, edge_type="LISTED_IN", weight=1.0)
+
+            # BELONGS_TO → Sector
+            sector = row.get("sector", "Other")
+            if sector in self.graph:
+                self.graph.add_edge(ticker, sector, edge_type="BELONGS_TO", weight=1.0)
+
+    def get_company_trading_profile(self, ticker: str) -> dict:
+        """
+        Return trading profile for a ticker.
+
+        If the ticker is in the graph as a Company node, returns its stored
+        profile.  If unknown, returns MICRO_OP defaults (cautious but not
+        maximally restrictive).
+        """
+        node = self.graph.nodes.get(ticker)
+        if node and node.get("node_type") == "Company":
+            return {
+                "risk_tier":       node["risk_tier"],
+                "size_multiplier": node["size_multiplier"],
+                "target_pct":      node["target_pct"],
+                "reversal_pct":    node["reversal_pct"],
+                "trading_note":    node["trading_note"],
+            }
+        logger.debug("Ticker %s not in graph — returning MICRO_OP defaults", ticker)
+        return dict(_MICRO_OP_DEFAULT)
+
     def get_metrics(self) -> GraphMetrics:
         """Calculate summary metrics for the graph."""
         sovereign = sum(1 for _, d in self.graph.nodes(data=True) if d.get("node_type") == "Sovereign")
         stats = sum(1 for _, d in self.graph.nodes(data=True) if d.get("node_type") == "Statistic")
         scenarios = sum(1 for _, d in self.graph.nodes(data=True) if d.get("node_type") == "Scenario")
+        company = sum(1 for _, d in self.graph.nodes(data=True) if d.get("node_type") == "Company")
+        sectors = sum(1 for _, d in self.graph.nodes(data=True) if d.get("node_type") == "Sector")
 
         monitors = sum(1 for _, _, d in self.graph.edges(data=True) if d.get("edge_type") == "MONITORS")
         contagion = sum(1 for _, _, d in self.graph.edges(data=True) if d.get("edge_type") == "CONTAGION")
@@ -289,6 +421,8 @@ class KnowledgeGraphBuilder:
             sovereign_nodes=sovereign,
             statistic_nodes=stats,
             scenario_nodes=scenarios,
+            company_nodes=company,
+            sector_nodes=sectors,
             total_edges=self.graph.number_of_edges(),
             monitors_edges=monitors,
             contagion_edges=contagion,
