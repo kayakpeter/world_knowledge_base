@@ -802,6 +802,15 @@ async def main() -> None:
     # Phase 2: Knowledge Graph
     kb = build_knowledge_graph(observations_df)
 
+    # Inject geopolitical edges from Open Brain (last 7 days of thoughts)
+    # In production: replace GEO_THOUGHTS with actual MCP search results
+    # from mcp__open-brain__search_thoughts(query="geopolitical contagion affected_stats",
+    #                                        filter_subsystem="geopolitical", match_count=50)
+    GEO_THOUGHTS: list[dict] = []  # populated by the agent session via MCP
+    if GEO_THOUGHTS:
+        injected = kb.inject_geo_edges(GEO_THOUGHTS)
+        logger.info(f"Geo bridge: {injected} edges injected")
+
     if args.mode == "dashboard":
         print_dashboard(kb, args.country)
         return

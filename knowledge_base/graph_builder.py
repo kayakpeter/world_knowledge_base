@@ -490,6 +490,17 @@ class KnowledgeGraphBuilder:
             json.dump(data, f, indent=2, default=str)
         logger.info("Graph exported to %s", output_path)
 
+    def inject_geo_edges(self, thoughts: list[dict]) -> int:
+        """
+        Inject geopolitical contagion edges derived from Open Brain thoughts.
+        Call this after build_graph() completes.
+        Returns count of edges added.
+        """
+        from processing.geo_financial_bridge import GeoFinancialBridge
+        bridge = GeoFinancialBridge()
+        edges = bridge.parse_thoughts(thoughts)
+        return bridge.inject_into_graph(self.graph, edges)
+
     def get_country_dashboard(self, country: str) -> dict:
         """
         Get the full 50-stat dashboard for a single country.
