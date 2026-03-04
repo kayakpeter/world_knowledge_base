@@ -58,6 +58,7 @@ from processing.crack_detector import CrackDetector
 from processing.hmm_prior_updater import HMMPriorUpdater, RegimeHistory
 from production.regime_multiplier_exporter import RegimeMultiplierExporter, RegimeProbs
 from processing.dynamic_scenario_generator import DynamicScenarioGenerator
+from processing.open_brain_client import search_thoughts
 from processing.news_intelligence import (
     NewsIntelligenceProcessor,
     DEMO_EVENTS,
@@ -836,10 +837,13 @@ async def main() -> None:
     kb = build_knowledge_graph(observations_df)
 
     # Inject geopolitical edges from Open Brain (last 7 days of thoughts)
-    # In production: replace GEO_THOUGHTS with actual MCP search results
-    # from mcp__open-brain__search_thoughts(query="geopolitical contagion affected_stats",
-    #                                        filter_subsystem="geopolitical", match_count=50)
-    GEO_THOUGHTS: list[dict] = []  # populated by the agent session via MCP
+    GEO_THOUGHTS = search_thoughts(
+        query="geopolitical contagion affected_stats policy_rate yield_spread",
+        filter_subsystem="geopolitical",
+        match_count=50,
+        match_threshold=0.4,
+    )
+    logger.info("Open Brain geo thoughts retrieved: %d", len(GEO_THOUGHTS))
     if GEO_THOUGHTS:
         injected = kb.inject_geo_edges(GEO_THOUGHTS)
         logger.info(f"Geo bridge: {injected} edges injected")
@@ -848,8 +852,53 @@ async def main() -> None:
         print_dashboard(kb, args.country)
         return
 
-    # Phase 3: HMM Analysis
-    hmm_results = run_hmm_analysis(observations_df)
+    # Fetch crack-detection history from Open Brain for HMM prior blending
+    _valid_regimes = {"thriving", "cracks_appearing", "crisis_imminent"}
+    _crack_thoughts = search_thoughts(
+        query="overall_regime cracks_appearing crisis_imminent country economic conditions",
+        filter_subsystem="crack-detection",
+        match_count=100,
+        match_threshold=0.3,
+    )
+    logger.info("Open Brain crack-detection thoughts retrieved: %d", len(_crack_thoughts))
+
+    # Build RegimeHistory objects grouped by country (chronological order)
+    _country_seqs: dict[str, list[tuple[str, str]]] = {}
+    for _t in _crack_thoughts:
+        _meta = _t.get("metadata", {})
+        _country = _meta.get("country")
+        _regime = _meta.get("overall_regime", "")
+        _ts = _t.get("created_at", "")
+        if _country and _regime in _valid_regimes:
+            _country_seqs.setdefault(_country, []).append((_ts, _regime))
+    crack_histories: list[RegimeHistory] = [
+        RegimeHistory(
+            country=_c,
+            regime_sequence=[_r for _, _r in sorted(_seqs)],
+        )
+        for _c, _seqs in _country_seqs.items()
+        if len(_seqs) >= 1
+    ]
+
+    # Build active crack summaries for scenario generator
+    active_summaries: list[str] = []
+    _latest_per_country: dict[str, str] = {}
+    for _t in _crack_thoughts:
+        _meta = _t.get("metadata", {})
+        _country = _meta.get("country")
+        _regime = _meta.get("overall_regime", "")
+        _ts = _t.get("created_at", "")
+        if _country and _regime in _valid_regimes:
+            if _country not in _latest_per_country or _ts > _latest_per_country[_country]:
+                _latest_per_country[_country] = _ts
+    for _country, _seqs in _country_seqs.items():
+        _latest_ts = max(ts for ts, _ in _seqs)
+        _latest_regime = next(r for ts, r in sorted(_seqs, reverse=True) if ts == _latest_ts)
+        if _latest_regime in ("cracks_appearing", "crisis_imminent"):
+            active_summaries.append(f"{_country}: {_latest_regime}")
+
+    # Phase 3: HMM Analysis (with Bayesian prior blending from crack history)
+    hmm_results = run_hmm_analysis(observations_df, crack_histories=crack_histories)
 
     logger.info("\n" + "=" * 70)
     logger.info("HMM STATE ESTIMATES")
@@ -880,14 +929,6 @@ async def main() -> None:
     logger.info("Regime multipliers ready for trading system: %s", multiplier_path)
 
     # Phase 4: Scenario Analysis
-    # CRACK_REPORTS populated by agent session from live crack detector output
-    # In production: pass actual CountryCrackReport list from run_crack_detection_demo()
-    CRACK_REPORTS: list = []  # agent populates from crack detector
-    active_summaries: list[str] = []
-    for report in CRACK_REPORTS:
-        if report.active_patterns:
-            pattern_names = [p.pattern_name for p in report.active_patterns]
-            active_summaries.append(f"{report.country}: {', '.join(pattern_names)}")
     run_scenario_analysis(kb, active_crack_summaries=active_summaries)
 
     # Phase 5: Dashboard for top economy
