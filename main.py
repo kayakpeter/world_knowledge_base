@@ -55,6 +55,9 @@ from processing.scenario_engine import (
     get_scenarios_affecting_country,
 )
 from processing.crack_detector import CrackDetector
+from processing.hmm_prior_updater import HMMPriorUpdater, RegimeHistory
+from production.regime_multiplier_exporter import RegimeMultiplierExporter, RegimeProbs
+from processing.dynamic_scenario_generator import DynamicScenarioGenerator
 from processing.news_intelligence import (
     NewsIntelligenceProcessor,
     DEMO_EVENTS,
@@ -97,13 +100,28 @@ def build_knowledge_graph(observations_df: pl.DataFrame) -> KnowledgeGraphBuilde
     return builder
 
 
-def run_hmm_analysis(observations_df: pl.DataFrame) -> dict[str, dict]:
+def run_hmm_analysis(
+    observations_df: pl.DataFrame,
+    crack_histories: list[RegimeHistory] | None = None,
+) -> dict[str, dict]:
     """
     Phase 3: Run HMM state estimation for each country.
 
     Uses the ingested observations to estimate current economic states.
+    If crack_histories is provided, Bayesian-blends transition priors with
+    empirical crack history before estimation.
     """
     logger.info("Running HMM state estimation for %d countries...", len(COUNTRIES))
+
+    # Load updated priors from crack history (populated by agent via Open Brain search)
+    updater = HMMPriorUpdater(blend_weight=0.30)
+    if crack_histories:
+        updated_priors = updater.compute_updated_priors(crack_histories)
+        updater.save(updated_priors)
+        logger.info("HMM priors updated for %d countries", len(updated_priors))
+    else:
+        updated_priors = updater.load_latest() or {}
+        logger.info("HMM priors: using latest saved priors (no new history)")
 
     results: dict[str, dict] = {}
 
@@ -117,8 +135,10 @@ def run_hmm_analysis(observations_df: pl.DataFrame) -> dict[str, dict]:
         else:
             country_obs = pl.DataFrame()
 
-        # Create country-specific HMM
+        # Create country-specific HMM, applying updated prior if available
         params = HMMParams(country=country, country_iso3=iso3)
+        if country in updated_priors:
+            params.transition_matrix = updated_priors[country]
         hmm = SovereignHMM(params)
 
         if not country_obs.is_empty() and "value" in country_obs.columns:
@@ -162,16 +182,29 @@ def run_hmm_analysis(observations_df: pl.DataFrame) -> dict[str, dict]:
     return results
 
 
-def run_scenario_analysis(kb: KnowledgeGraphBuilder) -> None:
+def run_scenario_analysis(
+    kb: KnowledgeGraphBuilder,
+    active_crack_summaries: list[str] | None = None,
+) -> None:
     """Phase 4: Scenario analysis with shock propagation."""
     logger.info("=" * 70)
     logger.info("SCENARIO ANALYSIS")
     logger.info("=" * 70)
 
+    # Expand static registry with Ollama-generated dynamic scenarios
+    dyn_gen = DynamicScenarioGenerator(max_scenarios=10)
+    dynamic_scenarios = dyn_gen.generate(active_crack_summaries or [])
+    if dynamic_scenarios:
+        dyn_gen.save(dynamic_scenarios)
+        all_scenarios = SCENARIO_REGISTRY + dynamic_scenarios
+        logger.info("Dynamic scenario generator added %d new scenarios (total: %d)", len(dynamic_scenarios), len(all_scenarios))
+    else:
+        all_scenarios = SCENARIO_REGISTRY
+
     categories = ["baseline", "likely", "moderate", "unlikely", "black_swan"]
 
     for cat in categories:
-        scenarios = get_scenarios_by_category(cat)
+        scenarios = [s for s in all_scenarios if s.category == cat]
         logger.info(
             "\n%s (%d scenarios):", cat.upper().replace("_", " "), len(scenarios)
         )
@@ -833,8 +866,29 @@ async def main() -> None:
             result["n_observations"],
         )
 
+    # Export regime multipliers for trading system
+    regime_probs = []
+    for country, result in hmm_results.items():
+        probs = result["state_estimate"]["probabilities"]
+        regime_probs.append(RegimeProbs(
+            country=country,
+            tranquil=probs.get("Tranquil", 0.60),
+            turbulent=probs.get("Turbulent", 0.30),
+            crisis=probs.get("Crisis", 0.10),
+        ))
+    multiplier_path = RegimeMultiplierExporter().export(regime_probs)
+    logger.info("Regime multipliers ready for trading system: %s", multiplier_path)
+
     # Phase 4: Scenario Analysis
-    run_scenario_analysis(kb)
+    # CRACK_REPORTS populated by agent session from live crack detector output
+    # In production: pass actual CountryCrackReport list from run_crack_detection_demo()
+    CRACK_REPORTS: list = []  # agent populates from crack detector
+    active_summaries: list[str] = []
+    for report in CRACK_REPORTS:
+        if report.active_patterns:
+            pattern_names = [p.pattern_name for p in report.active_patterns]
+            active_summaries.append(f"{report.country}: {', '.join(pattern_names)}")
+    run_scenario_analysis(kb, active_crack_summaries=active_summaries)
 
     # Phase 5: Dashboard for top economy
     print_dashboard(kb, "United States")
