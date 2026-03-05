@@ -46,7 +46,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=2, title="Fed Holds Rates Through H1",
-        category="baseline", probability_12m=0.70,
+        category="baseline", probability_12m=0.75,  # updated 2026-03-05: Iran oil shock extends hold
         description="FOMC maintains 3.50-3.75% through June 2026 on sticky inflation",
         primary_channel="financial",
         affected_countries=["United States"],
@@ -118,7 +118,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=9, title="Oil Settles Below $55",
-        category="likely", probability_12m=0.40,
+        category="likely", probability_12m=0.20,  # updated 2026-03-05: Iran war materially reduces probability
         description="WTI/Brent settle mid-$50s on Venezuela supply and weak China demand",
         primary_channel="commodity",
         affected_countries=["Saudi Arabia", "Russia", "Canada", "Brazil", "United States"],
@@ -282,7 +282,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=25, title="European Energy Shock (Gas Supply)",
-        category="unlikely", probability_12m=0.08,
+        category="unlikely", probability_12m=0.15,  # updated 2026-03-05: Iran war raises Gulf/LNG disruption risk
         description="LNG supply disruption forces European gas prices back above €100/MWh",
         primary_channel="commodity",
         affected_countries=["Germany", "France", "Italy", "Netherlands", "Poland"],
@@ -344,8 +344,8 @@ SCENARIO_REGISTRY: list[Scenario] = [
     # ── REMOTE/TAIL (Prob 0.02 - 0.05) ──────────────────────────────────
     Scenario(
         scenario_id=31, title="Fed Leadership Shock",
-        category="unlikely", probability_12m=0.05,
-        description="New Fed chair implements unexpectedly aggressive rate policy",
+        category="likely", probability_12m=0.45,  # updated 2026-03-05: Warsh nomination live; recategorized unlikely→likely
+        description="Warsh confirmed as Fed chair; implements rate cuts + growth-oriented policy shift",
         primary_channel="financial",
         affected_countries=["United States"],
         affected_stats=["policy_rate", "yield_spread_10y3m", "real_rates"],
@@ -364,7 +364,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=33, title="Dollar Hegemony Challenge",
-        category="unlikely", probability_12m=0.04,
+        category="moderate", probability_12m=0.20,  # updated 2026-03-05: 49 CBDC pilots, China yuan stablecoin push, EU MiCA barriers
         description="BRICS payment system gains critical mass, reducing dollar reserve demand",
         primary_channel="financial",
         affected_countries=["United States", "China", "Russia", "India", "Brazil", "Saudi Arabia"],
@@ -558,6 +558,209 @@ SCENARIO_REGISTRY: list[Scenario] = [
         affected_stats=["real_gdp_growth", "core_cpi", "terms_of_trade"],
         shock_magnitude=-10.0, severity="critical",
         causal_chain=["eruption", "ash_cloud", "agriculture_collapses", "global_famine_risk"],
+    ),
+
+    # ── IRAN WAR + STABLECOIN LEGISLATIVE BATTLE (added 2026-03-05) ──────────
+    Scenario(
+        scenario_id=51, title="Iran War: Hormuz Closure / Sustained Oil Disruption",
+        category="moderate", probability_12m=0.25,
+        description=(
+            "Iran-Israel-US conflict escalates to sustained disruption of Strait of Hormuz, "
+            "cutting ~20% of global oil supply. Brent surges above $100, European gas nearly doubles. "
+            "War is live as of 2026-02-28 — this scenario tracks escalation beyond current state."
+        ),
+        primary_channel="commodity",
+        affected_countries=["Iran", "United States", "Saudi Arabia", "UAE", "China", "Japan", "South Korea", "India", "Germany"],
+        affected_stats=["oil_price", "inflation_cpi", "real_gdp_growth", "current_account_balance", "policy_rate"],
+        shock_magnitude=2.5, severity="critical",
+        causal_chain=[
+            "iran_war_escalates",
+            "hormuz_threatened_or_closed",
+            "oil_tankers_reroute_cape_of_good_hope",
+            "brent_spikes_above_100",
+            "global_inflation_surge",
+            "rate_cut_path_blocked",
+            "recession_risk_rises",
+        ],
+    ),
+    Scenario(
+        scenario_id=52, title="Warsh Confirmed: Fed Rate Cuts Begin H2 2026",
+        category="likely", probability_12m=0.45,
+        description=(
+            "Kevin Warsh confirmed as Fed Chair after Powell exits May 2026. "
+            "Delivers 2-3 rate cuts by year-end, reorienting monetary policy toward growth. "
+            "Dollar weakens moderately; Treasury yields compress; crypto risk-on."
+        ),
+        primary_channel="financial",
+        affected_countries=["United States", "Brazil", "India", "South Korea", "Germany"],
+        affected_stats=["policy_rate", "yield_spread_10y3m", "real_gdp_growth", "exchange_rate_vs_usd", "equity_risk_premium"],
+        shock_magnitude=0.75, severity="medium",
+        causal_chain=[
+            "powell_exits_may_2026",
+            "warsh_senate_confirmed",
+            "fomc_composition_shifts",
+            "rate_cuts_signal_july",
+            "dollar_weakens",
+            "em_capital_inflows",
+        ],
+    ),
+    Scenario(
+        scenario_id=53, title="Clarity Act Passes Pre-July Recess",
+        category="moderate", probability_12m=0.28,
+        description=(
+            "US Clarity Act (crypto market structure) passes Senate before July 2026 recess. "
+            "Unlocks tokenization of securities, establishes dollar stablecoin framework globally. "
+            "Opposed by banks, Warren Democrats, law enforcement, and foreign governments — "
+            "passage requires White House political muscle holding through Iran war distraction."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "China", "EU", "Singapore", "UAE"],
+        affected_stats=["equity_risk_premium", "usd_dominance_index", "crypto_market_cap", "treasury_demand"],
+        shock_magnitude=1.2, severity="high",
+        causal_chain=[
+            "genius_act_foundation_holds",
+            "trump_political_capital_survives",
+            "banking_lobby_loses_clarity_fight",
+            "clarity_act_passes_july",
+            "dollar_stablecoin_rails_global",
+            "treasury_organic_demand_rises",
+        ],
+    ),
+    Scenario(
+        scenario_id=54, title="Clarity Act Stalls to 2027",
+        category="likely", probability_12m=0.52,
+        description=(
+            "Clarity Act fails to pass before July 2026 recess due to Iran war consuming "
+            "political oxygen, banking lobby entrenchment, unresolved Trump ethics provisions, "
+            "and Democratic clock-running strategy ahead of midterms. "
+            "Stablecoin strategy advances incrementally rather than transformatively. "
+            "Note: Scenarios 53+54 sum to 0.80; residual 0.20 = partial/amended passage."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "EU", "China", "Singapore"],
+        affected_stats=["crypto_market_cap", "usd_dominance_index", "treasury_demand"],
+        shock_magnitude=0.5, severity="low",
+        causal_chain=[
+            "iran_war_consumes_senate_bandwidth",
+            "banking_lobby_delays_committee_vote",
+            "ethics_provisions_unresolved",
+            "july_recess_hits",
+            "bill_punted_to_2027",
+            "cbdc_alternatives_gain_ground",
+        ],
+    ),
+    Scenario(
+        scenario_id=55, title="Trump Political Crisis / Removal",
+        category="unlikely", probability_12m=0.08,
+        description=(
+            "Trump removed, resigns, or politically incapacitated due to convergence of: "
+            "Iran war crimes accusations from Europe, DOJ-Powell debacle fallout, "
+            "family crypto conflict-of-interest exposure, and midterm political math. "
+            "Vance succession likely; crypto strategy survives but Clarity Act stalls. "
+            "Global read: deep American institutional instability → accelerates de-dollarization."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "EU", "China", "Russia", "Israel"],
+        affected_stats=["usd_dominance_index", "policy_rate", "equity_risk_premium", "sovereign_cds_spread"],
+        shock_magnitude=3.0, severity="critical",
+        causal_chain=[
+            "iran_war_crimes_accusations",
+            "doj_powell_investigation_escalates",
+            "crypto_conflict_exposure",
+            "political_support_collapses",
+            "trump_removed_or_resigns",
+            "vance_succession",
+            "clarity_act_stalls",
+            "dollar_confidence_shock",
+        ],
+    ),
+    Scenario(
+        scenario_id=56, title="Global Defense Procurement Supercycle",
+        category="likely", probability_12m=0.60,
+        description=(
+            "Iran war demonstration effect triggers 5-10 year precision munitions procurement supercycle. "
+            "Israel's iron dome depletion, Gulf states rearmament, NATO Article 3 stockpile concerns, "
+            "and Asia-Pacific (Japan, South Korea, Taiwan, Australia) accelerated spending. "
+            "Defense contractors see multi-year backlog growth. Feeds into sovereign fiscal pressure."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "Israel", "Germany", "Poland", "Japan", "South Korea", "Australia", "Saudi Arabia"],
+        affected_stats=["defense_spending_pct_gdp", "government_debt_to_gdp", "real_gdp_growth", "fiscal_balance"],
+        shock_magnitude=1.0, severity="medium",
+        causal_chain=[
+            "iran_war_demonstrates_munitions_consumption_rate",
+            "nato_stockpile_gap_revealed",
+            "asia_pacific_procurement_accelerates",
+            "defense_contractor_backlogs_surge",
+            "sovereign_fiscal_pressure_rises",
+            "debt_issuance_expands",
+        ],
+    ),
+    Scenario(
+        scenario_id=57, title="China Yuan Stablecoin Counter-Offensive",
+        category="moderate", probability_12m=0.35,
+        description=(
+            "China accelerates yuan-backed stablecoin issuance via state-sponsored entities "
+            "in response to US dollar stablecoin strategy. Targets Belt and Road corridor countries, "
+            "Iranian trade settlement, and ASEAN cross-border payments. "
+            "e-CNY + CIPS positioned as dollar stablecoin alternative for sanctioned entities."
+        ),
+        primary_channel="financial",
+        affected_countries=["China", "Iran", "Saudi Arabia", "UAE", "Pakistan", "Russia", "Brazil"],
+        affected_stats=["usd_dominance_index", "yuan_cross_border_share", "current_account_balance"],
+        shock_magnitude=0.8, severity="medium",
+        causal_chain=[
+            "us_dollar_stablecoin_strategy_signals",  # fires on GENIUS passage OR Clarity Act debate
+            "china_state_media_calls_for_yuan_stablecoins",
+            "pboc_accelerates_ecny_international",
+            "cips_expands_stablecoin_rails",
+            "belt_and_road_yuan_settlement_rises",
+            "dollar_share_in_em_trade_drops",
+        ],
+    ),
+    Scenario(
+        scenario_id=58, title="EM Sovereign Dollar Stablecoin Migration",
+        category="moderate", probability_12m=0.25,
+        description=(
+            "Citizens in high-inflation emerging markets (Argentina, Turkey, Nigeria, Venezuela) "
+            "mass-migrate savings into USDC/USDT, effectively dollarizing economies without "
+            "government consent. Central banks lose monetary transmission. "
+            "IMF warns of privatization of seigniorage — wealth concentrates in Coinbase/Circle/Tether."
+        ),
+        primary_channel="financial",
+        affected_countries=["Argentina", "Turkey", "Nigeria", "Venezuela", "Egypt", "Pakistan"],
+        affected_stats=["inflation_cpi", "exchange_rate_vs_usd", "current_account_balance", "fx_reserves"],
+        shock_magnitude=2.0, severity="high",
+        causal_chain=[
+            "dollar_stablecoin_rails_accessible",
+            "local_currency_inflation_persists",
+            "citizens_adopt_usdc_usdt",
+            "bank_deposit_flight",
+            "monetary_policy_transmission_breaks",
+            "central_bank_loses_control",
+        ],
+    ),
+    Scenario(
+        scenario_id=59, title="CBDC Coalition Acceleration",
+        category="likely", probability_12m=0.60,
+        description=(
+            "Record 49 governments accelerate CBDC pilots in direct response to US stablecoin strategy. "
+            "ECB digital euro wholesale live H2 2026, Japan yen stablecoin legal, South Korea won stablecoins. "
+            "Creates parallel non-dollar settlement infrastructure across G20 + EM bloc. "
+            "Dollar stablecoin dominance window narrows faster than Washington expects."
+        ),
+        primary_channel="financial",
+        affected_countries=["EU", "Japan", "South Korea", "India", "Singapore", "Brazil", "South Africa"],
+        affected_stats=["usd_dominance_index", "cross_border_payment_dollar_share", "fx_reserves"],
+        shock_magnitude=0.6, severity="medium",
+        causal_chain=[
+            "genius_act_signals_us_dollar_stablecoin_push",
+            "foreign_governments_read_as_dollar_weaponization",
+            "49_cbdc_pilots_accelerate",
+            "ecb_digital_euro_wholesale_live",
+            "asia_instant_settlement_non_dollar",
+            "dollar_optional_in_some_corridors",
+        ],
     ),
 ]
 
