@@ -134,12 +134,44 @@ def compute_stress_scores(
     return scores
 
 
+def check_staleness(
+    window_days: int = WINDOW_DAYS,
+    interp_dir: Path = _INTERP_DIR,
+    reference_date: date | None = None,
+    max_gap_hours: float = 24.0,
+) -> list[date]:
+    """
+    Check for gaps in interpretation coverage within the rolling window.
+
+    Returns a list of dates with no interpretation parquet file.
+    Logs WARNING if any date is missing (staleness alert).
+    """
+    ref = reference_date or date.today()
+    missing: list[date] = []
+    for delta in range(window_days + 1):
+        d = ref - timedelta(days=delta)
+        fname = interp_dir / f"interpretations_unified_{d.strftime('%Y%m%d')}.parquet"
+        if not fname.exists():
+            missing.append(d)
+
+    if missing:
+        logger.warning(
+            "STALENESS ALERT: %d of %d days in the geo stress window have no "
+            "interpretation parquet: %s",
+            len(missing),
+            window_days + 1,
+            ", ".join(d.isoformat() for d in sorted(missing)),
+        )
+    return missing
+
+
 def load_and_score(
     window_days: int = WINDOW_DAYS,
     interp_dir: Path = _INTERP_DIR,
     reference_date: date | None = None,
 ) -> dict[str, float]:
     """Convenience: load interpretation files and return stress scores."""
+    check_staleness(window_days, interp_dir, reference_date)
     dfs = _load_interpretation_files(window_days, interp_dir, reference_date)
     if not dfs:
         logger.warning("No interpretation files found in last %d days", window_days)

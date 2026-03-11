@@ -110,3 +110,40 @@ def write_fused_states(fused: dict[str, dict], output_path: Path) -> None:
     """Write fused_hmm_states.json to the given path."""
     output_path.write_text(json.dumps(fused, indent=2))
     logger.info("Fused HMM states written: %s (%d countries)", output_path, len(fused))
+
+
+def check_override_expiry_alerts(expiry_warning_hours: float = 48.0) -> None:
+    """
+    Log WARNING for any active geo override that expires within expiry_warning_hours.
+
+    Called automatically by fuse_states_from_snapshot() so expiry warnings appear
+    in every daily build log.
+    """
+    try:
+        from processing.geo_override import _load, is_expired
+        from datetime import datetime, timezone
+        overrides = _load()
+        now = datetime.now(timezone.utc)
+        for country, entry in overrides.items():
+            if is_expired(entry):
+                continue  # already expired — geo_override.get_active_overrides warns separately
+            exp_str = entry.get("override_expires", "")
+            try:
+                from datetime import datetime as _dt
+                exp = _dt.fromisoformat(exp_str.replace("Z", "+00:00"))
+                hours_left = (exp - now).total_seconds() / 3600
+                if hours_left <= expiry_warning_hours:
+                    logger.warning(
+                        "OVERRIDE EXPIRY: %s → %s expires in %.1fh (at %s, set by %s). "
+                        "Renew or clear: python3 processing/geo_override.py set '%s' <state> --reason '...'",
+                        country,
+                        entry.get("override_state"),
+                        hours_left,
+                        exp_str[:16],
+                        entry.get("override_set_by", "?"),
+                        country,
+                    )
+            except (ValueError, TypeError):
+                pass
+    except Exception as exc:
+        logger.debug("check_override_expiry_alerts: %s", exc)

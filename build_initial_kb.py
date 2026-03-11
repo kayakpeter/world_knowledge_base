@@ -1051,13 +1051,14 @@ def phase8_geo_fusion(snapshot_dir: Path) -> "Path | None":
 
     try:
         from processing.geo_stress_scorer import load_and_score
-        from processing.geo_fusion import fuse_states, write_fused_states
+        from processing.geo_fusion import fuse_states, write_fused_states, check_override_expiry_alerts
     except ImportError as exc:
         logger.error("phase8: could not import geo modules: %s", exc)
         return None
 
     hmm_states = json.loads(hmm_states_path.read_text())
 
+    check_override_expiry_alerts()
     stress_scores = load_and_score()
     if not stress_scores:
         logger.warning("phase8: no geo stress data available — writing fused file with HMM probs only")
