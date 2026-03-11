@@ -76,13 +76,19 @@ class SovereignHMM:
 
     def forward(self, observations: np.ndarray) -> tuple[np.ndarray, float]:
         """
-        Forward algorithm — compute P(observations) and forward variables.
+        Forward algorithm with per-step scaling to prevent float64 underflow.
+
+        Without scaling, long sequences (T > ~100) cause alpha to underflow to
+        exactly 0.0, making state_posteriors() return all-zero probabilities.
+        Scaling normalises alpha at each step and accumulates log-likelihood
+        via the scale factors.
 
         Args:
             observations: 1D array of observation indices (0=Low, 1=Normal, 2=High)
 
         Returns:
-            (alpha, log_likelihood) where alpha[t, i] = P(o_1...o_t, q_t=i)
+            (alpha_scaled, log_likelihood) where alpha_scaled[t, i] is the
+            scaled forward variable (not the raw probability).
         """
         T = len(observations)
         N = self.params.n_states
@@ -91,17 +97,23 @@ class SovereignHMM:
         pi = self.params.initial_probs
 
         alpha = np.zeros((T, N))
+        scales = np.zeros(T)
 
         # Initialization
         alpha[0] = pi * B[:, observations[0]]
+        scale = alpha[0].sum()
+        scales[0] = scale if scale > 0 else 1e-300
+        alpha[0] /= scales[0]
 
-        # Induction
+        # Induction with per-step scaling
         for t in range(1, T):
             for j in range(N):
                 alpha[t, j] = np.sum(alpha[t - 1] * A[:, j]) * B[j, observations[t]]
+            scale = alpha[t].sum()
+            scales[t] = scale if scale > 0 else 1e-300
+            alpha[t] /= scales[t]
 
-        # Scaling to avoid underflow
-        log_likelihood = np.sum(np.log(alpha[-1].sum()))
+        log_likelihood = np.sum(np.log(scales))
 
         return alpha, log_likelihood
 

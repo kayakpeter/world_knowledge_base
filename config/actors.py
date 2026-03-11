@@ -330,6 +330,79 @@ ACTOR_REGISTRY: list[Actor] = [
         influence_domains=["Monetary/Price"],
         institution="Bank of Korea",
     ),
+
+    # ── US Christian Nationalism Network ─────────────────────────────────────
+    # These actors appear in news re: judicial appointments, executive orders,
+    # religious liberty policy, reproductive rights, and LGBTQ legislation.
+    Actor(
+        actor_id="USA_LEONARD_LEO", name="Leonard Leo", role="Co-Chairman, Federalist Society",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Judiciary", "Political Stability", "Governance Reform"],
+        institution="Federalist Society",
+        notes="Architect of Trump Supreme Court appointments (Gorsuch, Kavanaugh, Barrett). "
+              "Roe v. Wade overturned 2022. Raised $250M+ 2014-2017.",
+    ),
+    Actor(
+        actor_id="USA_RALPH_DROLLINGER", name="Ralph Drollinger", role="Founder, Capitol Ministries",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability", "Governance Reform", "Labor"],
+        institution="Capitol Ministries",
+        notes="Weekly Bible studies for 52+ House members, 12 Senators, Cabinet. "
+              "Claims direct influence on Medicaid work requirement (2 Thess. citation).",
+    ),
+    Actor(
+        actor_id="USA_PAULA_WHITE", name="Paula White-Cain", role="Director, White House Faith Office",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability", "Governance Reform"],
+        institution="White House Faith Office",
+        notes="Trump's personal spiritual advisor since 2002. Senior Advisor and Special Gov Employee. "
+              "Prosperity gospel theology embedded in executive branch.",
+    ),
+    Actor(
+        actor_id="USA_TONY_PERKINS", name="Tony Perkins", role="President, Family Research Council",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability", "Governance Reform"],
+        institution="Family Research Council",
+        notes="Past CNP president. USCIRF member. FRC Action scored 245 members of Congress.",
+    ),
+    Actor(
+        actor_id="USA_RALPH_REED", name="Ralph Reed", role="Chairman, Faith & Freedom Coalition",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability"],
+        institution="Faith & Freedom Coalition",
+        notes="Distributes tens of millions of voter guides through evangelical churches. "
+              "Regular White House prayer session attendee.",
+    ),
+    Actor(
+        actor_id="USA_RUSSELL_VOUGHT", name="Russell Vought", role="Director, Office of Management and Budget",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Fiscal Deficit", "Public Investment", "Governance Reform"],
+        institution="OMB",
+        notes="P2025 Executive Office chapter author and transition director. "
+              "Self-identified Christian nationalist. Sponsors Capitol Ministries Cabinet Bible study.",
+    ),
+    Actor(
+        actor_id="USA_KEVIN_ROBERTS", name="Kevin Roberts", role="President, Heritage Foundation",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Governance Reform", "Political Stability"],
+        institution="Heritage Foundation",
+        notes="Project 2025 author ($22M budget, 100+ partner orgs). "
+              "53% of P2025 domestic agenda implemented/underway as of Feb 2026.",
+    ),
+    Actor(
+        actor_id="USA_ROBERT_JEFFRESS", name="Robert Jeffress", role="Senior Pastor, First Baptist Dallas",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability"],
+        institution="First Baptist Dallas",
+        notes="Regular Oval Office prayer session participant. Delivered prayer at Jerusalem embassy dedication.",
+    ),
+    Actor(
+        actor_id="USA_FRANKLIN_GRAHAM", name="Franklin Graham", role="President, Samaritan's Purse / Billy Graham Evangelistic Assoc.",
+        role_type="institutional", country="United States", country_iso3="USA",
+        influence_domains=["Political Stability", "Foreign Policy"],
+        institution="Samaritan's Purse",
+        notes="Described as 'practically holding court' in West Wing. International humanitarian network.",
+    ),
 ]
 
 
@@ -395,6 +468,18 @@ ACTOR_RELATIONSHIPS: list[ActorRelationship] = [
     # Japan monetary normalization
     ActorRelationship("JPN_BOJ", "USA_FED", "institutional", 0.6,
                       "Rate divergence driving carry trade dynamics."),
+
+    # Christian nationalism network
+    ActorRelationship("USA_LEONARD_LEO", "USA_POTUS", "ally", 0.9,
+                      "Judicial pipeline architect. Built Supreme Court majority via Federalist Society."),
+    ActorRelationship("USA_PAULA_WHITE", "USA_POTUS", "ally", 0.95,
+                      "Personal spiritual advisor. Director of White House Faith Office 2025."),
+    ActorRelationship("USA_RALPH_DROLLINGER", "USA_OMB", "ally", 0.7,
+                      "Capitol Ministries Bible study. Claims direct influence on Medicaid work requirement."),
+    ActorRelationship("USA_RUSSELL_VOUGHT", "USA_POTUS", "subordinate", 0.85,
+                      "OMB Director. Project 2025 transition architect. Self-identified Christian nationalist."),
+    ActorRelationship("USA_KEVIN_ROBERTS", "USA_POTUS", "ally", 0.7,
+                      "Heritage Foundation president. Project 2025 author. P2025 53% implemented as of Feb 2026."),
 ]
 
 

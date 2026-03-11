@@ -99,7 +99,13 @@ echo "  ✓ Core dependencies installed"
 echo "  Installing vLLM (this takes ~3-5 min)..."
 pip install --quiet vllm
 
-echo "  ✓ vLLM installed"
+# vLLM's default pip install pulls torch+cpu (no CUDA) for aarch64.
+# Re-install CUDA-enabled torch from the official CUDA index to match vLLM's ABI.
+echo "  Reinstalling torch with CUDA support (cu128)..."
+pip install --quiet torch==2.10.0+cu128 torchvision==0.25.0+cu128 \
+    --index-url https://download.pytorch.org/whl/cu128
+
+echo "  ✓ vLLM + CUDA torch installed"
 
 # ── 5. Create data directories ────────────────────────────────────────────────
 echo ""
