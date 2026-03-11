@@ -23,11 +23,19 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
+
+# Override state → (tranquil_prob, turbulent_prob, crisis_prob)
+_OVERRIDE_PROBS = {
+    "S0_Tranquil": (1.0, 0.0, 0.0),
+    "S1_Turbulent": (0.0, 1.0, 0.0),
+    "S2_Crisis":    (0.0, 0.0, 1.0),
+}
 
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "regime_multipliers"
 
@@ -56,6 +64,86 @@ class RegimeProbs:
 class RegimeMultiplierExporter:
     def __init__(self, output_dir: Path = OUTPUT_DIR) -> None:
         self.output_dir = output_dir
+
+    @staticmethod
+    def probs_from_hmm_states(states: dict[str, dict]) -> list["RegimeProbs"]:
+        """
+        Build RegimeProbs list from an hmm_states dict (as loaded from hmm_states.json).
+
+        If a country entry has a non-null override_state that hasn't expired,
+        the override probabilities (1.0 for the overridden state) are used instead
+        of the HMM posteriors. The final entry records which source was used.
+        """
+        try:
+            # Import lazily to avoid circular deps when used standalone
+            _override_path = Path(__file__).parent.parent / "processing" / "geo_override.py"
+            sys.path.insert(0, str(_override_path.parent.parent))
+            from processing.geo_override import get_active_overrides, is_expired
+            active_overrides = get_active_overrides()
+        except Exception as exc:
+            logger.warning("Could not load geo overrides: %s — using HMM states only", exc)
+            active_overrides = {}
+
+        probs: list[RegimeProbs] = []
+        for country, entry in states.items():
+            override_state = entry.get("override_state")
+            override_active = (
+                override_state is not None
+                and override_state in _OVERRIDE_PROBS
+                and country in active_overrides
+            )
+
+            if override_active:
+                t, tu, c = _OVERRIDE_PROBS[override_state]
+                logger.info(
+                    "  %-20s → %s [OVERRIDE by %s, expires %s]",
+                    country, override_state,
+                    entry.get("override_set_by", "?"),
+                    (entry.get("override_expires") or "?")[:10],
+                )
+            else:
+                # Use HMM state posteriors
+                state_probs = entry.get("state_probs", {})
+                t = float(state_probs.get("Tranquil", 0.60))
+                tu = float(state_probs.get("Turbulent", 0.30))
+                c = float(state_probs.get("Crisis", 0.10))
+
+            probs.append(RegimeProbs(country=country, tranquil=t, turbulent=tu, crisis=c))
+        return probs
+
+    def export_from_states(self, states_file: Path) -> Path:
+        """Load hmm_states.json, apply overrides, and export multipliers."""
+        states = json.loads(states_file.read_text())
+        probs = self.probs_from_hmm_states(states)
+        return self.export(probs)
+
+    def export_from_snapshot(self, snapshot_dir: Path) -> Path:
+        """
+        Export multipliers from a snapshot directory.
+
+        Prefers fused_hmm_states.json (geo-fused) over hmm_states.json (raw HMM).
+        Manual overrides (geo_override.py) still take priority over both.
+        """
+        fused_path = snapshot_dir / "fused_hmm_states.json"
+        raw_path   = snapshot_dir / "hmm_states.json"
+
+        if fused_path.exists():
+            logger.info("Using fused HMM states: %s", fused_path)
+            states = json.loads(fused_path.read_text())
+            # Promote fused_state_probs into state_probs so probs_from_hmm_states uses them
+            for entry in states.values():
+                if "fused_state_probs" in entry:
+                    entry["state_probs"] = entry["fused_state_probs"]
+        elif raw_path.exists():
+            logger.warning(
+                "fused_hmm_states.json not found in %s — using raw HMM states", snapshot_dir
+            )
+            states = json.loads(raw_path.read_text())
+        else:
+            raise FileNotFoundError(f"No HMM states file found in {snapshot_dir}")
+
+        probs = self.probs_from_hmm_states(states)
+        return self.export(probs)
 
     def export(self, probs: list[RegimeProbs]) -> Path:
         """

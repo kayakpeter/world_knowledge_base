@@ -432,6 +432,11 @@ def phase4_build_graph(
 ) -> KnowledgeGraphBuilder:
     phase_header("4", "Full Graph Construction")
 
+    # Paths for company + ETF seeds (built by build_company_nodes.py)
+    COMPANY_SEEDS_PATH = DEV_DATA_ROOT / "universe" / "company_seeds.parquet"
+    ETF_SEEDS_PATH     = DEV_DATA_ROOT / "universe" / "etf_seeds.parquet"
+    ETF_HOLD_PATH      = DEV_DATA_ROOT / "universe" / "new_etf_holdings.parquet"
+
     # Merge API observations + LLM-inferred stats
     all_observations = observations_df
 
@@ -453,7 +458,47 @@ def phase4_build_graph(
     logger.info("Total observations (API + LLM): %d", len(all_observations))
 
     builder = KnowledgeGraphBuilder()
-    builder.build_from_observations(all_observations)
+    builder.build_from_observations(
+        all_observations,
+        company_seed_path=COMPANY_SEEDS_PATH if COMPANY_SEEDS_PATH.exists() else None,
+    )
+
+    # ── ETF nodes + HOLDS edges ──────────────────────────────────────────────
+    if ETF_SEEDS_PATH.exists() and ETF_HOLD_PATH.exists():
+        import json as _json
+        from knowledge_base.company_schema import derive_trading_profile as _dtp
+        etf_df  = pl.read_parquet(ETF_SEEDS_PATH)
+        hold_df = pl.read_parquet(ETF_HOLD_PATH)
+
+        etf_added   = 0
+        holds_added = 0
+        for row in etf_df.iter_rows(named=True):
+            ticker = row["ticker"]
+            if ticker not in builder.graph:
+                builder.graph.add_node(
+                    ticker,
+                    node_type="ETF",
+                    name=row["name"],
+                    exchange=row["exchange"],
+                    holdings_count=row["holdings_count"],
+                )
+                etf_added += 1
+
+        for row in hold_df.iter_rows(named=True):
+            etf_t  = row["etf"]
+            hold_t = row["holding"]
+            if etf_t in builder.graph and hold_t in builder.graph:
+                builder.graph.add_edge(
+                    etf_t, hold_t,
+                    edge_type="HOLDS",
+                    weight=round(row["weight_pct"] / 100.0, 6),
+                    weight_pct=row["weight_pct"],
+                )
+                holds_added += 1
+
+        logger.info("ETF nodes: %d added | HOLDS edges: %d", etf_added, holds_added)
+    else:
+        logger.info("No ETF/company seed files found — skipping ETF nodes (run build_company_nodes.py)")
 
     # Apply LLM-inferred edge weights on top of the seed contagion channels
     if edge_weights:
@@ -537,13 +582,25 @@ def phase5_hmm_training(
             )
 
             if not country_df.is_empty():
-                period_groups = country_df.group_by("period").agg(
+                # Normalize period to annual (YYYY) to prevent daily-granularity
+                # time series from producing thousands of HMM timesteps.
+                # Daily periods like '2018-01-15' → '2018'; annual '2018' unchanged.
+                # This matters because forward() multiplies T probabilities without
+                # log-scaling — T=5000 daily steps causes float64 underflow to 0.
+                country_df = country_df.with_columns(
+                    pl.col("period").str.slice(0, 4).alias("period_year")
+                )
+                period_groups = country_df.group_by("period_year").agg(
                     pl.col("value").mean().alias("avg_value")
-                ).sort("period")
+                ).sort("period_year")
 
                 values = period_groups["avg_value"].to_numpy()
                 if len(values) >= 5:
                     obs_array = discretize_observations(values)
+                    logger.debug(
+                        "  %-20s HMM: %d annual periods from %d raw obs",
+                        country, len(values), len(country_df),
+                    )
 
         params = HMMParams(country=country, country_iso3=iso3)
         hmm = SovereignHMM(params=params)
@@ -689,6 +746,13 @@ def phase7_build_report(
             "state": node_data.get("markov_state", "Unknown"),
             "state_probs": node_data.get("state_probs", {}),
         }
+    # Merge active geopolitical overrides (override_state takes precedence in exporter)
+    try:
+        from processing.geo_override import merge_into_states
+        current_states = merge_into_states(current_states)
+        logger.info("  Geopolitical overrides merged into hmm_states")
+    except Exception as _exc:
+        logger.warning("  Could not merge geo overrides: %s", _exc)
     (snapshot_dir / "hmm_states.json").write_text(
         json.dumps(current_states, indent=2, default=str)
     )
@@ -969,6 +1033,54 @@ def phase7_build_report(
     return report_path
 
 
+# ─── Phase 8: Geopolitical Fusion ─────────────────────────────────────────────
+
+def phase8_geo_fusion(snapshot_dir: Path) -> "Path | None":
+    """
+    Blend HMM states with geopolitical stress signal from interpretation pipeline.
+
+    Writes fused_hmm_states.json alongside hmm_states.json in snapshot_dir.
+    Returns path to fused file, or None if geo stress data is unavailable.
+    """
+    phase_header("8", "Geopolitical Fusion (HMM + news urgency signal)")
+
+    hmm_states_path = snapshot_dir / "hmm_states.json"
+    if not hmm_states_path.exists():
+        logger.warning("phase8: hmm_states.json not found in %s — skipping", snapshot_dir)
+        return None
+
+    try:
+        from processing.geo_stress_scorer import load_and_score
+        from processing.geo_fusion import fuse_states, write_fused_states
+    except ImportError as exc:
+        logger.error("phase8: could not import geo modules: %s", exc)
+        return None
+
+    hmm_states = json.loads(hmm_states_path.read_text())
+
+    stress_scores = load_and_score()
+    if not stress_scores:
+        logger.warning("phase8: no geo stress data available — writing fused file with HMM probs only")
+        stress_scores = {}
+
+    fused = fuse_states(hmm_states, stress_scores)
+    out_path = snapshot_dir / "fused_hmm_states.json"
+    write_fused_states(fused, out_path)
+
+    # Log summary of any countries where geo stress shifted regime
+    for country, entry in fused.items():
+        hmm_state = hmm_states.get(country, {}).get("state", "?")
+        fused_state = entry.get("fused_state", "?")
+        stress = entry.get("geo_stress_score", 0.0)
+        if fused_state != hmm_state and stress > 0.1:
+            logger.info(
+                "  %-20s HMM=%s → fused=%s (stress=%.3f)",
+                country, hmm_state, fused_state, stress,
+            )
+
+    return out_path
+
+
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 async def main() -> None:
@@ -1057,6 +1169,9 @@ async def main() -> None:
         snapshot_dir, builder, observations_df, llm_stats_df, edge_weights,
         build_elapsed=build_elapsed,
     )
+
+    # ── Phase 8: Geo Fusion ───────────────────────────────────────────────────
+    phase8_geo_fusion(snapshot_dir)
 
     # Repack tarball to include hmm_states.json + build report
     with tarfile.open(snapshot_path, "w:gz") as tar:

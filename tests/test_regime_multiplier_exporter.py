@@ -37,3 +37,43 @@ def test_export_creates_json():
         us = data["countries"]["United States"]
         assert "position_size_multiplier" in us
         assert 0.0 <= us["position_size_multiplier"] <= 1.0
+
+
+def test_export_from_snapshot_prefers_fused(tmp_path):
+    """export_from_snapshot should use fused_state_probs when fused file exists."""
+    # Write minimal fused_hmm_states.json
+    fused = {
+        "Germany": {
+            "state": "S0_Tranquil",
+            "state_probs": {"Tranquil": 0.99, "Turbulent": 0.01, "Crisis": 0.0},
+            "fused_state_probs": {"Tranquil": 0.0, "Turbulent": 0.0, "Crisis": 1.0},
+            "fused_state": "S2_Crisis",
+            "geo_stress_score": 0.80,
+            "geo_stress_weight": 0.90,
+        }
+    }
+    (tmp_path / "fused_hmm_states.json").write_text(json.dumps(fused))
+
+    exporter = RegimeMultiplierExporter(output_dir=tmp_path / "out")
+    out = exporter.export_from_snapshot(tmp_path)
+    result = json.loads(out.read_text())
+
+    germany = result["countries"]["Germany"]
+    # Fused probs are Crisis=1.0 → multiplier should be 0.20
+    assert germany["position_size_multiplier"] == pytest.approx(0.20, abs=0.01)
+    assert germany["regime"] == "Crisis"
+
+
+def test_export_from_snapshot_falls_back_to_raw_hmm(tmp_path):
+    """export_from_snapshot should use hmm_states.json when no fused file exists."""
+    raw = {
+        "Canada": {
+            "state": "S0_Tranquil",
+            "state_probs": {"Tranquil": 1.0, "Turbulent": 0.0, "Crisis": 0.0},
+        }
+    }
+    (tmp_path / "hmm_states.json").write_text(json.dumps(raw))
+    exporter = RegimeMultiplierExporter(output_dir=tmp_path / "out")
+    out = exporter.export_from_snapshot(tmp_path)
+    result = json.loads(out.read_text())
+    assert result["countries"]["Canada"]["position_size_multiplier"] == pytest.approx(1.0)

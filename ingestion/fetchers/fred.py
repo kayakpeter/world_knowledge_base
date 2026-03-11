@@ -135,9 +135,23 @@ class FredFetcher(BaseFetcher):
                 )
 
         except httpx.HTTPStatusError as exc:
-            logger.error(
-                "FRED HTTP error for %s: %s", series_id, exc.response.status_code
-            )
+            status = exc.response.status_code
+            if status == 400:
+                # 400 = series does not exist — this is a configuration error in settings.py,
+                # not a transient network failure. Log prominently so it is never silently missed.
+                try:
+                    fred_msg = exc.response.json().get("error_message", exc.response.text[:200])
+                except Exception:
+                    fred_msg = exc.response.text[:200]
+                logger.error(
+                    "FRED CONFIGURATION ERROR: series '%s' for %s returned HTTP 400 — %s. "
+                    "Fix the series ID in config/settings.py.",
+                    series_id, country_iso3, fred_msg,
+                )
+            else:
+                logger.error(
+                    "FRED HTTP error for %s (%s): status %s", series_id, country_iso3, status
+                )
         except Exception as exc:
             logger.error("FRED fetch failed for %s: %s", series_id, exc)
 

@@ -35,12 +35,20 @@ if [ -f "${PROJ}/.env" ]; then
     set +a
 fi
 
-# Phase 0: News ingestion (runs first — no lock contention with statistical pipeline)
-echo "--- Phase 0: News ingestion ---" >> "${LOG}"
+# Phase 0: Sovereign news ingestion (geopolitical + macro, 20 countries)
+echo "--- Phase 0: Sovereign news ingestion ---" >> "${LOG}"
 "${PYTHON}" run_news_ingestion.py --hours 6 >> "${LOG}" 2>&1
 NEWS_EXIT=$?
 if [ "${NEWS_EXIT}" -ne 0 ]; then
-    echo "WARNING: News ingestion exited with code ${NEWS_EXIT} — continuing" >> "${LOG}"
+    echo "WARNING: Sovereign news ingestion exited with code ${NEWS_EXIT} — continuing" >> "${LOG}"
+fi
+
+# Phase 0.1: Equity + sector news ingestion (S&P 500, sector ETFs, top companies)
+echo "--- Phase 0.1: Equity news ingestion ---" >> "${LOG}"
+"${PYTHON}" run_equity_news_ingestion.py --hours 6 >> "${LOG}" 2>&1
+EQUITY_NEWS_EXIT=$?
+if [ "${EQUITY_NEWS_EXIT}" -ne 0 ]; then
+    echo "WARNING: Equity news ingestion exited with code ${EQUITY_NEWS_EXIT} — continuing" >> "${LOG}"
 fi
 
 # Phase 0.5: Dispatch new news parquets to agent inboxes
@@ -61,7 +69,7 @@ fi
 
 # Phase 1-2: Statistical ingestion + graph construction (API data only — no LLM calls)
 echo "--- Phase 1: Statistical ingestion ---" >> "${LOG}"
-"${PYTHON}" build_initial_kb.py --skip-llm >> "${LOG}" 2>&1
+"${PYTHON}" -B build_initial_kb.py --skip-llm >> "${LOG}" 2>&1
 EXIT_CODE=$?
 
 echo "Exit code: ${EXIT_CODE}" >> "${LOG}"

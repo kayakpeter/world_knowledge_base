@@ -177,10 +177,10 @@ STAT_REGISTRY: list[StatDefinition] = [
             "ESP": "ECBMLFR",
             "NLD": "ECBMLFR",
             # Other G20 — OECD/FRED interbank overnight rates (track policy closely)
-            "AUS": "IRSTCB01AUM156N",  # Reserve Bank of Australia
-            "KOR": "IRSTCB01KRM156N",  # Bank of Korea
-            "MEX": "IRSTCB01MXM156N",  # Banco de México
-            "TUR": "IRSTCB01TRM156N",  # Central Bank of Turkey
+            "AUS": "IRSTCI01AUM156N",  # Reserve Bank of Australia (call money)
+            "KOR": "IRSTCI01KRM156N",  # Bank of Korea (call money, tracks BoK rate)
+            "MEX": "IRSTCI01MXM156N",  # Banco de México (call money)
+            "TUR": "IRSTCI01TRM156N",  # Central Bank of Turkey (call money, ~36-47%)
             "POL": "IRSTCB01PLM156N",  # National Bank of Poland
             "CHN": "IRSTCB01CNM156N",  # PBoC (overnight interbank proxy)
             "IND": "IRSTCB01INM156N",  # Reserve Bank of India
@@ -194,8 +194,12 @@ STAT_REGISTRY: list[StatDefinition] = [
         stat_id=13, name="yield_spread_10y3m", category="Monetary/Price",
         source_type="api", primary_source="FRED",
         api_provider="fred",
-        fred_series={"USA": "T10Y3M"},
-        unit="percent", description="10Y-3M Treasury yield spread",
+        fred_series={
+            "USA": "T10Y3M",             # 10Y-3M Treasury spread (daily)
+            "DEU": "IRLTLT01DEM156N",    # Germany 10Y Bund yield (monthly) — spread proxy
+            "ITA": "IRLTLT01ITM156N",    # Italy 10Y BTP yield (monthly) — spread proxy
+        },
+        unit="percent", description="10Y-3M Treasury yield spread (USA); 10Y sovereign yield (DEU, ITA)",
     ),
     StatDefinition(
         stat_id=14, name="m2_supply", category="Monetary/Price",
