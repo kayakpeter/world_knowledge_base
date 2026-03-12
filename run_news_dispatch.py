@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import fcntl
+import glob as _glob
 import logging
 import os
 import sys
@@ -110,24 +111,24 @@ def main() -> None:
 
     # ── KG ingestion ─────────────────────────────────────────────────────────
     if _KG_AVAILABLE and not args.dry_run:
+        _neo4j = None
         try:
             _neo4j = _Neo4jClient()
-            # Ingest whichever parquet was just dispatched
             if args.force:
                 _kg_ingest_parquet(Path(args.force), _neo4j)
             elif args.parquet:
                 _kg_ingest_parquet(Path(args.parquet), _neo4j)
             else:
-                # Full sweep: ingest the most recent interpretation parquets
-                import glob as _glob
                 interp_dir = Path(__file__).parent / "data" / "interpretations"
                 for pq in sorted(_glob.glob(str(interp_dir / "interpretations_*.parquet")))[-5:]:
                     _kg_ingest_parquet(Path(pq), _neo4j)
             _evaluate_triggers(_neo4j)
             _kg_sync_openbrain(_neo4j)
-            _neo4j.close()
         except Exception as _kg_exc:
             logger.warning("KG ingestion skipped (Neo4j unavailable?): %s", _kg_exc)
+        finally:
+            if _neo4j is not None:
+                _neo4j.close()
 
     if n == 0:
         logger.info("Nothing dispatched.")
