@@ -29,7 +29,13 @@ def _load_env_var(key: str, default: str = "") -> str:
         for line in _ENV_FILE.read_text().splitlines():
             line = line.strip()
             if line.startswith(f"{key}="):
-                return line.split("=", 1)[1].strip()
+                val = line.split("=", 1)[1].strip()
+                # strip inline comments
+                val = val.split(" #")[0].strip()
+                # strip surrounding quotes
+                if len(val) >= 2 and val[0] == val[-1] and val[0] in ('"', "'"):
+                    val = val[1:-1]
+                return val
     return default
 
 
@@ -95,14 +101,20 @@ class Neo4jClient:
                 active=active, now=now,
             )
 
-    def activate_scenario(self, scenario_id: str) -> None:
+    def activate_scenario(self, scenario_id: str) -> bool:
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         with self._driver.session() as s:
-            s.run(
+            result = s.run(
                 "MATCH (s:Scenario {id: $id}) "
-                "SET s.active=true, s.activated_at=$now",
+                "SET s.active=true, s.activated_at=$now "
+                "RETURN count(s) AS matched",
                 id=scenario_id, now=now,
             )
+            row = result.single()
+            matched = int(row["matched"]) if row else 0
+        if matched == 0:
+            logger.warning("activate_scenario: scenario '%s' not found in Neo4j", scenario_id)
+        return matched > 0
 
     def upsert_stat(self, country_iso3: str, stat_name: str,
                     value: float | None, direction: str,
@@ -188,7 +200,7 @@ class Neo4jClient:
                 "MATCH (e:Event) "
                 "WHERE datetime(e.published_at) < datetime() - duration({hours: $h}) "
                 "  AND NOT (e)-[:ESCALATES]->(:Scenario {active: true}) "
-                "DELETE e RETURN count(e) AS deleted",
+                "DETACH DELETE e RETURN count(e) AS deleted",
                 h=older_than_hours,
             )
             row = result.single()
