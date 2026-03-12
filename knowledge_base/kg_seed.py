@@ -22,10 +22,10 @@ INFRASTRUCTURE_REGISTRY: list[dict] = [
     {"infra_id": "abqaiq_refinery",  "name": "Abqaiq Processing",     "infra_type": "REFINERY",      "country_iso3": "SAU", "risk_tier": "critical"},
     {"infra_id": "kharg_island",     "name": "Kharg Island Terminal",  "infra_type": "PORT",          "country_iso3": "IRN", "risk_tier": "critical"},
     {"infra_id": "bushehr_npp",      "name": "Bushehr NPP",            "infra_type": "NPP",           "country_iso3": "IRN", "risk_tier": "critical"},
-    {"infra_id": "ras_laffan",       "name": "Ras Laffan LNG",        "infra_type": "PIPELINE",      "country_iso3": "QAT", "risk_tier": "high"},
+    {"infra_id": "ras_laffan",       "name": "Ras Laffan LNG",        "infra_type": "LNG_TERMINAL",  "country_iso3": "QAT", "risk_tier": "high"},
     {"infra_id": "al_udeid",         "name": "Al Udeid Air Base",      "infra_type": "MILITARY_BASE", "country_iso3": "QAT", "risk_tier": "high"},
     {"infra_id": "5th_fleet_bahrain","name": "5th Fleet HQ Bahrain",   "infra_type": "MILITARY_BASE", "country_iso3": "BHR", "risk_tier": "high"},
-    {"infra_id": "natanz_facility",  "name": "Natanz Enrichment",      "infra_type": "NPP",           "country_iso3": "IRN", "risk_tier": "critical"},
+    {"infra_id": "natanz_facility",  "name": "Natanz Enrichment",      "infra_type": "ENRICHMENT",    "country_iso3": "IRN", "risk_tier": "critical"},
 ]
 
 # ── Known scenarios ───────────────────────────────────────────────────────────
