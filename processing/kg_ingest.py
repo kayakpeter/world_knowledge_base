@@ -66,7 +66,7 @@ def ingest_parquet(path: Path, client: Neo4jClient,
     logger.info("Ingesting %d rows from %s (dry_run=%s)", len(rows), path.name, dry_run)
 
     if dry_run:
-        return len(rows)
+        return sum(1 for r in rows if r.get("item_id"))
 
     for row in rows:
         item_id      = str(row.get("item_id", "") or "")
@@ -101,18 +101,22 @@ def ingest_parquet(path: Path, client: Neo4jClient,
         stat_dirs  = str(row.get("stat_direction", "") or "").split(",")
         magnitudes = str(row.get("estimated_magnitude", "") or "").split(",")
 
-        for i, iso3 in enumerate(iso3_list):
-            direction = stat_dirs[i].strip() if i < len(stat_dirs) else ""
-            try:
-                magnitude = float(magnitudes[i]) if i < len(magnitudes) and magnitudes[i].strip() else None
-            except (ValueError, TypeError):
-                magnitude = None
-            client.create_affects_edge(item_id, iso3, direction, magnitude)
+        # Fixed — use first stat's direction/magnitude as aggregate for all AFFECTS edges
+        agg_direction = stat_dirs[0].strip() if stat_dirs else ""
+        try:
+            agg_magnitude = float(magnitudes[0]) if magnitudes and magnitudes[0].strip() else None
+        except (ValueError, TypeError):
+            agg_magnitude = None
 
-        # Upsert Stat nodes — affected_stats is comma-separated stat names
+        for iso3 in iso3_list:
+            client.create_affects_edge(item_id, iso3, agg_direction, agg_magnitude)
+
+        # Upsert Stat nodes — only if we have a valid primary country
         affected_stats_raw = str(row.get("affected_stats", "") or "")
         stat_names = [x.strip() for x in affected_stats_raw.split(",") if x.strip()]
         for j, stat_name in enumerate(stat_names):
+            if not country_iso3:
+                continue
             direction = stat_dirs[j].strip() if j < len(stat_dirs) else ""
             try:
                 magnitude = float(magnitudes[j]) if j < len(magnitudes) and magnitudes[j].strip() else None

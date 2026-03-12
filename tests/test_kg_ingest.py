@@ -46,6 +46,9 @@ def test_ingest_parquet_creates_affects_edges(tmp_path):
     # evt_001: IRN + cross_country USA, DEU = 3 AFFECTS edges
     # evt_002: SAU, no cross = 1 AFFECTS edge
     assert mock_client.create_affects_edge.call_count >= 4
+    # Verify the correct countries were targeted
+    called_iso3s = [c[0][1] for c in mock_client.create_affects_edge.call_args_list]
+    assert set(called_iso3s) == {"IRN", "USA", "DEU", "SAU"}
 
 
 def test_ingest_parquet_dry_run_does_not_call_client(tmp_path):
