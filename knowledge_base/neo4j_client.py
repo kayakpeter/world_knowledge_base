@@ -188,7 +188,7 @@ class Neo4jClient:
                 "MATCH (e:Event) "
                 "WHERE datetime(e.published_at) < datetime() - duration({hours: $h}) "
                 "  AND NOT (e)-[:ESCALATES]->(:Scenario {active: true}) "
-                "WITH e, e.id AS eid DELETE e RETURN count(eid) AS deleted",
+                "DELETE e RETURN count(e) AS deleted",
                 h=older_than_hours,
             )
             row = result.single()
