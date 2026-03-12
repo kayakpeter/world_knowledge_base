@@ -531,3 +531,36 @@ class KnowledgeGraphBuilder:
             dashboard[category].append(entry)
 
         return dashboard
+
+    @classmethod
+    def load_from_neo4j(cls, driver) -> "KnowledgeGraphBuilder":
+        """
+        Build a KnowledgeGraphBuilder seeded from Neo4j Country + Stat nodes.
+        Falls back to the standard in-memory seed if Neo4j is unreachable.
+        """
+        builder = cls()  # creates standard in-memory graph
+        try:
+            with driver.session() as s:
+                countries = list(s.run("MATCH (c:Country) RETURN c.iso3, c.name"))
+                for row in countries:
+                    iso3 = row["c.iso3"]
+                    if iso3 and iso3 not in builder.graph:
+                        builder.graph.add_node(iso3, node_type="Sovereign", country=row["c.name"])
+                stats = list(s.run(
+                    "MATCH (st:Stat) RETURN st.country_iso3, st.stat_name, st.value, st.direction"
+                ))
+                for row in stats:
+                    node_id = f"{row['st.country_iso3']}_{row['st.stat_name']}"
+                    builder.graph.add_node(
+                        node_id,
+                        node_type="Statistic",
+                        country=row["st.country_iso3"],
+                        stat=row["st.stat_name"],
+                        value=row["st.value"],
+                    )
+            logger.info(
+                "NetworkX graph loaded from Neo4j: %d nodes", builder.graph.number_of_nodes()
+            )
+        except Exception as exc:
+            logger.warning("Neo4j unavailable, using in-memory seed: %s", exc)
+        return builder
