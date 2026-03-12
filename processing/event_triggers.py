@@ -161,7 +161,11 @@ def evaluate_triggers(client: Neo4jClient, dry_run: bool = False) -> list[str]:
 
     Returns list of trigger IDs that fired (or would fire in dry_run).
     """
-    active_flags = client.get_active_flags()
+    try:
+        active_flags = client.get_active_flags()
+    except Exception as exc:
+        logger.error("evaluate_triggers: failed to read flags from Neo4j: %s", exc)
+        return []
     fired: list[str] = []
 
     for trigger in TRIGGERS:
