@@ -33,6 +33,23 @@ import re
 
 import polars as pl
 
+try:
+    from langdetect import detect as _langdetect_detect
+    from langdetect import LangDetectException
+    _LANGDETECT_AVAILABLE = True
+except ImportError:
+    _LANGDETECT_AVAILABLE = False
+
+
+def _detected_language(text: str) -> str | None:
+    """Return ISO-639-1 language code for text, or None if detection fails/unavailable."""
+    if not _LANGDETECT_AVAILABLE or not text or len(text) < 10:
+        return None
+    try:
+        return _langdetect_detect(text)
+    except Exception:
+        return None
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from config.agent_assignments import AGENT_ASSIGNMENTS, COUNTRIES_BY_AGENT
@@ -246,6 +263,28 @@ class NewsDispatcher:
                     "NewsDispatcher: dropped %d non-English items before dispatch",
                     n_dropped,
                 )
+
+        # Secondary language check: catch sources that mislabel non-English
+        # articles as language='en' (e.g. Politico Europe publishing German
+        # content with an 'en' tag).  Uses langdetect on the headline when
+        # available; silently skips if library is absent or detection fails.
+        if _LANGDETECT_AVAILABLE and "headline" in df.columns:
+            headlines = df["headline"].to_list()
+            keep_mask = []
+            n_lang_dropped = 0
+            for h in headlines:
+                detected = _detected_language(h)
+                if detected is not None and detected != "en":
+                    keep_mask.append(False)
+                    n_lang_dropped += 1
+                    logger.info(
+                        "NewsDispatcher: lang-mismatch drop (tag=en, detected=%s): '%s'",
+                        detected, (h or "")[:80],
+                    )
+                else:
+                    keep_mask.append(True)
+            if n_lang_dropped:
+                df = df.filter(pl.Series(keep_mask))
 
         result: dict[str, pl.DataFrame] = {}
         for agent, iso3_list in COUNTRIES_BY_AGENT.items():
