@@ -65,7 +65,14 @@ class SectorImpact:
 
     @classmethod
     def from_dict(cls, d: dict) -> "SectorImpact":
-        return cls(**d)
+        return cls(
+            sector=d["sector"],
+            direction=d["direction"],
+            magnitude=d["magnitude"],
+            magnitude_pct=d.get("magnitude_pct"),
+            tickers=d.get("tickers", []),
+            notes=d.get("notes", ""),
+        )
 
 
 @dataclass
@@ -151,9 +158,12 @@ class ScenarioTree:
         return (created + timedelta(hours=self.window_hours)).isoformat()
 
     def add_node(self, node: ScenarioNode) -> None:
+        """Insert node into tree. Parent MUST be added before children."""
         self.nodes[node.node_id] = node
         if node.parent_id and node.parent_id in self.nodes:
-            self.nodes[node.parent_id].children.append(node.node_id)
+            parent = self.nodes[node.parent_id]
+            if node.node_id not in parent.children:
+                parent.children.append(node.node_id)
 
     def add_tombstone(self, node_id: str, description: str, joint_prob: float, reason: str) -> None:
         self.tombstones.append({

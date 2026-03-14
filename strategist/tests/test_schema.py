@@ -108,3 +108,28 @@ def test_scenario_tree_make_id():
     sid = ScenarioTree.make_id("US strikes Kharg Island")
     assert "us-strikes-kharg-island" in sid
     assert len(sid) > 10
+
+
+def test_add_node_no_duplicate_children():
+    tree = ScenarioTree(scenario_id="dup-test", trigger_event="e", severity="HIGH", confirmed=True)
+    root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
+    child = ScenarioNode(node_id="c1", description="c1", branch_probability=0.5, parent_id="root", depth=1)
+    tree.add_node(root)
+    tree.add_node(child)
+    tree.add_node(child)  # duplicate — should not add again
+    assert tree.nodes["root"].children.count("c1") == 1
+
+
+def test_sector_impact_from_dict_ignores_extra_keys():
+    d = {
+        "sector": "energy",
+        "direction": "UP",
+        "magnitude": "HIGH",
+        "magnitude_pct": 20.0,
+        "tickers": ["FRO"],
+        "notes": "test",
+        "FUTURE_KEY": "should be ignored",
+    }
+    # Should not raise
+    si = SectorImpact.from_dict(d)
+    assert si.sector == "energy"
