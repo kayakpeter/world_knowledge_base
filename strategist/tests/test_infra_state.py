@@ -19,10 +19,7 @@ def _make_registry(mock_client=None):
     """Create InfraStateRegistry with a mock Neo4j client — no live DB needed."""
     if mock_client is None:
         mock_client = MagicMock()
-    reg = InfraStateRegistry.__new__(InfraStateRegistry)
-    reg._client = mock_client
-    reg._cache = {}
-    return reg
+    return InfraStateRegistry(mock_client)
 
 
 def test_get_status_from_cache():

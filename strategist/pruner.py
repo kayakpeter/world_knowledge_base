@@ -37,6 +37,10 @@ class PruningEngine:
         """
         Returns (decision, reason_string).
         reason_string is human-readable for tombstone audit.
+
+        current_node_count: number of nodes ALREADY in the tree (before adding this candidate).
+        Budget fires when current_node_count > max_nodes_per_scenario, i.e., the tree is
+        already full before this node is evaluated.
         """
         # 1. Depth check
         if node.depth >= self._cfg.pruning.max_depth:

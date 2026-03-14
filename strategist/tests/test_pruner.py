@@ -5,7 +5,8 @@ from strategist.schema import ScenarioNode, NodeStatus
 
 
 def _node(node_id, joint_prob, depth=1, status=NodeStatus.PENDING):
-    n = ScenarioNode(
+    """Helper: creates node where joint_probability == joint_prob (parent_joint=1.0 * branch=joint_prob)."""
+    return ScenarioNode(
         node_id=node_id,
         description="test",
         branch_probability=joint_prob,
@@ -13,9 +14,6 @@ def _node(node_id, joint_prob, depth=1, status=NodeStatus.PENDING):
         depth=depth,
         parent_joint_probability=1.0,
     )
-    # Override joint_probability by setting parent_joint_probability = joint_prob and branch = 1.0
-    # Actually just set branch_probability = joint_prob since parent_joint = 1.0
-    return n
 
 
 def test_keep_above_floor():
