@@ -1,6 +1,7 @@
 # strategist/config.py
 from __future__ import annotations
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 @dataclass
@@ -34,10 +35,14 @@ class StrategistConfig:
     window_hours: int = 72
     ollama_url: str = "http://localhost:11434/v1"
     ollama_model: str = "qwen2.5:32b"
-    scenarios_dir: str = "/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb/data/scenarios"
-    regime_config_dir: str = "/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb/data/regime_config"
+    scenarios_dir: Path = field(
+        default_factory=lambda: Path("/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb/data/scenarios")
+    )
+    regime_config_dir: Path = field(
+        default_factory=lambda: Path("/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb/data/regime_config")
+    )
 
-    _SEVERITY_FLOORS: dict = field(
+    _SEVERITY_FLOORS: dict[str, float] = field(
         default_factory=lambda: {
             "CRITICAL": 0.03,
             "HIGH": 0.05,

@@ -15,6 +15,7 @@ def test_severity_thresholds():
     assert cfg.pruning_floor_for_severity("CRITICAL") == 0.03
     assert cfg.pruning_floor_for_severity("HIGH") == 0.05
     assert cfg.pruning_floor_for_severity("MEDIUM") == 0.10
+    assert cfg.pruning_floor_for_severity("LOW") == 0.20
 
 
 def test_unknown_severity_returns_default():
@@ -26,3 +27,4 @@ def test_sector_names_complete():
     cfg = StrategistConfig()
     for s in ["energy", "tanker", "bulk", "agriculture", "container", "defense", "currency", "sovereign", "insurance"]:
         assert s in cfg.sectors.sector_names
+    assert len(cfg.sectors.sector_names) == 9
