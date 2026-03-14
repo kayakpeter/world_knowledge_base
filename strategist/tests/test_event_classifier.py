@@ -66,3 +66,9 @@ def test_multiple_infra_detected():
     result = clf.classify("Strike on Abqaiq and Kharg Island simultaneously", confirmed=True)
     assert "ABQAIQ" in result.infra_ids
     assert "KHARG_ISLAND" in result.infra_ids
+
+
+def test_north_field_maps_to_ras_laffan():
+    clf = EventClassifier()
+    result = clf.classify("North Field LNG export terminal under threat", confirmed=False)
+    assert "RAS_LAFFAN" in result.infra_ids

@@ -12,7 +12,7 @@ INFRA_KEYWORD_MAP: dict[str, list[str]] = {
     "KHARG_ISLAND":    ["kharg", "kharg island"],
     "ABQAIQ":          ["abqaiq", "abqaiq-khurais"],
     "FUJAIRAH":        ["fujairah"],
-    "RAS_LAFFAN":      ["ras laffan", "ras al-khaimah lng"],
+    "RAS_LAFFAN":      ["ras laffan", "ras laffan lng", "north field"],
     "JEBEL_ALI":       ["jebel ali", "jebel ali port"],
     "BAGHDAD_EMBASSY": ["baghdad embassy", "us embassy baghdad"],
 }
@@ -36,7 +36,7 @@ class TriggerEvent:
     severity: str           # CRITICAL | HIGH | MEDIUM | LOW
     confirmed: bool
     infra_ids: list[str] = field(default_factory=list)
-    sectors: list[str] = field(default_factory=list)
+    sectors: list[str] = field(default_factory=list)  # stub: populated by expander in Phase 2
 
 
 class EventClassifier:
