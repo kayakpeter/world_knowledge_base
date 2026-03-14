@@ -120,3 +120,48 @@ def test_expand_sets_depth():
         expander.expand(root, tree, severity="HIGH")
     )
     assert children[0].depth == 3  # parent depth + 1
+
+
+def test_expand_all_zero_probabilities_returns_empty():
+    """If all branch probabilities are 0, return [] (graceful degradation)."""
+    expander = _make_expander(_make_llm_response([
+        {"description": "A", "probability": 0.0, "sector_impacts": [], "infrastructure_effects": [], "time_offset_hours": 0},
+        {"description": "B", "probability": 0.0, "sector_impacts": [], "infrastructure_effects": [], "time_offset_hours": 0},
+    ]))
+
+    tree = ScenarioTree(scenario_id="t6", trigger_event="Test", severity="HIGH", confirmed=True)
+    root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
+    tree.add_node(root)
+
+    children = asyncio.get_event_loop().run_until_complete(
+        expander.expand(root, tree, severity="HIGH")
+    )
+    assert children == []
+
+
+def test_expand_filters_invalid_infra_effects():
+    """Infrastructure effects with invalid new_status are silently dropped."""
+    expander = _make_expander(_make_llm_response([
+        {
+            "description": "Branch with bad infra",
+            "probability": 0.50,
+            "sector_impacts": [],
+            "infrastructure_effects": [
+                {"infra_id": "HORMUZ_STRAIT", "new_status": "CLOSED", "confidence": 0.9},
+                {"infra_id": "UNKNOWN_NODE", "new_status": "INVALID_STATUS", "confidence": 0.5},
+            ],
+            "time_offset_hours": 0,
+        },
+    ]))
+
+    tree = ScenarioTree(scenario_id="t7", trigger_event="Test", severity="HIGH", confirmed=True)
+    root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
+    tree.add_node(root)
+
+    children = asyncio.get_event_loop().run_until_complete(
+        expander.expand(root, tree, severity="HIGH")
+    )
+    assert len(children) == 1
+    # Only the valid CLOSED effect should remain
+    assert len(children[0].infrastructure_effects) == 1
+    assert children[0].infrastructure_effects[0]["new_status"] == "CLOSED"

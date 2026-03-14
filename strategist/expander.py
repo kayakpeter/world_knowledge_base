@@ -70,6 +70,25 @@ class ScenarioExpander:
                 model=config.ollama_model,
             )
 
+    _VALID_STATUSES = {
+        "OPERATIONAL", "AT_RISK", "DEGRADED", "STRUCK_MILITARY",
+        "STRUCK_OIL_INFRA", "CLOSED", "EFFECTIVE_CLOSURE", "SMOKE_REPORTED", "UNKNOWN",
+    }
+
+    def _validate_infra_effects(self, raw_effects: list) -> list[dict]:
+        """Keep only well-formed infrastructure effect dicts."""
+        valid = []
+        for effect in raw_effects:
+            if not isinstance(effect, dict):
+                continue
+            if "infra_id" not in effect or "new_status" not in effect:
+                continue
+            if effect["new_status"] not in self._VALID_STATUSES:
+                logger.warning("Skipping infra effect with unknown status: %s", effect.get("new_status"))
+                continue
+            valid.append(effect)
+        return valid
+
     async def expand(
         self,
         node: ScenarioNode,
@@ -124,6 +143,9 @@ class ScenarioExpander:
         # (e.g. 1.05) is acceptable and preserved as-is. Only normalize when
         # the sum materially exceeds 1.0 (threshold: 1.10).
         total = sum(max(0.0, float(i.get("probability", 0.0))) for i in items)
+        if total == 0.0 and items:
+            logger.warning("All branch probabilities are zero for node=%s — treating as parse error", parent.node_id)
+            return []
         _NORMALIZATION_THRESHOLD = 1.10
         scale = 1.0 / total if total > _NORMALIZATION_THRESHOLD else 1.0
 
@@ -148,7 +170,7 @@ class ScenarioExpander:
                     depth=parent.depth + 1,
                     parent_joint_probability=parent.joint_probability,
                     sector_impacts=sector_impacts,
-                    infrastructure_effects=item.get("infrastructure_effects", []),
+                    infrastructure_effects=self._validate_infra_effects(item.get("infrastructure_effects", [])),
                     time_offset_hours=float(item.get("time_offset_hours", 0.0)),
                 )
                 children.append(child)
