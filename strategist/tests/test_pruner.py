@@ -43,13 +43,38 @@ def test_exactly_at_floor_is_kept():
     assert decision == PruneDecision.KEEP
 
 
-def test_prune_at_max_depth():
+def test_leaf_at_main_bfs_max_depth():
     cfg = StrategistConfig()
     engine = PruningEngine(cfg)
-    # max_depth = 4; depth 4 is leaf (no further expansion)
+    # main BFS: depth == max_depth (4) → LEAF_MAX_DEPTH (kept in tree, eligible for extension)
     node = _node("n4", 0.50, depth=4)
     decision, reason = engine.evaluate(node, severity="HIGH", current_node_count=5)
+    assert decision == PruneDecision.LEAF_MAX_DEPTH
+    assert "extension" in reason
+
+
+def test_prune_beyond_extension_depth():
+    from strategist.config import PruningConfig
+    cfg = StrategistConfig(pruning=PruningConfig(max_depth=4, extension_depth=2))
+    engine = PruningEngine(cfg)
+    # extension pass: effective_max_depth = 6; depth 6 → PRUNE_DEPTH (hard stop)
+    node = _node("n4b", 0.50, depth=6)
+    decision, reason = engine.evaluate(
+        node, severity="HIGH", current_node_count=5, effective_max_depth=6
+    )
     assert decision == PruneDecision.PRUNE_DEPTH
+
+
+def test_extension_pass_keep_within_limit():
+    from strategist.config import PruningConfig
+    cfg = StrategistConfig(pruning=PruningConfig(max_depth=4, extension_depth=2))
+    engine = PruningEngine(cfg)
+    # extension pass: effective_max_depth = 6; depth 5 → KEEP
+    node = _node("n4c", 0.50, depth=5)
+    decision, _ = engine.evaluate(
+        node, severity="HIGH", current_node_count=5, effective_max_depth=6
+    )
+    assert decision == PruneDecision.KEEP
 
 
 def test_prune_budget_exceeded():
