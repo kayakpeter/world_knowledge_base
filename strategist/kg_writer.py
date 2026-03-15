@@ -50,7 +50,7 @@ class KGWriter:
             )
         except Exception:
             logger.exception("Failed to upsert scenario: %s", tree.scenario_id)
-            return
+            raise
 
         # 2. Activate
         try:
@@ -60,9 +60,9 @@ class KGWriter:
 
         # 3. Store flags for each kept node (tombstones are excluded — they are
         #    not in tree.nodes, only in tree.tombstones)
-        prefix = f"SCENARIO_{tree.scenario_id[:16]}"
+        prefix = f"SCENARIO_{tree.scenario_id}"
         for node in tree.nodes.values():
-            node_prefix = f"{prefix}_NODE_{node.node_id[:8]}"
+            node_prefix = f"{prefix}_NODE_{node.node_id}"
 
             # Store sector impacts
             for impact in node.sector_impacts:

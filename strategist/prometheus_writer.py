@@ -59,7 +59,7 @@ class PrometheusDeltaWriter:
 
         for node in tree.nodes.values():
             if node.status == NodeStatus.PRUNED:
-                continue  # skip pruned nodes (shouldn't be in tree.nodes, but guard anyway)
+                continue  # REQUIRED: pruned nodes remain in tree.nodes; this guard prevents them from inflating scores
             weight_jp = node.joint_probability
             for impact in node.sector_impacts:
                 config_key = SECTOR_TO_CONFIG_KEY.get(impact.sector)
