@@ -39,8 +39,8 @@ class PruningEngine:
         reason_string is human-readable for tombstone audit.
 
         current_node_count: number of nodes ALREADY in the tree (before adding this candidate).
-        Budget fires when current_node_count > max_nodes_per_scenario, i.e., the tree is
-        already full before this node is evaluated.
+        Budget fires when current_node_count >= max_nodes_per_scenario — this enforces a
+        strict ceiling: once the tree reaches max_nodes, no further candidates are added.
         """
         # 1. Depth check
         if node.depth >= self._cfg.pruning.max_depth:
@@ -50,10 +50,10 @@ class PruningEngine:
             )
 
         # 2. Budget check
-        if current_node_count > self._cfg.pruning.max_nodes_per_scenario:
+        if current_node_count >= self._cfg.pruning.max_nodes_per_scenario:
             return (
                 PruneDecision.PRUNE_BUDGET,
-                f"node_count={current_node_count} > budget={self._cfg.pruning.max_nodes_per_scenario}",
+                f"node_count={current_node_count} >= budget={self._cfg.pruning.max_nodes_per_scenario}",
             )
 
         # 3. Probability floor check

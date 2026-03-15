@@ -9,7 +9,7 @@ class PruningConfig:
     joint_probability_floor: float = 0.05
     max_nodes_per_scenario: int = 50
     tombstone_enabled: bool = True
-    max_depth: int = 4
+    max_depth: int = 4  # nodes at this depth are pruned; leaves exist at depth max_depth-1
     max_branching_factor: int = 4
 
 

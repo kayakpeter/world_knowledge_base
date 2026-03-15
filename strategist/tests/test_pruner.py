@@ -61,6 +61,15 @@ def test_prune_budget_exceeded():
     assert decision == PruneDecision.PRUNE_BUDGET
 
 
+def test_prune_budget_exactly_at_limit():
+    cfg = StrategistConfig()
+    engine = PruningEngine(cfg)
+    node = _node("n_budget", 0.50, depth=1)
+    # Exactly at max_nodes — should now prune (strict ceiling)
+    decision, reason = engine.evaluate(node, severity="HIGH", current_node_count=50)
+    assert decision == PruneDecision.PRUNE_BUDGET
+
+
 def test_severity_critical_has_lower_floor():
     cfg = StrategistConfig()
     engine = PruningEngine(cfg)
