@@ -136,6 +136,22 @@ _AGENT_EXCLUSIONS: dict[str, list[tuple[re.Pattern, str]]] = {
 # Max headlines shown per country in the message body
 MAX_HEADLINES_PER_COUNTRY = 5
 
+# Per-country language allowlist that EXTENDS the default English filter.
+# Keys are ISO-3 country codes; values are accepted language tags (lowercased).
+# Items must match either the default English set OR the country-specific set.
+#
+# Why: the upstream coverage audit (2026-04-26) found 100 GDELT items per cycle
+# tagged language="sp" for MEX and ~96 tagged "ar" for SAU were silently
+# dropped by the English-only filter, leaving these countries near-zero in
+# dispatched output despite healthy raw fetch volume. gemma4:31b can interpret
+# Spanish/Arabic items at the high level we need; translation is a separate
+# concern. NewsData and GDELT both use 2-letter codes ("sp"/"es" for Spanish,
+# "ar" for Arabic) — include the variants observed in the data.
+COUNTRY_LANGUAGE_ALLOWLIST: dict[str, set[str]] = {
+    "MEX": {"sp", "es", "spanish"},
+    "SAU": {"ar", "arabic"},
+}
+
 
 class NewsDispatcher:
     """
@@ -251,16 +267,24 @@ class NewsDispatcher:
         Content-level exclusion filters (_AGENT_EXCLUSIONS) are applied after
         the country_iso3 split to remove mis-tagged and low-relevance items.
         """
-        # Drop non-English items before dispatch
-        # The news API uses both "en" and "english" as language codes.
+        # Drop non-English items before dispatch — except for countries in
+        # COUNTRY_LANGUAGE_ALLOWLIST, where additional languages are accepted
+        # (MEX: Spanish; SAU: Arabic). Per-API tag normalisation: NewsData uses
+        # full names ("english"); GDELT uses 2-letter codes ("en"/"sp"/"ar").
         if "language" in df.columns:
             n_before = len(df)
-            lang = pl.col("language").str.to_lowercase()
-            df = df.filter(lang.is_in(["english", "en"]))
+            lang_norm = pl.col("language").str.to_lowercase()
+            keep_mask = lang_norm.is_in(["english", "en"])
+            for iso3, allowed in COUNTRY_LANGUAGE_ALLOWLIST.items():
+                keep_mask = keep_mask | (
+                    (pl.col("country_iso3") == iso3)
+                    & lang_norm.is_in(list(allowed))
+                )
+            df = df.filter(keep_mask)
             n_dropped = n_before - len(df)
             if n_dropped:
                 logger.info(
-                    "NewsDispatcher: dropped %d non-English items before dispatch",
+                    "NewsDispatcher: dropped %d non-allowed-language items before dispatch",
                     n_dropped,
                 )
 
@@ -268,21 +292,26 @@ class NewsDispatcher:
         # articles as language='en' (e.g. Politico Europe publishing German
         # content with an 'en' tag).  Uses langdetect on the headline when
         # available; silently skips if library is absent or detection fails.
+        # Honours COUNTRY_LANGUAGE_ALLOWLIST so MEX/SAU items legitimately in
+        # Spanish/Arabic are preserved instead of dropped here.
         if _LANGDETECT_AVAILABLE and "headline" in df.columns:
             headlines = df["headline"].to_list()
+            countries = df["country_iso3"].to_list() if "country_iso3" in df.columns else [""] * len(headlines)
             keep_mask = []
             n_lang_dropped = 0
-            for h in headlines:
+            for h, iso3 in zip(headlines, countries):
                 detected = _detected_language(h)
-                if detected is not None and detected != "en":
+                if detected is None or detected == "en":
+                    keep_mask.append(True)
+                elif detected in COUNTRY_LANGUAGE_ALLOWLIST.get(iso3, set()):
+                    keep_mask.append(True)
+                else:
                     keep_mask.append(False)
                     n_lang_dropped += 1
                     logger.info(
                         "NewsDispatcher: lang-mismatch drop (tag=en, detected=%s): '%s'",
                         detected, (h or "")[:80],
                     )
-                else:
-                    keep_mask.append(True)
             if n_lang_dropped:
                 df = df.filter(pl.Series(keep_mask))
 
