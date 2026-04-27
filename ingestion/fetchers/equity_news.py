@@ -299,14 +299,23 @@ class EquityNewsFetcher:
     Async equity + sector news fetcher.
 
     Sources:
-      - Curated financial RSS feeds (MarketWatch, WSJ, Seeking Alpha, PR Newswire)
+      - Curated financial RSS feeds (MarketWatch, WSJ, Seeking Alpha
+        general, Benzinga news/earnings/markets, PR Newswire)
       - Yahoo Finance per-ticker RSS for the 65 bellwether tickers in
         TOP_COMPANY_TARGETS. ~20 items per ticker, properly dated.
-        Replaces the previous GNews-based path which had been silently
-        dead (12h free-tier delay > 6h cron window) since deployment.
+      - Seeking Alpha per-ticker RSS for the same 65 bellwether tickers
+        via their /api/sa/combined endpoint (~30 items per ticker,
+        analyst-leaning). The seekingalpha.com/symbol/<TICKER>/news URL
+        in Hermes's brief is 403-CDN-blocked; the api/sa/combined path
+        is the working alternative.
+      The combined per-ticker fan-out (130 fetches per cycle) is bounded
+      by independent semaphores; URL-hash dedup in fetch_all() collapses
+      cross-source overlap. Replaces the dead GNews path (12h free-tier
+      delay > 6h cron window).
     """
 
-    YAHOO_FINANCE_RSS = "https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US"
+    YAHOO_FINANCE_RSS  = "https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US"
+    SEEKING_ALPHA_RSS  = "https://seekingalpha.com/api/sa/combined/{ticker}.xml"
 
     def __init__(
         self,
@@ -314,10 +323,11 @@ class EquityNewsFetcher:
     ):
         self._timeout = timeout
         self._seen: set[str] = set()
-        # Polite concurrent-request cap on Yahoo Finance — 8 simultaneous fetches
-        # is well within their public-RSS tolerance and keeps a 65-ticker pull
-        # under ~10s end-to-end.
+        # Polite concurrent-request cap per source. 8 is well within both
+        # Yahoo's and SA's public-RSS tolerance and keeps a 65-ticker fan-out
+        # under ~10s end-to-end per source.
         self._yh_sem = asyncio.Semaphore(8)
+        self._sa_sem = asyncio.Semaphore(8)
 
     async def fetch_all(self, since_hours: int = 6) -> list[NewsItem]:
         """
@@ -332,6 +342,7 @@ class EquityNewsFetcher:
         results = await asyncio.gather(
             self._fetch_equity_rss(since),
             self._fetch_yahoo_per_ticker(since),
+            self._fetch_sa_per_ticker(since),
             return_exceptions=True,
         )
 
@@ -548,6 +559,102 @@ class EquityNewsFetcher:
             ))
         return out
 
+    # ── Seeking Alpha per-ticker ─────────────────────────────────────────────
+
+    async def _fetch_sa_per_ticker(self, since: datetime) -> list[NewsItem]:
+        """Fetch the per-ticker SA RSS for every bellwether in TOP_COMPANY_TARGETS.
+        SA's per-ticker feed is 30 items deep and analyst-leaning; complements
+        Yahoo's broader market mix. Cross-mentions and Yahoo-overlap collapse
+        via URL-hash dedup in fetch_all().
+        """
+        items: list[NewsItem] = []
+        async with httpx.AsyncClient(
+            timeout=self._timeout,
+            follow_redirects=True,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; KB-fetcher/1.0)"},
+        ) as client:
+            tasks = [
+                self._fetch_one_sa(client, ticker, since)
+                for ticker, _name, _sector in TOP_COMPANY_TARGETS
+            ]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            n_failed = 0
+            for r in results:
+                if isinstance(r, Exception):
+                    n_failed += 1
+                    logger.debug("Seeking Alpha fetch error: %s", r)
+                    continue
+                items.extend(r)
+            if n_failed:
+                logger.warning(
+                    "  Seeking Alpha: %d/%d ticker fetches failed",
+                    n_failed, len(TOP_COMPANY_TARGETS),
+                )
+        logger.info(
+            "  Seeking Alpha: %d equity items across %d tickers",
+            len(items), len(TOP_COMPANY_TARGETS),
+        )
+        return items
+
+    async def _fetch_one_sa(
+        self,
+        client: httpx.AsyncClient,
+        ticker: str,
+        since: datetime,
+    ) -> list[NewsItem]:
+        """Fetch one ticker's Seeking Alpha api/sa/combined RSS feed."""
+        url = self.SEEKING_ALPHA_RSS.format(ticker=ticker)
+        async with self._sa_sem:
+            try:
+                resp = await client.get(url)
+                if resp.status_code != 200:
+                    logger.debug("Seeking Alpha %s: HTTP %d", ticker, resp.status_code)
+                    return []
+                # Same Cloudflare-trailing-junk safeguard as _fetch_one_rss.
+                body = resp.text
+                for end_tag in ("</rss>", "</feed>"):
+                    idx = body.rfind(end_tag)
+                    if idx != -1:
+                        body = body[: idx + len(end_tag)]
+                        break
+                root = ET.fromstring(body)
+            except (httpx.HTTPError, ET.ParseError) as exc:
+                logger.debug("Seeking Alpha %s: %s", ticker, exc)
+                return []
+
+        out: list[NewsItem] = []
+        for entry in root.findall(".//item"):
+            title_el = entry.find("title")
+            link_el  = entry.find("link")
+            desc_el  = entry.find("description")
+            pub_el   = entry.find("pubDate")
+
+            link_url = (link_el.text or "").strip() if link_el is not None else ""
+            headline = _strip_html((title_el.text or "")) if title_el is not None else ""
+            if not link_url or not headline:
+                continue
+
+            pub_raw = (pub_el.text or "").strip() if pub_el is not None else ""
+            if not _is_recent(pub_raw, since):
+                continue
+            pub_iso = pub_raw
+            dt = _parse_dt(pub_raw)
+            if dt:
+                pub_iso = dt.isoformat()
+
+            summary = _strip_html((desc_el.text or "")) if desc_el is not None else ""
+
+            out.append(_make_item(
+                url          = link_url,
+                headline     = headline,
+                summary      = summary,
+                source       = f"Seeking Alpha ({ticker})",
+                published_at = pub_iso,
+                fetch_source = "equity_sa",
+                tickers      = [ticker],
+            ))
+        return out
+
     async def health_check(self) -> dict[str, bool]:
         """Quick health check for each source."""
         results: dict[str, bool] = {}
@@ -569,5 +676,15 @@ class EquityNewsFetcher:
                 results["equity_yahoo"] = r.status_code == 200
             except Exception:
                 results["equity_yahoo"] = False
+
+            # Seeking Alpha per-ticker
+            try:
+                r = await client.get(
+                    self.SEEKING_ALPHA_RSS.format(ticker="NVDA"),
+                    follow_redirects=True,
+                )
+                results["equity_sa"] = r.status_code == 200
+            except Exception:
+                results["equity_sa"] = False
 
         return results
