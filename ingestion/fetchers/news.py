@@ -110,9 +110,10 @@ RSS_FEEDS: list[tuple[str, str, str]] = [
     # Argentina
     ("Buenos Aires Herald", "https://buenosairesherald.com/feed",                 "ARG"),
     ("MercoPress",          "https://en.mercopress.com/rss",                      "ARG"),
-    # South Africa
-    ("Daily Maverick",      "https://www.dailymaverick.co.za/feed/",              "ZAF"),
-    ("Business Day ZA",     "https://www.businesslive.co.za/rss/bd/",            "ZAF"),
+    # South Africa — Daily Maverick (403 scraper-blocked) and Business Day
+    # (301 URL moved) replaced 2026-04-27 with Mail & Guardian (10 items
+    # per fetch, ~daily updates, broad national coverage).
+    ("Mail & Guardian",     "https://mg.co.za/feed/",                             "ZAF"),
     # Iran — PressTV is state media but only English-language source available
     ("PressTV",             "https://www.presstv.ir/rss.xml",                     "IRN"),
     ("Iran International",  "https://www.iranintl.com/en/rss",                   "IRN"),
@@ -120,9 +121,11 @@ RSS_FEEDS: list[tuple[str, str, str]] = [
     ("Jerusalem Post",      "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",   "ISR"),
     ("Times of Israel",     "https://www.timesofisrael.com/feed/",                "ISR"),
     ("Haaretz English",     "https://www.haaretz.com/srv/haaretz-rss.xml",        "ISR"),
-    # UAE
-    ("The National UAE",    "https://www.thenationalnews.com/rss.xml",            "UAE"),
-    ("Gulf News UAE",       "https://gulfnews.com/rss/uae",                       "UAE"),
+    # UAE — The National's old /rss.xml endpoint and Gulf News /uae both
+    # 404 since 2026. Replaced 2026-04-27 with The National's new outbound
+    # feed URL (6 items/fetch, cleanly dated). Khaleej Times alternate
+    # exists but is HTML, not RSS — skipped.
+    ("The National UAE",    "https://www.thenationalnews.com/arc/outboundfeeds/rss/?outputType=xml", "UAE"),
     # Qatar
     ("Al Jazeera English",  "https://www.aljazeera.com/xml/rss/all.xml",          "QAT"),
     ("Qatar Tribune",       "https://www.qatar-tribune.com/rss.xml",              "QAT"),
