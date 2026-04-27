@@ -142,6 +142,25 @@ RSS_FEEDS: list[tuple[str, str, str]] = [
     ("Italian Insider",     "https://www.italianinsider.it/?q=rss.xml",           "ITA"),
     # Politico Europe — EU-wide governance/policy; assign to GBR (Minerva) for broad European coverage
     ("Politico Europe",     "https://www.politico.eu/feed/",                      "GBR"),
+    # ── Phase 4 (2026-04-27): API-only countries with no prior RSS coverage. ──
+    # Their NewsData.io and GNews API paths produced zero items in 7d audit
+    # because NewsData free /1/news returns 5-7h-stale articles (outside our
+    # 6h window) and GNews free has a 12h delay. RSS fixes that.
+    # USA — political/macro coverage to complement equity_news_*.parquet stream
+    ("Politico US",         "https://rss.politico.com/politics-news.xml",         "USA"),
+    ("NPR News",            "https://feeds.npr.org/1001/rss.xml",                 "USA"),
+    ("Washington Post",     "https://feeds.washingtonpost.com/rss/national",      "USA"),
+    # Spain — English-language, slim coverage market
+    ("SpainInEnglish",      "https://feeds.feedburner.com/SpainInEnglish",        "ESP"),
+    # Canada
+    ("Globe and Mail",      "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/", "CAN"),
+    ("National Post",       "https://nationalpost.com/feed",                      "CAN"),
+    # Australia
+    ("ABC News AU",         "https://www.abc.net.au/news/feed/45910/rss.xml",     "AUS"),
+    ("Sydney Morning Herald","https://www.smh.com.au/rss/feed.xml",               "AUS"),
+    # Netherlands — English-language expat-oriented but covers domestic politics
+    ("NL Times",            "https://nltimes.nl/rss",                             "NLD"),
+    ("DutchNews",           "https://www.dutchnews.nl/feed/",                     "NLD"),
 ]
 
 
