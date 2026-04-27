@@ -158,6 +158,14 @@ EQUITY_RSS_FEEDS: list[tuple[str, str, list[str]]] = [
     ("Seeking Alpha",      "https://seekingalpha.com/market_currents.xml",                       ["SPY"]),
     # ── Press releases ───────────────────────────────────────────────────────
     ("PR Newswire",        "https://www.prnewswire.com/rss/news-releases-list.rss",             []),
+    # ── Benzinga (Phase 2 of C, added 2026-04-27) ────────────────────────────
+    # Per-symbol Benzinga feeds (e.g. /quote/<TICKER>/feed) are 404 — gated
+    # behind paid Benzinga Pro. The free general-news feeds work and tend to
+    # carry breaking earnings/movers items minutes ahead of aggregator RSS.
+    # No pre-tagged tickers — rely on the post-fetch _scan_tickers() scanner.
+    ("Benzinga News",      "https://www.benzinga.com/news/feed",                                 []),
+    ("Benzinga Earnings",  "https://www.benzinga.com/news/earnings/feed",                        []),
+    ("Benzinga Markets",   "https://www.benzinga.com/markets/feed",                              []),
 ]
 
 # ─── Ticker scanner ───────────────────────────────────────────────────────────
@@ -374,7 +382,17 @@ class EquityNewsFetcher:
                 logger.debug("RSS %s: HTTP %d", label, resp.status_code)
                 return []
 
-            root = ET.fromstring(resp.text)
+            # Some CDNs (e.g. Cloudflare on Benzinga) inject a trailing
+            # <script> after </rss>, breaking strict XML. Truncate at the
+            # last close-of-root we recognise so the inner document parses.
+            body = resp.text
+            for end_tag in ("</rss>", "</feed>"):
+                idx = body.rfind(end_tag)
+                if idx != -1:
+                    body = body[: idx + len(end_tag)]
+                    break
+
+            root = ET.fromstring(body)
             ns   = {"atom": "http://www.w3.org/2005/Atom"}
 
             # Handle both RSS 2.0 (<item>) and Atom (<entry>) formats
