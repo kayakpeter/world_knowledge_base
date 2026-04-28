@@ -215,7 +215,25 @@ class NewsDispatcher:
             logger.info("NewsDispatcher: %s is empty — skipping", path.name)
             return 0
 
-        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        # Derive the per-batch identifier from the SOURCE parquet's stem so the
+        # written filename is deterministic and unique per parquet. Using
+        # datetime.now() with second precision (the previous behaviour) caused
+        # collisions: when sovereign + equity dispatches fired within the same
+        # UTC second on the first daily cycle, both wrote to the same
+        # news_<agent>_<HHMMSS>.json path and the second OVERWROTE the first.
+        # Apollo's USA-equity briefing on 2026-04-27 + 2026-04-28 mornings
+        # surfaced this — body claimed N USA items, attachment had M sovereign
+        # items because the equity file was overwritten by the sovereign
+        # dispatch a fraction of a second later. The source parquet stem is
+        # unique by construction (run_news_ingestion writes with a timestamp,
+        # and the sovereign vs equity scripts produce non-overlapping names).
+        stem = path.stem
+        if stem.startswith("equity_news_"):
+            timestamp = "equity_" + stem[len("equity_news_"):]
+        elif stem.startswith("news_"):
+            timestamp = stem[len("news_"):]
+        else:
+            timestamp = stem
         agent_counts: dict[str, int] = {}
         total = 0
 
@@ -454,6 +472,26 @@ class NewsDispatcher:
             "Full items are in the attached JSON file. For each item, produce a",
             "NewsInterpretation with: actor_ids, intent, affected_stats, sentiment,",
             "urgency, cross_country flags.",
+            "",
+            "── PREDICTION REQUIREMENTS (mandatory) ──",
+            "For EVERY interpreted item, you MUST also provide next-trading-day predictions:",
+            "",
+            "  market_impact  — JSON list of index predictions.",
+            '    Example: [{"index":"SPX","move":"down","pct":-1.0,"conf":0.7}]',
+            "    Indices: SPX, DJI, NDX, RUT, VIX. Use null if no index impact.",
+            "",
+            "  sector_impact  — JSON list of sector ETF predictions.",
+            '    Example: [{"etf":"XLE","name":"Energy","move":"up","pct":2.0,"conf":0.8}]',
+            "    Standard ETFs: XLE XLF XLK XLV XLI XLB XLY XLP XLU XLRE XLC",
+            "    Specialty: ITA(Defense) XBI(Biotech) XOP(Oil&Gas) SMH(Semis)",
+            "    GDX(Gold) JETS(Airlines) KRE(Regional Banks). Use null if none.",
+            "",
+            "  ticker_impact  — JSON list of specific company predictions.",
+            '    Example: [{"ticker":"LMT","move":"up","pct":1.5,"conf":0.6,"reason":"missile rebuild"}]',
+            "    Only include tickers with a clear, direct causal link. Use null if none.",
+            "",
+            "Predictions are scored against actual next-trading-day results.",
+            "Be precise — vague or hedged predictions score as misses.",
             "",
             f"Write results to: data/interpretations/interpretations_{agent}_<timestamp>.parquet",
             "",
