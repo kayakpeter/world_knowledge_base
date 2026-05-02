@@ -95,8 +95,31 @@ V2_COLUMNS = [
     "sentiment", "urgency", "confidence",
     "cross_country", "cross_country_iso3",
     "interpreted_by", "interpreted_at", "notes",
+    "risk_reward_horizon", "volatility_risk",
+    "operational_risk", "supply_chain_exposure",
     "market_impact", "sector_impact", "ticker_impact",
 ]
+
+
+# Vocabulary normalization for the new Hybrid Extension fields.
+# gemma4:31b sometimes drifts from H/M/L → high/med/low; tolerate both.
+_VOLATILITY_RISK_NORMALISE: dict[str, str] = {
+    "h": "H", "high": "H",
+    "m": "M", "med": "M", "medium": "M", "moderate": "M",
+    "l": "L", "low": "L",
+}
+_RISK_REWARD_HORIZON_NORMALISE: dict[str, str] = {
+    "intraday":      "intraday",
+    "1-4_weeks":     "1-4_weeks",
+    "1-4 weeks":     "1-4_weeks",
+    "1_to_4_weeks":  "1-4_weeks",
+    "weeks":         "1-4_weeks",
+    "multi_quarter": "multi_quarter",
+    "multi-quarter": "multi_quarter",
+    "multiquarter":  "multi_quarter",
+    "quarters":      "multi_quarter",
+    "long_term":     "multi_quarter",
+}
 
 
 def normalize_interpretation_df(df: pl.DataFrame, agent: str) -> pl.DataFrame:
@@ -330,6 +353,47 @@ def normalize_interpretation_df(df: pl.DataFrame, agent: str) -> pl.DataFrame:
         out["notes"] = str_col(col("interpretation_note"))
     else:
         out["notes"] = literal_str("", "notes")
+
+    # ── Hybrid Extension fields (normalized, tolerate vocab drift) ────────────
+    if "risk_reward_horizon" in df.columns:
+        out["risk_reward_horizon"] = (
+            col("risk_reward_horizon")
+            .fill_null("")
+            .map_elements(
+                lambda s: _RISK_REWARD_HORIZON_NORMALISE.get(
+                    str(s).lower().strip(), str(s)
+                ),
+                return_dtype=pl.String,
+            )
+            .alias("risk_reward_horizon")
+        )
+    else:
+        out["risk_reward_horizon"] = literal_str("", "risk_reward_horizon")
+
+    if "volatility_risk" in df.columns:
+        out["volatility_risk"] = (
+            col("volatility_risk")
+            .fill_null("")
+            .map_elements(
+                lambda s: _VOLATILITY_RISK_NORMALISE.get(
+                    str(s).lower().strip(), str(s).upper()
+                ) if s else "",
+                return_dtype=pl.String,
+            )
+            .alias("volatility_risk")
+        )
+    else:
+        out["volatility_risk"] = literal_str("", "volatility_risk")
+
+    if "operational_risk" in df.columns:
+        out["operational_risk"] = str_col(col("operational_risk"))
+    else:
+        out["operational_risk"] = literal_str("", "operational_risk")
+
+    if "supply_chain_exposure" in df.columns:
+        out["supply_chain_exposure"] = str_col(col("supply_chain_exposure"))
+    else:
+        out["supply_chain_exposure"] = literal_str("", "supply_chain_exposure")
 
     # ── prediction fields (JSON strings, nullable) ─────────────────────────────
     for pred_col in ("market_impact", "sector_impact", "ticker_impact"):
