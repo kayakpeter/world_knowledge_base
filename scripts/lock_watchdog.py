@@ -100,8 +100,8 @@ REGISTRY: tuple[LockPolicy, ...] = (
     ),
     LockPolicy(
         path=Path("/tmp/ollama_inference.lock"),
-        max_age_seconds=1800,
-        warn_age_seconds=1200,
+        max_age_seconds=900,           # 15 min — interpret_news.py heartbeats every ~70s/batch, so ~13x margin
+        warn_age_seconds=600,          # 10 min — must stay < max_age
         check_heartbeat=True,          # interpret_news.py writes .heartbeat
         kill_holder=True,
         owner_tag="ollama_inference",
