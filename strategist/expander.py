@@ -10,6 +10,24 @@ from strategist.schema import ScenarioNode, ScenarioTree, SectorImpact, NodeStat
 
 logger = logging.getLogger(__name__)
 
+
+def _strip_code_fences(text: str) -> str:
+    """Remove markdown code fences from an LLM response.
+
+    gemma4:31b wraps JSON in ```json ... ``` fences; llama3.1:70b did not.
+    Handles both newline-delimited and inline fences; returns text unchanged
+    when no fence is present.
+    """
+    s = text.strip()
+    if not s.startswith("```"):
+        return s
+    s = s[3:]                       # drop opening ```
+    if s[:4].lower() == "json":     # drop optional language tag
+        s = s[4:]
+    s = s.rsplit("```", 1)[0]       # drop closing fence + any trailing text
+    return s.strip()
+
+
 SYSTEM_PROMPT = """You are a geopolitical scenario analyst. Given a triggering event and its immediate context, generate plausible near-term (72-hour window) consequences as a scenario tree.
 
 For each branch you generate:
@@ -115,9 +133,9 @@ class ScenarioExpander:
                 system_prompt=SYSTEM_PROMPT,
                 user_prompt=user_prompt,
                 temperature=0.3,
-                max_tokens=1500,
+                max_tokens=800,
             )
-            raw_content = response.content
+            raw_content = response.raw_text
         except Exception:
             logger.exception("LLM call failed during expand for node=%s", node.node_id)
             return []
@@ -132,7 +150,7 @@ class ScenarioExpander:
     ) -> list[ScenarioNode]:
         """Parse LLM JSON response into child ScenarioNodes."""
         try:
-            data = json.loads(raw)
+            data = json.loads(_strip_code_fences(raw))
             items = data.get("branches", [])
         except (json.JSONDecodeError, AttributeError):
             logger.warning("Failed to parse LLM response as JSON for node=%s", parent.node_id)

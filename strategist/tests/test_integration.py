@@ -20,6 +20,7 @@ from strategist.infra_state import InfraStateRegistry
 from strategist.prometheus_writer import PrometheusDeltaWriter
 from strategist.kg_writer import KGWriter
 from strategist.schema import ScenarioNode, SectorImpact
+from processing.llm_interface import LLMResponse
 
 
 def _make_mock_llm_provider():
@@ -61,7 +62,7 @@ def _make_mock_llm_provider():
             branches = []
         import json as json_mod
         content = json_mod.dumps({"branches": branches})
-        return MagicMock(content=content)
+        return LLMResponse(raw_text=content)
 
     provider.complete = fake_complete
     return provider
@@ -133,7 +134,7 @@ def test_pipeline_handles_empty_llm_gracefully(tmp_path):
     cfg.regime_config_dir = tmp_path / "regime"
 
     mock_llm = MagicMock()
-    mock_llm.complete = AsyncMock(return_value=MagicMock(content="[]"))  # invalid JSON
+    mock_llm.complete = AsyncMock(return_value=LLMResponse(raw_text="[]"))  # non-dict JSON
 
     mock_neo4j = MagicMock()
     mock_neo4j.upsert_scenario = MagicMock()
