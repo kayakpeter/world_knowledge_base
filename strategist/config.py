@@ -38,7 +38,7 @@ class StrategistConfig:
     sectors: SectorConfig = field(default_factory=SectorConfig)
     window_hours: int = 72
     ollama_url: str = "http://localhost:11434/v1"
-    ollama_model: str = "qwen2.5:32b"
+    ollama_model: str = "gemma4:31b"
     scenarios_dir: Path = field(
         default_factory=lambda: Path("/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb/data/scenarios")
     )
