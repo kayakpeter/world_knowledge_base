@@ -8,7 +8,7 @@ has been confirmed. Updates the scenario JSON confirmed flag if evidence found.
 
 Usage:
     python -m processing.scenario_confirmation_check --agent apollo
-    python -m processing.scenario_confirmation_check --agent hermes
+    python -m processing.scenario_confirmation_check --agent prometheus
     python -m processing.scenario_confirmation_check --agent hephaestus
 """
 from __future__ import annotations
