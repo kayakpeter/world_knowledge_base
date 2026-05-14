@@ -1,0 +1,10 @@
+{
+  "scenario_id": "bushehr-nuclear-power-plant-st-20260316-0348-61458d",
+  "trigger_event": "Bushehr nuclear power plant struck \u2014 radioactive release risk",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T03:58:12.043911+00:00",
+  "defense_bonus": 1.755,
+  "currency_bonus": 1.608,
+  "energy_bonus": 1.772,
+  "insurance_bonus": 1.315
+}

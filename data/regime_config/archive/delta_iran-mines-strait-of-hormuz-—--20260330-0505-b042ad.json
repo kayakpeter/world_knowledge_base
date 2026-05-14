@@ -1,0 +1,12 @@
+{
+  "scenario_id": "iran-mines-strait-of-hormuz-\u2014--20260330-0505-b042ad",
+  "trigger_event": "Iran mines Strait of Hormuz \u2014 commercial shipping blocked",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T05:18:13.826208+00:00",
+  "energy_bonus": 3.152,
+  "defense_bonus": 1.971,
+  "insurance_bonus": 1.444,
+  "shipping_bonus": 1.289,
+  "sovereign_bonus": 1.067,
+  "currency_bonus": 1.122
+}

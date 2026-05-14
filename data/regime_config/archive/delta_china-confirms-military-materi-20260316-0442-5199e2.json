@@ -1,0 +1,12 @@
+{
+  "scenario_id": "china-confirms-military-materi-20260316-0442-5199e2",
+  "trigger_event": "China confirms military materiel supply to Iran \u2014 US imposes secondary sanctions",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T04:51:36.090217+00:00",
+  "defense_bonus": 2.135,
+  "currency_bonus": 1.948,
+  "energy_bonus": 1.703,
+  "agriculture_bonus": 1.0,
+  "sovereign_bonus": 1.203,
+  "shipping_bonus": 1.05
+}

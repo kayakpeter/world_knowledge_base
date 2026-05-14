@@ -1,0 +1,56 @@
+{
+  "scenario_id": "test-20260315-0006-a1f1bc",
+  "trigger_event": "Test",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-15T00:06:48.868069+00:00",
+  "expires_at": "2026-03-18T00:06:48.868069+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "test-202_root": {
+      "node_id": "test-202_root",
+      "description": "Test",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "child_with_infra"
+      ],
+      "pruned_reason": ""
+    },
+    "child_with_infra": {
+      "node_id": "child_with_infra",
+      "description": "Iran closes Hormuz",
+      "branch_probability": 0.7,
+      "parent_id": "test-202_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.7,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

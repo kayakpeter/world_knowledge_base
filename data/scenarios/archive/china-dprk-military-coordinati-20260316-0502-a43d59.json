@@ -1,0 +1,510 @@
+{
+  "scenario_id": "china-dprk-military-coordinati-20260316-0502-a43d59",
+  "trigger_event": "China-DPRK military coordination confirmed \u2014 DPRK fires ballistic missiles toward Japan",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-16T05:02:36.714797+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-dp_root": {
+      "node_id": "china-dp_root",
+      "description": "China-DPRK military coordination confirmed \u2014 DPRK fires ballistic missiles toward Japan",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "30e58e8b",
+        "acc690eb",
+        "8b77daec"
+      ],
+      "pruned_reason": ""
+    },
+    "30e58e8b": {
+      "node_id": "30e58e8b",
+      "description": "Japan intercepts all incoming missiles, no casualties or damage.",
+      "branch_probability": 0.6,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.6,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "MITSY",
+            "IHI"
+          ],
+          "notes": "Increased demand for missile defense systems."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "1027eb7c",
+        "4b245868",
+        "d363049d",
+        "9cd6301c"
+      ],
+      "pruned_reason": ""
+    },
+    "acc690eb": {
+      "node_id": "acc690eb",
+      "description": "One missile evades interception, causing minor damage to a non-critical facility in Japan.",
+      "branch_probability": 0.3,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "MITSY",
+            "IHI"
+          ],
+          "notes": "Heightened demand for missile defense and reconstruction efforts."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Yen weakens due to increased risk perception."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "OSAKA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "6ec30da4",
+        "c7c19e16",
+        "ea344ff7"
+      ],
+      "pruned_reason": ""
+    },
+    "8b77daec": {
+      "node_id": "8b77daec",
+      "description": "Multiple missiles evade interception, causing significant damage to critical infrastructure in Japan.",
+      "branch_probability": 0.1,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.1,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "MITSY",
+            "IHI"
+          ],
+          "notes": "Massive investment in defense and reconstruction."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Yen sharply depreciates due to severe economic impact."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Disruption in port operations and shipping routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TOKYO_ELECTRIC_POWER",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "YOKOHAMA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "4f9ea04d",
+        "c152e04a",
+        "4fa87ecc",
+        "77ccd19f"
+      ],
+      "pruned_reason": ""
+    },
+    "1027eb7c": {
+      "node_id": "1027eb7c",
+      "description": "Japan and South Korea increase their military readiness levels, leading to heightened tensions in the region.",
+      "branch_probability": 0.31481481481481477,
+      "parent_id": "30e58e8b",
+      "depth": 2,
+      "parent_joint_probability": 0.6,
+      "joint_probability": 0.18888888888888886,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "MITSY",
+            "BA"
+          ],
+          "notes": "Increased demand for defense equipment and services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4b245868": {
+      "node_id": "4b245868",
+      "description": "The United States deploys additional naval assets to the Western Pacific, enhancing regional security.",
+      "branch_probability": 0.2777777777777778,
+      "parent_id": "30e58e8b",
+      "depth": 2,
+      "parent_joint_probability": 0.6,
+      "joint_probability": 0.16666666666666666,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "US defense contractors benefit from increased military presence."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d363049d": {
+      "node_id": "d363049d",
+      "description": "Financial markets react negatively to the escalation, causing a decline in regional stock indices.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "30e58e8b",
+      "depth": 2,
+      "parent_joint_probability": 0.6,
+      "joint_probability": 0.13333333333333333,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY",
+            "KRW"
+          ],
+          "notes": "Regional currencies weaken due to risk aversion."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9cd6301c": {
+      "node_id": "9cd6301c",
+      "description": "China calls for an emergency meeting of the UN Security Council to address the crisis.",
+      "branch_probability": 0.18518518518518517,
+      "parent_id": "30e58e8b",
+      "depth": 2,
+      "parent_joint_probability": 0.6,
+      "joint_probability": 0.1111111111111111,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6ec30da4": {
+      "node_id": "6ec30da4",
+      "description": "Japan responds with a limited military strike against North Korean missile sites.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "acc690eb",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.09999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "MITSUBISHI",
+            "LOCKHEED"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NORTH_KOREAN_MISSILE_SITES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c7c19e16": {
+      "node_id": "c7c19e16",
+      "description": "China issues a strong diplomatic protest and increases military presence along the border with North Korea.",
+      "branch_probability": 0.28205128205128205,
+      "parent_id": "acc690eb",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.0846153846153846,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Yuan weakens due to increased regional tensions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ea344ff7": {
+      "node_id": "ea344ff7",
+      "description": "South Korea enhances its missile defense systems and places troops on high alert.",
+      "branch_probability": 0.3846153846153846,
+      "parent_id": "acc690eb",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.11538461538461536,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "HYUNDAI",
+            "BAE"
+          ],
+          "notes": "Increased spending on defense and security measures."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SOUTH_KOREAN_MILITARY_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4f9ea04d": {
+      "node_id": "4f9ea04d",
+      "description": "Japan declares a state of emergency, mobilizing all available defense forces.",
+      "branch_probability": 0.33333333333333337,
+      "parent_id": "8b77daec",
+      "depth": 2,
+      "parent_joint_probability": 0.1,
+      "joint_probability": 0.03333333333333334,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "7733.T",
+            "7013.T"
+          ],
+          "notes": "Increased demand for defense equipment and services."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAPAN_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "JAPAN_TRANSPORTATION",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c152e04a": {
+      "node_id": "c152e04a",
+      "description": "The United States announces immediate military support to Japan, including deployment of additional naval assets.",
+      "branch_probability": 0.27450980392156865,
+      "parent_id": "8b77daec",
+      "depth": 2,
+      "parent_joint_probability": 0.1,
+      "joint_probability": 0.027450980392156866,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "US defense contractors benefit from increased military activity."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4fa87ecc": {
+      "node_id": "4fa87ecc",
+      "description": "Global financial markets react negatively, with a sharp decline in Japanese and South Korean currencies.",
+      "branch_probability": 0.23529411764705885,
+      "parent_id": "8b77daec",
+      "depth": 2,
+      "parent_joint_probability": 0.1,
+      "joint_probability": 0.023529411764705885,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY",
+            "KRW"
+          ],
+          "notes": "Investor confidence wanes due to regional instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "77ccd19f": {
+      "node_id": "77ccd19f",
+      "description": "China and North Korea issue a joint statement threatening further action if international sanctions are imposed.",
+      "branch_probability": 0.15686274509803924,
+      "parent_id": "8b77daec",
+      "depth": 2,
+      "parent_joint_probability": 0.1,
+      "joint_probability": 0.015686274509803925,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "CNY",
+            "KPW"
+          ],
+          "notes": "Increased political tension affects sovereign credit ratings."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

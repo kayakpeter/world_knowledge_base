@@ -1,0 +1,11 @@
+{
+  "scenario_id": "us-strikes-kharg-island-20260330-0348-0bf988",
+  "trigger_event": "US strikes Kharg Island",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T04:01:10.461993+00:00",
+  "energy_bonus": 2.473,
+  "defense_bonus": 1.858,
+  "shipping_bonus": 1.56,
+  "currency_bonus": 1.208,
+  "insurance_bonus": 1.067
+}

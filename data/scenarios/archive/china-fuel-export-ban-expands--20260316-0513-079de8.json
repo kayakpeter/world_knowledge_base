@@ -1,0 +1,416 @@
+{
+  "scenario_id": "china-fuel-export-ban-expands--20260316-0513-079de8",
+  "trigger_event": "China fuel export ban expands \u2014 Asia-Pacific energy crisis accelerates",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-16T05:13:40.520311+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-fu_root": {
+      "node_id": "china-fu_root",
+      "description": "China fuel export ban expands \u2014 Asia-Pacific energy crisis accelerates",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "0a3f1935",
+        "dbc885d8",
+        "c412e953"
+      ],
+      "pruned_reason": ""
+    },
+    "0a3f1935": {
+      "node_id": "0a3f1935",
+      "description": "Regional fuel prices surge, leading to widespread industrial slowdowns.",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3953488372093023,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "EXX",
+            "CVX"
+          ],
+          "notes": "Fuel prices spike due to supply constraints."
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "DE",
+            "AGCO"
+          ],
+          "notes": "Higher fuel costs reduce profitability for agricultural operations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "35ba0122",
+        "3cf260d9",
+        "11f8094a"
+      ],
+      "pruned_reason": ""
+    },
+    "dbc885d8": {
+      "node_id": "dbc885d8",
+      "description": "Government intervention in major economies to ration fuel and prioritize essential services.",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3255813953488372,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased focus on securing domestic fuel supplies for military use."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ASIA_PACIFIC_REFINERIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "2f0175bf",
+        "88962736",
+        "8489c5ef"
+      ],
+      "pruned_reason": ""
+    },
+    "c412e953": {
+      "node_id": "c412e953",
+      "description": "International calls for emergency fuel reserves to be released to stabilize markets.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.27906976744186046,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "FXA"
+          ],
+          "notes": "Currency markets react to potential economic instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "3b713f3c",
+        "8b9f8a34",
+        "a5767528"
+      ],
+      "pruned_reason": ""
+    },
+    "35ba0122": {
+      "node_id": "35ba0122",
+      "description": "Regional governments implement emergency fuel rationing measures.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "0a3f1935",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.1602765556253928,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Rationing reduces demand but increases prices due to scarcity."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3cf260d9": {
+      "node_id": "3cf260d9",
+      "description": "Major industrial sectors in the region begin to scale back operations or shut down temporarily.",
+      "branch_probability": 0.3513513513513513,
+      "parent_id": "0a3f1935",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.13890634820867376,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Reduced industrial activity leads to lower demand for bulk commodities."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Manufacturing slowdown reduces container shipping demand."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "11f8094a": {
+      "node_id": "11f8094a",
+      "description": "International aid and fuel shipments are expedited to the region to mitigate the crisis.",
+      "branch_probability": 0.2432432432432432,
+      "parent_id": "0a3f1935",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.09616593337523568,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Increased demand for tanker services to transport fuel."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2f0175bf": {
+      "node_id": "2f0175bf",
+      "description": "Major Asian cities implement strict fuel rationing, leading to widespread public transportation disruptions.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "dbc885d8",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.1319924575738529,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "PBF",
+            "PSX"
+          ],
+          "notes": "Increased demand for alternative fuels and energy sources."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88962736": {
+      "node_id": "88962736",
+      "description": "Regional governments increase subsidies for renewable energy projects to reduce dependency on imported fuels.",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "dbc885d8",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.10559396605908232,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TSLA",
+            "FSLR"
+          ],
+          "notes": "Boost in renewable energy stocks due to increased government support."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8489c5ef": {
+      "node_id": "8489c5ef",
+      "description": "International trade tensions rise as countries seek to secure alternative fuel supplies, leading to diplomatic disputes.",
+      "branch_probability": 0.27027027027027023,
+      "parent_id": "dbc885d8",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.08799497171590193,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military spending and defense contracts."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3b713f3c": {
+      "node_id": "3b713f3c",
+      "description": "Emergency fuel reserves are released by major economies, providing short-term relief.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "c412e953",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.12956810631229237,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "EXX",
+            "CVX"
+          ],
+          "notes": "Short-term stabilization of fuel prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8b9f8a34": {
+      "node_id": "8b9f8a34",
+      "description": "China imposes additional sanctions on countries that release emergency reserves, escalating tensions.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "c412e953",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.05980066445182724,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military spending and preparedness."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SOUTH_CHINA_SEA_TRAFFIC",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a5767528": {
+      "node_id": "a5767528",
+      "description": "International energy agencies fail to coordinate effectively, leading to further market instability.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "c412e953",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.08970099667774087,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XOM",
+            "BP"
+          ],
+          "notes": "Increased volatility and higher fuel prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

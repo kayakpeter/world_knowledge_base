@@ -1,0 +1,399 @@
+{
+  "scenario_id": "fordow-underground-nuclear-fac-20260316-0309-4f4846",
+  "trigger_event": "Fordow underground nuclear facility struck \u2014 enrichment status unknown",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T03:09:45.994211+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "fordow-u_root": {
+      "node_id": "fordow-u_root",
+      "description": "Fordow underground nuclear facility struck \u2014 enrichment status unknown",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "39ce32b4",
+        "8f145501",
+        "126f348c"
+      ],
+      "pruned_reason": ""
+    },
+    "39ce32b4": {
+      "node_id": "39ce32b4",
+      "description": "Iran confirms the strike and announces significant damage to the facility, but no change in enrichment activities.",
+      "branch_probability": 0.45,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.45,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions may boost defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FORDOW_FACILITY",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "ddc44601",
+        "fe3fff42",
+        "70cfaa46"
+      ],
+      "pruned_reason": ""
+    },
+    "8f145501": {
+      "node_id": "8f145501",
+      "description": "Iran denies any strike occurred and claims the facility is fully operational.",
+      "branch_probability": 0.35,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.35,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FORDOW_FACILITY",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "eff87bef",
+        "e0daf2cd",
+        "ef6ff200"
+      ],
+      "pruned_reason": ""
+    },
+    "126f348c": {
+      "node_id": "126f348c",
+      "description": "International condemnation of the strike leads to diplomatic tensions, but no immediate military response.",
+      "branch_probability": 0.2,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Uncertainty may weaken global currencies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "73eec7ff",
+        "c71b0c8a",
+        "af82e08c"
+      ],
+      "pruned_reason": ""
+    },
+    "ddc44601": {
+      "node_id": "ddc44601",
+      "description": "International condemnation of the attack leads to increased diplomatic tensions, but no immediate military response.",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "39ce32b4",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.20769230769230765,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased defense spending expected."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fe3fff42": {
+      "node_id": "fe3fff42",
+      "description": "Iran retaliates with cyberattacks against critical infrastructure in the attacking country.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "39ce32b4",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.10384615384615382,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Currency volatility due to uncertainty."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ATTACKING_COUNTRY_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "70cfaa46": {
+      "node_id": "70cfaa46",
+      "description": "Iran increases its uranium enrichment activities in response, leading to heightened regional tensions.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "39ce32b4",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.13846153846153847,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "eff87bef": {
+      "node_id": "eff87bef",
+      "description": "International intelligence agencies confirm the strike, leading to increased tensions.",
+      "branch_probability": 0.39999999999999997,
+      "parent_id": "8f145501",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.13999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense stocks due to heightened tensions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e0daf2cd": {
+      "node_id": "e0daf2cd",
+      "description": "Iranian officials retract their statement and admit to limited damage, but claim no significant impact on operations.",
+      "branch_probability": 0.26666666666666666,
+      "parent_id": "8f145501",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.09333333333333332,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MINOR",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Slight increase in oil prices due to uncertainty."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ef6ff200": {
+      "node_id": "ef6ff200",
+      "description": "Regional allies of Iran, such as Hezbollah, increase their rhetoric and threaten retaliation against perceived enemies.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "8f145501",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.11666666666666665,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Currency markets react to potential regional instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "73eec7ff": {
+      "node_id": "73eec7ff",
+      "description": "Iran announces it will resume full-scale uranium enrichment, escalating regional tensions.",
+      "branch_probability": 0.45,
+      "parent_id": "126f348c",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.09000000000000001,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased uncertainty in oil markets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c71b0c8a": {
+      "node_id": "c71b0c8a",
+      "description": "The United States and Israel increase their naval presence in the Persian Gulf, leading to heightened military tensions.",
+      "branch_probability": 0.35,
+      "parent_id": "126f348c",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.06999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PERSIAN_GULF_NAVY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "af82e08c": {
+      "node_id": "af82e08c",
+      "description": "International sanctions against Iran are tightened, affecting trade and financial markets.",
+      "branch_probability": 0.3,
+      "parent_id": "126f348c",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.06,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Weakening of Iranian rial and related currencies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

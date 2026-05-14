@@ -1,0 +1,10 @@
+{
+  "scenario_id": "kharg-island-second-strike-\u2014-i-20260330-0518-950102",
+  "trigger_event": "Kharg Island second strike \u2014 Iran crude export terminal destroyed",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T05:28:54.741233+00:00",
+  "energy_bonus": 2.554,
+  "defense_bonus": 1.754,
+  "currency_bonus": 1.124,
+  "sovereign_bonus": 1.088
+}

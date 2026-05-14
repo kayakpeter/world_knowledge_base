@@ -1,0 +1,572 @@
+{
+  "scenario_id": "idf-launches-lebanon-ground-in-20260330-0612-b3db04",
+  "trigger_event": "IDF launches Lebanon ground invasion \u2014 2006-scale operation",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-30T06:12:39.472230+00:00",
+  "expires_at": "2026-04-02T06:12:39.472230+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "idf-laun_root": {
+      "node_id": "idf-laun_root",
+      "description": "IDF launches Lebanon ground invasion \u2014 2006-scale operation",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "d9b9dd12",
+        "4efe46dd",
+        "eba45ca9",
+        "4c151ad8"
+      ],
+      "pruned_reason": ""
+    },
+    "d9b9dd12": {
+      "node_id": "d9b9dd12",
+      "description": "Hezbollah retaliates with rocket barrage on Israeli cities",
+      "branch_probability": 0.38095238095238093,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38095238095238093,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "41f2a4f5",
+        "df426a52",
+        "7e3412fb"
+      ],
+      "pruned_reason": ""
+    },
+    "4efe46dd": {
+      "node_id": "4efe46dd",
+      "description": "Lebanese government collapses as PM resigns in protest",
+      "branch_probability": 0.19047619047619047,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.19047619047619047,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "LB:LEBANON"
+          ],
+          "notes": "Credit rating downgrade likely"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e293daf1",
+        "a2ec5d4b",
+        "256f820c"
+      ],
+      "pruned_reason": ""
+    },
+    "eba45ca9": {
+      "node_id": "eba45ca9",
+      "description": "Iran deploys IRGC troops to Lebanon in support of Hezbollah",
+      "branch_probability": 0.2857142857142857,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2857142857142857,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Potential disruption to regional oil exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d9d0e2a8",
+        "0e990458",
+        "e9080671"
+      ],
+      "pruned_reason": ""
+    },
+    "4c151ad8": {
+      "node_id": "4c151ad8",
+      "description": "US and EU impose sanctions on Lebanon in response to Hezbollah actions",
+      "branch_probability": 0.14285714285714285,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.14285714285714285,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Lebanese pound devaluation likely"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "af89c887",
+        "4d799c7c",
+        "9986c496"
+      ],
+      "pruned_reason": ""
+    },
+    "41f2a4f5": {
+      "node_id": "41f2a4f5",
+      "description": "Israel escalates response, targeting Hezbollah strongholds and Lebanese infrastructure",
+      "branch_probability": 0.5070422535211268,
+      "parent_id": "d9b9dd12",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.193158953722334,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Potential disruption to offshore gas production"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for military equipment and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "SIDON_REFINERY",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "df426a52": {
+      "node_id": "df426a52",
+      "description": "International community intervenes, calling for ceasefire and emergency UN Security Council meeting",
+      "branch_probability": 0.2887323943661972,
+      "parent_id": "d9b9dd12",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.10999329309188463,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Potential currency devaluation due to conflict escalation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7e3412fb": {
+      "node_id": "7e3412fb",
+      "description": "Iran increases military support for Hezbollah, potentially drawing in other regional actors",
+      "branch_probability": 0.20422535211267606,
+      "parent_id": "d9b9dd12",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.07780013413816231,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e293daf1": {
+      "node_id": "e293daf1",
+      "description": "Hezbollah launches retaliatory rocket attacks on Israeli cities, prompting IDF to expand ground operation",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "4efe46dd",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.0875160875160875,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a2ec5d4b": {
+      "node_id": "a2ec5d4b",
+      "description": "US and EU impose economic sanctions on Lebanon in response to Hezbollah's involvement",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "4efe46dd",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.061776061776061764,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Lebanese pound devaluation"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "LB:LEBANON 10YR"
+          ],
+          "notes": "Increased credit risk"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "256f820c": {
+      "node_id": "256f820c",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) sends troops to support Hezbollah, escalating regional conflict",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "4efe46dd",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.041184041184041176,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased risk of oil supply disruptions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d9d0e2a8": {
+      "node_id": "d9d0e2a8",
+      "description": "Hezbollah launches massive rocket barrage against Israeli cities",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "eba45ca9",
+      "depth": 2,
+      "parent_joint_probability": 0.2857142857142857,
+      "joint_probability": 0.12698412698412698,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0e990458": {
+      "node_id": "0e990458",
+      "description": "US and EU impose severe economic sanctions on Iran in response to IRGC deployment",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "eba45ca9",
+      "depth": 2,
+      "parent_joint_probability": 0.2857142857142857,
+      "joint_probability": 0.09523809523809523,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Increased uncertainty around Iranian oil exports"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Market volatility and risk aversion"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e9080671": {
+      "node_id": "e9080671",
+      "description": "Syria opens Golan Heights front against Israel, drawing in Jordanian forces",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "eba45ca9",
+      "depth": 2,
+      "parent_joint_probability": 0.2857142857142857,
+      "joint_probability": 0.06349206349206349,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Escalating regional conflict and increased demand for military equipment"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TABQA_DAM",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "af89c887": {
+      "node_id": "af89c887",
+      "description": "Hezbollah launches rocket attacks against Israeli cities, prompting IDF escalation",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "4c151ad8",
+      "depth": 2,
+      "parent_joint_probability": 0.14285714285714285,
+      "joint_probability": 0.06563706563706562,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MAJOR",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4d799c7c": {
+      "node_id": "4d799c7c",
+      "description": "Iran deploys IRGC troops to Lebanon in support of Hezbollah",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "4c151ad8",
+      "depth": 2,
+      "parent_joint_probability": 0.14285714285714285,
+      "joint_probability": 0.04633204633204632,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Potential disruption to Iranian oil exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9986c496": {
+      "node_id": "9986c496",
+      "description": "Russia condemns Israeli actions, threatens to veto UN Security Council resolutions",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "4c151ad8",
+      "depth": 2,
+      "parent_joint_probability": 0.14285714285714285,
+      "joint_probability": 0.030888030888030885,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MINOR",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "RSX"
+          ],
+          "notes": "Potential impact on Russian-Israeli relations"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete",
+  "confirmation": {
+    "confirmed_at": "2026-03-30T14:50:41.257589+00:00",
+    "confidence": 0.8,
+    "evidence": "Multiple headlines report Israeli troops entering Lebanon, with phrases such as 'Israel to widen invasion of Lebanon', 'Israeli troops ski into Lebanon', and 'multi-front war' suggesting a significant military operation.",
+    "key_headline": "Israel to widen invasion of Lebanon",
+    "source": "scenario_confirmation_check"
+  }
+}

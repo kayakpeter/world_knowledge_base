@@ -1,0 +1,437 @@
+{
+  "scenario_id": "iran-mines-strait-of-hormuz-\u2014--20260316-0220-3162a2",
+  "trigger_event": "Iran mines Strait of Hormuz \u2014 commercial shipping blocked",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T02:20:30.323477+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iran-min_root": {
+      "node_id": "iran-min_root",
+      "description": "Iran mines Strait of Hormuz \u2014 commercial shipping blocked",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "36d99012",
+        "239519a4",
+        "0b8919cd"
+      ],
+      "pruned_reason": ""
+    },
+    "36d99012": {
+      "node_id": "36d99012",
+      "description": "International naval forces begin mine-clearing operations in the Strait of Hormuz.",
+      "branch_probability": 0.346938775510204,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.346938775510204,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "GD",
+            "LMT"
+          ],
+          "notes": "Increased demand for mine-clearing and naval support equipment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "f8e5a675",
+        "186b3aa0",
+        "c693028d"
+      ],
+      "pruned_reason": ""
+    },
+    "239519a4": {
+      "node_id": "239519a4",
+      "description": "Oil prices surge due to supply concerns, leading to global economic instability.",
+      "branch_probability": 0.36734693877551017,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.36734693877551017,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "XOM",
+            "CVX",
+            "BP"
+          ],
+          "notes": "Significant increase in oil prices due to supply disruption."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "2546fb86",
+        "9043cb5e",
+        "709dafcd"
+      ],
+      "pruned_reason": ""
+    },
+    "0b8919cd": {
+      "node_id": "0b8919cd",
+      "description": "Regional tensions escalate, leading to increased military presence and potential conflict.",
+      "branch_probability": 0.28571428571428564,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.28571428571428564,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BA",
+            "GD",
+            "LMT"
+          ],
+          "notes": "Heightened military readiness and increased defense spending."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "39b8eec1",
+        "a95760d6",
+        "73691be4"
+      ],
+      "pruned_reason": ""
+    },
+    "f8e5a675": {
+      "node_id": "f8e5a675",
+      "description": "Mine-clearing operations are successful, and the Strait of Hormuz reopens within 72 hours.",
+      "branch_probability": 0.5,
+      "parent_id": "36d99012",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.173469387755102,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced risk premium as the strait reopens."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "186b3aa0": {
+      "node_id": "186b3aa0",
+      "description": "Mine-clearing operations face significant delays due to technical issues or Iranian interference.",
+      "branch_probability": 0.3,
+      "parent_id": "36d99012",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.10408163265306121,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Prolonged closure leads to higher oil prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c693028d": {
+      "node_id": "c693028d",
+      "description": "International tensions escalate, leading to a broader conflict in the region.",
+      "branch_probability": 0.2,
+      "parent_id": "36d99012",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.0693877551020408,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2546fb86": {
+      "node_id": "2546fb86",
+      "description": "US and allied naval forces begin mine-clearing operations, causing tensions to rise.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "239519a4",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.15306122448979592,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "GD"
+          ],
+          "notes": "Increased demand for naval and defense equipment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9043cb5e": {
+      "node_id": "9043cb5e",
+      "description": "Iran threatens to expand mining activities to other strategic waterways, further disrupting trade.",
+      "branch_probability": 0.25,
+      "parent_id": "239519a4",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.09183673469387754,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "MAERSK",
+            "CMA"
+          ],
+          "notes": "Disruption in global container shipping routes."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "709dafcd": {
+      "node_id": "709dafcd",
+      "description": "Global oil markets react with panic, driving up crude oil prices by over 20%.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "239519a4",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.12244897959183672,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Significant increase in crude oil prices due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "39b8eec1": {
+      "node_id": "39b8eec1",
+      "description": "Iranian forces begin laying mines, causing immediate closure of the Strait of Hormuz.",
+      "branch_probability": 0.6,
+      "parent_id": "0b8919cd",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.17142857142857137,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices surge due to supply disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a95760d6": {
+      "node_id": "a95760d6",
+      "description": "International naval forces intervene to prevent Iran from mining the Strait, leading to a stand-off.",
+      "branch_probability": 0.3,
+      "parent_id": "0b8919cd",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.08571428571428569,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for military equipment and services."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "73691be4": {
+      "node_id": "73691be4",
+      "description": "Diplomatic negotiations de-escalate the situation, and Iran backs down from mining the Strait.",
+      "branch_probability": 0.1,
+      "parent_id": "0b8919cd",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.028571428571428567,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

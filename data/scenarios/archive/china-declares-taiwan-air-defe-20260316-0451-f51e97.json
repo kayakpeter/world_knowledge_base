@@ -1,0 +1,517 @@
+{
+  "scenario_id": "china-declares-taiwan-air-defe-20260316-0451-f51e97",
+  "trigger_event": "China declares Taiwan Air Defense Identification Zone closure \u2014 warplanes breach median line",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T04:51:36.524091+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-de_root": {
+      "node_id": "china-de_root",
+      "description": "China declares Taiwan Air Defense Identification Zone closure \u2014 warplanes breach median line",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "fb081c86",
+        "b7c538b3",
+        "8b963a9a",
+        "0d7b35ad"
+      ],
+      "pruned_reason": ""
+    },
+    "fb081c86": {
+      "node_id": "fb081c86",
+      "description": "Taiwan responds by deploying additional air defenses and conducting military drills.",
+      "branch_probability": 0.32692307692307687,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.32692307692307687,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased military activity boosts defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "79e7c2c8",
+        "d0f112ac",
+        "049de097"
+      ],
+      "pruned_reason": ""
+    },
+    "b7c538b3": {
+      "node_id": "b7c538b3",
+      "description": "The United States issues a strong diplomatic protest and increases naval presence in the region.",
+      "branch_probability": 0.28846153846153844,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.28846153846153844,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "USD strengthens against CNY due to increased tensions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "c3963d4d",
+        "22fa7596",
+        "b37d8cb1"
+      ],
+      "pruned_reason": ""
+    },
+    "8b963a9a": {
+      "node_id": "8b963a9a",
+      "description": "China escalates by conducting live-fire exercises near the median line, leading to heightened regional tensions.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.23076923076923073,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to potential supply disruptions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TAIWAN_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "446ab2fa",
+        "e32aca52",
+        "41bc6816"
+      ],
+      "pruned_reason": ""
+    },
+    "0d7b35ad": {
+      "node_id": "0d7b35ad",
+      "description": "International condemnation leads to a temporary de-escalation as both sides engage in diplomatic talks.",
+      "branch_probability": 0.15384615384615385,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.15384615384615385,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "77c02e83",
+        "b91ef9db",
+        "a36d71ae"
+      ],
+      "pruned_reason": ""
+    },
+    "79e7c2c8": {
+      "node_id": "79e7c2c8",
+      "description": "China escalates by conducting live-fire drills near the median line, increasing tensions.",
+      "branch_probability": 0.45,
+      "parent_id": "fb081c86",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.1471153846153846,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense stocks due to heightened military activity."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d0f112ac": {
+      "node_id": "d0f112ac",
+      "description": "The United States issues a strong diplomatic statement condemning China's actions and reaffirms support for Taiwan.",
+      "branch_probability": 0.35,
+      "parent_id": "fb081c86",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.11442307692307689,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Yuan depreciates due to increased regional tensions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "049de097": {
+      "node_id": "049de097",
+      "description": "Taiwan increases its naval presence in the Taiwan Strait, leading to a higher risk of direct confrontation.",
+      "branch_probability": 0.2,
+      "parent_id": "fb081c86",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.06538461538461537,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Oil prices rise due to potential disruption in the Taiwan Strait."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TAIWAN_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c3963d4d": {
+      "node_id": "c3963d4d",
+      "description": "China responds by deploying additional military assets to the area, escalating tensions.",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "b7c538b3",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.13313609467455617,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased military activity boosts defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TAIWAN_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "22fa7596": {
+      "node_id": "22fa7596",
+      "description": "Taiwan conducts a show of force with its own military exercises, further heightening regional tensions.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "b7c538b3",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.08875739644970414,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "TWD=USD"
+          ],
+          "notes": "Increased uncertainty devalues the Taiwanese dollar."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b37d8cb1": {
+      "node_id": "b37d8cb1",
+      "description": "Regional allies, including Japan and South Korea, express support for the U.S. and increase their own military readiness.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "b7c538b3",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.06656804733727809,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "7013.T",
+            "000710.KS"
+          ],
+          "notes": "Regional defense stocks rise due to increased military preparedness."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "446ab2fa": {
+      "node_id": "446ab2fa",
+      "description": "Taiwan responds with its own military drills, increasing the risk of direct confrontation.",
+      "branch_probability": 0.45,
+      "parent_id": "8b963a9a",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.10384615384615382,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased defense spending and stockpiling of military equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e32aca52": {
+      "node_id": "e32aca52",
+      "description": "The United States issues a strong diplomatic warning and deploys additional naval assets to the region.",
+      "branch_probability": 0.35,
+      "parent_id": "8b963a9a",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.08076923076923075,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "USD strengthens against CNY due to increased geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "41bc6816": {
+      "node_id": "41bc6816",
+      "description": "Regional allies, including Japan and South Korea, increase their military readiness and intelligence sharing.",
+      "branch_probability": 0.3,
+      "parent_id": "8b963a9a",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.06923076923076922,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "7733.T",
+            "000710.KS"
+          ],
+          "notes": "Increased defense spending and joint military exercises."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "77c02e83": {
+      "node_id": "77c02e83",
+      "description": "Diplomatic talks fail, leading to increased military presence in the region.",
+      "branch_probability": 0.4,
+      "parent_id": "0d7b35ad",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.06153846153846154,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b91ef9db": {
+      "node_id": "b91ef9db",
+      "description": "China and Taiwan reach a preliminary agreement to reduce tensions.",
+      "branch_probability": 0.3,
+      "parent_id": "0d7b35ad",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.046153846153846156,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "CNY=X"
+          ],
+          "notes": "Stabilization of the Chinese yuan as tensions ease."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a36d71ae": {
+      "node_id": "a36d71ae",
+      "description": "The United States announces additional sanctions against China, further straining relations.",
+      "branch_probability": 0.2,
+      "parent_id": "0d7b35ad",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.03076923076923077,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CHINA"
+          ],
+          "notes": "Negative impact on Chinese sovereign debt due to increased political risk."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

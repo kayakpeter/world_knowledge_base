@@ -1,0 +1,430 @@
+{
+  "scenario_id": "b61-12-nuclear-gravity-bomb-de-20260330-0550-ab35ff",
+  "trigger_event": "B61-12 nuclear gravity bomb deployed to Middle East theater",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T05:50:48.803159+00:00",
+  "expires_at": "2026-04-02T05:50:48.803159+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "b61-12-n_root": {
+      "node_id": "b61-12-n_root",
+      "description": "B61-12 nuclear gravity bomb deployed to Middle East theater",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "522efc42",
+        "79300b8f",
+        "943473bc"
+      ],
+      "pruned_reason": ""
+    },
+    "522efc42": {
+      "node_id": "522efc42",
+      "description": "US confirms deployment, sparking diplomatic crisis with Russia and China",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.46153846153846145,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions boost defense stocks"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Diplomatic crisis weighs on euro"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "1e13f4e1",
+        "f7eef8be",
+        "a74c6c32"
+      ],
+      "pruned_reason": ""
+    },
+    "79300b8f": {
+      "node_id": "79300b8f",
+      "description": "Russia responds with nuclear-capable bomber deployments to Syria",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3076923076923077,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Escalation fears boost oil prices"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "RUSSIA 10YR"
+          ],
+          "notes": "Increased tensions weigh on Russian bonds"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SYRIAN_AIRSPACE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "8902fd01",
+        "8341caf9",
+        "d91b1341"
+      ],
+      "pruned_reason": ""
+    },
+    "943473bc": {
+      "node_id": "943473bc",
+      "description": "Iran announces military exercises in response to perceived US aggression",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.23076923076923073,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Increased tensions boost tanker demand"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAIT_OF_HORMUZ",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "3c200e3c",
+        "99b1c358",
+        "8f111641"
+      ],
+      "pruned_reason": ""
+    },
+    "1e13f4e1": {
+      "node_id": "1e13f4e1",
+      "description": "Russia places its nuclear forces on high alert, prompting a reciprocal response from NATO",
+      "branch_probability": 0.33488372093023255,
+      "parent_id": "522efc42",
+      "depth": 2,
+      "parent_joint_probability": 0.46153846153846145,
+      "joint_probability": 0.154561717352415,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NOC",
+            "GD"
+          ],
+          "notes": "Increased tensions drive up demand for defense contractors"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f7eef8be": {
+      "node_id": "f7eef8be",
+      "description": "China announces a series of naval exercises in the South China Sea, raising concerns about freedom of navigation",
+      "branch_probability": 0.2697674418604651,
+      "parent_id": "522efc42",
+      "depth": 2,
+      "parent_joint_probability": 0.46153846153846145,
+      "joint_probability": 0.1245080500894454,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruptions to tanker traffic in the region"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a74c6c32": {
+      "node_id": "a74c6c32",
+      "description": "US and Russian ambassadors to the UN engage in a heated exchange, with the US ambassador walking out of the meeting",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "522efc42",
+      "depth": 2,
+      "parent_joint_probability": 0.46153846153846145,
+      "joint_probability": 0.18246869409660102,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MINOR",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased tensions drive up demand for safe-haven currencies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8902fd01": {
+      "node_id": "8902fd01",
+      "description": "US deploys additional aircraft carrier strike group to Mediterranean",
+      "branch_probability": 0.40259740259740256,
+      "parent_id": "79300b8f",
+      "depth": 2,
+      "parent_joint_probability": 0.3076923076923077,
+      "joint_probability": 0.12387612387612387,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NOC",
+            "GD"
+          ],
+          "notes": "Increased tensions drive demand for defense contractors"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8341caf9": {
+      "node_id": "8341caf9",
+      "description": "Turkey closes Bosphorus Strait to Russian naval traffic",
+      "branch_probability": 0.2662337662337662,
+      "parent_id": "79300b8f",
+      "depth": 2,
+      "parent_joint_probability": 0.3076923076923077,
+      "joint_probability": 0.08191808191808192,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -25.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Disrupted tanker traffic impacts global oil supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BOSPHORUS_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d91b1341": {
+      "node_id": "d91b1341",
+      "description": "Israel puts military on high alert, prepares for potential strike",
+      "branch_probability": 0.33116883116883117,
+      "parent_id": "79300b8f",
+      "depth": 2,
+      "parent_joint_probability": 0.3076923076923077,
+      "joint_probability": 0.1018981018981019,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Increased tensions drive currency volatility"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3c200e3c": {
+      "node_id": "3c200e3c",
+      "description": "Iranian military exercises escalate into live-fire drills near Strait of Hormuz",
+      "branch_probability": 0.42,
+      "parent_id": "943473bc",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.0969230769230769,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased tensions near key oil chokepoint"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "99b1c358": {
+      "node_id": "99b1c358",
+      "description": "US and allied naval assets redeploy to counter Iranian exercises, increasing risk of miscalculation",
+      "branch_probability": 0.31,
+      "parent_id": "943473bc",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.07153846153846152,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Increased demand for naval defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8f111641": {
+      "node_id": "8f111641",
+      "description": "Russia and China issue joint statement condemning US nuclear deployment, increasing diplomatic tensions",
+      "branch_probability": 0.21,
+      "parent_id": "943473bc",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.04846153846153845,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased uncertainty in global markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

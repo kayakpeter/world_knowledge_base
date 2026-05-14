@@ -1,0 +1,422 @@
+{
+  "scenario_id": "india-formally-exits-iran-war--20260316-0432-3d3e87",
+  "trigger_event": "India formally exits Iran war neutrality \u2014 aligns with US coalition",
+  "severity": "HIGH",
+  "confirmed": false,
+  "created_at": "2026-03-16T04:32:54.027342+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-fo_root": {
+      "node_id": "india-fo_root",
+      "description": "India formally exits Iran war neutrality \u2014 aligns with US coalition",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "4f78714a",
+        "17625326",
+        "85375e1f"
+      ],
+      "pruned_reason": ""
+    },
+    "4f78714a": {
+      "node_id": "4f78714a",
+      "description": "India imposes economic sanctions on Iran, leading to reduced trade.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38636363636363635,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Reduced agricultural imports from Iran."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ONGC"
+          ],
+          "notes": "Increased demand for alternative energy sources."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "9b9b0d41",
+        "442690e1",
+        "14be4b38"
+      ],
+      "pruned_reason": ""
+    },
+    "17625326": {
+      "node_id": "17625326",
+      "description": "Iran retaliates by cutting off oil supplies to India, causing an energy crisis.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "ONGC",
+            "IOCL"
+          ],
+          "notes": "Severe shortage of oil imports from Iran."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIA_IRAN_OIL_PIPELINE",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "77e3b335",
+        "0220a277",
+        "ba4366c0"
+      ],
+      "pruned_reason": ""
+    },
+    "85375e1f": {
+      "node_id": "85375e1f",
+      "description": "The US increases military aid to India, enhancing defense capabilities.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3409090909090909,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "L&T",
+            "BHEL"
+          ],
+          "notes": "Boost in defense contracts and investments."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "ebd62cc7",
+        "e89f8def",
+        "2caa4edc"
+      ],
+      "pruned_reason": ""
+    },
+    "9b9b0d41": {
+      "node_id": "9b9b0d41",
+      "description": "India's decision leads to a significant reduction in Iranian oil imports, causing a spike in global oil prices.",
+      "branch_probability": 0.4838709677419355,
+      "parent_id": "4f78714a",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.18695014662756598,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Global oil prices rise due to reduced supply from Iran."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "442690e1": {
+      "node_id": "442690e1",
+      "description": "Iran responds by threatening to close the Strait of Hormuz, disrupting global oil shipments.",
+      "branch_probability": 0.2903225806451613,
+      "parent_id": "4f78714a",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.1121700879765396,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Threat to global oil supply causes prices to surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "14be4b38": {
+      "node_id": "14be4b38",
+      "description": "India increases military presence in the Gulf, heightening tensions and leading to a regional arms race.",
+      "branch_probability": 0.2258064516129032,
+      "parent_id": "4f78714a",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.08724340175953077,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased military spending boosts defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "77e3b335": {
+      "node_id": "77e3b335",
+      "description": "India imposes emergency energy conservation measures, reducing industrial output.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "17625326",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.11056511056511055,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for alternative energy sources"
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Reduced fertilizer production due to energy constraints"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0220a277": {
+      "node_id": "0220a277",
+      "description": "India accelerates its renewable energy projects and imports LNG from other sources, mitigating the crisis.",
+      "branch_probability": 0.27027027027027023,
+      "parent_id": "17625326",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.0737100737100737,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Short-term increase in energy prices"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MINOR",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased military readiness"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ba4366c0": {
+      "node_id": "ba4366c0",
+      "description": "International pressure on Iran increases, leading to sanctions that further isolate Iran economically.",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "17625326",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.08845208845208843,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -30.0,
+          "tickers": [],
+          "notes": "Iranian rial devalues significantly"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [],
+          "notes": "Increased political instability in Iran"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ebd62cc7": {
+      "node_id": "ebd62cc7",
+      "description": "India and the US conduct joint naval exercises in the Arabian Sea, signaling a strong alliance.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "85375e1f",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.1382063882063882,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e89f8def": {
+      "node_id": "e89f8def",
+      "description": "Iran responds with a series of cyberattacks targeting Indian and US military communication systems.",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "85375e1f",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.11056511056511055,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Cyberattacks may lead to economic instability and currency depreciation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIAN_MILITARY_COMM",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2caa4edc": {
+      "node_id": "2caa4edc",
+      "description": "The international community, including China and Russia, calls for de-escalation and diplomatic talks.",
+      "branch_probability": 0.27027027027027023,
+      "parent_id": "85375e1f",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.09213759213759212,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

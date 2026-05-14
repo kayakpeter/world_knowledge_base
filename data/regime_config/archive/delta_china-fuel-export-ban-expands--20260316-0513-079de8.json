@@ -1,0 +1,11 @@
+{
+  "scenario_id": "china-fuel-export-ban-expands--20260316-0513-079de8",
+  "trigger_event": "China fuel export ban expands \u2014 Asia-Pacific energy crisis accelerates",
+  "severity": "HIGH",
+  "generated_at": "2026-03-16T05:22:25.432671+00:00",
+  "energy_bonus": 2.384,
+  "agriculture_bonus": 1.395,
+  "defense_bonus": 1.533,
+  "currency_bonus": 1.279,
+  "shipping_bonus": 1.096
+}

@@ -1,0 +1,11 @@
+{
+  "scenario_id": "b61-12-nuclear-gravity-bomb-de-20260316-0317-e12599",
+  "trigger_event": "B61-12 nuclear gravity bomb deployed to Middle East theater",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T03:28:31.654412+00:00",
+  "defense_bonus": 1.779,
+  "currency_bonus": 1.618,
+  "sovereign_bonus": 1.444,
+  "energy_bonus": 1.0,
+  "agriculture_bonus": 1.0
+}

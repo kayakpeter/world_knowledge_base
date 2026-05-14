@@ -1,0 +1,31 @@
+{
+  "scenario_id": "abqaiq-oil-processing-facility-20260316-0129-2254eb",
+  "trigger_event": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-16T01:29:48.923642+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "abqaiq-o_root": {
+      "node_id": "abqaiq-o_root",
+      "description": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

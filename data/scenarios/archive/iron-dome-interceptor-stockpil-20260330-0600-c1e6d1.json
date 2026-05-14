@@ -1,0 +1,431 @@
+{
+  "scenario_id": "iron-dome-interceptor-stockpil-20260330-0600-c1e6d1",
+  "trigger_event": "Iron Dome interceptor stockpile depleted \u2014 mass Israeli civilian casualties",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T06:00:37.625465+00:00",
+  "expires_at": "2026-04-02T06:00:37.625465+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iron-dom_root": {
+      "node_id": "iron-dom_root",
+      "description": "Iron Dome interceptor stockpile depleted \u2014 mass Israeli civilian casualties",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "0b38373b",
+        "4cfc0c40",
+        "d720ba7b"
+      ],
+      "pruned_reason": ""
+    },
+    "0b38373b": {
+      "node_id": "0b38373b",
+      "description": "Israeli government declares state of emergency, mobilizes reserves",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3953488372093023,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for defense systems and equipment"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "a7852aba",
+        "21b98e6b",
+        "50350b70"
+      ],
+      "pruned_reason": ""
+    },
+    "4cfc0c40": {
+      "node_id": "4cfc0c40",
+      "description": "Hamas launches large-scale rocket attack on Israeli cities",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3255813953488372,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Potential disruption to energy infrastructure"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "2e5ce3ab",
+        "36b15800",
+        "35f586c3"
+      ],
+      "pruned_reason": ""
+    },
+    "d720ba7b": {
+      "node_id": "d720ba7b",
+      "description": "US and EU issue joint statement condemning Hamas, pledging support to Israel",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.27906976744186046,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Potential boost to Israeli currency"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "153531dd",
+        "fc0ea030",
+        "2c32b375"
+      ],
+      "pruned_reason": ""
+    },
+    "a7852aba": {
+      "node_id": "a7852aba",
+      "description": "Hamas launches large-scale rocket barrage on major Israeli cities",
+      "branch_probability": 0.46451612903225803,
+      "parent_id": "0b38373b",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.18364591147786943,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "21b98e6b": {
+      "node_id": "21b98e6b",
+      "description": "Israeli military launches ground invasion of Gaza Strip",
+      "branch_probability": 0.3548387096774194,
+      "parent_id": "0b38373b",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.14028507126781695,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Potential disruption to natural gas exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KEREM SHALOM_CROSSING",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "50350b70": {
+      "node_id": "50350b70",
+      "description": "International community intervenes with emergency diplomatic efforts",
+      "branch_probability": 0.1806451612903226,
+      "parent_id": "0b38373b",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.07141785446361591,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Potential currency devaluation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2e5ce3ab": {
+      "node_id": "2e5ce3ab",
+      "description": "Israel launches ground invasion of Gaza Strip",
+      "branch_probability": 0.5070422535211268,
+      "parent_id": "4cfc0c40",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.1650835244022273,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN",
+            "LMT"
+          ],
+          "notes": "Increased demand for military equipment and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_BORDER_CROSSING",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "TEL_AVIV_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "36b15800": {
+      "node_id": "36b15800",
+      "description": "International community intervenes with emergency diplomatic efforts",
+      "branch_probability": 0.29577464788732394,
+      "parent_id": "4cfc0c40",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.09629872256796593,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel devalues due to uncertainty"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "35f586c3": {
+      "node_id": "35f586c3",
+      "description": "Hezbollah joins the conflict, launching attacks on northern Israel",
+      "branch_probability": 0.19718309859154934,
+      "parent_id": "4cfc0c40",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.06419914837864396,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Risk premium increases due to potential disruption of regional energy supplies"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_REFINERY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "153531dd": {
+      "node_id": "153531dd",
+      "description": "Israel launches large-scale ground invasion of Gaza Strip",
+      "branch_probability": 0.543859649122807,
+      "parent_id": "d720ba7b",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.15177478580171358,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN",
+            "LMT"
+          ],
+          "notes": "Increased demand for military equipment and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_CITY_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "KEREM_SHALOM_CROSSING",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fc0ea030": {
+      "node_id": "fc0ea030",
+      "description": "Egypt brokers emergency ceasefire between Israel and Hamas",
+      "branch_probability": 0.2719298245614035,
+      "parent_id": "d720ba7b",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.07588739290085679,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Reduced tensions lead to lower energy prices"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2c32b375": {
+      "node_id": "2c32b375",
+      "description": "Hezbollah launches rocket attacks on northern Israel from Lebanon",
+      "branch_probability": 0.1842105263157895,
+      "parent_id": "d720ba7b",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.05140758873929009,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Escalation of conflict leads to increased demand for defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

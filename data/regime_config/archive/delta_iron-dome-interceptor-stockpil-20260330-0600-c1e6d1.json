@@ -1,0 +1,9 @@
+{
+  "scenario_id": "iron-dome-interceptor-stockpil-20260330-0600-c1e6d1",
+  "trigger_event": "Iron Dome interceptor stockpile depleted \u2014 mass Israeli civilian casualties",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T06:10:12.239954+00:00",
+  "defense_bonus": 1.0,
+  "energy_bonus": 1.345,
+  "currency_bonus": 1.447
+}

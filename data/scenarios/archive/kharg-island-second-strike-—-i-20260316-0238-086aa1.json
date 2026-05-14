@@ -1,0 +1,507 @@
+{
+  "scenario_id": "kharg-island-second-strike-\u2014-i-20260316-0238-086aa1",
+  "trigger_event": "Kharg Island second strike \u2014 Iran crude export terminal destroyed",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T02:38:12.685208+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "kharg-is_root": {
+      "node_id": "kharg-is_root",
+      "description": "Kharg Island second strike \u2014 Iran crude export terminal destroyed",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "9635d76e",
+        "fef6b366",
+        "317e416c"
+      ],
+      "pruned_reason": ""
+    },
+    "9635d76e": {
+      "node_id": "9635d76e",
+      "description": "International condemnation and calls for de-escalation, but no immediate military response.",
+      "branch_probability": 0.65,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.65,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "834647e7",
+        "c081c643",
+        "2a710392"
+      ],
+      "pruned_reason": ""
+    },
+    "fef6b366": {
+      "node_id": "fef6b366",
+      "description": "Iranian retaliation against regional targets, including oil facilities or shipping lanes.",
+      "branch_probability": 0.3,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Severe disruption in oil supply leads to price spike."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "63784ebf",
+        "0d475271",
+        "ce49aa2c"
+      ],
+      "pruned_reason": ""
+    },
+    "317e416c": {
+      "node_id": "317e416c",
+      "description": "Regional tensions escalate, leading to a broader conflict involving multiple countries.",
+      "branch_probability": 0.15,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.15,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Widespread disruption in oil supply."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USD/IRR"
+          ],
+          "notes": "Iranian rial weakens against USD."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "SAUDI_ARABIA_OIL_FACILITIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "87d7fc17",
+        "bc6492f8",
+        "9ae386c8"
+      ],
+      "pruned_reason": ""
+    },
+    "834647e7": {
+      "node_id": "834647e7",
+      "description": "Iran announces a temporary halt in oil exports through the Strait of Hormuz, leading to a spike in global oil prices.",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "9635d76e",
+      "depth": 2,
+      "parent_joint_probability": 0.65,
+      "joint_probability": 0.2569767441860465,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Global oil supply disruption"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c081c643": {
+      "node_id": "c081c643",
+      "description": "The United States deploys additional naval assets to the Persian Gulf to ensure the free flow of commerce, increasing tensions.",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "9635d76e",
+      "depth": 2,
+      "parent_joint_probability": 0.65,
+      "joint_probability": 0.21162790697674416,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military presence"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2a710392": {
+      "node_id": "2a710392",
+      "description": "Saudi Arabia and the UAE increase their oil production to mitigate the impact of Iran's reduced exports, stabilizing oil markets.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "9635d76e",
+      "depth": 2,
+      "parent_joint_probability": 0.65,
+      "joint_probability": 0.1813953488372093,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ARPC"
+          ],
+          "notes": "Increased production to stabilize markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "63784ebf": {
+      "node_id": "63784ebf",
+      "description": "Iranian forces launch cyberattacks on Saudi Aramco's oil production systems, causing temporary shutdowns.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "fef6b366",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.09999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_ARAMCO_FACILITIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0d475271": {
+      "node_id": "0d475271",
+      "description": "Iran closes the Strait of Hormuz to all maritime traffic, disrupting global oil supplies.",
+      "branch_probability": 0.25925925925925924,
+      "parent_id": "fef6b366",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.07777777777777777,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices surge as supply routes are blocked."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ce49aa2c": {
+      "node_id": "ce49aa2c",
+      "description": "Regional tensions escalate, leading to increased military presence in the Persian Gulf by the US and its allies.",
+      "branch_probability": 0.40740740740740744,
+      "parent_id": "fef6b366",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.12222222222222223,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Defense stocks rise on increased military activity."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "87d7fc17": {
+      "node_id": "87d7fc17",
+      "description": "Saudi Arabia launches retaliatory strikes against Iranian military targets, escalating the conflict.",
+      "branch_probability": 0.35,
+      "parent_id": "317e416c",
+      "depth": 2,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.0525,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices surge due to supply disruptions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KHARG_ISLAND",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "SAUDI_ARABIA_OIL_FACILITIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bc6492f8": {
+      "node_id": "bc6492f8",
+      "description": "The United States deploys additional naval forces to the Persian Gulf to protect shipping lanes and deter further aggression.",
+      "branch_probability": 0.45,
+      "parent_id": "317e416c",
+      "depth": 2,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.0675,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased military presence boosts defense stocks."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "US dollar weakens slightly due to increased military spending."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PERSIAN_GULF_SHIPPING_LANES",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9ae386c8": {
+      "node_id": "9ae386c8",
+      "description": "International condemnation and calls for de-escalation lead to a temporary ceasefire, but tensions remain high.",
+      "branch_probability": 0.2,
+      "parent_id": "317e416c",
+      "depth": 2,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.03,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices stabilize as conflict pauses."
+        },
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Defense stocks cool off as immediate threat subsides."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KHARG_ISLAND",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

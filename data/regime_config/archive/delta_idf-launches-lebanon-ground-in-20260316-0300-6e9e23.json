@@ -1,0 +1,10 @@
+{
+  "scenario_id": "idf-launches-lebanon-ground-in-20260316-0300-6e9e23",
+  "trigger_event": "IDF launches Lebanon ground invasion \u2014 2006-scale operation",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T03:09:45.507618+00:00",
+  "defense_bonus": 1.724,
+  "currency_bonus": 1.443,
+  "energy_bonus": 1.545,
+  "agriculture_bonus": 1.199
+}

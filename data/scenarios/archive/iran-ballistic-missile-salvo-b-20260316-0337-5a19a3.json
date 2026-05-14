@@ -1,0 +1,495 @@
+{
+  "scenario_id": "iran-ballistic-missile-salvo-b-20260316-0337-5a19a3",
+  "trigger_event": "Iran ballistic missile salvo breaches Israeli air defenses \u2014 mass civilian casualties",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-16T03:37:56.455055+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iran-bal_root": {
+      "node_id": "iran-bal_root",
+      "description": "Iran ballistic missile salvo breaches Israeli air defenses \u2014 mass civilian casualties",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "fd0994eb",
+        "4f568342",
+        "068617f7"
+      ],
+      "pruned_reason": ""
+    },
+    "fd0994eb": {
+      "node_id": "fd0994eb",
+      "description": "Israel launches retaliatory strikes against Iranian military targets, causing significant damage.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38636363636363635,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense stocks due to heightened conflict."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NUCLEAR_FACILITIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ISRAELI_AIRPORTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "3c6470f6",
+        "7f1ebc8b",
+        "d8b2e45c"
+      ],
+      "pruned_reason": ""
+    },
+    "4f568342": {
+      "node_id": "4f568342",
+      "description": "International condemnation and calls for an immediate ceasefire, leading to diplomatic negotiations.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel weakens due to uncertainty."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ISR"
+          ],
+          "notes": "Israeli bonds face pressure."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "e391bf45",
+        "56ff84e0",
+        "492ea015"
+      ],
+      "pruned_reason": ""
+    },
+    "068617f7": {
+      "node_id": "068617f7",
+      "description": "Regional allies of Israel, such as the United States, deploy additional military assets to the region.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3409090909090909,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "GD",
+            "RTX"
+          ],
+          "notes": "Defense contractors benefit from increased military presence."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "US_MILITARY_BASES_IN_REGION",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "4c33d2c1",
+        "75b1b29d",
+        "27ae13e7"
+      ],
+      "pruned_reason": ""
+    },
+    "3c6470f6": {
+      "node_id": "3c6470f6",
+      "description": "Iran responds with cyberattacks targeting Israeli critical infrastructure, causing widespread power outages.",
+      "branch_probability": 0.28125,
+      "parent_id": "fd0994eb",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.10866477272727272,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for alternative energy sources"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Heightened defense spending and stockpiling"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7f1ebc8b": {
+      "node_id": "7f1ebc8b",
+      "description": "The United States deploys additional forces to the Middle East, increasing tensions and military presence in the region.",
+      "branch_probability": 0.375,
+      "parent_id": "fd0994eb",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.14488636363636365,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased military contracts and spending"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Market uncertainty and risk aversion"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d8b2e45c": {
+      "node_id": "d8b2e45c",
+      "description": "International condemnation and calls for an immediate ceasefire, leading to diplomatic efforts to de-escalate the conflict.",
+      "branch_probability": 0.34375,
+      "parent_id": "fd0994eb",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.1328125,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "IL",
+            "IR"
+          ],
+          "notes": "Potential sanctions and economic pressure"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e391bf45": {
+      "node_id": "e391bf45",
+      "description": "United Nations Security Council convenes an emergency session to discuss sanctions against Iran.",
+      "branch_probability": 0.37777777777777777,
+      "parent_id": "4f568342",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.10303030303030301,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense systems and security solutions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "56ff84e0": {
+      "node_id": "56ff84e0",
+      "description": "Israel launches retaliatory strikes against Iranian military targets, causing significant damage.",
+      "branch_probability": 0.28888888888888886,
+      "parent_id": "4f568342",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.07878787878787877,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Disruption in oil supply routes and increased geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRANIAN_OIL_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "492ea015": {
+      "node_id": "492ea015",
+      "description": "Regional allies of Israel, such as Saudi Arabia and the UAE, increase their military support and readiness.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "4f568342",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.0909090909090909,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Enhanced regional defense cooperation and increased arms sales."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4c33d2c1": {
+      "node_id": "4c33d2c1",
+      "description": "United States launches retaliatory strikes against Iranian military targets, escalating conflict.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "068617f7",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.134297520661157,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contractors."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NUCLEAR_FACILITIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "IRAN_MILITARY_AIRBASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "75b1b29d": {
+      "node_id": "75b1b29d",
+      "description": "Regional tensions lead to a closure of the Strait of Hormuz by Iran, disrupting oil shipments.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "068617f7",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.09297520661157023,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Severe disruption in oil supply routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "27ae13e7": {
+      "node_id": "27ae13e7",
+      "description": "Saudi Arabia and other Gulf states increase their military support for Israel, leading to a broader regional coalition.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "068617f7",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.11363636363636362,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased military spending by Gulf states."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

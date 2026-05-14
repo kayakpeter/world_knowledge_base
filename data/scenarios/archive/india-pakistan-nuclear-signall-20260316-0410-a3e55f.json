@@ -1,0 +1,524 @@
+{
+  "scenario_id": "india-pakistan-nuclear-signall-20260316-0410-a3e55f",
+  "trigger_event": "India-Pakistan nuclear signalling \u2014 Pakistan places strategic forces on alert",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T04:10:31.635307+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-pa_root": {
+      "node_id": "india-pa_root",
+      "description": "India-Pakistan nuclear signalling \u2014 Pakistan places strategic forces on alert",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "acc4dc60",
+        "28da94f1",
+        "cf74a3f0",
+        "cc5e20f7"
+      ],
+      "pruned_reason": ""
+    },
+    "acc4dc60": {
+      "node_id": "acc4dc60",
+      "description": "India responds by placing its own strategic forces on alert, escalating tensions.",
+      "branch_probability": 0.32692307692307687,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.32692307692307687,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "L&T",
+            "HAL"
+          ],
+          "notes": "Increased demand for defense stocks due to heightened military readiness."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "a09765c9",
+        "2cf782f5",
+        "c84b2b7f"
+      ],
+      "pruned_reason": ""
+    },
+    "28da94f1": {
+      "node_id": "28da94f1",
+      "description": "International diplomatic efforts intensify to de-escalate the situation.",
+      "branch_probability": 0.28846153846153844,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.28846153846153844,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Currency volatility due to uncertainty and potential economic sanctions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "0059c9f8",
+        "3dde2431",
+        "9594cc80"
+      ],
+      "pruned_reason": ""
+    },
+    "cf74a3f0": {
+      "node_id": "cf74a3f0",
+      "description": "Pakistan conducts a missile test, further raising tensions.",
+      "branch_probability": 0.15384615384615385,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.15384615384615385,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ONGC",
+            "PSO"
+          ],
+          "notes": "Oil prices rise due to fears of supply disruptions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "979d0288",
+        "5cadeb97",
+        "1cef2177"
+      ],
+      "pruned_reason": ""
+    },
+    "cc5e20f7": {
+      "node_id": "cc5e20f7",
+      "description": "Regional allies and NATO members increase surveillance and support to both nations.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.23076923076923073,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BAE",
+            "LMT"
+          ],
+          "notes": "Increased defense spending and contracts for surveillance and support."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "c88496f2",
+        "d26b61e4",
+        "17f8774c"
+      ],
+      "pruned_reason": ""
+    },
+    "a09765c9": {
+      "node_id": "a09765c9",
+      "description": "India and Pakistan engage in limited conventional military skirmishes along the border.",
+      "branch_probability": 0.45,
+      "parent_id": "acc4dc60",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.1471153846153846,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense equipment and services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2cf782f5": {
+      "node_id": "2cf782f5",
+      "description": "International diplomatic efforts intensify, leading to a temporary de-escalation.",
+      "branch_probability": 0.35,
+      "parent_id": "acc4dc60",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.11442307692307689,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Stabilization efforts reduce currency volatility."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c84b2b7f": {
+      "node_id": "c84b2b7f",
+      "description": "Pakistan conducts a missile test, further raising tensions.",
+      "branch_probability": 0.2,
+      "parent_id": "acc4dc60",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.06538461538461537,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Concerns over regional stability drive oil prices up."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KARACHI_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0059c9f8": {
+      "node_id": "0059c9f8",
+      "description": "United Nations Security Council convenes an emergency session to address the crisis.",
+      "branch_probability": 0.37777777777777777,
+      "parent_id": "28da94f1",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.10897435897435896,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3dde2431": {
+      "node_id": "3dde2431",
+      "description": "Major powers, including the United States and China, initiate direct bilateral talks with both India and Pakistan.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "28da94f1",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.09615384615384615,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased defense spending and military readiness."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9594cc80": {
+      "node_id": "9594cc80",
+      "description": "Regional allies of India and Pakistan increase their own military preparedness.",
+      "branch_probability": 0.28888888888888886,
+      "parent_id": "28da94f1",
+      "depth": 2,
+      "parent_joint_probability": 0.28846153846153844,
+      "joint_probability": 0.08333333333333331,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Regional military build-up."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "979d0288": {
+      "node_id": "979d0288",
+      "description": "India responds by placing its own strategic forces on high alert, increasing the risk of conflict.",
+      "branch_probability": 0.4375,
+      "parent_id": "cf74a3f0",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.06730769230769232,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "L&T",
+            "HAL"
+          ],
+          "notes": "Increased military readiness boosts defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5cadeb97": {
+      "node_id": "5cadeb97",
+      "description": "International diplomatic efforts intensify to de-escalate the situation, reducing immediate conflict risk.",
+      "branch_probability": 0.3125,
+      "parent_id": "cf74a3f0",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.04807692307692308,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Uncertainty leads to currency depreciation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1cef2177": {
+      "node_id": "1cef2177",
+      "description": "Pakistan conducts another missile test, escalating tensions further.",
+      "branch_probability": 0.25,
+      "parent_id": "cf74a3f0",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.038461538461538464,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ONGC"
+          ],
+          "notes": "Geopolitical tensions boost oil prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c88496f2": {
+      "node_id": "c88496f2",
+      "description": "China increases military presence along the Line of Actual Control (LAC) with India, signaling support for Pakistan.",
+      "branch_probability": 0.35,
+      "parent_id": "cc5e20f7",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.08076923076923075,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased defense spending and military readiness."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d26b61e4": {
+      "node_id": "d26b61e4",
+      "description": "The United States deploys additional naval assets to the Indian Ocean to monitor the situation and provide a show of force.",
+      "branch_probability": 0.45,
+      "parent_id": "cc5e20f7",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.10384615384615382,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased military activity and potential for defense contracts."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIAN_OCEAN_NAVY",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "17f8774c": {
+      "node_id": "17f8774c",
+      "description": "Regional tensions lead to a temporary closure of the Karachi Stock Exchange and the Bombay Stock Exchange due to market instability.",
+      "branch_probability": 0.25,
+      "parent_id": "cc5e20f7",
+      "depth": 2,
+      "parent_joint_probability": 0.23076923076923073,
+      "joint_probability": 0.05769230769230768,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Currency devaluation due to market uncertainty."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KARACHI_STOCK_EXCHANGE",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "BOMBAY_STOCK_EXCHANGE",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

@@ -1,0 +1,449 @@
+{
+  "scenario_id": "kharg-island-second-strike-\u2014-i-20260330-0518-950102",
+  "trigger_event": "Kharg Island second strike \u2014 Iran crude export terminal destroyed",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T05:18:13.916492+00:00",
+  "expires_at": "2026-04-02T05:18:13.916492+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "kharg-is_root": {
+      "node_id": "kharg-is_root",
+      "description": "Kharg Island second strike \u2014 Iran crude export terminal destroyed",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "8c69fc59",
+        "3ede9651",
+        "20ae1b0f"
+      ],
+      "pruned_reason": ""
+    },
+    "8c69fc59": {
+      "node_id": "8c69fc59",
+      "description": "Global oil prices surge as Iranian exports grind to a halt",
+      "branch_probability": 0.36170212765957444,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.36170212765957444,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "Brent",
+            "WTI"
+          ],
+          "notes": "Immediate price shock as market digests loss of Iranian exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "4012053e",
+        "b960de66",
+        "b40a8f80"
+      ],
+      "pruned_reason": ""
+    },
+    "3ede9651": {
+      "node_id": "3ede9651",
+      "description": "Iran retaliates with missile strikes on Saudi Aramco facilities",
+      "branch_probability": 0.2553191489361702,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2553191489361702,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ARAMCO"
+          ],
+          "notes": "Potential for further disruptions to global oil supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_PROCESSING_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "966a2242",
+        "b4699d82",
+        "c6dd7c9a"
+      ],
+      "pruned_reason": ""
+    },
+    "20ae1b0f": {
+      "node_id": "20ae1b0f",
+      "description": "US and allies increase naval presence in the Persian Gulf",
+      "branch_probability": 0.3829787234042553,
+      "parent_id": "kharg-is_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3829787234042553,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense assets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "99c44c49",
+        "df6c3e40",
+        "195be082"
+      ],
+      "pruned_reason": ""
+    },
+    "4012053e": {
+      "node_id": "4012053e",
+      "description": "Saudi Arabia increases oil production to compensate for lost Iranian exports, stabilizing global markets",
+      "branch_probability": 0.45925925925925926,
+      "parent_id": "8c69fc59",
+      "depth": 2,
+      "parent_joint_probability": 0.36170212765957444,
+      "joint_probability": 0.1661150512214342,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO",
+            "RDSB"
+          ],
+          "notes": "Saudi Arabia's increased production helps to offset lost Iranian exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b960de66": {
+      "node_id": "b960de66",
+      "description": "US Navy deploys additional warships to the Persian Gulf, increasing tensions with Iran",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "8c69fc59",
+      "depth": 2,
+      "parent_joint_probability": 0.36170212765957444,
+      "joint_probability": 0.1205673758865248,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Increased US military presence in the region boosts defense sector stocks"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PERSIAN_GULF SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b40a8f80": {
+      "node_id": "b40a8f80",
+      "description": "Iranian Revolutionary Guard Corps launches retaliatory missile strikes against Saudi Arabian oil infrastructure",
+      "branch_probability": 0.20740740740740743,
+      "parent_id": "8c69fc59",
+      "depth": 2,
+      "parent_joint_probability": 0.36170212765957444,
+      "joint_probability": 0.07501970055161544,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "FRO",
+            "RDSB"
+          ],
+          "notes": "Saudi Arabian oil infrastructure is severely damaged, exacerbating global supply disruptions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_PROCESSING_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "966a2242": {
+      "node_id": "966a2242",
+      "description": "Saudi Arabia declares force majeure, halting oil exports from affected facilities",
+      "branch_probability": 0.496551724137931,
+      "parent_id": "3ede9651",
+      "depth": 2,
+      "parent_joint_probability": 0.2553191489361702,
+      "joint_probability": 0.1267791636096845,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ARAMCO"
+          ],
+          "notes": "Potential loss of 2-3 mb/d in Saudi oil exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_PROCESSING_FACILITY",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "RAS_TANURA_REFINERY",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b4699d82": {
+      "node_id": "b4699d82",
+      "description": "US and UK navies deploy additional assets to the Persian Gulf, raising tensions with Iran",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "3ede9651",
+      "depth": 2,
+      "parent_joint_probability": 0.2553191489361702,
+      "joint_probability": 0.07923697725605282,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Increased demand for naval defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c6dd7c9a": {
+      "node_id": "c6dd7c9a",
+      "description": "OPEC emergency meeting convened to discuss potential output increase to offset Saudi losses",
+      "branch_probability": 0.1931034482758621,
+      "parent_id": "3ede9651",
+      "depth": 2,
+      "parent_joint_probability": 0.2553191489361702,
+      "joint_probability": 0.04930300807043287,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "OPEC"
+          ],
+          "notes": "Potential increase in OPEC output to stabilize global oil markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "99c44c49": {
+      "node_id": "99c44c49",
+      "description": "Iran retaliates with missile strikes on Saudi Aramco facilities",
+      "branch_probability": 0.4460431654676259,
+      "parent_id": "20ae1b0f",
+      "depth": 2,
+      "parent_joint_probability": 0.3829787234042553,
+      "joint_probability": 0.17082504209398439,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "df6c3e40": {
+      "node_id": "df6c3e40",
+      "description": "US and allies impose additional sanctions on Iran's oil sector",
+      "branch_probability": 0.3237410071942446,
+      "parent_id": "20ae1b0f",
+      "depth": 2,
+      "parent_joint_probability": 0.3829787234042553,
+      "joint_probability": 0.12398591764885963,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced Iranian oil exports"
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased volatility in currency markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "195be082": {
+      "node_id": "195be082",
+      "description": "China and Russia issue joint statement condemning US aggression",
+      "branch_probability": 0.23021582733812948,
+      "parent_id": "20ae1b0f",
+      "depth": 2,
+      "parent_joint_probability": 0.3829787234042553,
+      "joint_probability": 0.08816776366141128,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Increased tensions between US and China/Russia"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

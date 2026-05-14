@@ -1,0 +1,397 @@
+{
+  "scenario_id": "china-dprk-military-coordinati-20260330-0445-2c2f76",
+  "trigger_event": "China-DPRK military coordination confirmed \u2014 DPRK fires ballistic missiles toward Japan",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:45:47.004450+00:00",
+  "expires_at": "2026-04-02T04:45:47.004450+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-dp_root": {
+      "node_id": "china-dp_root",
+      "description": "China-DPRK military coordination confirmed \u2014 DPRK fires ballistic missiles toward Japan",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "e89271d0",
+        "ad29cd3c",
+        "b74c8296"
+      ],
+      "pruned_reason": ""
+    },
+    "e89271d0": {
+      "node_id": "e89271d0",
+      "description": "Japan and South Korea scramble fighter jets, increasing regional tensions",
+      "branch_probability": 0.43589743589743596,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.43589743589743596,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems and equipment"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "b2f0e0ba",
+        "00ce6493",
+        "9b3b533b"
+      ],
+      "pruned_reason": ""
+    },
+    "ad29cd3c": {
+      "node_id": "ad29cd3c",
+      "description": "US Pacific Command issues statement condemning DPRK actions, hinting at potential military response",
+      "branch_probability": 0.358974358974359,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.358974358974359,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Increased uncertainty and risk aversion"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Decreased investor confidence in South Korean assets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "7f4bdcc0",
+        "c570dd4d",
+        "e3fab27c"
+      ],
+      "pruned_reason": ""
+    },
+    "b74c8296": {
+      "node_id": "b74c8296",
+      "description": "China's Foreign Ministry issues statement urging calm and restraint from all parties involved",
+      "branch_probability": 0.20512820512820518,
+      "parent_id": "china-dp_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.20512820512820518,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "CL1"
+          ],
+          "notes": "Potential decrease in oil prices due to reduced tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "4f9d4f0d",
+        "c8365cb8",
+        "384bc8f5"
+      ],
+      "pruned_reason": ""
+    },
+    "b2f0e0ba": {
+      "node_id": "b2f0e0ba",
+      "description": "US Pacific Command deploys additional naval assets to the region, including a carrier strike group",
+      "branch_probability": 0.39999999999999997,
+      "parent_id": "e89271d0",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.17435897435897438,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military activity and tensions in the region boost defense sector stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "00ce6493": {
+      "node_id": "00ce6493",
+      "description": "Japan imposes economic sanctions on North Korea, targeting key industries such as coal and textiles",
+      "branch_probability": 0.32903225806451614,
+      "parent_id": "e89271d0",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.14342431761786603,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Sanctions on North Korea's coal industry may reduce global supply and impact energy sector stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9b3b533b": {
+      "node_id": "9b3b533b",
+      "description": "South Korea's President calls for an emergency meeting with the US and Japan to discuss a unified response to the escalating crisis",
+      "branch_probability": 0.27096774193548384,
+      "parent_id": "e89271d0",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.11811414392059554,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Increased uncertainty and tensions in the region may lead to a decline in the South Korean won"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 9.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7f4bdcc0": {
+      "node_id": "7f4bdcc0",
+      "description": "US and Japan conduct joint naval exercises in the East China Sea as a show of force",
+      "branch_probability": 0.3924050632911392,
+      "parent_id": "ad29cd3c",
+      "depth": 2,
+      "parent_joint_probability": 0.358974358974359,
+      "joint_probability": 0.14086335605322947,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense contractors"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c570dd4d": {
+      "node_id": "c570dd4d",
+      "description": "China scrambles fighter jets in response to US-Japan naval exercises, increasing risk of miscalculation",
+      "branch_probability": 0.2594936708860759,
+      "parent_id": "ad29cd3c",
+      "depth": 2,
+      "parent_joint_probability": 0.358974358974359,
+      "joint_probability": 0.09315157416423236,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Increased tensions lead to currency volatility"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e3fab27c": {
+      "node_id": "e3fab27c",
+      "description": "South Korea puts military on high alert and begins evacuation of citizens from Japan",
+      "branch_probability": 0.3481012658227848,
+      "parent_id": "ad29cd3c",
+      "depth": 2,
+      "parent_joint_probability": 0.358974358974359,
+      "joint_probability": 0.1249594287568971,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "TRV"
+          ],
+          "notes": "Increased tensions lead to higher demand for insurance premiums"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4f9d4f0d": {
+      "node_id": "4f9d4f0d",
+      "description": "Japan scrambles fighter jets, puts military on high alert",
+      "branch_probability": 0.33333333333333337,
+      "parent_id": "b74c8296",
+      "depth": 2,
+      "parent_joint_probability": 0.20512820512820518,
+      "joint_probability": 0.0683760683760684,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c8365cb8": {
+      "node_id": "c8365cb8",
+      "description": "South Korea's President holds emergency meeting with National Security Council",
+      "branch_probability": 0.36078431372549025,
+      "parent_id": "b74c8296",
+      "depth": 2,
+      "parent_joint_probability": 0.20512820512820518,
+      "joint_probability": 0.0740070387129211,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Increased uncertainty leads to currency volatility"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "384bc8f5": {
+      "node_id": "384bc8f5",
+      "description": "US Pacific Command issues statement condemning DPRK's actions, reaffirming commitment to regional allies",
+      "branch_probability": 0.3058823529411765,
+      "parent_id": "b74c8296",
+      "depth": 2,
+      "parent_joint_probability": 0.20512820512820518,
+      "joint_probability": 0.0627450980392157,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Increased tensions lead to higher demand for safe-haven assets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

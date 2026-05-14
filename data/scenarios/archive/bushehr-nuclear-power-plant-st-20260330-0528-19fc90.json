@@ -1,0 +1,460 @@
+{
+  "scenario_id": "bushehr-nuclear-power-plant-st-20260330-0528-19fc90",
+  "trigger_event": "Bushehr nuclear power plant struck \u2014 radioactive release risk",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T05:28:54.835701+00:00",
+  "expires_at": "2026-04-02T05:28:54.835701+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "bushehr-_root": {
+      "node_id": "bushehr-_root",
+      "description": "Bushehr nuclear power plant struck \u2014 radioactive release risk",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "7167671f",
+        "a9a5d2f5",
+        "fd170451"
+      ],
+      "pruned_reason": ""
+    },
+    "7167671f": {
+      "node_id": "7167671f",
+      "description": "Iran declares emergency and scrambles to contain potential radioactive leak",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4444444444444445,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "TKF"
+          ],
+          "notes": "Potential disruption to regional energy supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 1.0
+        }
+      ],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "d6bdce81",
+        "8802d9ee",
+        "929c2dce"
+      ],
+      "pruned_reason": ""
+    },
+    "a9a5d2f5": {
+      "node_id": "a9a5d2f5",
+      "description": "International Atomic Energy Agency (IAEA) sends emergency inspection team to assess damage",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "IRAN"
+          ],
+          "notes": "Potential diplomatic fallout and increased tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "160c9aaf",
+        "451f2b39",
+        "a7687f06"
+      ],
+      "pruned_reason": ""
+    },
+    "fd170451": {
+      "node_id": "fd170451",
+      "description": "Regional oil markets experience price spike due to concerns over potential environmental disaster",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22222222222222224,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BNO"
+          ],
+          "notes": "Potential supply chain disruptions and increased costs"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "921c990c",
+        "01aba4bc",
+        "311c6207"
+      ],
+      "pruned_reason": ""
+    },
+    "d6bdce81": {
+      "node_id": "d6bdce81",
+      "description": "Iranian authorities successfully contain the damage, averting a major radioactive release",
+      "branch_probability": 0.6,
+      "parent_id": "7167671f",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.26666666666666666,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8802d9ee": {
+      "node_id": "8802d9ee",
+      "description": "Radioactive leak confirmed, prompting evacuation of nearby cities and a regional health crisis",
+      "branch_probability": 0.3,
+      "parent_id": "7167671f",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.13333333333333333,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "TKF"
+          ],
+          "notes": "Potential disruption to regional energy supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "929c2dce": {
+      "node_id": "929c2dce",
+      "description": "International community offers assistance, leading to a coordinated response and potential easing of tensions",
+      "branch_probability": 0.2,
+      "parent_id": "7167671f",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.0888888888888889,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Potential for increased cooperation and stability"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "160c9aaf": {
+      "node_id": "160c9aaf",
+      "description": "Iran declares Bushehr nuclear power plant a military target, escalating tensions with Western powers",
+      "branch_probability": 0.45,
+      "parent_id": "a9a5d2f5",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.15,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT",
+            "ENI"
+          ],
+          "notes": "Potential disruption to global energy supplies"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 1.0
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "451f2b39": {
+      "node_id": "451f2b39",
+      "description": "IAEA inspection team confirms radioactive release, prompting international calls for Iran to shut down the plant",
+      "branch_probability": 0.3,
+      "parent_id": "a9a5d2f5",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.09999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential long-term disruption to global energy supplies"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TRV",
+            "ALL"
+          ],
+          "notes": "Increased demand for insurance coverage"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a7687f06": {
+      "node_id": "a7687f06",
+      "description": "Iran refuses IAEA inspection team access, leading to international condemnation and potential economic sanctions",
+      "branch_probability": 0.25,
+      "parent_id": "a9a5d2f5",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.08333333333333333,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "IRAN"
+          ],
+          "notes": "Potential economic impact on Iran"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Currency devaluation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "921c990c": {
+      "node_id": "921c990c",
+      "description": "Iranian government confirms radioactive release, prompting regional evacuation and increased military presence",
+      "branch_probability": 0.45,
+      "parent_id": "fd170451",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.1,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Oil prices surge on supply concerns and potential for regional instability"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Defense stocks rise on anticipation of increased military spending"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 1.0
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "01aba4bc": {
+      "node_id": "01aba4bc",
+      "description": "Regional oil producers, including Saudi Arabia and Iraq, announce emergency meeting to discuss potential supply disruptions",
+      "branch_probability": 0.3,
+      "parent_id": "fd170451",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.06666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Oil prices rise on concerns over potential supply disruptions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 9.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "311c6207": {
+      "node_id": "311c6207",
+      "description": "International Atomic Energy Agency (IAEA) sends team to assess damage and provide assistance, easing market concerns",
+      "branch_probability": 0.25,
+      "parent_id": "fd170451",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.05555555555555556,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Oil prices retreat as concerns over radioactive release ease"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

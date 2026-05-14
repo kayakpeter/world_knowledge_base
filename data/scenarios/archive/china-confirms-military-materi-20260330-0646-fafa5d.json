@@ -1,0 +1,392 @@
+{
+  "scenario_id": "china-confirms-military-materi-20260330-0646-fafa5d",
+  "trigger_event": "China confirms military materiel supply to Iran \u2014 US imposes secondary sanctions",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T06:46:30.037718+00:00",
+  "expires_at": "2026-04-02T06:46:30.037718+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-co_root": {
+      "node_id": "china-co_root",
+      "description": "China confirms military materiel supply to Iran \u2014 US imposes secondary sanctions",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "df4b76fc",
+        "dec13222",
+        "71558b32"
+      ],
+      "pruned_reason": ""
+    },
+    "df4b76fc": {
+      "node_id": "df4b76fc",
+      "description": "Iran accelerates nuclear program development, citing 'existential threat' from US",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.34210526315789475,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "767fe1eb",
+        "94a8e6bc",
+        "99976527"
+      ],
+      "pruned_reason": ""
+    },
+    "dec13222": {
+      "node_id": "dec13222",
+      "description": "China retaliates with sanctions on US defense contractors, citing 'unacceptable interference'",
+      "branch_probability": 0.23684210526315788,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.23684210526315788,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Potential loss of sales and revenue for US defense contractors"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "5b9cce5f",
+        "4dbb6da4",
+        "221098c1"
+      ],
+      "pruned_reason": ""
+    },
+    "71558b32": {
+      "node_id": "71558b32",
+      "description": "EU and other nations condemn US secondary sanctions as 'unilateral overreach', sparking diplomatic tensions",
+      "branch_probability": 0.42105263157894735,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.42105263157894735,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Potential decline in US dollar value against major currencies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "ccdb0e2b",
+        "fb3af769",
+        "7ece21a7"
+      ],
+      "pruned_reason": ""
+    },
+    "767fe1eb": {
+      "node_id": "767fe1eb",
+      "description": "EU announces intention to invoke JCPOA dispute resolution mechanism, seeking to salvage nuclear deal",
+      "branch_probability": 0.4626865671641791,
+      "parent_id": "df4b76fc",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.15828750981932443,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT",
+            "RDSB"
+          ],
+          "notes": "Potential for reduced Iranian oil exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "94a8e6bc": {
+      "node_id": "94a8e6bc",
+      "description": "Israel launches preemptive airstrikes against Iranian nuclear facilities, citing 'imminent threat'",
+      "branch_probability": 0.23134328358208955,
+      "parent_id": "df4b76fc",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.07914375490966222,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "RTN",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems in the region"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NUCLEAR_POWER_PLANT",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "99976527": {
+      "node_id": "99976527",
+      "description": "Russia offers to mediate US-Iran talks, proposing a new diplomatic channel",
+      "branch_probability": 0.30597014925373134,
+      "parent_id": "df4b76fc",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.1046739984289081,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Potential for increased Russian influence in the region"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5b9cce5f": {
+      "node_id": "5b9cce5f",
+      "description": "US defense contractors experience significant losses as Chinese government cancels existing contracts and blacklists companies",
+      "branch_probability": 0.4235294117647059,
+      "parent_id": "dec13222",
+      "depth": 2,
+      "parent_joint_probability": 0.23684210526315788,
+      "joint_probability": 0.1003095975232198,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MAJOR",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Immediate impact on stock prices and future revenue projections"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4dbb6da4": {
+      "node_id": "4dbb6da4",
+      "description": "China's sanctions prompt US lawmakers to introduce legislation aimed at reducing dependence on Chinese components in defense supply chain",
+      "branch_probability": 0.24705882352941178,
+      "parent_id": "dec13222",
+      "depth": 2,
+      "parent_joint_probability": 0.23684210526315788,
+      "joint_probability": 0.05851393188854489,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Potential long-term benefits for US defense contractors with diversified supply chains"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "221098c1": {
+      "node_id": "221098c1",
+      "description": "Iranian military accelerates procurement of Chinese military equipment, citing 'strengthened strategic partnership'",
+      "branch_probability": 0.3294117647058824,
+      "parent_id": "dec13222",
+      "depth": 2,
+      "parent_joint_probability": 0.23684210526315788,
+      "joint_probability": 0.0780185758513932,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MINOR",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CASC"
+          ],
+          "notes": "Increased demand for Chinese military exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ccdb0e2b": {
+      "node_id": "ccdb0e2b",
+      "description": "EU announces plans to establish a special purpose vehicle (SPV) to facilitate legitimate trade with Iran, bypassing US sanctions",
+      "branch_probability": 0.3924050632911392,
+      "parent_id": "71558b32",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.16522318454363755,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.5,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "EU's move could weaken the US dollar"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fb3af769": {
+      "node_id": "fb3af769",
+      "description": "Iran threatens to withdraw from the Joint Comprehensive Plan of Action (JCPOA) and resume nuclear enrichment activities",
+      "branch_probability": 0.2594936708860759,
+      "parent_id": "71558b32",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.10926049300466352,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.2,
+          "tickers": [
+            "WTI"
+          ],
+          "notes": "Increased tensions could lead to oil price spike"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7ece21a7": {
+      "node_id": "7ece21a7",
+      "description": "China and Russia issue a joint statement condemning US sanctions and pledging support for Iran's 'sovereign rights'",
+      "branch_probability": 0.3481012658227848,
+      "parent_id": "71558b32",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.1465689540306462,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 6.8,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Escalating tensions could boost defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

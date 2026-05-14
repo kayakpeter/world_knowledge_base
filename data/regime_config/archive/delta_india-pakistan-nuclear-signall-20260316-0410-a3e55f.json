@@ -1,0 +1,9 @@
+{
+  "scenario_id": "india-pakistan-nuclear-signall-20260316-0410-a3e55f",
+  "trigger_event": "India-Pakistan nuclear signalling \u2014 Pakistan places strategic forces on alert",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T04:21:24.217042+00:00",
+  "defense_bonus": 2.333,
+  "currency_bonus": 1.451,
+  "energy_bonus": 1.29
+}

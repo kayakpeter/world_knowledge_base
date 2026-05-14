@@ -1,0 +1,10 @@
+{
+  "scenario_id": "fordow-underground-nuclear-fac-20260330-0539-fcc423",
+  "trigger_event": "Fordow underground nuclear facility struck \u2014 enrichment status unknown",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T05:50:48.713843+00:00",
+  "defense_bonus": 1.827,
+  "energy_bonus": 2.442,
+  "currency_bonus": 1.26,
+  "shipping_bonus": 1.0
+}
