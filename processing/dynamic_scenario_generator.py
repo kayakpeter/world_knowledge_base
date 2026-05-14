@@ -18,7 +18,7 @@ from typing import Any
 
 import openai
 
-from processing.scenario_engine import Scenario
+from processing.scenario_engine import Scenario, SCENARIO_REGISTRY
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +52,7 @@ def parse_scenario_json(content: str) -> list[Scenario]:
     try:
         raw = json.loads(content)
         scenarios = []
-        for i, item in enumerate(raw, start=51):  # start IDs after the 50 static ones
+        for i, item in enumerate(raw, start=max(s.scenario_id for s in SCENARIO_REGISTRY) + 1):  # dynamic IDs continue after the static registry's max ID
             try:
                 scenarios.append(Scenario(
                     scenario_id=i,

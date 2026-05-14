@@ -1,5 +1,5 @@
 """
-Scenario Engine — 50 scenarios from baseline to black swan.
+Scenario Engine — 65 scenarios from baseline to black swan.
 
 Each scenario has:
 - Probability estimate (refined by LLM)
@@ -29,7 +29,7 @@ class Scenario:
     severity: str = "medium"  # "low", "medium", "high", "critical"
 
 
-# ─── The 50 Scenarios ────────────────────────────────────────────────────────
+# ─── The 65 Scenarios ────────────────────────────────────────────────────────
 # Ordered by probability (most likely → black swan)
 
 SCENARIO_REGISTRY: list[Scenario] = [
@@ -76,7 +76,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=5, title="German Infrastructure Spend Ramps",
-        category="baseline", probability_12m=0.60,
+        category="baseline", probability_12m=0.52,
         description="€500B infrastructure and defense program begins material deployment",
         primary_channel="financial",
         affected_countries=["Germany", "Poland", "France", "Netherlands"],
@@ -98,7 +98,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=7, title="India Overtakes Germany GDP",
-        category="likely", probability_12m=0.55,
+        category="likely", probability_12m=0.40,
         description="India passes Germany in nominal GDP, accelerating emerging market weight shift",
         primary_channel="trade",
         affected_countries=["India", "Germany"],
@@ -108,7 +108,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=8, title="ECB Cuts Below 2%",
-        category="likely", probability_12m=0.40,
+        category="likely", probability_12m=0.25,
         description="European Central Bank cuts deposit rate below 2% on weak growth",
         primary_channel="financial",
         affected_countries=["Germany", "France", "Italy", "Spain", "Netherlands"],
@@ -118,7 +118,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=9, title="Oil Settles Below $55",
-        category="likely", probability_12m=0.20,  # updated 2026-03-05: Iran war materially reduces probability
+        category="likely", probability_12m=0.03,  # updated 2026-05-14: Brent $117 + structural oil horizon 2027 — sub-$55 needs regime reversal
         description="WTI/Brent settle mid-$50s on Venezuela supply and weak China demand",
         primary_channel="commodity",
         affected_countries=["Saudi Arabia", "Russia", "Canada", "Brazil", "United States"],
@@ -128,7 +128,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=10, title="BoJ Rate to 0.75%",
-        category="likely", probability_12m=0.45,
+        category="likely", probability_12m=0.65,
         description="Bank of Japan continues normalization to 0.75% policy rate",
         primary_channel="financial",
         affected_countries=["Japan", "United States", "South Korea"],
@@ -140,7 +140,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     # ── MODERATE (Prob 0.15 - 0.30) ──────────────────────────────────────
     Scenario(
         scenario_id=11, title="US-China Tech Decoupling Escalation",
-        category="moderate", probability_12m=0.30,
+        category="moderate", probability_12m=0.38,
         description="US expands semiconductor export controls; China retaliates with rare earth restrictions",
         primary_channel="trade",
         affected_countries=["United States", "China", "South Korea", "Netherlands", "Japan"],
@@ -180,7 +180,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=15, title="Indonesian Currency Crisis",
-        category="moderate", probability_12m=0.15,
+        category="moderate", probability_12m=0.40,
         description="Rupiah depreciates sharply on current account widening and capital flight",
         primary_channel="financial",
         affected_countries=["Indonesia", "India", "Brazil", "Turkey"],
@@ -210,7 +210,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=18, title="Saudi Vision 2030 Fiscal Strain",
-        category="moderate", probability_12m=0.25,
+        category="moderate", probability_12m=0.10,
         description="Oil revenue shortfall forces Saudi to issue significant sovereign debt",
         primary_channel="commodity",
         affected_countries=["Saudi Arabia"],
@@ -230,7 +230,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=20, title="USMCA Withdrawal Threat",
-        category="moderate", probability_12m=0.15,
+        category="moderate", probability_12m=0.10,
         description="US signals USMCA termination, creating supply chain uncertainty",
         primary_channel="trade",
         affected_countries=["United States", "Mexico", "Canada"],
@@ -242,7 +242,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     # ── UNLIKELY (Prob 0.05 - 0.15) ─────────────────────────────────────
     Scenario(
         scenario_id=21, title="Italian Sovereign Debt Crisis",
-        category="unlikely", probability_12m=0.10,
+        category="unlikely", probability_12m=0.13,
         description="Italian spread widens to 400bp+, triggering ECB Transmission Protection Instrument",
         primary_channel="financial",
         affected_countries=["Italy", "France", "Spain", "Germany"],
@@ -252,7 +252,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=22, title="Global Shipping Disruption",
-        category="unlikely", probability_12m=0.12,
+        category="unlikely", probability_12m=0.45,
         description="Major shipping chokepoint (Suez/Malacca) blockage lasting 2+ months",
         primary_channel="trade",
         affected_countries=["China", "Germany", "Japan", "South Korea", "Netherlands"],
@@ -282,7 +282,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=25, title="European Energy Shock (Gas Supply)",
-        category="unlikely", probability_12m=0.15,  # updated 2026-03-05: Iran war raises Gulf/LNG disruption risk
+        category="unlikely", probability_12m=0.50,  # updated 2026-05-14: EU_SECOND_ENERGY_CRISIS_4_YEARS confirmed — approaching realized
         description="LNG supply disruption forces European gas prices back above €100/MWh",
         primary_channel="commodity",
         affected_countries=["Germany", "France", "Italy", "Netherlands", "Poland"],
@@ -312,7 +312,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=28, title="Indian Banking Stress Event",
-        category="unlikely", probability_12m=0.08,
+        category="unlikely", probability_12m=0.10,
         description="Major Indian bank requires government intervention on hidden NPLs",
         primary_channel="financial",
         affected_countries=["India"],
@@ -322,7 +322,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=29, title="Australian Housing Correction",
-        category="unlikely", probability_12m=0.12,
+        category="unlikely", probability_12m=0.18,
         description="Australian housing prices correct 15%+ on rate sensitivity and China slowdown",
         primary_channel="financial",
         affected_countries=["Australia"],
@@ -332,7 +332,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=30, title="South Korean Semiconductor Disruption",
-        category="unlikely", probability_12m=0.07,
+        category="unlikely", probability_12m=0.12,
         description="Geopolitical event or natural disaster disrupts Korean semiconductor production",
         primary_channel="trade",
         affected_countries=["South Korea", "United States", "China", "Japan"],
@@ -342,19 +342,12 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
 
     # ── REMOTE/TAIL (Prob 0.02 - 0.05) ──────────────────────────────────
-    Scenario(
-        scenario_id=31, title="Fed Leadership Shock",
-        category="likely", probability_12m=0.45,  # updated 2026-03-05: Warsh nomination live; recategorized unlikely→likely
-        description="Warsh confirmed as Fed chair; implements rate cuts + growth-oriented policy shift",
-        primary_channel="financial",
-        affected_countries=["United States"],
-        affected_stats=["policy_rate", "yield_spread_10y3m", "real_rates"],
-        shock_magnitude=1.5, severity="high",
-        causal_chain=["powell_exits", "new_chair_surprises", "market_reprices"],
-    ),
+    # scenario_id=31 RETIRED 2026-05-14 — substantive duplicate of #52
+    # ("Warsh confirmed → Fed rate path"). ID gap intentional; downstream IDs
+    # not renumbered (get_scenarios_* iterate the list, never index by ID).
     Scenario(
         scenario_id=32, title="Russia-NATO Direct Confrontation",
-        category="unlikely", probability_12m=0.03,
+        category="unlikely", probability_12m=0.12,
         description="Military incident between Russia and NATO member escalates",
         primary_channel="political",
         affected_countries=["Russia", "Poland", "Germany", "United Kingdom", "France", "United States"],
@@ -364,7 +357,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=33, title="Dollar Hegemony Challenge",
-        category="moderate", probability_12m=0.20,  # updated 2026-03-05: 49 CBDC pilots, China yuan stablecoin push, EU MiCA barriers
+        category="moderate", probability_12m=0.27,  # updated 2026-05-14: PETRODOLLAR_CRACKS_FRAMING + RBI gold repatriation — de-dollarization narrative warmer
         description="BRICS payment system gains critical mass, reducing dollar reserve demand",
         primary_channel="financial",
         affected_countries=["United States", "China", "Russia", "India", "Brazil", "Saudi Arabia"],
@@ -387,7 +380,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=35, title="Taiwan Strait Crisis",
-        category="unlikely", probability_12m=0.04,
+        category="unlikely", probability_12m=0.08,
         description="Military escalation in Taiwan Strait disrupts global semiconductor supply",
         primary_channel="political",
         affected_countries=["China", "United States", "Japan", "South Korea", "Netherlands"],
@@ -399,7 +392,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     # ── BLACK SWAN (Prob < 0.02) ─────────────────────────────────────────
     Scenario(
         scenario_id=36, title="Cascading Sovereign Default Chain",
-        category="black_swan", probability_12m=0.015,
+        category="black_swan", probability_12m=0.025,
         description="One major EM default triggers contagion across multiple sovereigns",
         primary_channel="financial",
         affected_countries=["Turkey", "Brazil", "Indonesia", "Mexico", "India"],
@@ -409,7 +402,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=37, title="US Treasury Market Liquidity Crisis",
-        category="black_swan", probability_12m=0.02,
+        category="black_swan", probability_12m=0.035,
         description="Treasury market experiences flash crash or sustained illiquidity event",
         primary_channel="financial",
         affected_countries=["United States"],
@@ -442,7 +435,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=40, title="Correlated Natural Disaster Season",
-        category="black_swan", probability_12m=0.015,
+        category="black_swan", probability_12m=0.025,
         description="Multiple simultaneous major natural disasters overwhelm global response capacity",
         primary_channel="commodity",
         affected_countries=["Japan", "Indonesia", "United States", "Mexico"],
@@ -482,7 +475,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=44, title="Simultaneous EM Currency Crisis",
-        category="black_swan", probability_12m=0.015,
+        category="black_swan", probability_12m=0.05,
         description="Dollar strength triggers synchronized currency crises across multiple EMs",
         primary_channel="financial",
         affected_countries=["Turkey", "Brazil", "Indonesia", "India", "Mexico"],
@@ -515,7 +508,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=47, title="Runaway Sovereign Debt Spiral (US)",
-        category="black_swan", probability_12m=0.02,
+        category="black_swan", probability_12m=0.03,
         description="US interest costs exceed 30% of revenue, triggering buyer's strike",
         primary_channel="financial",
         affected_countries=["United States"],
@@ -525,7 +518,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=48, title="Petrodollar System Collapse",
-        category="black_swan", probability_12m=0.008,
+        category="black_swan", probability_12m=0.015,
         description="Saudi Arabia permanently shifts oil pricing away from USD",
         primary_channel="commodity",
         affected_countries=["United States", "Saudi Arabia", "China", "Russia"],
@@ -562,25 +555,24 @@ SCENARIO_REGISTRY: list[Scenario] = [
 
     # ── IRAN WAR + STABLECOIN LEGISLATIVE BATTLE (added 2026-03-05) ──────────
     Scenario(
-        scenario_id=51, title="Iran War: Hormuz Closure / Sustained Oil Disruption",
-        category="moderate", probability_12m=0.25,
+        scenario_id=51, title="Iran War: Hormuz Tollbooth Regime (Realized — Persistence)",
+        category="baseline", probability_12m=0.70,
         description=(
-            "Iran-Israel-US conflict escalates to sustained disruption of Strait of Hormuz, "
-            "cutting ~20% of global oil supply. Brent surges above $100, European gas nearly doubles. "
-            "War is live as of 2026-02-28 — this scenario tracks escalation beyond current state."
+            "REALIZED as of 2026-05. Iran-Israel-US multi-theater kinetic war with the "
+            "Strait of Hormuz under Iran dual-permanent-ops tollbooth at ~37% transit rate. "
+            "This scenario now tracks PERSISTENCE of the realized state over the next 12m "
+            "(absent a ceasefire); FURTHER escalation — full closure / Kharg destruction — "
+            "is scenario #60."
         ),
         primary_channel="commodity",
         affected_countries=["Iran", "United States", "Saudi Arabia", "UAE", "China", "Japan", "South Korea", "India", "Germany"],
         affected_stats=["oil_price", "inflation_cpi", "real_gdp_growth", "current_account_balance", "policy_rate"],
-        shock_magnitude=2.5, severity="critical",
+        shock_magnitude=1.5, severity="critical",
         causal_chain=[
-            "iran_war_escalates",
-            "hormuz_threatened_or_closed",
-            "oil_tankers_reroute_cape_of_good_hope",
-            "brent_spikes_above_100",
-            "global_inflation_surge",
-            "rate_cut_path_blocked",
-            "recession_risk_rises",
+            "hormuz_tollbooth_regime_realized",
+            "transit_rate_stabilized_~37pct",
+            "brent_floor_~95_ceiling_~130",
+            "regime_persists_absent_ceasefire",
         ],
     ),
     Scenario(
@@ -606,7 +598,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=53, title="Clarity Act Passes Pre-July Recess",
-        category="moderate", probability_12m=0.28,
+        category="moderate", probability_12m=0.18,
         description=(
             "US Clarity Act (crypto market structure) passes Senate before July 2026 recess. "
             "Unlocks tokenization of securities, establishes dollar stablecoin framework globally. "
@@ -628,7 +620,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=54, title="Clarity Act Stalls to 2027",
-        category="likely", probability_12m=0.52,
+        category="likely", probability_12m=0.62,
         description=(
             "Clarity Act fails to pass before July 2026 recess due to Iran war consuming "
             "political oxygen, banking lobby entrenchment, unresolved Trump ethics provisions, "
@@ -651,7 +643,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=55, title="Trump Political Crisis / Removal",
-        category="unlikely", probability_12m=0.08,
+        category="unlikely", probability_12m=0.11,
         description=(
             "Trump removed, resigns, or politically incapacitated due to convergence of: "
             "Iran war crimes accusations from Europe, DOJ-Powell debacle fallout, "
@@ -676,7 +668,7 @@ SCENARIO_REGISTRY: list[Scenario] = [
     ),
     Scenario(
         scenario_id=56, title="Global Defense Procurement Supercycle",
-        category="likely", probability_12m=0.60,
+        category="likely", probability_12m=0.75,
         description=(
             "Iran war demonstration effect triggers 5-10 year precision munitions procurement supercycle. "
             "Israel's iron dome depletion, Gulf states rearmament, NATO Article 3 stockpile concerns, "
@@ -760,6 +752,146 @@ SCENARIO_REGISTRY: list[Scenario] = [
             "ecb_digital_euro_wholesale_live",
             "asia_instant_settlement_non_dollar",
             "dollar_optional_in_some_corridors",
+        ],
+    ),
+
+    # ── MULTI-THEATER KINETIC TOPOLOGY (added 2026-05-14) ───────────────────
+    Scenario(
+        scenario_id=60, title="Iran War: Full Hormuz Closure / Kharg Destruction",
+        category="moderate", probability_12m=0.30,
+        description=(
+            "Escalation BEYOND the realized #51 tollbooth regime: the ~37%-transit "
+            "tollbooth breaks down into full closure, or Kharg Island crude-export "
+            "capacity is destroyed. Brent above $150; global recession trigger."
+        ),
+        primary_channel="commodity",
+        affected_countries=["Iran", "United States", "Saudi Arabia", "UAE", "China", "Japan", "South Korea", "India", "Germany"],
+        affected_stats=["oil_price", "inflation_cpi", "real_gdp_growth", "current_account_balance", "policy_rate"],
+        shock_magnitude=3.5, severity="critical",
+        causal_chain=[
+            "hormuz_tollbooth_regime_breaks_down",
+            "kharg_terminal_destroyed_or_full_closure",
+            "brent_above_150",
+            "global_inflation_spike",
+            "global_recession_trigger",
+        ],
+    ),
+    Scenario(
+        scenario_id=61, title="GCC States Enter as Open Belligerents",
+        category="moderate", probability_12m=0.30,
+        description=(
+            "KSA/UAE/Iraq covert anti-Iran operations (currently 3-theater covert) "
+            "become overt; Iran retaliates directly against GCC oil and economic "
+            "infrastructure, widening the war from bilateral to regional."
+        ),
+        primary_channel="political",
+        affected_countries=["Saudi Arabia", "UAE", "Iraq", "Iran", "United States", "China", "Japan", "South Korea", "India"],
+        affected_stats=["oil_price", "political_instability", "crude_output", "current_account_balance"],
+        shock_magnitude=2.5, severity="critical",
+        causal_chain=[
+            "gcc_covert_ops_exposed",
+            "gcc_declares_open_belligerent_status",
+            "iran_retaliates_gcc_oil_infrastructure",
+            "gulf_economic_infrastructure_degraded",
+            "oil_supply_shock_deepens",
+        ],
+    ),
+    Scenario(
+        scenario_id=62, title="US-China Direct Confrontation over Hormuz Blockade",
+        category="moderate", probability_12m=0.22,
+        description=(
+            "China's breach of the US Hormuz blockade escalates to direct US-China "
+            "naval confrontation. The live Trump-Xi summit track collapses; "
+            "Iran becomes a US-China great-power flashpoint."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "China", "Iran", "Japan", "South Korea", "Taiwan"],
+        affected_stats=["political_instability", "currency_volatility", "oil_price", "export_velocity"],
+        shock_magnitude=15.0, severity="critical",
+        causal_chain=[
+            "china_breaches_us_hormuz_blockade",
+            "us_interdicts_chinese_flagged_vessel",
+            "naval_standoff",
+            "trump_xi_summit_track_collapses",
+            "great_power_confrontation_priced",
+        ],
+    ),
+    Scenario(
+        scenario_id=63, title="Iran Nuclear Weaponization Breakout",
+        category="unlikely", probability_12m=0.12,
+        description=(
+            "Iran crosses the weaponization threshold — confirmed weapons-grade "
+            "enrichment or device assembly — post-strikes, with enrichment capacity "
+            "intact. Triggers an Israeli/US counterforce response."
+        ),
+        primary_channel="political",
+        affected_countries=["Iran", "Israel", "United States", "Saudi Arabia", "United Kingdom", "France", "Russia"],
+        affected_stats=["political_instability", "oil_price", "currency_volatility"],
+        shock_magnitude=25.0, severity="critical",
+        causal_chain=[
+            "enrichment_capacity_intact_post_strikes",
+            "weaponization_priority_confirmed",
+            "breakout_detected",
+            "israeli_us_counterforce_response",
+            "regional_war_escalates",
+        ],
+    ),
+    Scenario(
+        scenario_id=64, title="DPRK-Russia Strategic Nuclear Axis Hardens",
+        category="unlikely", probability_12m=0.15,
+        description=(
+            "Confirmed Russia-DPRK nuclear/strategic-materiel transfer deepens into "
+            "an operational strategic axis — DPRK capability leap, regional arms race, "
+            "accelerated Asia-Pacific rearmament."
+        ),
+        primary_channel="political",
+        affected_countries=["Russia", "North Korea", "South Korea", "Japan", "United States", "China"],
+        affected_stats=["political_instability", "currency_volatility", "defense_spending_pct_gdp"],
+        shock_magnitude=15.0, severity="critical",
+        causal_chain=[
+            "rus_dprk_nuclear_transfer_confirmed",
+            "dprk_capability_leap",
+            "regional_arms_race",
+            "asia_pacific_rearmament_accelerates",
+        ],
+    ),
+    Scenario(
+        scenario_id=65, title="Coordinated Multi-Theater Great-Power Stress",
+        category="moderate", probability_12m=0.25,
+        description=(
+            "The Iran, Russia-Ukraine/NATO and China-Taiwan theaters shift from "
+            "parallel to actively coordinated — adversary axis synchronization "
+            "overstretches US crisis-management capacity across theaters at once."
+        ),
+        primary_channel="political",
+        affected_countries=["United States", "Iran", "Russia", "China", "United Kingdom", "Germany", "Japan", "South Korea", "Poland"],
+        affected_stats=["political_instability", "currency_volatility", "real_gdp_growth", "defense_spending_pct_gdp"],
+        shock_magnitude=20.0, severity="critical",
+        causal_chain=[
+            "theaters_currently_parallel_not_coordinated",
+            "adversary_axis_coordination_emerges",
+            "us_capacity_overstretched",
+            "simultaneous_crisis_management_fails",
+        ],
+    ),
+    Scenario(
+        scenario_id=66, title="Disorderly Yen / BoJ-Fed FX Intervention Regime Breakdown",
+        category="moderate", probability_12m=0.30,
+        description=(
+            "The operational yen-intervention regime fails to hold; a disorderly JPY "
+            "move triggers a carry-trade unwind and global risk-off — distinct from "
+            "the orderly normalization of #10."
+        ),
+        primary_channel="financial",
+        affected_countries=["Japan", "United States", "South Korea", "Germany"],
+        affected_stats=["currency_volatility", "policy_rate", "yield_spread_10y3m"],
+        shock_magnitude=10.0, severity="high",
+        causal_chain=[
+            "yen_intervention_regime_operational",
+            "intervention_fails_to_hold",
+            "disorderly_jpy_move",
+            "carry_trade_unwinds",
+            "global_risk_off",
         ],
     ),
 ]
