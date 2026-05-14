@@ -133,7 +133,10 @@ class ScenarioExpander:
                 system_prompt=SYSTEM_PROMPT,
                 user_prompt=user_prompt,
                 temperature=0.3,
-                max_tokens=800,
+                # gemma4:31b is a thinking model — thinking tokens share this
+                # budget. <~3000 leaves no room for the ~2900-char fenced JSON
+                # output and content comes back empty (finish_reason=length).
+                max_tokens=4000,
             )
             raw_content = response.raw_text
         except Exception:

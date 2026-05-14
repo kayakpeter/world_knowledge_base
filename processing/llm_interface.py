@@ -159,7 +159,7 @@ class LocalModelProvider(BaseLLMProvider):
         system_prompt: str,
         user_prompt: str,
         temperature: float = 0.3,
-        max_tokens: int = 2000,
+        max_tokens: int = 4000,  # gemma4:31b thinking model — thinking tokens share this budget
     ) -> LLMResponse:
         import httpx
         async with httpx.AsyncClient(timeout=120.0) as client:
@@ -191,7 +191,7 @@ class LocalModelProvider(BaseLLMProvider):
         system_prompt: str,
         user_prompt: str,
         temperature: float = 0.1,
-        max_tokens: int = 2000,
+        max_tokens: int = 4000,  # gemma4:31b thinking model — thinking tokens share this budget
     ) -> dict:
         resp = await self.complete(
             system_prompt=system_prompt + "\n\nRespond ONLY with valid JSON. No markdown, no explanation.",
