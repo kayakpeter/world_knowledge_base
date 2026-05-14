@@ -22,6 +22,23 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 
+def _strip_code_fences(text: str) -> str:
+    """Remove markdown code fences from an LLM response.
+
+    gemma4:31b wraps JSON in ```json ... ``` fences; not all models do.
+    Handles both newline-delimited and inline fences; returns text unchanged
+    when no fence is present.
+    """
+    s = text.strip()
+    if not s.startswith("```"):
+        return s
+    s = s[3:]                       # drop opening ```
+    if s[:4].lower() == "json":     # drop optional language tag
+        s = s[4:]
+    s = s.rsplit("```", 1)[0]       # drop closing fence + any trailing text
+    return s.strip()
+
+
 @dataclass
 class LLMResponse:
     """Structured response from the LLM."""
@@ -113,12 +130,7 @@ class ClaudeAPIProvider(BaseLLMProvider):
             max_tokens=max_tokens,
         )
         try:
-            # Strip potential markdown fencing
-            text = resp.raw_text.strip()
-            if text.startswith("```"):
-                text = text.split("\n", 1)[1]
-                text = text.rsplit("```", 1)[0]
-            return json.loads(text)
+            return json.loads(_strip_code_fences(resp.raw_text))
         except json.JSONDecodeError as exc:
             logger.error("Failed to parse LLM JSON: %s\nRaw: %s", exc, resp.raw_text[:500])
             return {"error": str(exc), "raw": resp.raw_text[:500]}
@@ -188,11 +200,7 @@ class LocalModelProvider(BaseLLMProvider):
             max_tokens=max_tokens,
         )
         try:
-            text = resp.raw_text.strip()
-            if text.startswith("```"):
-                text = text.split("\n", 1)[1]
-                text = text.rsplit("```", 1)[0]
-            return json.loads(text)
+            return json.loads(_strip_code_fences(resp.raw_text))
         except json.JSONDecodeError as exc:
             logger.error("Failed to parse local model JSON: %s", exc)
             return {"error": str(exc), "raw": resp.raw_text[:500]}
