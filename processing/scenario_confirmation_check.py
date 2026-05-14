@@ -25,6 +25,7 @@ from pathlib import Path
 import httpx
 
 from processing.scenario_archiver import archive_expired_scenarios
+from config.agent_assignments import AGENT_ASSIGNMENTS
 
 logging.basicConfig(
     level=logging.INFO,
@@ -33,76 +34,76 @@ logging.basicConfig(
 )
 logger = logging.getLogger("scenario_confirmation")
 
-# ── Scenario assignments per agent ────────────────────────────────────────────
+# ── Watch-event scenarios — flat list, agent DERIVED from primary_country ─────
+# Per plan Rev 2.3: the per-agent assignment is derived from
+# AGENT_ASSIGNMENTS[primary_country], never hand-keyed — this makes routing
+# misroutes structurally impossible. `primary_country` is the ISO3 routing key;
+# `trigger` strings exactly match the event strings in run_scenario_update.sh
+# (the find_scenario_files() exact-match coupling). The 8 confirmed events are
+# already realized and are not confirmation-monitored here.
 
-AGENT_SCENARIOS: dict[str, list[dict]] = {
-    "apollo": [
-        {
-            "trigger": "B61-12 nuclear gravity bomb deployed to Middle East theater",
-            "search_terms": "B61 nuclear bomb Middle East deployed theater",
-            "key_entities": ["B61-12", "nuclear bomb", "Middle East deployment"],
-        },
-        {
-            "trigger": "Bushehr nuclear power plant struck — radioactive release risk",
-            "search_terms": "Bushehr nuclear power plant struck attack radiation",
-            "key_entities": ["Bushehr", "nuclear plant", "attack", "radiation"],
-        },
-        {
-            "trigger": "China confirms military materiel supply to Iran — US imposes secondary sanctions",
-            "search_terms": "China military weapons supply Iran secondary sanctions",
-            "key_entities": ["China", "Iran", "military supply", "secondary sanctions"],
-        },
-        {
-            "trigger": "China declares Taiwan Air Defense Identification Zone closure — warplanes breach median line",
-            "search_terms": "China Taiwan ADIZ closure warplanes median line",
-            "key_entities": ["China", "Taiwan", "ADIZ", "median line"],
-        },
-        {
-            "trigger": "Fordow underground nuclear facility struck — enrichment status unknown",
-            "search_terms": "Fordow nuclear facility struck attack enrichment",
-            "key_entities": ["Fordow", "nuclear facility", "struck", "enrichment"],
-        },
-        {
-            "trigger": "Iron Dome interceptor stockpile depleted — mass Israeli civilian casualties",
-            "search_terms": "Iron Dome depleted stockpile interceptors Israel casualties",
-            "key_entities": ["Iron Dome", "depleted", "Israeli casualties"],
-        },
-        {
-            "trigger": "Kharg Island second strike — Iran crude export terminal destroyed",
-            "search_terms": "Kharg Island strike attack Iran oil terminal",
-            "key_entities": ["Kharg Island", "strike", "Iran oil terminal"],
-        },
-        {
-            "trigger": "Mojtaba Khamenei confirmed killed — IRGC succession crisis",
-            "search_terms": "Mojtaba Khamenei killed dead IRGC succession",
-            "key_entities": ["Mojtaba Khamenei", "killed", "IRGC succession"],
-        },
-    ],
-    "hermes": [
-        {
-            "trigger": "IDF launches Lebanon ground invasion — 2006-scale operation",
-            "search_terms": "IDF Israel Lebanon ground invasion troops",
-            "key_entities": ["IDF", "Lebanon", "ground invasion"],
-        },
-        {
-            "trigger": "Iran mines Strait of Hormuz — commercial shipping blocked",
-            "search_terms": "Iran mines Strait Hormuz shipping blocked",
-            "key_entities": ["Iran", "mines", "Strait of Hormuz", "shipping blocked"],
-        },
-    ],
-    "hephaestus": [
-        {
-            "trigger": "India formally exits Iran war neutrality — aligns with US coalition",
-            "search_terms": "India exits neutrality Iran war US coalition alignment",
-            "key_entities": ["India", "neutrality", "Iran war", "US coalition"],
-        },
-        {
-            "trigger": "India-Pakistan nuclear signalling — Pakistan places strategic forces on alert",
-            "search_terms": "Pakistan nuclear forces alert India-Pakistan strategic",
-            "key_entities": ["Pakistan", "nuclear forces", "alert", "India-Pakistan"],
-        },
-    ],
-}
+WATCH_EVENTS: list[dict] = [
+    {"primary_country": "IRN",
+     "trigger": "Kharg second strike — Iran crude export capacity destroyed",
+     "search_terms": "Kharg Island second strike Iran crude export terminal destroyed",
+     "key_entities": ["Kharg Island", "second strike", "Iran crude terminal", "destroyed"]},
+    {"primary_country": "IRN",
+     "trigger": "Iran mines Strait of Hormuz — full commercial closure",
+     "search_terms": "Iran mines Strait Hormuz full commercial closure shipping",
+     "key_entities": ["Iran", "mines", "Strait of Hormuz", "full closure"]},
+    {"primary_country": "IRN",
+     "trigger": "Bushehr / Fordow nuclear facility strike — radioactive release risk",
+     "search_terms": "Bushehr Fordow nuclear facility struck radioactive release",
+     "key_entities": ["Bushehr", "Fordow", "nuclear facility struck", "radioactive release"]},
+    {"primary_country": "IRN",
+     "trigger": "B61-12 deployment to theater",
+     "search_terms": "B61 nuclear bomb Middle East deployed theater",
+     "key_entities": ["B61-12", "nuclear bomb", "Middle East deployment"]},
+    {"primary_country": "UAE",
+     "trigger": "UAE confirmed flips from victim to overt belligerent — Iran retaliates on UAE",
+     "search_terms": "UAE overt belligerent Iran retaliates UAE attack",
+     "key_entities": ["UAE", "belligerent", "Iran retaliation", "UAE attack"]},
+    {"primary_country": "RUS",
+     "trigger": "DPRK-Russia nuclear-materiel transfer operationalized",
+     "search_terms": "North Korea Russia nuclear materiel transfer confirmed",
+     "key_entities": ["DPRK", "Russia", "nuclear materiel transfer"]},
+    {"primary_country": "CHN",
+     "trigger": "Trump-Xi summit collapses — Iran-energy-trade tripartite fails",
+     "search_terms": "Trump Xi summit collapses fails Iran energy trade",
+     "key_entities": ["Trump-Xi summit", "collapse", "Iran-energy-trade tripartite"]},
+    {"primary_country": "JPN",
+     "trigger": "BoJ/MoF yen-intervention regime breaks down — disorderly JPY move",
+     "search_terms": "Bank of Japan yen intervention disorderly JPY carry trade",
+     "key_entities": ["BoJ", "MoF", "yen intervention", "disorderly JPY"]},
+    {"primary_country": "IRN",
+     "trigger": "Iran ballistic salvo breaches Israeli air defenses — mass casualties",
+     "search_terms": "Iran ballistic missile salvo breaches Israeli air defenses casualties",
+     "key_entities": ["Iran", "ballistic missile salvo", "Israeli air defenses", "civilian casualties"]},
+    {"primary_country": "ISR",
+     "trigger": "Iron Dome interceptor stockpile depleted",
+     "search_terms": "Iron Dome depleted stockpile interceptors Israel casualties",
+     "key_entities": ["Iron Dome", "depleted", "Israeli casualties"]},
+    {"primary_country": "IRN",
+     "trigger": "Correlated multi-theater stress — Iran + Ukraine + Taiwan simultaneity",
+     "search_terms": "Iran Ukraine Taiwan simultaneous crisis multi-theater",
+     "key_entities": ["multi-theater", "Iran", "Ukraine", "Taiwan", "simultaneity"]},
+    {"primary_country": "IND",
+     "trigger": "India formally exits war neutrality / Hormuz exemption revoked",
+     "search_terms": "India exits neutrality Iran war Hormuz exemption revoked",
+     "key_entities": ["India", "neutrality", "Hormuz exemption revoked"]},
+]
+
+# ── Per-agent assignments — DERIVED, never hand-keyed (plan Rev 2.3) ──────────
+# AGENT_ASSIGNMENTS only (no SECONDARY_ASSIGNMENTS): confirmation monitoring is
+# single-dispatch — a dual-dispatch would just duplicate the GDELT/Ollama call.
+AGENT_SCENARIOS: dict[str, list[dict]] = {}
+for _event in WATCH_EVENTS:
+    _agent = AGENT_ASSIGNMENTS[_event["primary_country"]]
+    AGENT_SCENARIOS.setdefault(_agent, []).append({
+        "trigger":      _event["trigger"],
+        "search_terms": _event["search_terms"],
+        "key_entities": _event["key_entities"],
+    })
 
 # ── GDELT search ──────────────────────────────────────────────────────────────
 
