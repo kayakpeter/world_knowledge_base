@@ -1,0 +1,1383 @@
+{
+  "scenario_id": "boj-mof-yen-intervention-regim-20260514-2125-9dca39",
+  "trigger_event": "BoJ/MoF yen-intervention regime breaks down \u2014 disorderly JPY move",
+  "severity": "HIGH",
+  "confirmed": false,
+  "created_at": "2026-05-14T21:25:18.735748+00:00",
+  "expires_at": "2026-05-17T21:25:18.735748+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "boj-mof-_root": {
+      "node_id": "boj-mof-_root",
+      "description": "BoJ/MoF yen-intervention regime breaks down \u2014 disorderly JPY move",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "646c708c",
+        "968db44d",
+        "e8173bf4"
+      ],
+      "pruned_reason": ""
+    },
+    "646c708c": {
+      "node_id": "646c708c",
+      "description": "Rapid JPY depreciation triggers massive carry trade liquidations and global volatility",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "boj-mof-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.48148148148148145,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "JPY plunges past psychological support levels as intervention is deemed ineffective."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Japanese Government Bond prices fall as investors flee the currency."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "52db5dee",
+        "1399ba2f",
+        "81886488"
+      ],
+      "pruned_reason": ""
+    },
+    "968db44d": {
+      "node_id": "968db44d",
+      "description": "BoJ implements emergency interest rate hike to halt currency collapse, shocking global bond markets",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "boj-mof-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2962962962962963,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Short-term corrective spike in JPY following emergency policy pivot."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Global yield curve shifts upward as JPY-funded assets are liquidated."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "ef00f86f",
+        "44c1bd3f",
+        "dc6ad6c6"
+      ],
+      "pruned_reason": ""
+    },
+    "e8173bf4": {
+      "node_id": "e8173bf4",
+      "description": "Broad 'risk-off' sentiment leads to flight to USD and gold, destabilizing G10 currency pairs",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "boj-mof-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2222222222222222,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Safe-haven demand increases for USD amidst JPY instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased hedging costs for multinational corporations with JPY exposure."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "04bd395e",
+        "9814c74d"
+      ],
+      "pruned_reason": ""
+    },
+    "52db5dee": {
+      "node_id": "52db5dee",
+      "description": "Forced deleveraging of global carry trades triggers a sharp sell-off in high-beta assets and US equities.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "646c708c",
+      "depth": 2,
+      "parent_joint_probability": 0.48148148148148145,
+      "joint_probability": 0.23182441700960216,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Violent JPY appreciation as traders close short positions to cover margins."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Surge in demand for volatility hedging and currency swaps."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "528b684d",
+        "143e5998"
+      ],
+      "pruned_reason": ""
+    },
+    "1399ba2f": {
+      "node_id": "1399ba2f",
+      "description": "Bank of Japan implements an emergency interest rate hike to halt disorderly currency depreciation.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "646c708c",
+      "depth": 2,
+      "parent_joint_probability": 0.48148148148148145,
+      "joint_probability": 0.1426611796982167,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Sharp rise in Japanese Government Bond yields following policy pivot."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Immediate support for JPY as rate differentials narrow."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d65516b7"
+      ],
+      "pruned_reason": ""
+    },
+    "81886488": {
+      "node_id": "81886488",
+      "description": "G7 central banks launch a coordinated intervention to stabilize the JPY and prevent systemic financial contagion.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "646c708c",
+      "depth": 2,
+      "parent_joint_probability": 0.48148148148148145,
+      "joint_probability": 0.10699588477366254,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Coordinated selling of USD to support JPY, reducing volatility."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Reduction in sovereign risk premiums as systemic stability is restored."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "e2b11d5c"
+      ],
+      "pruned_reason": ""
+    },
+    "ef00f86f": {
+      "node_id": "ef00f86f",
+      "description": "Global carry trade unwind triggers massive liquidation of US Treasuries and global equity indices.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "968db44d",
+      "depth": 2,
+      "parent_joint_probability": 0.2962962962962963,
+      "joint_probability": 0.1426611796982167,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "TLT",
+            "IEF"
+          ],
+          "notes": "Forced liquidation of JPY-funded long positions in US Treasuries to cover margin calls."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "JPY="
+          ],
+          "notes": "Rapid repatriation of capital into Yen as carry trades are closed."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "3b7dd0b0"
+      ],
+      "pruned_reason": ""
+    },
+    "44c1bd3f": {
+      "node_id": "44c1bd3f",
+      "description": "Extreme JPY volatility leads to a liquidity freeze in FX swap markets, stressing corporate hedging operations.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "968db44d",
+      "depth": 2,
+      "parent_joint_probability": 0.2962962962962963,
+      "joint_probability": 0.0877914951989026,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Bid-ask spreads widen significantly; liquidity evaporates in JPY crosses."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Surge in demand for currency hedging and volatility protection."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "dc6ad6c6": {
+      "node_id": "dc6ad6c6",
+      "description": "G7 central banks coordinate a joint intervention and policy statement to dampen JPY volatility and prevent systemic contagion.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "968db44d",
+      "depth": 2,
+      "parent_joint_probability": 0.2962962962962963,
+      "joint_probability": 0.06584362139917695,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY="
+          ],
+          "notes": "Coordinated selling of JPY to prevent an overshoot and stabilize global trade."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "TLT"
+          ],
+          "notes": "Stabilization of bond markets as panic selling is mitigated by G7 coordination."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "04bd395e": {
+      "node_id": "04bd395e",
+      "description": "Forced unwinding of JPY-funded carry trades triggers a systemic liquidity crunch and global equity sell-off.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "e8173bf4",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.10699588477366254,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Extreme volatility as traders liquidate assets to cover JPY margins."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Massive sell-off in Japanese Government Bonds to raise cash."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Surge in demand for currency hedging and volatility swaps."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9814c74d": {
+      "node_id": "9814c74d",
+      "description": "G7 central banks announce a coordinated multi-lateral intervention to stabilize the Yen and prevent systemic contagion.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "e8173bf4",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.06584362139917695,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Sharp reversal of JPY weakness following coordinated central bank action."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Restored confidence in G10 monetary cooperation stabilizes bond markets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "528b684d": {
+      "node_id": "528b684d",
+      "description": "Aggressive flight-to-safety rotation into US Treasuries and JPY safe-haven demand triggers a sharp drop in sovereign yields.",
+      "branch_probability": 0.5,
+      "parent_id": "52db5dee",
+      "depth": 3,
+      "parent_joint_probability": 0.23182441700960216,
+      "joint_probability": 0.11591220850480108,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "JPY spikes as carry trade unwinds and safe-haven demand peaks."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "TLT"
+          ],
+          "notes": "Flight to quality drives US Treasury prices up and yields down."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e4126577",
+        "91575ad1",
+        "78e89801"
+      ],
+      "pruned_reason": ""
+    },
+    "143e5998": {
+      "node_id": "143e5998",
+      "description": "Systemic liquidity crunch as margin calls on high-beta assets force the liquidation of unrelated liquid positions.",
+      "branch_probability": 0.3,
+      "parent_id": "52db5dee",
+      "depth": 3,
+      "parent_joint_probability": 0.23182441700960216,
+      "joint_probability": 0.06954732510288064,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Increased counterparty risk and volatility impact insurance capital requirements."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD demand spikes globally as firms scramble for dollar liquidity to cover margins."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "af19b4d5",
+        "2cbbe56b",
+        "919b99c6"
+      ],
+      "pruned_reason": ""
+    },
+    "d65516b7": {
+      "node_id": "d65516b7",
+      "description": "Rapid JPY appreciation triggers a systemic global carry trade unwind, causing extreme volatility in G10 currencies and global equities.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "1399ba2f",
+      "depth": 3,
+      "parent_joint_probability": 0.1426611796982167,
+      "joint_probability": 0.059442158207590294,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Violent appreciation as carry positions are liquidated."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Sharp rise in Japanese Government Bond yields."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "8634c258",
+        "11406300",
+        "562072a1"
+      ],
+      "pruned_reason": ""
+    },
+    "e2b11d5c": {
+      "node_id": "e2b11d5c",
+      "description": "G7 coordination successfully anchors the JPY, reducing volatility and restoring market confidence in the MoF's ability to manage the currency.",
+      "branch_probability": 0.47826086956521746,
+      "parent_id": "81886488",
+      "depth": 3,
+      "parent_joint_probability": 0.10699588477366254,
+      "joint_probability": 0.051171944891751656,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "JPY=X"
+          ],
+          "notes": "Stabilization of JPY value against USD/EUR following coordinated support."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "JGBS"
+          ],
+          "notes": "Reduction in risk premiums for Japanese Government Bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "309b90fb",
+        "388ecd37",
+        "e2d1e9f3"
+      ],
+      "pruned_reason": ""
+    },
+    "3b7dd0b0": {
+      "node_id": "3b7dd0b0",
+      "description": "Forced deleveraging and margin calls trigger a 'fire sale' of high-quality liquid assets (HQLA) to cover JPY liabilities.",
+      "branch_probability": 0.41935483870967744,
+      "parent_id": "ef00f86f",
+      "depth": 3,
+      "parent_joint_probability": 0.1426611796982167,
+      "joint_probability": 0.059825656002477974,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Extreme JPY appreciation as carry trades are forcibly closed."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "TLT",
+            "IEF"
+          ],
+          "notes": "Massive liquidation of US Treasuries to raise cash."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased volatility and counterparty risk exposure for global insurers."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "5e3e8f31",
+        "2783d21a",
+        "a1dd5f00"
+      ],
+      "pruned_reason": ""
+    },
+    "e4126577": {
+      "node_id": "e4126577",
+      "description": "Violent unwinding of JPY-funded carry trades triggers forced liquidation of global risk assets and equities.",
+      "branch_probability": 0.5,
+      "parent_id": "528b684d",
+      "depth": 4,
+      "parent_joint_probability": 0.11591220850480108,
+      "joint_probability": 0.05795610425240054,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Rapid JPY appreciation as carry trades are closed out."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "TLT"
+          ],
+          "notes": "Flight to safety drives US Treasury yields lower."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "91575ad1": {
+      "node_id": "91575ad1",
+      "description": "G7 finance ministers and central banks coordinate an emergency liquidity facility to stabilize JPY volatility.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "528b684d",
+      "depth": 4,
+      "parent_joint_probability": 0.11591220850480108,
+      "joint_probability": 0.03566529492455418,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "STABLE",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Intervention reduces volatility and halts the disorderly slide."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "TNX"
+          ],
+          "notes": "Yields stabilize as panic subsides."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "78e89801": {
+      "node_id": "78e89801",
+      "description": "Systemic liquidity freeze in JPY cross-currency swap markets leads to institutional funding stress.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "528b684d",
+      "depth": 4,
+      "parent_joint_probability": 0.11591220850480108,
+      "joint_probability": 0.02229080932784636,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "PPL"
+          ],
+          "notes": "Increased credit default swap premiums for JPY-exposed institutions."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Extreme volatility due to lack of liquidity in hedging instruments."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "af19b4d5": {
+      "node_id": "af19b4d5",
+      "description": "G7 central banks activate emergency currency swap lines to provide USD liquidity and halt the disorderly JPY spiral.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "143e5998",
+      "depth": 4,
+      "parent_joint_probability": 0.06954732510288064,
+      "joint_probability": 0.032289829512051726,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY=X"
+          ],
+          "notes": "Reduction in volatility as liquidity is injected into the system."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "STABLE",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Stabilization of Japanese Government Bond yields."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2cbbe56b": {
+      "node_id": "2cbbe56b",
+      "description": "Forced liquidation of liquid sovereign bond holdings (JGBs and USTs) to cover margin calls, causing a spike in global yields.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "143e5998",
+      "depth": 4,
+      "parent_joint_probability": 0.06954732510288064,
+      "joint_probability": 0.02235449735449735,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TNX",
+            "JGB"
+          ],
+          "notes": "Yields spike as massive volumes of bonds are dumped for cash."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USDJPY=X"
+          ],
+          "notes": "Extreme volatility as the carry trade unwind accelerates."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "919b99c6": {
+      "node_id": "919b99c6",
+      "description": "Contagion spreads to corporate credit markets, increasing borrowing costs for capital-intensive industrial and defense firms.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "143e5998",
+      "depth": 4,
+      "parent_joint_probability": 0.06954732510288064,
+      "joint_probability": 0.014902998236331566,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Equity prices drop due to increased cost of capital and risk-off sentiment."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Increased counterparty risk and volatility in balance sheet valuations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8634c258": {
+      "node_id": "8634c258",
+      "description": "Forced liquidation of global equity and sovereign bond portfolios to cover JPY margin calls, accelerating a global market sell-off.",
+      "branch_probability": 0.5,
+      "parent_id": "d65516b7",
+      "depth": 4,
+      "parent_joint_probability": 0.059442158207590294,
+      "joint_probability": 0.029721079103795147,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Short-covering feedback loop drives JPY to multi-year highs."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Forced selling of Treasuries to raise cash for JPY obligations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "11406300": {
+      "node_id": "11406300",
+      "description": "G7 central banks initiate coordinated currency interventions and liquidity swaps to dampen JPY volatility and prevent systemic collapse.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "d65516b7",
+      "depth": 4,
+      "parent_joint_probability": 0.059442158207590294,
+      "joint_probability": 0.018289894833104708,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Intervention creates a temporary ceiling on JPY appreciation."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "UST"
+          ],
+          "notes": "Market stabilizes as liquidity is injected via swap lines."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "562072a1": {
+      "node_id": "562072a1",
+      "description": "Severe liquidity freeze in the global repo market as JPY-denominated collateral faces extreme haircuts and margin spikes.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "d65516b7",
+      "depth": 4,
+      "parent_joint_probability": 0.059442158207590294,
+      "joint_probability": 0.01143118427069044,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "Extreme scarcity of JPY liquidity in offshore markets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Increased counterparty risk and solvency concerns for large hedge fund exposures."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "309b90fb": {
+      "node_id": "309b90fb",
+      "description": "Market equilibrium is restored as risk premiums on JPY-denominated assets compress and carry-trade volatility subsides.",
+      "branch_probability": 0.6,
+      "parent_id": "e2b11d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.051171944891751656,
+      "joint_probability": 0.030703166935050992,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "JPY="
+          ],
+          "notes": "Reduction in implied volatility and stabilization of spot rates."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "STABLE",
+          "magnitude": "LOW",
+          "magnitude_pct": 0.5,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Japanese Government Bond yields stabilize as currency panic eases."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "388ecd37": {
+      "node_id": "388ecd37",
+      "description": "The BoJ leverages G7 support to announce a fundamental shift in monetary policy, including a definitive interest rate hike to support the JPY.",
+      "branch_probability": 0.3,
+      "parent_id": "e2b11d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.051171944891751656,
+      "joint_probability": 0.015351583467525496,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "JPY="
+          ],
+          "notes": "Fundamental support from rate hikes drives JPY appreciation."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "JGB"
+          ],
+          "notes": "Yields rise in response to hawkish BoJ pivot."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e2d1e9f3": {
+      "node_id": "e2d1e9f3",
+      "description": "Speculators perceive the G7 coordination as a temporary ceiling, leading to a gradual build-up of short positions to test the new floor.",
+      "branch_probability": 0.2,
+      "parent_id": "e2b11d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.051171944891751656,
+      "joint_probability": 0.010234388978350332,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "JPY="
+          ],
+          "notes": "Return of volatility as markets test the limits of G7 intervention."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [],
+          "notes": "Increased demand for currency hedging and tail-risk insurance."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5e3e8f31": {
+      "node_id": "5e3e8f31",
+      "description": "Massive liquidation of US Treasuries by Japanese institutions to cover margins triggers a sharp spike in US long-term yields.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "3b7dd0b0",
+      "depth": 4,
+      "parent_joint_probability": 0.059825656002477974,
+      "joint_probability": 0.027776197429721917,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TLT",
+            "TNA"
+          ],
+          "notes": "Rapid sell-off of USTs leads to a surge in yields, destabilizing global bond pricing."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Extreme volatility in JPY as deleveraging accelerates."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2783d21a": {
+      "node_id": "2783d21a",
+      "description": "Margin call cascades spread to non-JPY positions, forcing broad liquidations across global equity and credit markets.",
+      "branch_probability": 0.25,
+      "parent_id": "3b7dd0b0",
+      "depth": 4,
+      "parent_joint_probability": 0.059825656002477974,
+      "joint_probability": 0.014956414000619494,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "JPY"
+          ],
+          "notes": "JPY strength spikes violently as carry trades are forcibly closed."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Flight to liquidity forces sales of even high-grade sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a1dd5f00": {
+      "node_id": "a1dd5f00",
+      "description": "Federal Reserve and BoJ activate emergency swap lines to provide USD liquidity and dampen JPY volatility.",
+      "branch_probability": 0.28571428571428575,
+      "parent_id": "3b7dd0b0",
+      "depth": 4,
+      "parent_joint_probability": 0.059825656002477974,
+      "joint_probability": 0.017093044572136566,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USDJPY"
+          ],
+          "notes": "Intervention provides a ceiling for JPY volatility and stabilizes exchange rates."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "TLT"
+          ],
+          "notes": "Reduced pressure on UST sales as liquidity is injected via central bank channels."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "e42d6236",
+      "description": "Rapid JPY depreciation causes an immediate spike in landed costs for energy and food imports, threatening Japanese domestic stability.",
+      "joint_probability": 0.04938271604938271,
+      "pruned_reason": "joint_probability=0.0494 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "1cb08484",
+      "description": "Emergency coordination between the Federal Reserve and BoJ to establish temporary liquidity swap lines to stabilize FX markets.",
+      "joint_probability": 0.04636488340192043,
+      "pruned_reason": "joint_probability=0.0464 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "abb40fe1",
+      "description": "JGB market experiences a liquidity crisis as yields spike, forcing the BoJ to implement emergency bond-buying to prevent a collapse.",
+      "joint_probability": 0.035665294924554176,
+      "pruned_reason": "joint_probability=0.0357 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "95a6c70d",
+      "description": "Japanese export-heavy sectors face a severe valuation shock due to the combined effect of higher borrowing costs and a stronger yen.",
+      "joint_probability": 0.047553726566072235,
+      "pruned_reason": "joint_probability=0.0476 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "97434d01",
+      "description": "Markets perceive the intervention as insufficient, accelerating the JPY sell-off and triggering a broader contagion across other Asian currencies.",
+      "joint_probability": 0.023259974950796205,
+      "pruned_reason": "joint_probability=0.0233 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a433ac95",
+      "description": "Rapid JPY appreciation following the intervention triggers a violent unwind of global carry trades, causing a liquidity shock in global equity and bond markets.",
+      "joint_probability": 0.032563964931114686,
+      "pruned_reason": "joint_probability=0.0326 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "42a061af",
+      "description": "G7 central banks activate emergency currency swap lines to mitigate USD/JPY liquidity shortages.",
+      "joint_probability": 0.036815788309217216,
+      "pruned_reason": "joint_probability=0.0368 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "2e814917",
+      "description": "Severe risk-off sentiment triggers a collapse in demand forecasts for industrial commodities and energy.",
+      "joint_probability": 0.046019735386521515,
+      "pruned_reason": "joint_probability=0.0460 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "bf33b561",
+      "description": "Massive unwind of JPY carry trades triggers a global risk-off event and sharp liquidation of foreign assets.",
+      "joint_probability": 0.04076033705663335,
+      "pruned_reason": "joint_probability=0.0408 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "5b228aae",
+      "description": "Bank of Japan implements emergency liquidity facilities to prevent systemic insolvency among corporate hedgers.",
+      "joint_probability": 0.02821869488536155,
+      "pruned_reason": "joint_probability=0.0282 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "2cd4f702",
+      "description": "Severe margin calls on JPY-denominated derivatives lead to credit rating downgrades for major Japanese exporters.",
+      "joint_probability": 0.018812463256907698,
+      "pruned_reason": "joint_probability=0.0188 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b7aad255",
+      "description": "Market confidence is restored as G7 coordination signals a hard floor for JPY, leading to a reduction in volatility.",
+      "joint_probability": 0.039506172839506165,
+      "pruned_reason": "joint_probability=0.0395 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c7aabac5",
+      "description": "The joint intervention is perceived as insufficient or 'too little too late,' leading to a resumption of the disorderly JPY slide.",
+      "joint_probability": 0.019753086419753083,
+      "pruned_reason": "joint_probability=0.0198 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "fafa46c5",
+      "description": "Rapid JPY volatility triggers a forced unwind of the 'Yen Carry Trade,' causing systemic liquidation in G7 sovereign bond markets.",
+      "joint_probability": 0.009876543209876541,
+      "pruned_reason": "joint_probability=0.0099 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "d07c9d67",
+      "description": "G7 central banks activate USD/JPY swap lines to provide liquidity and stabilize global funding markets.",
+      "joint_probability": 0.049676660787771894,
+      "pruned_reason": "joint_probability=0.0497 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "82e3766c",
+      "description": "Margin calls on JPY carry trades force aggressive liquidation of emerging market sovereign debt.",
+      "joint_probability": 0.026748971193415634,
+      "pruned_reason": "joint_probability=0.0267 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "20ea5986",
+      "description": "Global risk-off sentiment triggers a sharp collapse in industrial commodity prices due to growth fears.",
+      "joint_probability": 0.030570252792475015,
+      "pruned_reason": "joint_probability=0.0306 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "6a27f935",
+      "description": "Market perceives G7 commitment as credible, leading to a sharp reversal of JPY weakness and a reduction in volatility.",
+      "joint_probability": 0.039506172839506165,
+      "pruned_reason": "joint_probability=0.0395 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "0b239aee",
+      "description": "Rapid JPY appreciation triggers a systemic unwind of yen-funded carry trades, causing forced liquidations in global assets.",
+      "joint_probability": 0.019753086419753083,
+      "pruned_reason": "joint_probability=0.0198 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "5043cab2",
+      "description": "Market views the G7 intervention as insufficient against fundamental divergence, leading to a failed stabilization attempt.",
+      "joint_probability": 0.01316872427983539,
+      "pruned_reason": "joint_probability=0.0132 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

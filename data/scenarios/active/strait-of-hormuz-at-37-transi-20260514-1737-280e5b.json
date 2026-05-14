@@ -1,0 +1,3507 @@
+{
+  "scenario_id": "strait-of-hormuz-at-37-transi-20260514-1737-280e5b",
+  "trigger_event": "Strait of Hormuz at 37% transit under Iran dual-permanent-ops tollbooth",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-05-14T17:37:09.517238+00:00",
+  "expires_at": "2026-05-17T17:37:09.517238+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "strait-o_root": {
+      "node_id": "strait-o_root",
+      "description": "Strait of Hormuz at 37% transit under Iran dual-permanent-ops tollbooth",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "160da430",
+        "6e6ff977",
+        "f1882bbd"
+      ],
+      "pruned_reason": ""
+    },
+    "160da430": {
+      "node_id": "160da430",
+      "description": "US and Coalition forces initiate kinetic 'Freedom of Navigation' operations to dismantle the tollbooth infrastructure.",
+      "branch_probability": 0.3513513513513513,
+      "parent_id": "strait-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3513513513513513,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for precision munitions and naval surveillance assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "War premium added to Brent crude due to active combat in the strait."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums skyrocket for all vessels in the Persian Gulf."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "IRAN_COASTAL_DEFENSES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "408a33e3",
+        "387b8392",
+        "23ba8a28"
+      ],
+      "pruned_reason": ""
+    },
+    "6e6ff977": {
+      "node_id": "6e6ff977",
+      "description": "Commercial shipping underwriters declare the Strait a 'War Zone', leading to a de facto total closure for non-military vessels.",
+      "branch_probability": 0.4324324324324324,
+      "parent_id": "strait-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4324324324324324,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf tankers as supply chain breaks."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Immediate supply shock as 63% of transit is already blocked and remaining 37% becomes uninsurable."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Iranian Rial collapses under anticipation of sanctions/conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "7778d7f3",
+        "3832aeba",
+        "1b71201e"
+      ],
+      "pruned_reason": ""
+    },
+    "f1882bbd": {
+      "node_id": "f1882bbd",
+      "description": "GCC states maximize overland pipeline throughput to bypass the Strait, causing regional sovereign credit volatility.",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "strait-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2162162162162162,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on GCC sovereign debt due to proximity to conflict."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Price support from limited bypass capacity failing to meet global demand."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_WEST_PIPELINE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "4a5848af",
+        "a83abaf9",
+        "e804de4f"
+      ],
+      "pruned_reason": ""
+    },
+    "408a33e3": {
+      "node_id": "408a33e3",
+      "description": "Iran launches asymmetric swarm drone and missile attacks against commercial tankers to signal resolve and maintain leverage.",
+      "branch_probability": 0.65,
+      "parent_id": "160da430",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.22837837837837835,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Risk premium spikes due to direct threats to commercial shipping."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Freight rates surge as vessels demand higher risk premiums for Gulf entry."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for the Persian Gulf reach record highs."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "GULF_TANKER_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "c3124e37",
+        "09962388",
+        "ddc967b6"
+      ],
+      "pruned_reason": ""
+    },
+    "387b8392": {
+      "node_id": "387b8392",
+      "description": "Iran declares a total closure of the Strait and deploys sea mines to prevent Coalition transit, escalating to a full blockade.",
+      "branch_probability": 0.3,
+      "parent_id": "160da430",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.1054054054054054,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Immediate supply shock as 20% of global oil transit is halted."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Regional GCC sovereign bonds face sell-off due to war risk."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Volatility in regional currencies; flight to safe havens."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "67648197",
+        "6bf58fd0"
+      ],
+      "pruned_reason": ""
+    },
+    "23ba8a28": {
+      "node_id": "23ba8a28",
+      "description": "Kinetic operations successfully neutralize tollbooth assets with minimal Iranian counter-response, restoring transit flow.",
+      "branch_probability": 0.15,
+      "parent_id": "160da430",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.0527027027027027,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Removal of geopolitical risk premium as transit normalizes."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Normalization of freight rates as risk of seizure drops."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "8ea65e47"
+      ],
+      "pruned_reason": ""
+    },
+    "7778d7f3": {
+      "node_id": "7778d7f3",
+      "description": "Global crude oil prices spike violently as markets price in a total supply disruption from the Persian Gulf.",
+      "branch_probability": 0.45238095238095233,
+      "parent_id": "6e6ff977",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.19562419562419558,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate reaction to loss of ~20 million bpd capacity."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf vessels and risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for all regional transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "da649540",
+        "c3659b21",
+        "3f747601"
+      ],
+      "pruned_reason": ""
+    },
+    "3832aeba": {
+      "node_id": "3832aeba",
+      "description": "US and Coalition forces initiate military escort operations to force open the strait, increasing the risk of direct kinetic engagement.",
+      "branch_probability": 0.30952380952380953,
+      "parent_id": "6e6ff977",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.13384813384813385,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Further escalation of risk profiles for regional assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "11d2072b",
+        "fb444b5e"
+      ],
+      "pruned_reason": ""
+    },
+    "1b71201e": {
+      "node_id": "1b71201e",
+      "description": "GCC sovereign bonds face massive sell-offs as primary export revenue streams are frozen.",
+      "branch_probability": 0.23809523809523808,
+      "parent_id": "6e6ff977",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.10296010296010295,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Credit default swaps for Gulf states spike as revenue vanishes."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Pressure on pegged currencies due to loss of USD inflows."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "ae5d5b18"
+      ],
+      "pruned_reason": ""
+    },
+    "4a5848af": {
+      "node_id": "4a5848af",
+      "description": "Iran launches precision drone strikes against overland pipeline junctions to neutralize the GCC bypass strategy.",
+      "branch_probability": 0.26923076923076916,
+      "parent_id": "f1882bbd",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.058212058212058194,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock as bypass capacity is compromised."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for land-based energy assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Credit default swaps for GCC states spike due to infrastructure vulnerability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GCC_OVERLAND_PIPELINES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a83abaf9": {
+      "node_id": "a83abaf9",
+      "description": "Insurance underwriters declare the Strait a 'no-go' zone, effectively reducing the 37% transit to near zero.",
+      "branch_probability": 0.4230769230769231,
+      "parent_id": "f1882bbd",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.09147609147609147,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme scarcity of insured tonnage for the remaining transit window."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [],
+          "notes": "Unprecedented spike in war risk premiums."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Market prices in full 'closure' premium."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "59d0ad53"
+      ],
+      "pruned_reason": ""
+    },
+    "e804de4f": {
+      "node_id": "e804de4f",
+      "description": "US Navy initiates aggressive escort operations for the remaining 37% transit, leading to direct kinetic skirmishes.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "f1882bbd",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.06652806652806653,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense and missile systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength against regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "9a4084fd"
+      ],
+      "pruned_reason": ""
+    },
+    "c3124e37": {
+      "node_id": "c3124e37",
+      "description": "Major shipping insurers declare the Strait a high-risk war zone, triggering a total cessation of commercial tanker transit.",
+      "branch_probability": 0.5,
+      "parent_id": "408a33e3",
+      "depth": 3,
+      "parent_joint_probability": 0.22837837837837835,
+      "joint_probability": 0.11418918918918917,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 150.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for non-state backed vessels."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf vessels due to scarcity."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Immediate supply shock as 20% of global oil flow is halted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "b363bfa8",
+        "f4cc73ab",
+        "a0764421"
+      ],
+      "pruned_reason": ""
+    },
+    "09962388": {
+      "node_id": "09962388",
+      "description": "US and Coalition forces initiate kinetic retaliatory strikes against Iranian drone launch sites and naval assets.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "408a33e3",
+      "depth": 3,
+      "parent_joint_probability": 0.22837837837837835,
+      "joint_probability": 0.07027027027027026,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and precision munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk of full-scale regional war premiums added to crude."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Regional sovereign credit spreads widen significantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_COASTAL_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "43100b22",
+        "66694c9a",
+        "711e26d3"
+      ],
+      "pruned_reason": ""
+    },
+    "ddc967b6": {
+      "node_id": "ddc967b6",
+      "description": "Iran pivots to a 'managed flow' proposal, offering a ceasefire in exchange for formal recognition of toll payments.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "408a33e3",
+      "depth": 3,
+      "parent_joint_probability": 0.22837837837837835,
+      "joint_probability": 0.04391891891891891,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Safe haven flows compete with regional instability."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Price floor established by the 'toll' cost added to barrels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "222e3531",
+        "5620ac06",
+        "c38433e2"
+      ],
+      "pruned_reason": ""
+    },
+    "67648197": {
+      "node_id": "67648197",
+      "description": "Global energy markets enter a state of panic, triggering an immediate and massive spike in crude oil prices and tanker freight rates.",
+      "branch_probability": 0.45238095238095233,
+      "parent_id": "387b8392",
+      "depth": 3,
+      "parent_joint_probability": 0.1054054054054054,
+      "joint_probability": 0.047683397683397674,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to total blockade of the world's most critical oil chokepoint."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Freight rates skyrocket as vessels are trapped or rerouted; extreme risk premiums applied."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for the Persian Gulf become prohibitive, effectively halting commercial transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.98
+        }
+      ],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [
+        "35944512",
+        "f1ef55ed",
+        "98792881"
+      ],
+      "pruned_reason": ""
+    },
+    "6bf58fd0": {
+      "node_id": "6bf58fd0",
+      "description": "Coalition forces initiate high-intensity mine-clearing operations and naval escort missions to force a corridor open.",
+      "branch_probability": 0.3571428571428571,
+      "parent_id": "387b8392",
+      "depth": 3,
+      "parent_joint_probability": 0.1054054054054054,
+      "joint_probability": 0.03764478764478764,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval mine countermeasures and missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Insurance costs remain elevated despite military presence due to active combat risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "26305f5b",
+        "66fa5c7f",
+        "a72c0796"
+      ],
+      "pruned_reason": ""
+    },
+    "8ea65e47": {
+      "node_id": "8ea65e47",
+      "description": "Rapid restoration of commercial shipping traffic and collapse of geopolitical risk premiums in energy markets.",
+      "branch_probability": 0.65,
+      "parent_id": "23ba8a28",
+      "depth": 3,
+      "parent_joint_probability": 0.0527027027027027,
+      "joint_probability": 0.034256756756756754,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.5,
+          "tickers": [
+            "XLE",
+            "CL"
+          ],
+          "notes": "Price correction as supply constraints are removed."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "War risk premiums plummet as transit safety is restored."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Hull and Machinery (H&M) premiums for Hormuz transit normalize."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "26b74898",
+        "4d201202",
+        "68cc110d"
+      ],
+      "pruned_reason": ""
+    },
+    "da649540": {
+      "node_id": "da649540",
+      "description": "Marine insurance underwriters declare the Persian Gulf a high-risk zone, triggering an effective closure for commercial tankers.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "7778d7f3",
+      "depth": 3,
+      "parent_joint_probability": 0.19562419562419558,
+      "joint_probability": 0.0815100815100815,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 150.0,
+          "tickers": [],
+          "notes": "War risk premiums spike to prohibitive levels."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for non-Gulf vessels surge as ships are diverted."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Further price escalation due to physical delivery failure."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "6805b236",
+        "b584d5d7",
+        "dd43ae0a"
+      ],
+      "pruned_reason": ""
+    },
+    "c3659b21": {
+      "node_id": "c3659b21",
+      "description": "US and Coalition forces initiate kinetic operations to dismantle Iranian tollbooth infrastructure and restore free navigation.",
+      "branch_probability": 0.25,
+      "parent_id": "7778d7f3",
+      "depth": 3,
+      "parent_joint_probability": 0.19562419562419558,
+      "joint_probability": 0.048906048906048896,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and surveillance."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Immediate fear of total regional war overrides short-term supply hopes."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_COASTAL_BATTERIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "790fc52d",
+        "2f7e1c01",
+        "3a8c0239"
+      ],
+      "pruned_reason": ""
+    },
+    "3f747601": {
+      "node_id": "3f747601",
+      "description": "IEA and G7 nations coordinate a massive, synchronized release of Strategic Petroleum Reserves (SPR) to break the price spike.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "7778d7f3",
+      "depth": 3,
+      "parent_joint_probability": 0.19562419562419558,
+      "joint_probability": 0.06520806520806519,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Artificial supply increase attempts to dampen speculative volatility."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.0,
+          "tickers": [],
+          "notes": "Increased fiscal pressure on releasing nations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "68536419",
+        "dc862865",
+        "58c152c0"
+      ],
+      "pruned_reason": ""
+    },
+    "11d2072b": {
+      "node_id": "11d2072b",
+      "description": "Iran launches asymmetric drone and mine attacks against coalition escorts and escorted tankers to signal resolve.",
+      "branch_probability": 0.35,
+      "parent_id": "3832aeba",
+      "depth": 3,
+      "parent_joint_probability": 0.13384813384813385,
+      "joint_probability": 0.04684684684684685,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike in Brent crude due to direct kinetic engagement in the choke point."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme surge in spot rates for VLCCs as risk premiums skyrocket."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for Hormuz transit become prohibitive."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense and missile systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "8b9d2b8b",
+        "548207ac",
+        "a95b085c"
+      ],
+      "pruned_reason": ""
+    },
+    "fb444b5e": {
+      "node_id": "fb444b5e",
+      "description": "A strategic stalemate ensues where coalition escorts maintain presence but avoid firing, while Iran maintains the tollbooth.",
+      "branch_probability": 0.45,
+      "parent_id": "3832aeba",
+      "depth": 3,
+      "parent_joint_probability": 0.13384813384813385,
+      "joint_probability": 0.06023166023166023,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Sustained risk premium integrated into oil prices."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased voyage durations and insurance costs."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD amid regional instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "9b8821ad",
+        "8ef7ff6a",
+        "db5f65bd"
+      ],
+      "pruned_reason": ""
+    },
+    "ae5d5b18": {
+      "node_id": "ae5d5b18",
+      "description": "Global oil benchmarks spike violently as tanker insurance premiums soar and shipping lanes are rerouted.",
+      "branch_probability": 0.5,
+      "parent_id": "1b71201e",
+      "depth": 3,
+      "parent_joint_probability": 0.10296010296010295,
+      "joint_probability": 0.05148005148005148,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to restricted Hormuz transit."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates surge for non-Gulf vessels and high-risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "War risk premiums for Persian Gulf transit become prohibitive."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "cd766dc3",
+        "054079a6",
+        "b80b39f3"
+      ],
+      "pruned_reason": ""
+    },
+    "59d0ad53": {
+      "node_id": "59d0ad53",
+      "description": "Global crude oil and LNG spot prices surge violently due to the immediate removal of ~20% of global supply from the market.",
+      "branch_probability": 0.475,
+      "parent_id": "a83abaf9",
+      "depth": 3,
+      "parent_joint_probability": 0.09147609147609147,
+      "joint_probability": 0.04345114345114345,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock as Hormuz becomes impassable for commercial shipping."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme spike in spot rates for available tonnage outside the zone."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.98
+        }
+      ],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [
+        "589f151a",
+        "8705af93",
+        "21bfdad8"
+      ],
+      "pruned_reason": ""
+    },
+    "9a4084fd": {
+      "node_id": "9a4084fd",
+      "description": "Global financial markets trigger a 'flight to safety' as kinetic skirmishes signal a prolonged regional conflict.",
+      "branch_probability": 0.4545454545454546,
+      "parent_id": "e804de4f",
+      "depth": 3,
+      "parent_joint_probability": 0.06652806652806653,
+      "joint_probability": 0.030240030240030243,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Safe-haven demand drives up USD and CHF against emerging market currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased yields on GCC sovereign debt due to heightened geopolitical risk."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Speculative buying drives prices up ahead of actual supply disruptions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "900a6757",
+        "ff8940e7",
+        "8f79c309"
+      ],
+      "pruned_reason": ""
+    },
+    "b363bfa8": {
+      "node_id": "b363bfa8",
+      "description": "Global oil benchmarks experience a violent price surge as markets price in a total supply shock of ~20 million barrels per day.",
+      "branch_probability": 0.5757575757575758,
+      "parent_id": "c3124e37",
+      "depth": 4,
+      "parent_joint_probability": 0.11418918918918917,
+      "joint_probability": 0.06574529074529074,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate panic buying and hedging against total supply cutoff."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums skyrocket for all vessels in the Middle East."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety and USD strength as a reserve currency."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f4cc73ab": {
+      "node_id": "f4cc73ab",
+      "description": "US and Coalition forces initiate 'Operation Freedom of Navigation' to break the blockade via naval escorts.",
+      "branch_probability": 0.27272727272727276,
+      "parent_id": "c3124e37",
+      "depth": 4,
+      "parent_joint_probability": 0.11418918918918917,
+      "joint_probability": 0.031142506142506143,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval munitions and surveillance assets."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -50.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Complete collapse of spot rates for Hormuz-dependent routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a0764421": {
+      "node_id": "a0764421",
+      "description": "Iran launches preemptive strikes on regional oil infrastructure to deter coalition naval intervention.",
+      "branch_probability": 0.15151515151515152,
+      "parent_id": "c3124e37",
+      "depth": 4,
+      "parent_joint_probability": 0.11418918918918917,
+      "joint_probability": 0.0173013923013923,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Secondary supply shock from production facility damage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [],
+          "notes": "Total loss claims and policy cancellations for regional assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_KHURAIS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "43100b22": {
+      "node_id": "43100b22",
+      "description": "Iran declares a total blockade of the Strait of Hormuz in direct retaliation for kinetic strikes.",
+      "branch_probability": 0.35,
+      "parent_id": "09962388",
+      "depth": 4,
+      "parent_joint_probability": 0.07027027027027026,
+      "joint_probability": 0.02459459459459459,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to total transit cessation."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme spike in spot rates for available non-blocked tonnage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums surge to prohibitive levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "66694c9a": {
+      "node_id": "66694c9a",
+      "description": "Iranian proxies launch coordinated drone and missile strikes against regional oil production and export facilities.",
+      "branch_probability": 0.45,
+      "parent_id": "09962388",
+      "depth": 4,
+      "parent_joint_probability": 0.07027027027027026,
+      "joint_probability": 0.03162162162162162,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Price spike driven by physical capacity loss."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in GCC."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Claims surge for industrial property and business interruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ABQAIQ_KHURAIS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "711e26d3": {
+      "node_id": "711e26d3",
+      "description": "Iran maintains the 'tollbooth' operations but avoids further escalation to prevent full-scale war, leading to a high-tension stalemate.",
+      "branch_probability": 0.2,
+      "parent_id": "09962388",
+      "depth": 4,
+      "parent_joint_probability": 0.07027027027027026,
+      "joint_probability": 0.014054054054054053,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD amid regional instability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premiums on GCC sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "222e3531": {
+      "node_id": "222e3531",
+      "description": "US-led coalition rejects 'toll' as extortion, initiating military operations to forcibly restore freedom of navigation.",
+      "branch_probability": 0.55,
+      "parent_id": "ddc967b6",
+      "depth": 4,
+      "parent_joint_probability": 0.04391891891891891,
+      "joint_probability": 0.0241554054054054,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium spike due to direct kinetic conflict in the strait."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense and missile systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums surge to prohibitive levels for all Gulf transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5620ac06": {
+      "node_id": "5620ac06",
+      "description": "Fragmented compliance occurs as non-aligned nations and specific shipping firms begin paying tolls to resume critical imports.",
+      "branch_probability": 0.3,
+      "parent_id": "ddc967b6",
+      "depth": 4,
+      "parent_joint_probability": 0.04391891891891891,
+      "joint_probability": 0.013175675675675671,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates for 'toll-compliant' vessels skyrocket."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Price volatility persists as market splits between compliant and non-compliant flows."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c38433e2": {
+      "node_id": "c38433e2",
+      "description": "A temporary diplomatic freeze is established via Omani mediation to discuss the 'managed flow' framework, leading to a tentative ceasefire.",
+      "branch_probability": 0.2,
+      "parent_id": "ddc967b6",
+      "depth": 4,
+      "parent_joint_probability": 0.04391891891891891,
+      "joint_probability": 0.008783783783783783,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Partial relief rally as the immediate threat of total closure recedes."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Stabilization of GCC sovereign bonds as diplomatic channels reopen."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "35944512": {
+      "node_id": "35944512",
+      "description": "Global insurance underwriters declare the Persian Gulf a high-risk war zone, triggering a total cessation of commercial tanker traffic.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "67648197",
+      "depth": 4,
+      "parent_joint_probability": 0.047683397683397674,
+      "joint_probability": 0.017219004719004716,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for non-state actors."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 100.0,
+          "tickers": [
+            "STNG",
+            "FRO"
+          ],
+          "notes": "Extreme scarcity of available insured tonnage for the region."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Physical supply shock compounds financial panic."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f1ef55ed": {
+      "node_id": "f1ef55ed",
+      "description": "US-led coalition initiates naval escort operations to forcibly break the tollbooth and restore free navigation.",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "67648197",
+      "depth": 4,
+      "parent_joint_probability": 0.047683397683397674,
+      "joint_probability": 0.010596310596310596,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and missile defense systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk of direct kinetic conflict between US and Iran."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Regional sovereign debt volatility increases."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "98792881": {
+      "node_id": "98792881",
+      "description": "IEA member states coordinate a massive, synchronized release of Strategic Petroleum Reserves (SPR) to dampen price volatility.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "67648197",
+      "depth": 4,
+      "parent_joint_probability": 0.047683397683397674,
+      "joint_probability": 0.019868082368082365,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Artificial supply injection to counteract the Hormuz bottleneck."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety persists despite SPR release."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "26305f5b": {
+      "node_id": "26305f5b",
+      "description": "Iran launches asymmetric drone and missile strikes against coalition mine-clearing vessels to deter the corridor opening.",
+      "branch_probability": 0.45,
+      "parent_id": "6bf58fd0",
+      "depth": 4,
+      "parent_joint_probability": 0.03764478764478764,
+      "joint_probability": 0.01694015444015444,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike due to risk of total closure and direct military conflict."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit reach unprecedented levels."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense systems and munitions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "66fa5c7f": {
+      "node_id": "66fa5c7f",
+      "description": "Coalition forces successfully establish a limited, protected transit lane, partially restoring commercial flow.",
+      "branch_probability": 0.35,
+      "parent_id": "6bf58fd0",
+      "depth": 4,
+      "parent_joint_probability": 0.03764478764478764,
+      "joint_probability": 0.013175675675675673,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Increased spot rates for high-risk escorted voyages."
+        },
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Partial relief of supply shock as transit resumes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a72c0796": {
+      "node_id": "a72c0796",
+      "description": "Iran targets regional oil production facilities in Saudi Arabia or UAE to force coalition withdrawal from the Strait.",
+      "branch_probability": 0.2,
+      "parent_id": "6bf58fd0",
+      "depth": 4,
+      "parent_joint_probability": 0.03764478764478764,
+      "joint_probability": 0.007528957528957528,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Direct hit to production capacity creates global supply deficit."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on GCC sovereign debt."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Catastrophic loss claims for industrial infrastructure."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OIL_FIELDS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "26b74898": {
+      "node_id": "26b74898",
+      "description": "Rapid collapse of the 'war premium' leads to a sharp correction in crude oil futures and energy sector valuations.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "8ea65e47",
+      "depth": 4,
+      "parent_joint_probability": 0.034256756756756754,
+      "joint_probability": 0.015325391180654336,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE",
+            "CVX"
+          ],
+          "notes": "Immediate removal of geopolitical risk premium from Brent and WTI benchmarks."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "SAR",
+            "KWD"
+          ],
+          "notes": "Pressure on oil-exporting currencies as price expectations normalize."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4d201202": {
+      "node_id": "4d201202",
+      "description": "Massive surge of delayed tankers attempting simultaneous transit creates severe maritime congestion and logistical bottlenecks.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "8ea65e47",
+      "depth": 4,
+      "parent_joint_probability": 0.034256756756756754,
+      "joint_probability": 0.011719416785206258,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates drop as the urgency of 'emergency' shipping vanishes."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for the Persian Gulf collapse instantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "68cc110d": {
+      "node_id": "68cc110d",
+      "description": "Formalization of a new maritime security framework or diplomatic accord stabilizes long-term sovereign risk profiles.",
+      "branch_probability": 0.21052631578947367,
+      "parent_id": "8ea65e47",
+      "depth": 4,
+      "parent_joint_probability": 0.034256756756756754,
+      "joint_probability": 0.007211948790896159,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Improved credit outlook for regional GCC states due to reduced conflict probability."
+        },
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Reduced short-term demand for emergency regional security deployments."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6805b236": {
+      "node_id": "6805b236",
+      "description": "Global crude oil benchmarks experience a massive price spike as markets price in a total supply shock from the Persian Gulf.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "da649540",
+      "depth": 4,
+      "parent_joint_probability": 0.0815100815100815,
+      "joint_probability": 0.03646503646503646,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate reaction to the effective closure of the world's most critical oil chokepoint."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety and increased demand for USD to settle energy contracts."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b584d5d7": {
+      "node_id": "b584d5d7",
+      "description": "US and coalition forces initiate a naval convoy system to force commercial transit, increasing the risk of direct kinetic engagement.",
+      "branch_probability": 0.23684210526315788,
+      "parent_id": "da649540",
+      "depth": 4,
+      "parent_joint_probability": 0.0815100815100815,
+      "joint_probability": 0.0193050193050193,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums skyrocket for any vessel entering the Gulf of Oman."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "dd43ae0a": {
+      "node_id": "dd43ae0a",
+      "description": "Major Asian importers (China, India, Japan) trigger emergency strategic petroleum reserve (SPR) releases and pivot to long-haul Atlantic basin crude.",
+      "branch_probability": 0.3157894736842105,
+      "parent_id": "da649540",
+      "depth": 4,
+      "parent_joint_probability": 0.0815100815100815,
+      "joint_probability": 0.025740025740025735,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Ton-mile demand surges as tankers are rerouted from the Atlantic/US Gulf to Asia."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "WTI"
+          ],
+          "notes": "Increased pressure on non-Gulf crude sources."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "790fc52d": {
+      "node_id": "790fc52d",
+      "description": "Iran retaliates by deploying naval mines and swarm drone attacks against Coalition vessels and commercial tankers.",
+      "branch_probability": 0.5,
+      "parent_id": "c3659b21",
+      "depth": 4,
+      "parent_joint_probability": 0.048906048906048896,
+      "joint_probability": 0.024453024453024448,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium spike due to potential total closure of the Strait."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme surge in spot rates for VLCCs as risk premiums skyrocket."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit become prohibitive."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2f7e1c01": {
+      "node_id": "2f7e1c01",
+      "description": "Iranian proxies (Houthi/Hezbollah) launch coordinated strikes on Saudi and UAE oil production facilities to divert Coalition forces.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "c3659b21",
+      "depth": 4,
+      "parent_joint_probability": 0.048906048906048896,
+      "joint_probability": 0.016929016929016924,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Supply shock from production facility damage combined with transit risk."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in the region."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Pressure on GCC sovereign bonds due to instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OIL_INFRA",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3a8c0239": {
+      "node_id": "3a8c0239",
+      "description": "Coalition operations successfully neutralize tollbooth infrastructure with minimal Iranian escalation, leading to a restoration of transit.",
+      "branch_probability": 0.15384615384615385,
+      "parent_id": "c3659b21",
+      "depth": 4,
+      "parent_joint_probability": 0.048906048906048896,
+      "joint_probability": 0.007524007524007523,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Relief rally as the immediate threat of a permanent tollbooth is removed."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Normalization of routing expectations reduces immediate spot volatility."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "68536419": {
+      "node_id": "68536419",
+      "description": "Oil markets react positively to the SPR release, leading to a partial correction in crude prices and reduced panic buying.",
+      "branch_probability": 0.45,
+      "parent_id": "3f747601",
+      "depth": 4,
+      "parent_joint_probability": 0.06520806520806519,
+      "joint_probability": 0.029343629343629333,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Short-term supply shock mitigated by coordinated G7 release."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Reduced energy-driven inflation pressure on G7 currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "dc862865": {
+      "node_id": "dc862865",
+      "description": "Iran perceives the SPR release as a Western attempt to neutralize their leverage and escalates tollbooth operations to a full blockade.",
+      "branch_probability": 0.3,
+      "parent_id": "3f747601",
+      "depth": 4,
+      "parent_joint_probability": 0.06520806520806519,
+      "joint_probability": 0.019562419562419556,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "FRO",
+            "XLE"
+          ],
+          "notes": "Market realizes SPR is a finite buffer against a total closure."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers in the Gulf spike instantaneously."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased anticipation of direct military intervention to reopen the strait."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "58c152c0": {
+      "node_id": "58c152c0",
+      "description": "Markets dismiss the SPR release as a temporary band-aid, maintaining high price floors due to the structural risk of the blockade.",
+      "branch_probability": 0.25,
+      "parent_id": "3f747601",
+      "depth": 4,
+      "parent_joint_probability": 0.06520806520806519,
+      "joint_probability": 0.016302016302016296,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Increased demand for long-haul diversions and specialized high-risk transit."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Price floor remains high despite SPR injections."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8b9d2b8b": {
+      "node_id": "8b9d2b8b",
+      "description": "Coalition forces launch retaliatory precision strikes on Iranian drone launch sites and naval assets in the Gulf.",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "11d2072b",
+      "depth": 4,
+      "parent_joint_probability": 0.04684684684684685,
+      "joint_probability": 0.014538676607642126,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and precision munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Fear of total blockade drives crude prices to historic highs."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NAVAL_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "548207ac": {
+      "node_id": "548207ac",
+      "description": "Major shipping insurers declare the Strait a 'War Risk' zone, triggering Force Majeure and a total halt of commercial traffic.",
+      "branch_probability": 0.5172413793103449,
+      "parent_id": "11d2072b",
+      "depth": 4,
+      "parent_joint_probability": 0.04684684684684685,
+      "joint_probability": 0.024231127679403542,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums spike exponentially for any vessel entering the Gulf."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for non-Gulf tankers surge as global supply tightens."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Immediate market reaction to the physical cessation of flow."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a95b085c": {
+      "node_id": "a95b085c",
+      "description": "Iran expands asymmetric operations to include drone strikes on land-based oil terminals and pipeline hubs.",
+      "branch_probability": 0.1724137931034483,
+      "parent_id": "11d2072b",
+      "depth": 4,
+      "parent_joint_probability": 0.04684684684684685,
+      "joint_probability": 0.00807704255980118,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 35.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Direct hit to production capacity beyond just transit bottlenecks."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Expansion of risk coverage to land-based energy assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "REGIONAL_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9b8821ad": {
+      "node_id": "9b8821ad",
+      "description": "Insurance underwriters designate the Strait as a high-risk war zone, leading to a collapse in commercial transit despite the stalemate.",
+      "branch_probability": 0.5,
+      "parent_id": "fb444b5e",
+      "depth": 4,
+      "parent_joint_probability": 0.06023166023166023,
+      "joint_probability": 0.030115830115830116,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 150.0,
+          "tickers": [],
+          "notes": "War risk premiums surge, making transit economically unviable for non-state actors."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 45.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates spike as available tonnage avoids the region."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Brent crude premiums rise due to perceived supply insecurity."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8ef7ff6a": {
+      "node_id": "8ef7ff6a",
+      "description": "Iran implements 'Selective Access' protocols, denying entry to vessels from specific nations to leverage political concessions.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "fb444b5e",
+      "depth": 4,
+      "parent_joint_probability": 0.06023166023166023,
+      "joint_probability": 0.018532818532818535,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Credit default swaps for Gulf GCC states widen as regional stability deteriorates."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Market reacts to the weaponization of transit rights."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "db5f65bd": {
+      "node_id": "db5f65bd",
+      "description": "A tactical miscalculation between a coalition escort and an Iranian patrol boat triggers a localized kinetic skirmish.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "fb444b5e",
+      "depth": 4,
+      "parent_joint_probability": 0.06023166023166023,
+      "joint_probability": 0.011583011583011582,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and missile defense systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Immediate panic buying of crude on news of active combat."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 100.0,
+          "tickers": [],
+          "notes": "Immediate suspension of coverage for the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cd766dc3": {
+      "node_id": "cd766dc3",
+      "description": "US-led coalition initiates kinetic 'Freedom of Navigation' operations to dismantle the tollbooth, leading to naval skirmishes.",
+      "branch_probability": 0.36000000000000004,
+      "parent_id": "ae5d5b18",
+      "depth": 4,
+      "parent_joint_probability": 0.05148005148005148,
+      "joint_probability": 0.018532818532818535,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and naval defense systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "War premium added to benchmarks as supply risk shifts from restriction to total loss."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for non-state backed vessels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "054079a6": {
+      "node_id": "054079a6",
+      "description": "Severe currency devaluation and sovereign credit pressure in oil-importing emerging markets due to energy cost shocks.",
+      "branch_probability": 0.48,
+      "parent_id": "ae5d5b18",
+      "depth": 4,
+      "parent_joint_probability": 0.05148005148005148,
+      "joint_probability": 0.024710424710424707,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "INR",
+            "TRY"
+          ],
+          "notes": "Rapid capital flight from energy-dependent emerging economies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads widen for major Asian and European importers."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b80b39f3": {
+      "node_id": "b80b39f3",
+      "description": "Iran escalates from a 'tollbooth' to a full blockade in response to Western sanctions or military posturing.",
+      "branch_probability": 0.16000000000000003,
+      "parent_id": "ae5d5b18",
+      "depth": 4,
+      "parent_joint_probability": 0.05148005148005148,
+      "joint_probability": 0.008236808236808238,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Immediate removal of 20% of global oil supply from market."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Extreme spike in spot rates for available non-Gulf tonnage."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "589f151a": {
+      "node_id": "589f151a",
+      "description": "US-led coalition initiates military operations to forcibly break the Iranian tollbooth and restore free navigation.",
+      "branch_probability": 0.25,
+      "parent_id": "59d0ad53",
+      "depth": 4,
+      "parent_joint_probability": 0.04345114345114345,
+      "joint_probability": 0.010862785862785862,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate surge in demand for precision munitions and naval defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit become prohibitive."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Price volatility increases due to risk of direct conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8705af93": {
+      "node_id": "8705af93",
+      "description": "Global energy markets enter a liquidity crisis as spot prices trigger massive margin calls and force majeure declarations.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "59d0ad53",
+      "depth": 4,
+      "parent_joint_probability": 0.04345114345114345,
+      "joint_probability": 0.015690690690690692,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "JPY",
+            "EUR"
+          ],
+          "notes": "Oil-importing currencies crash against USD due to trade deficit shocks."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf vessels as routes are rerouted."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "P&I clubs implement emergency surcharges."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "21bfdad8": {
+      "node_id": "21bfdad8",
+      "description": "IEA member states coordinate an emergency release of Strategic Petroleum Reserves (SPR) to dampen price volatility.",
+      "branch_probability": 0.3888888888888889,
+      "parent_id": "59d0ad53",
+      "depth": 4,
+      "parent_joint_probability": 0.04345114345114345,
+      "joint_probability": 0.016897666897666898,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Short-term price correction as artificial supply is injected."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.0,
+          "tickers": [],
+          "notes": "Increased fiscal pressure on importing nations to manage reserve costs."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "900a6757": {
+      "node_id": "900a6757",
+      "description": "Insurance underwriters declare the Gulf a 'war zone', triggering a total effective closure as commercial vessels refuse transit.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "9a4084fd",
+      "depth": 4,
+      "parent_joint_probability": 0.030240030240030243,
+      "joint_probability": 0.01008001008001008,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock as 60% of global LNG and oil transit halts."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates skyrocket due to extreme risk premiums and vessel scarcity."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "War risk premiums surge to unprecedented levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ff8940e7": {
+      "node_id": "ff8940e7",
+      "description": "Kinetic skirmishes escalate into targeted strikes on regional oil export terminals and processing plants.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "9a4084fd",
+      "depth": 4,
+      "parent_joint_probability": 0.030240030240030243,
+      "joint_probability": 0.006720006720006721,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Loss of production capacity adds to the transit restriction shock."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional missile defense and naval assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Regional credit spreads widen as geopolitical risk peaks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_EXPORT_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8f79c309": {
+      "node_id": "8f79c309",
+      "description": "Intensified flight to safety triggers a collapse in regional currency valuations and a spike in sovereign bond yields.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "9a4084fd",
+      "depth": 4,
+      "parent_joint_probability": 0.030240030240030243,
+      "joint_probability": 0.013440013440013441,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Rapid devaluation of regional currencies against USD/CHF."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Sell-off in regional sovereign debt as investors flee to US Treasuries."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "edbfbd49",
+      "description": "Coalition or regional allies launch precision retaliatory strikes against Iranian oil export terminals and naval assets to break the blockade.",
+      "joint_probability": 0.020077220077220074,
+      "pruned_reason": "joint_probability=0.0201 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "e6e594f2",
+      "description": "Iran pivots to asymmetric warfare, deploying naval mines or swarm drones to disrupt the restored flow.",
+      "joint_probability": 0.013175675675675675,
+      "pruned_reason": "joint_probability=0.0132 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "fd0ff6cc",
+      "description": "Iranian leadership initiates emergency diplomatic channels to avoid further kinetic degradation of strategic assets.",
+      "joint_probability": 0.007905405405405404,
+      "pruned_reason": "joint_probability=0.0079 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "767e9411",
+      "description": "The show of force compels Iran to enter emergency diplomatic negotiations to establish a temporary 'safe transit' corridor.",
+      "joint_probability": 0.02676962676962677,
+      "pruned_reason": "joint_probability=0.0268 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "36217e61",
+      "description": "US-led coalition initiates military operations to break the 'tollbooth' and restore free navigation.",
+      "joint_probability": 0.027456027456027453,
+      "pruned_reason": "joint_probability=0.0275 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "368ed96d",
+      "description": "Credit rating agencies issue mass downgrades for GCC sovereigns, triggering forced liquidations of regional assets.",
+      "joint_probability": 0.02402402402402402,
+      "pruned_reason": "joint_probability=0.0240 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "cfe758f8",
+      "description": "Global energy markets react to the neutralization of GCC bypass routes, triggering a massive spike in Brent crude and insurance premiums.",
+      "joint_probability": 0.026042236568552347,
+      "pruned_reason": "joint_probability=0.0260 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "49676667",
+      "description": "US and Coalition forces launch immediate retaliatory precision strikes against Iranian drone launch facilities and C2 nodes.",
+      "joint_probability": 0.019914651493598858,
+      "pruned_reason": "joint_probability=0.0199 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "c7583283",
+      "description": "Critical failure of the East-West Pipeline leads to a total cessation of overland oil exports for the affected GCC states.",
+      "joint_probability": 0.012255170149906987,
+      "pruned_reason": "joint_probability=0.0123 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "be372061",
+      "description": "US and coalition forces initiate emergency naval escorts to force open the strait, increasing the risk of direct kinetic engagement.",
+      "joint_probability": 0.029729729729729728,
+      "pruned_reason": "joint_probability=0.0297 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "1492f06b",
+      "description": "Credit rating agencies issue warnings or downgrades for Gulf sovereign debt as export revenues are frozen.",
+      "joint_probability": 0.018295218295218293,
+      "pruned_reason": "joint_probability=0.0183 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "0c2f36bc",
+      "description": "Iran declares a total closure of the Strait of Hormuz and deploys naval mines in response to US kinetic actions.",
+      "joint_probability": 0.014112014112014112,
+      "pruned_reason": "joint_probability=0.0141 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "f3e936c8",
+      "description": "Coordinated Houthi and Iranian-backed proxy strikes target shipping in the Bab el-Mandeb to overstretch US Navy assets.",
+      "joint_probability": 0.02217602217602218,
+      "pruned_reason": "joint_probability=0.0222 < floor=0.0300 (severity=CRITICAL)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

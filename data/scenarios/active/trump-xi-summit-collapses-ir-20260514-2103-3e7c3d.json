@@ -1,0 +1,1985 @@
+{
+  "scenario_id": "trump-xi-summit-collapses-ir-20260514-2103-3e7c3d",
+  "trigger_event": "Trump-Xi summit collapses \u2014 Iran-energy-trade tripartite fails",
+  "severity": "HIGH",
+  "confirmed": false,
+  "created_at": "2026-05-14T21:03:56.581087+00:00",
+  "expires_at": "2026-05-17T21:03:56.581087+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "trump-xi_root": {
+      "node_id": "trump-xi_root",
+      "description": "Trump-Xi summit collapses \u2014 Iran-energy-trade tripartite fails",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "15fd1e20",
+        "9cd91126",
+        "732ca358"
+      ],
+      "pruned_reason": ""
+    },
+    "15fd1e20": {
+      "node_id": "15fd1e20",
+      "description": "Immediate global energy market volatility and risk premium spike due to perceived instability in the Persian Gulf.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "trump-xi_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.42857142857142855,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.5,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Speculative buying driven by fear of renewed 'Maximum Pressure' campaign."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.2,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety following diplomatic collapse."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "d804e9f7",
+        "511f79dd",
+        "0fded276"
+      ],
+      "pruned_reason": ""
+    },
+    "9cd91126": {
+      "node_id": "9cd91126",
+      "description": "US Treasury announces aggressive enforcement of secondary sanctions on entities facilitating Iranian energy exports to China.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "trump-xi_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3428571428571428,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Reduced volume of sanctioned Iranian crude shipments."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "IRN"
+          ],
+          "notes": "Increased default risk for Iranian state obligations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "0310ead7",
+        "9583aa1f",
+        "b3bf28ab"
+      ],
+      "pruned_reason": ""
+    },
+    "732ca358": {
+      "node_id": "732ca358",
+      "description": "Iran initiates naval exercises and increases IRGC activity in the Strait of Hormuz as a signal of diplomatic frustration.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "trump-xi_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22857142857142856,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LLR"
+          ],
+          "notes": "War risk premiums for tankers in the Gulf surge."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional security assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "fd9332d4",
+        "e1ac05cb"
+      ],
+      "pruned_reason": ""
+    },
+    "d804e9f7": {
+      "node_id": "d804e9f7",
+      "description": "Iranian naval forces increase patrols and conduct drills in the Strait of Hormuz as a signal of leverage.",
+      "branch_probability": 0.35,
+      "parent_id": "15fd1e20",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.15,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Risk premium spike due to potential supply disruption."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Increased freight rates for high-risk zone transit."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers in the Gulf surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "80f354cb",
+        "50079339"
+      ],
+      "pruned_reason": ""
+    },
+    "511f79dd": {
+      "node_id": "511f79dd",
+      "description": "Rapid oil price surge triggers currency volatility and sovereign risk spikes for energy-importing emerging markets.",
+      "branch_probability": 0.55,
+      "parent_id": "15fd1e20",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.2357142857142857,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "INR",
+            "TRY"
+          ],
+          "notes": "Flight to safety in USD; pressure on EM currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Increased borrowing costs for oil-dependent importers."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Immediate upward pressure on Brent and WTI futures."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "6cd835e5",
+        "f54ab3fe",
+        "a89a5c91"
+      ],
+      "pruned_reason": ""
+    },
+    "0fded276": {
+      "node_id": "0fded276",
+      "description": "Coordinated cyber-attacks target regional energy distribution hubs to exacerbate geopolitical instability.",
+      "branch_probability": 0.2,
+      "parent_id": "15fd1e20",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.08571428571428572,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Panic buying due to infrastructure uncertainty."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Cyber-insurance claims and premium adjustments."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for cyber-defense and surveillance."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_ENERGY_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0310ead7": {
+      "node_id": "0310ead7",
+      "description": "Iran initiates asymmetric naval harassment in the Strait of Hormuz to signal leverage against sanctions.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "9cd91126",
+      "depth": 2,
+      "parent_joint_probability": 0.3428571428571428,
+      "joint_probability": 0.11020408163265305,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Immediate risk premium added to crude prices due to potential supply disruption."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Spot rates for VLCCs spike as risk premiums are added to regional voyages."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers transiting the Gulf surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "b5e7f5ce"
+      ],
+      "pruned_reason": ""
+    },
+    "9583aa1f": {
+      "node_id": "9583aa1f",
+      "description": "China announces a temporary suspension of Iranian crude imports to avoid US secondary sanctions.",
+      "branch_probability": 0.25,
+      "parent_id": "9cd91126",
+      "depth": 2,
+      "parent_joint_probability": 0.3428571428571428,
+      "joint_probability": 0.0857142857142857,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Removal of Iranian barrels from the global market creates immediate supply tightness."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Market reflects increased trade tension and potential for further US-China economic decoupling."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b3bf28ab": {
+      "node_id": "b3bf28ab",
+      "description": "Global financial markets price in a systemic escalation of the US-China trade war and Iranian instability.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "9cd91126",
+      "depth": 2,
+      "parent_joint_probability": 0.3428571428571428,
+      "joint_probability": 0.14693877551020404,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Flight to quality increases demand for US Treasuries while emerging market bonds sell off."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD strengthens as a safe-haven asset amid geopolitical volatility."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased anticipation of regional military buildup in the Persian Gulf."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "36cb314c"
+      ],
+      "pruned_reason": ""
+    },
+    "fd9332d4": {
+      "node_id": "fd9332d4",
+      "description": "Global energy markets react to IRGC activity with a sharp spike in Brent crude and shipping insurance premiums.",
+      "branch_probability": 0.46875,
+      "parent_id": "732ca358",
+      "depth": 2,
+      "parent_joint_probability": 0.22857142857142856,
+      "joint_probability": 0.10714285714285714,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.5,
+          "tickers": [
+            "USO",
+            "XLE"
+          ],
+          "notes": "Risk premium added due to potential supply disruption in Hormuz."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers transiting the Gulf surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e1ac05cb": {
+      "node_id": "e1ac05cb",
+      "description": "US Central Command increases naval presence and conducts freedom of navigation operations to deter IRGC.",
+      "branch_probability": 0.34375,
+      "parent_id": "732ca358",
+      "depth": 2,
+      "parent_joint_probability": 0.22857142857142856,
+      "joint_probability": 0.07857142857142857,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased operational tempo and potential for short-term procurement spikes."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [],
+          "notes": "Increased geopolitical risk premium for Middle Eastern sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "80f354cb": {
+      "node_id": "80f354cb",
+      "description": "US Fifth Fleet increases readiness and conducts Freedom of Navigation Operations (FONOPs) in response to drills.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "d804e9f7",
+      "depth": 3,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.054166666666666675,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased anticipation of regional security contracts and hardware deployment."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD amid rising geopolitical tension."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "4f5c04e0",
+        "bbea888a",
+        "68ab6671"
+      ],
+      "pruned_reason": ""
+    },
+    "50079339": {
+      "node_id": "50079339",
+      "description": "Market panic triggers a 'war premium' in oil prices despite no actual kinetic closure of the strait.",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "d804e9f7",
+      "depth": 3,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.06666666666666667,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative buying driven by fear of total strait closure."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased yields on regional GCC sovereign debt due to risk profile."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "e11413a8",
+        "e9bb5d9e",
+        "8c51b2fa"
+      ],
+      "pruned_reason": ""
+    },
+    "6cd835e5": {
+      "node_id": "6cd835e5",
+      "description": "Coordinated G7 strategic petroleum reserve (SPR) releases to dampen oil price volatility and stabilize emerging market currencies.",
+      "branch_probability": 0.45,
+      "parent_id": "511f79dd",
+      "depth": 3,
+      "parent_joint_probability": 0.2357142857142857,
+      "joint_probability": 0.10607142857142857,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Increased supply offsets geopolitical premium."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "EMFX"
+          ],
+          "notes": "Reduced import cost pressure stabilizes EM currencies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "67eb5235",
+        "9e5a8f3f",
+        "401ae89c",
+        "f26c2872"
+      ],
+      "pruned_reason": ""
+    },
+    "f54ab3fe": {
+      "node_id": "f54ab3fe",
+      "description": "Sovereign credit rating downgrades for energy-importing emerging markets lead to a localized credit crunch and capital flight.",
+      "branch_probability": 0.3,
+      "parent_id": "511f79dd",
+      "depth": 3,
+      "parent_joint_probability": 0.2357142857142857,
+      "joint_probability": 0.07071428571428572,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Increased default risk in energy-dependent EM nations."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "USD/TRY",
+            "USD/INR"
+          ],
+          "notes": "Rapid depreciation due to capital flight."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "PPL"
+          ],
+          "notes": "Increased demand for political risk insurance."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "2462241b",
+        "30ba883d",
+        "8a7e4e1d"
+      ],
+      "pruned_reason": ""
+    },
+    "a89a5c91": {
+      "node_id": "a89a5c91",
+      "description": "Iran leverages the diplomatic failure by increasing naval activity in the Strait of Hormuz to signal potential supply disruptions.",
+      "branch_probability": 0.25,
+      "parent_id": "511f79dd",
+      "depth": 3,
+      "parent_joint_probability": 0.2357142857142857,
+      "joint_probability": 0.05892857142857143,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Fear premium spikes on potential supply shock."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Freight rates surge due to risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "War risk premiums for tankers increase sharply."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Increased focus on regional security and naval deterrence."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "5cf1b129",
+        "08210879",
+        "1dcd346f"
+      ],
+      "pruned_reason": ""
+    },
+    "b5e7f5ce": {
+      "node_id": "b5e7f5ce",
+      "description": "Market panic leads to preemptive rerouting of non-essential tankers and a spike in short-term energy futures.",
+      "branch_probability": 0.45714285714285713,
+      "parent_id": "0310ead7",
+      "depth": 3,
+      "parent_joint_probability": 0.11020408163265305,
+      "joint_probability": 0.05037900874635568,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Speculative buying driven by fear of total closure."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Rapid adjustment of hull and machinery insurance for Gulf-bound ships."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "107b4a5f",
+        "11768db8",
+        "c27e3f26"
+      ],
+      "pruned_reason": ""
+    },
+    "36cb314c": {
+      "node_id": "36cb314c",
+      "description": "Rapid devaluation of the Yuan (CNY) and flight to safe-haven assets as markets price in a systemic trade war escalation.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "b3bf28ab",
+      "depth": 3,
+      "parent_joint_probability": 0.14693877551020404,
+      "joint_probability": 0.0682215743440233,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "CNY",
+            "USD"
+          ],
+          "notes": "CNY drops against USD; flight to safety in Treasury bonds."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Emerging market sovereign debt yields rise as risk appetite collapses."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "6bb87375",
+        "4003b6e3",
+        "b6f974bb"
+      ],
+      "pruned_reason": ""
+    },
+    "4f5c04e0": {
+      "node_id": "4f5c04e0",
+      "description": "Iran conducts asymmetric retaliation via seizure of commercial tankers in the Strait of Hormuz to signal deterrence.",
+      "branch_probability": 0.34090909090909094,
+      "parent_id": "80f354cb",
+      "depth": 4,
+      "parent_joint_probability": 0.054166666666666675,
+      "joint_probability": 0.018465909090909095,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Immediate spike in spot rates due to perceived risk and vessel diversions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War-risk premiums for Persian Gulf transits surge."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Brent crude price increase on supply disruption fears."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bbea888a": {
+      "node_id": "bbea888a",
+      "description": "Market volatility spikes as geopolitical risk premiums are priced into energy and currency markets without kinetic escalation.",
+      "branch_probability": 0.5681818181818181,
+      "parent_id": "80f354cb",
+      "depth": 4,
+      "parent_joint_probability": 0.054166666666666675,
+      "joint_probability": 0.030776515151515152,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Speculative buying driven by US naval movements."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety increases demand for USD."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Pre-emptive adjustment of regional risk profiles."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "68ab6671": {
+      "node_id": "68ab6671",
+      "description": "Tactical miscalculation during FONOPs leads to a direct kinetic engagement between US Navy and IRGC naval assets.",
+      "branch_probability": 0.09090909090909091,
+      "parent_id": "80f354cb",
+      "depth": 4,
+      "parent_joint_probability": 0.054166666666666675,
+      "joint_probability": 0.004924242424242426,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense and missile systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Panic buying due to imminent threat of supply cutoff."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Immediate suspension of standard coverage in the Gulf."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e11413a8": {
+      "node_id": "e11413a8",
+      "description": "Iran conducts naval 'readiness' exercises in the Strait of Hormuz as a signal of resolve following diplomatic failure.",
+      "branch_probability": 0.25925925925925924,
+      "parent_id": "50079339",
+      "depth": 4,
+      "parent_joint_probability": 0.06666666666666667,
+      "joint_probability": 0.01728395061728395,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Speculative spike as market fears exercises transition to blockade."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Spot rates for VLCCs surge due to perceived risk premium."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War-risk premiums for Persian Gulf transit spike immediately."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e9bb5d9e": {
+      "node_id": "e9bb5d9e",
+      "description": "Major energy importers (IEA/USA) announce a coordinated Strategic Petroleum Reserve (SPR) release to dampen the war premium.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "50079339",
+      "depth": 4,
+      "parent_joint_probability": 0.06666666666666667,
+      "joint_probability": 0.02222222222222222,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Price correction as supply fears are partially mitigated by government intervention."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD strengthens as a safe haven despite the SPR release."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8c51b2fa": {
+      "node_id": "8c51b2fa",
+      "description": "Rapid oil price inflation triggers currency volatility and sovereign debt pressure in energy-importing emerging markets.",
+      "branch_probability": 0.40740740740740744,
+      "parent_id": "50079339",
+      "depth": 4,
+      "parent_joint_probability": 0.06666666666666667,
+      "joint_probability": 0.027160493827160497,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -4.0,
+          "tickers": [],
+          "notes": "Energy-dependent currencies face sharp devaluation."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Yields rise on sovereign bonds of net energy importers."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "67eb5235": {
+      "node_id": "67eb5235",
+      "description": "SPR releases successfully cap immediate oil price spikes, leading to a temporary stabilization of energy markets and a reduction in panic buying.",
+      "branch_probability": 0.375,
+      "parent_id": "6cd835e5",
+      "depth": 4,
+      "parent_joint_probability": 0.10607142857142857,
+      "joint_probability": 0.03977678571428571,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Short-term price ceiling established by G7 coordinated supply."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "EM"
+          ],
+          "notes": "Reduced energy import costs provide temporary relief to oil-importing EM currencies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9e5a8f3f": {
+      "node_id": "9e5a8f3f",
+      "description": "Markets perceive SPR releases as insufficient to offset long-term geopolitical risk, triggering a speculative surge in oil futures.",
+      "branch_probability": 0.25,
+      "parent_id": "6cd835e5",
+      "depth": 4,
+      "parent_joint_probability": 0.10607142857142857,
+      "joint_probability": 0.02651785714285714,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Speculators bet on supply disruptions outweighing temporary SPR injections."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "PJK"
+          ],
+          "notes": "War risk premiums for Persian Gulf transit increase."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "401ae89c": {
+      "node_id": "401ae89c",
+      "description": "Iran responds to the tripartite failure and G7 intervention by conducting naval exercises, threatening the flow of oil through the Strait of Hormuz.",
+      "branch_probability": 0.20833333333333334,
+      "parent_id": "6cd835e5",
+      "depth": 4,
+      "parent_joint_probability": 0.10607142857142857,
+      "joint_probability": 0.022098214285714287,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for VLCCs spike due to extreme risk premiums."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and surveillance assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Supply fear overrides SPR stabilization efforts."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f26c2872": {
+      "node_id": "f26c2872",
+      "description": "Failure of the tripartite agreement triggers a flight-to-safety, causing severe depreciation in oil-importing emerging market currencies despite SPR efforts.",
+      "branch_probability": 0.16666666666666669,
+      "parent_id": "6cd835e5",
+      "depth": 4,
+      "parent_joint_probability": 0.10607142857142857,
+      "joint_probability": 0.01767857142857143,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TRY",
+            "INR"
+          ],
+          "notes": "Capital flight from EM to USD/CHF as geopolitical instability peaks."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Yields on EM sovereign debt rise as credit risk increases."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2462241b": {
+      "node_id": "2462241b",
+      "description": "Accelerated capital flight leads to sharp devaluation of EM currencies, increasing the real cost of energy imports.",
+      "branch_probability": 0.5,
+      "parent_id": "f54ab3fe",
+      "depth": 4,
+      "parent_joint_probability": 0.07071428571428572,
+      "joint_probability": 0.03535714285714286,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "EMERging_Market_Indices"
+          ],
+          "notes": "Rapid sell-off of EM currencies against USD due to credit risk."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Yields on EM sovereign bonds spike as risk premiums rise."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "30ba883d": {
+      "node_id": "30ba883d",
+      "description": "Liquidity shortages force energy-importing EMs to reduce spot-market purchases, triggering a drop in global energy demand.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "f54ab3fe",
+      "depth": 4,
+      "parent_joint_probability": 0.07071428571428572,
+      "joint_probability": 0.02175824175824176,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CL",
+            "NG"
+          ],
+          "notes": "Demand destruction in emerging markets puts downward pressure on spot prices."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Reduced shipment volumes from major exporters to affected EM regions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8a7e4e1d": {
+      "node_id": "8a7e4e1d",
+      "description": "A major energy-importing EM announces a moratorium on sovereign debt payments, triggering a regional contagion event.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "f54ab3fe",
+      "depth": 4,
+      "parent_joint_probability": 0.07071428571428572,
+      "joint_probability": 0.013598901098901097,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Hard default event leads to immediate exclusion from international capital markets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Credit Default Swap (CDS) spreads widen aggressively."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EM_PORT_TERMINALS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5cf1b129": {
+      "node_id": "5cf1b129",
+      "description": "Iran seizes a commercial tanker in the Strait of Hormuz to demonstrate capability and force diplomatic concessions.",
+      "branch_probability": 0.20588235294117646,
+      "parent_id": "a89a5c91",
+      "depth": 4,
+      "parent_joint_probability": 0.05892857142857143,
+      "joint_probability": 0.012132352941176469,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium spike due to potential supply outage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 45.0,
+          "tickers": [],
+          "notes": "War-risk premiums for Persian Gulf transit surge instantly."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates increase as vessels avoid the area or demand higher risk pay."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "08210879": {
+      "node_id": "08210879",
+      "description": "Global energy markets enter a volatility spiral based on naval signaling, despite no kinetic event occurring.",
+      "branch_probability": 0.4411764705882353,
+      "parent_id": "a89a5c91",
+      "depth": 4,
+      "parent_joint_probability": 0.05892857142857143,
+      "joint_probability": 0.025997899159663863,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative buying driven by geopolitical instability."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD as regional tensions rise."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Preemptive increase in maritime insurance for the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1dcd346f": {
+      "node_id": "1dcd346f",
+      "description": "The US Navy increases presence and implements escort missions for commercial vessels to deter Iranian aggression.",
+      "branch_probability": 0.35294117647058826,
+      "parent_id": "a89a5c91",
+      "depth": 4,
+      "parent_joint_probability": 0.05892857142857143,
+      "joint_probability": 0.020798319327731095,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased operational tempo and potential for expedited regional procurement."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on GCC sovereign debt due to proximity to conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "107b4a5f": {
+      "node_id": "107b4a5f",
+      "description": "Iran increases naval activity in the Strait of Hormuz to signal leverage following the diplomatic failure.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "b5e7f5ce",
+      "depth": 4,
+      "parent_joint_probability": 0.05037900874635568,
+      "joint_probability": 0.016193252811328614,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Risk premium spikes due to potential supply disruption."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates surge as ships avoid high-risk zones or require higher premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for Persian Gulf transits increase sharply."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "11768db8": {
+      "node_id": "11768db8",
+      "description": "Rapid capital flight from emerging markets and the CNY toward USD and safe-haven assets.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "b5e7f5ce",
+      "depth": 4,
+      "parent_joint_probability": 0.05037900874635568,
+      "joint_probability": 0.023390254060807997,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USDCNY"
+          ],
+          "notes": "CNY weakens significantly against USD on summit collapse."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased yields on emerging market debt due to geopolitical instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c27e3f26": {
+      "node_id": "c27e3f26",
+      "description": "Immediate imposition of targeted trade restrictions or tariffs by the US as a retaliatory measure for the summit's failure.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "b5e7f5ce",
+      "depth": 4,
+      "parent_joint_probability": 0.05037900874635568,
+      "joint_probability": 0.010795501874219075,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Anticipated drop in trans-Pacific trade volumes."
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Fear of Chinese retaliatory tariffs on US agricultural exports."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6bb87375": {
+      "node_id": "6bb87375",
+      "description": "Contagion spreads to emerging market sovereign debt as investors hedge against systemic trade war risks.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "36cb314c",
+      "depth": 4,
+      "parent_joint_probability": 0.0682215743440233,
+      "joint_probability": 0.03284742468415937,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength against EM currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Increased risk premium on emerging market bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4003b6e3": {
+      "node_id": "4003b6e3",
+      "description": "China accelerates shift toward non-USD energy settlement mechanisms to mitigate currency devaluation impact.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "36cb314c",
+      "depth": 4,
+      "parent_joint_probability": 0.0682215743440233,
+      "joint_probability": 0.020213799805636534,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Uncertainty over trade flows creates short-term price volatility."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Potential for rerouting and longer voyages to avoid sanctioned corridors."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b6f974bb": {
+      "node_id": "b6f974bb",
+      "description": "US implements secondary sanctions on entities facilitating the failed tripartite energy trade, increasing regional tension.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "36cb314c",
+      "depth": 4,
+      "parent_joint_probability": 0.0682215743440233,
+      "joint_probability": 0.0151603498542274,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "P&I"
+          ],
+          "notes": "War risk premiums spike for vessels in the Gulf region."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Fear of supply disruption from Iranian exports."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "e5264646",
+      "description": "IRGC seizes a commercial tanker as a 'tit-for-tat' response to the failed tripartite agreement.",
+      "joint_probability": 0.04285714285714286,
+      "pruned_reason": "joint_probability=0.0429 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c8f05b4c",
+      "description": "Iranian forces seize a commercial tanker to demonstrate physical control and leverage over the Strait.",
+      "joint_probability": 0.029166666666666667,
+      "pruned_reason": "joint_probability=0.0292 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a64973d4",
+      "description": "Widespread power outages at regional energy hubs trigger a global oil price spike and operational chaos.",
+      "joint_probability": 0.04126984126984127,
+      "pruned_reason": "joint_probability=0.0413 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ffaa128c",
+      "description": "Digital disruption of port management systems leads to a standstill in tanker and container traffic.",
+      "joint_probability": 0.025396825396825397,
+      "pruned_reason": "joint_probability=0.0254 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "eda98d08",
+      "description": "Attribution of cyber-attacks to state actors triggers targeted retaliatory kinetic strikes on C2 infrastructure.",
+      "joint_probability": 0.019047619047619046,
+      "pruned_reason": "joint_probability=0.0190 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ab687fea",
+      "description": "Iran seizes a commercial tanker to demonstrate operational control over the Strait.",
+      "joint_probability": 0.02204081632653061,
+      "pruned_reason": "joint_probability=0.0220 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "501f9ca9",
+      "description": "US Navy initiates high-visibility escort missions for commercial vessels (Operation-style), increasing regional tension.",
+      "joint_probability": 0.037784256559766756,
+      "pruned_reason": "joint_probability=0.0378 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "8615a3b5",
+      "description": "Iran initiates asymmetric retaliation by harassing commercial shipping in the Strait of Hormuz to signal resolve.",
+      "joint_probability": 0.021428571428571425,
+      "pruned_reason": "joint_probability=0.0214 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b55b1f89",
+      "description": "Global energy markets react to the formal removal of Iranian crude from the Chinese market, causing a price shock.",
+      "joint_probability": 0.03979591836734694,
+      "pruned_reason": "joint_probability=0.0398 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ac66be47",
+      "description": "Iran faces severe liquidity crisis and sovereign credit downgrade as its primary revenue stream is severed.",
+      "joint_probability": 0.024489795918367346,
+      "pruned_reason": "joint_probability=0.0245 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a19d4861",
+      "description": "Iran signals intent to disrupt oil flows in the Strait of Hormuz as a retaliatory measure for the failed tripartite agreement.",
+      "joint_probability": 0.04723032069970844,
+      "pruned_reason": "joint_probability=0.0472 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c39e2b70",
+      "description": "Increased US and Chinese military posturing in the South China Sea and Persian Gulf to project strength following diplomatic failure.",
+      "joint_probability": 0.03148688046647229,
+      "pruned_reason": "joint_probability=0.0315 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "adedb1eb",
+      "description": "IRGC initiates 'security exercises' in the Strait of Hormuz, leading to tactical vessel seizures and navigation warnings.",
+      "joint_probability": 0.028846153846153837,
+      "pruned_reason": "joint_probability=0.0288 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "d8358776",
+      "description": "US Treasury implements aggressive 'snapback' sanctions on Iranian oil exports and Chinese entities facilitating the trade.",
+      "joint_probability": 0.04532967032967033,
+      "pruned_reason": "joint_probability=0.0453 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "e1a53378",
+      "description": "US Navy increases presence in the Gulf via Operation Sentinel to deter IRGC aggression, escalating military tension.",
+      "joint_probability": 0.03296703296703297,
+      "pruned_reason": "joint_probability=0.0330 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "8e3f8925",
+      "description": "IRGC seizes a commercial tanker in the Strait of Hormuz as a retaliatory signal against US naval presence.",
+      "joint_probability": 0.02391304347826087,
+      "pruned_reason": "joint_probability=0.0239 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ac855330",
+      "description": "Proxy-led drone strikes target energy infrastructure in the Gulf to pressure US naval withdrawal.",
+      "joint_probability": 0.013664596273291927,
+      "pruned_reason": "joint_probability=0.0137 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "605bcf4a",
+      "description": "Markets price in a prolonged standoff, leading to a surge in energy risk premiums without kinetic escalation.",
+      "joint_probability": 0.040993788819875775,
+      "pruned_reason": "joint_probability=0.0410 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

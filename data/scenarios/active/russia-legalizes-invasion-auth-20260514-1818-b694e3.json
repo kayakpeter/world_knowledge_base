@@ -1,0 +1,1761 @@
+{
+  "scenario_id": "russia-legalizes-invasion-auth-20260514-1818-b694e3",
+  "trigger_event": "Russia legalizes invasion authority; Romania Danube flank targeted",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-05-14T18:18:35.521049+00:00",
+  "expires_at": "2026-05-17T18:18:35.521049+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "russia-l_root": {
+      "node_id": "russia-l_root",
+      "description": "Russia legalizes invasion authority; Romania Danube flank targeted",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "575a4f0a",
+        "e8dfb95c",
+        "dbe85e88"
+      ],
+      "pruned_reason": ""
+    },
+    "575a4f0a": {
+      "node_id": "575a4f0a",
+      "description": "NATO invokes Article 5 leading to rapid military mobilization and regional security escalation.",
+      "branch_probability": 0.41304347826086957,
+      "parent_id": "russia-l_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.41304347826086957,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate surge in demand for munitions and air defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Flight to safety favoring USD over Euro due to proximity of conflict."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 100.0,
+          "tickers": [
+            "ROM"
+          ],
+          "notes": "Spike in Romanian sovereign bond yields due to direct invasion risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_PORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "66834f7d",
+        "e354fd78",
+        "46796262"
+      ],
+      "pruned_reason": ""
+    },
+    "e8dfb95c": {
+      "node_id": "e8dfb95c",
+      "description": "Kinetic strikes on Danube river infrastructure causing total cessation of grain and bulk transit.",
+      "branch_probability": 0.32608695652173914,
+      "parent_id": "russia-l_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.32608695652173914,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "WEAT"
+          ],
+          "notes": "Disruption of key export corridor for Ukrainian and Romanian grain."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "BDI"
+          ],
+          "notes": "Rerouting of bulk cargoes increasing freight rates."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for Black Sea and Danube navigation surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_RIVER_CORRIDOR",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e85de9cd",
+        "f38dd8f7",
+        "da3e06c1"
+      ],
+      "pruned_reason": ""
+    },
+    "dbe85e88": {
+      "node_id": "dbe85e88",
+      "description": "Energy market panic as conflict threatens regional pipeline stability and Black Sea energy transit.",
+      "branch_probability": 0.2608695652173913,
+      "parent_id": "russia-l_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2608695652173913,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NGF"
+          ],
+          "notes": "Fear of disruption to regional gas transit and infrastructure."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for long-haul tankers to replace regional pipeline flow."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_GAS_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "f30795cc",
+        "b579e929",
+        "d85e2bc3"
+      ],
+      "pruned_reason": ""
+    },
+    "66834f7d": {
+      "node_id": "66834f7d",
+      "description": "Direct kinetic engagement between NATO and Russian forces in the Black Sea and Danube Delta.",
+      "branch_probability": 0.325,
+      "parent_id": "575a4f0a",
+      "depth": 2,
+      "parent_joint_probability": 0.41304347826086957,
+      "joint_probability": 0.1342391304347826,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate surge in demand for munitions and air defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all Black Sea shipping."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_RIVER_WATERWAY",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "PORT_OF_CONSTANTA",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "b12e7d51"
+      ],
+      "pruned_reason": ""
+    },
+    "e354fd78": {
+      "node_id": "e354fd78",
+      "description": "Global financial contagion and flight to safe-haven assets due to systemic war risk.",
+      "branch_probability": 0.425,
+      "parent_id": "575a4f0a",
+      "depth": 2,
+      "parent_joint_probability": 0.41304347826086957,
+      "joint_probability": 0.17554347826086955,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Massive flight to quality; volatility in EUR."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Yields spike on Eastern European sovereign bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "9d36db94",
+        "ad5ec06a"
+      ],
+      "pruned_reason": ""
+    },
+    "46796262": {
+      "node_id": "46796262",
+      "description": "Russia implements total energy embargo on NATO members as a retaliatory measure.",
+      "branch_probability": 0.25,
+      "parent_id": "575a4f0a",
+      "depth": 2,
+      "parent_joint_probability": 0.41304347826086957,
+      "joint_probability": 0.10326086956521739,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "NGS"
+          ],
+          "notes": "Natural gas prices surge on immediate supply shock."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for LNG shipments to replace pipeline gas."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_PIPELINES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e85de9cd": {
+      "node_id": "e85de9cd",
+      "description": "Global agricultural markets react to the total blockage of the Danube corridor, triggering a sharp spike in grain futures.",
+      "branch_probability": 0.3829787234042553,
+      "parent_id": "e8dfb95c",
+      "depth": 2,
+      "parent_joint_probability": 0.32608695652173914,
+      "joint_probability": 0.12488436632747456,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ZC"
+          ],
+          "notes": "Immediate supply shock due to cessation of Ukrainian/Romanian grain exports via river."
+        },
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "BDRY"
+          ],
+          "notes": "Loss of primary transit route for bulk commodities in the region."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all Black Sea and Danube basin vessels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_CONSTANTA",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "dde50dd0"
+      ],
+      "pruned_reason": ""
+    },
+    "f38dd8f7": {
+      "node_id": "f38dd8f7",
+      "description": "NATO activates Article 4 consultations and deploys rapid response forces to the Romanian border in response to infrastructure strikes.",
+      "branch_probability": 0.34042553191489366,
+      "parent_id": "e8dfb95c",
+      "depth": 2,
+      "parent_joint_probability": 0.32608695652173914,
+      "joint_probability": 0.11100832562442185,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional deterrence and air defense systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Romanian government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ROMANIA_BORDER_POSTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "2b385ae4"
+      ],
+      "pruned_reason": ""
+    },
+    "da3e06c1": {
+      "node_id": "da3e06c1",
+      "description": "Logistics pivot to rail and road networks causes systemic congestion and delays in regional energy and bulk transport.",
+      "branch_probability": 0.2765957446808511,
+      "parent_id": "e8dfb95c",
+      "depth": 2,
+      "parent_joint_probability": 0.32608695652173914,
+      "joint_probability": 0.09019426456984274,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Disruption in bulk fuel transport via river increases land-based transport costs."
+        },
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Inefficiencies in rail-pivot lead to lower throughput volume."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_RAIL_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f30795cc": {
+      "node_id": "f30795cc",
+      "description": "Kinetic strikes target Romanian energy transit hubs and Danube river ports to disrupt NATO logistics.",
+      "branch_probability": 0.2571428571428571,
+      "parent_id": "dbe85e88",
+      "depth": 2,
+      "parent_joint_probability": 0.2608695652173913,
+      "joint_probability": 0.0670807453416149,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "NGF"
+          ],
+          "notes": "Immediate spike in regional gas and oil prices due to infrastructure damage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all Black Sea assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_PORT_CONSTANTA",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ROMANIA_GAS_PIPELINES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b579e929": {
+      "node_id": "b579e929",
+      "description": "Black Sea shipping lanes face effective closure due to naval mining and active combat operations.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "dbe85e88",
+      "depth": 2,
+      "parent_joint_probability": 0.2608695652173913,
+      "joint_probability": 0.08944099378881985,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Rerouting costs and scarcity of Black Sea tonnage."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 18.0,
+          "tickers": [],
+          "notes": "Grain and ore exports from the region halted."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Total loss premiums applied to Black Sea transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_SHIPPING_LANE",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d85e2bc3": {
+      "node_id": "d85e2bc3",
+      "description": "NATO triggers Article 5, leading to full military mobilization and closure of regional airspace.",
+      "branch_probability": 0.39999999999999997,
+      "parent_id": "dbe85e88",
+      "depth": 2,
+      "parent_joint_probability": 0.2608695652173913,
+      "joint_probability": 0.10434782608695652,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Massive increase in demand for munitions and air defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "RON",
+            "BGN"
+          ],
+          "notes": "Flight to safety leads to collapse of regional currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Credit rating downgrades for frontline NATO states."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ROMANIA_AIRSPACE",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "BULGARIA_AIRSPACE",
+          "new_status": "CLOSED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b12e7d51": {
+      "node_id": "b12e7d51",
+      "description": "Targeted Russian kinetic strikes on Danube Delta logistics hubs to sever Ukrainian grain and military supply lines.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "66834f7d",
+      "depth": 3,
+      "parent_joint_probability": 0.1342391304347826,
+      "joint_probability": 0.06232531055900621,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -30.0,
+          "tickers": [],
+          "notes": "Complete halt of Danube river grain exports."
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Severe disruption to regional crop logistics and export capacity."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Diversion of cargo from river-sea vessels to rail/road."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_RIVER_CHANNELS",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "DANUBE_DELTA_BRIDGES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "df243770",
+        "96728409",
+        "8d1ace37"
+      ],
+      "pruned_reason": ""
+    },
+    "9d36db94": {
+      "node_id": "9d36db94",
+      "description": "NATO invokes Article 5, triggering massive military mobilization and a surge in defense procurement.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "e354fd78",
+      "depth": 3,
+      "parent_joint_probability": 0.17554347826086955,
+      "joint_probability": 0.07853260869565216,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LMT",
+            "RTX",
+            "BA"
+          ],
+          "notes": "Immediate pivot to wartime production and emergency procurement contracts."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "EU_BONDS"
+          ],
+          "notes": "Increased risk premiums on Eastern European sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_ACCESS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "c3c69fbf",
+        "7066d738",
+        "a5dca19a"
+      ],
+      "pruned_reason": ""
+    },
+    "ad5ec06a": {
+      "node_id": "ad5ec06a",
+      "description": "Russia implements a naval blockade of the Black Sea to isolate the Danube flank, disrupting global grain and energy flows.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "e354fd78",
+      "depth": 3,
+      "parent_joint_probability": 0.17554347826086955,
+      "joint_probability": 0.06005434782608695,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "BRENT"
+          ],
+          "notes": "Supply chain disruption and geopolitical risk premium."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BDI"
+          ],
+          "notes": "Spike in freight rates due to rerouting of agricultural exports."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "CMR"
+          ],
+          "notes": "War risk premiums surge for all Black Sea transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "DANUBE_RIVER_LOGISTICS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "50bd3ed0",
+        "3538cc4e",
+        "7861dd61"
+      ],
+      "pruned_reason": ""
+    },
+    "dde50dd0": {
+      "node_id": "dde50dd0",
+      "description": "Marine insurance underwriters declare the Danube delta and adjacent Black Sea ports high-risk zones, causing a surge in war-risk premiums.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "e85de9cd",
+      "depth": 3,
+      "parent_joint_probability": 0.12488436632747456,
+      "joint_probability": 0.052035152636447736,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War-risk premiums for Black Sea transit spike immediately."
+        },
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ZC"
+          ],
+          "notes": "Increased shipping costs further inflate grain futures."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "f6a7e903",
+        "14c7dfd8",
+        "3d2c4ae4"
+      ],
+      "pruned_reason": ""
+    },
+    "2b385ae4": {
+      "node_id": "2b385ae4",
+      "description": "Russia declares a maritime exclusion zone in the Danube Delta, effectively halting all commercial shipping.",
+      "branch_probability": 0.5,
+      "parent_id": "f38dd8f7",
+      "depth": 3,
+      "parent_joint_probability": 0.11100832562442185,
+      "joint_probability": 0.055504162812210926,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Grain export disruption from Ukraine/Romania triggers global price spike."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Rerouting of bulk commodities increases freight rates."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Hull and cargo insurance for Danube traffic becomes unavailable."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_DELTA_CHANNEL",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "e91012b9",
+        "d66fed60",
+        "69f77e7a"
+      ],
+      "pruned_reason": ""
+    },
+    "df243770": {
+      "node_id": "df243770",
+      "description": "Global agricultural markets react to the severance of the Danube grain corridor, triggering sharp price spikes in wheat and corn.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "b12e7d51",
+      "depth": 4,
+      "parent_joint_probability": 0.06232531055900621,
+      "joint_probability": 0.027882375776397513,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ADM",
+            "Bunge"
+          ],
+          "notes": "Immediate supply shock due to loss of primary Ukrainian export route."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STAA"
+          ],
+          "notes": "Increased freight rates for alternative long-haul bulk routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_DELTA_PORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "96728409": {
+      "node_id": "96728409",
+      "description": "NATO activates Article 4 consultations and deploys rapid response forces to the Romanian border to deter further incursions.",
+      "branch_probability": 0.3684210526315789,
+      "parent_id": "b12e7d51",
+      "depth": 4,
+      "parent_joint_probability": 0.06232531055900621,
+      "joint_probability": 0.02296195652173913,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipated increase in regional security spending and munitions replenishment."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ROMANIA_GOV_BONDS"
+          ],
+          "notes": "Increased risk premium on Romanian sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ROMANIA_EASTERN_FLANK",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8d1ace37": {
+      "node_id": "8d1ace37",
+      "description": "Russian kinetic strikes expand to the Port of Constanta to neutralize the primary deep-water alternative to the Danube.",
+      "branch_probability": 0.18421052631578946,
+      "parent_id": "b12e7d51",
+      "depth": 4,
+      "parent_joint_probability": 0.06232531055900621,
+      "joint_probability": 0.011480978260869565,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "MAEU"
+          ],
+          "notes": "Disruption of Black Sea container traffic and rerouting costs."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "LLOYDS"
+          ],
+          "notes": "War risk premiums spike for all Black Sea maritime transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_CONSTANTA",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c3c69fbf": {
+      "node_id": "c3c69fbf",
+      "description": "Black Sea and Danube shipping lanes are effectively closed due to active combat and mine threats.",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "9d36db94",
+      "depth": 4,
+      "parent_joint_probability": 0.07853260869565216,
+      "joint_probability": 0.031047775530839226,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme risk premium on Black Sea shipments"
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BDI"
+          ],
+          "notes": "Disruption of grain and ore exports from the region"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "LLOY"
+          ],
+          "notes": "War risk premiums spike to prohibitive levels"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "DANUBE_RIVER_WAY",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7066d738": {
+      "node_id": "7066d738",
+      "description": "European sovereign debt markets crash as capital flees to safe-haven assets following Article 5 invocation.",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "9d36db94",
+      "depth": 4,
+      "parent_joint_probability": 0.07853260869565216,
+      "joint_probability": 0.025568756319514656,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "EU_BONDS"
+          ],
+          "notes": "Massive sell-off in Eastern European government bonds"
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Flight to safety driving USD and CHF demand"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "BA",
+            "Rheinmetall"
+          ],
+          "notes": "Anticipated long-term procurement surge"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a5dca19a": {
+      "node_id": "a5dca19a",
+      "description": "Russian cyber-kinetic strikes target energy grids in Romania and Bulgaria to disrupt NATO mobilization logistics.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "9d36db94",
+      "depth": 4,
+      "parent_joint_probability": 0.07853260869565216,
+      "joint_probability": 0.02191607684529828,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NG"
+          ],
+          "notes": "Regional energy instability increases prices"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "SVR"
+          ],
+          "notes": "Cyber-insurance claims surge"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ROMANIAN_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "BULGARIAN_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "50bd3ed0": {
+      "node_id": "50bd3ed0",
+      "description": "Global commodity markets react to the cessation of Black Sea grain and energy exports, triggering price spikes.",
+      "branch_probability": 0.45238095238095233,
+      "parent_id": "ad5ec06a",
+      "depth": 4,
+      "parent_joint_probability": 0.06005434782608695,
+      "joint_probability": 0.027167443064182187,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ADM",
+            "Bunge"
+          ],
+          "notes": "Immediate shock to wheat and corn futures due to blockade of Danube/Black Sea corridor."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Risk premium added to Brent crude as Black Sea exports are severed."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STAR"
+          ],
+          "notes": "Dry bulk freight rates spike due to rerouting and risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_SHIPPING_LANES",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3538cc4e": {
+      "node_id": "3538cc4e",
+      "description": "NATO activates Article 4/5 consultations and deploys naval assets to the Black Sea to challenge the blockade.",
+      "branch_probability": 0.3571428571428571,
+      "parent_id": "ad5ec06a",
+      "depth": 4,
+      "parent_joint_probability": 0.06005434782608695,
+      "joint_probability": 0.02144798136645962,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval defense and surveillance systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for the region become prohibitive."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Romanian sovereign bonds face sell-off due to immediate conflict risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_CONSTANTA",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7861dd61": {
+      "node_id": "7861dd61",
+      "description": "Russia launches precision strikes on Romanian port infrastructure to prevent land-based bypasses of the blockade.",
+      "branch_probability": 0.19047619047619047,
+      "parent_id": "ad5ec06a",
+      "depth": 4,
+      "parent_joint_probability": 0.06005434782608695,
+      "joint_probability": 0.011438923395445133,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "Total loss of coverage for Black Sea maritime assets."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "MAEU"
+          ],
+          "notes": "Disruption of containerized trade via the Danube-Black Sea axis."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_CONSTANTA",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "DANUBE_RIVER_LOCKS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f6a7e903": {
+      "node_id": "f6a7e903",
+      "description": "Commercial shipping operators suspend calls to Danube ports as prohibitive war-risk premiums render voyages economically unviable.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "dde50dd0",
+      "depth": 4,
+      "parent_joint_probability": 0.052035152636447736,
+      "joint_probability": 0.022300779701334743,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STAA"
+          ],
+          "notes": "Freight rates spike due to risk premiums and vessel diversion."
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Export paralysis of Romanian grain via Danube corridor."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_DELTA_PORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "14c7dfd8": {
+      "node_id": "14c7dfd8",
+      "description": "Russian forces execute precision strikes on Danube river bridges and port infrastructure to isolate the Romanian flank.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "dde50dd0",
+      "depth": 4,
+      "parent_joint_probability": 0.052035152636447736,
+      "joint_probability": 0.011893749174045197,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "Rheinmetall"
+          ],
+          "notes": "Increased demand for NATO rapid response and regional defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Immediate payout triggers for war-risk policies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_BRIDGE_NETWORK",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3d2c4ae4": {
+      "node_id": "3d2c4ae4",
+      "description": "Sharp depreciation of the Romanian Leu (RON) and spike in sovereign bond yields following the insurance declaration.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "dde50dd0",
+      "depth": 4,
+      "parent_joint_probability": 0.052035152636447736,
+      "joint_probability": 0.017840623761067792,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RON"
+          ],
+          "notes": "Capital flight from the region due to imminent invasion risk."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Romania's credit default swap (CDS) spreads widen significantly."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e91012b9": {
+      "node_id": "e91012b9",
+      "description": "Global grain markets react to the closure of the Danube corridor, causing a sharp spike in agricultural commodity prices.",
+      "branch_probability": 0.4722222222222222,
+      "parent_id": "2b385ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.055504162812210926,
+      "joint_probability": 0.02621029910576627,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ADM",
+            "Bunge"
+          ],
+          "notes": "Immediate disruption of Ukrainian and Romanian grain exports via the Danube."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STX"
+          ],
+          "notes": "Rerouting of bulk cargoes to alternative ports increases freight rates."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LLOY"
+          ],
+          "notes": "War risk premiums for Black Sea transit surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DANUBE_DELTA_CHANNEL",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d66fed60": {
+      "node_id": "d66fed60",
+      "description": "NATO activates rapid response forces and increases naval presence in the Black Sea to challenge the exclusion zone.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "2b385ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.055504162812210926,
+      "joint_probability": 0.020043169904409505,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for surveillance and coastal defense systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ROM"
+          ],
+          "notes": "Increased risk premium on Romanian government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_NAVY_ROUTES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "69f77e7a": {
+      "node_id": "69f77e7a",
+      "description": "Russian forces launch precision strikes on Romanian port infrastructure to enforce the maritime exclusion zone.",
+      "branch_probability": 0.16666666666666666,
+      "parent_id": "2b385ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.055504162812210926,
+      "joint_probability": 0.009250693802035154,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Force majeure declarations across Black Sea shipping lanes."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Risk premium added to regional energy transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CONSTANTA_PORT",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "SULINA_CHANNEL",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "883420d0",
+      "description": "Rapid escalation to full-scale NATO Article 5 activation with large-scale air and naval engagements in the Black Sea.",
+      "joint_probability": 0.04314829192546584,
+      "pruned_reason": "joint_probability=0.0431 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "07b372c4",
+      "description": "Retaliatory or preemptive strikes on energy infrastructure and pipelines in the Black Sea basin.",
+      "joint_probability": 0.02876552795031056,
+      "pruned_reason": "joint_probability=0.0288 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "cedd0caf",
+      "description": "Systemic currency collapse in Eastern Europe leads to a regional liquidity crisis and forced deleveraging.",
+      "joint_probability": 0.03695652173913043,
+      "pruned_reason": "joint_probability=0.0370 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c90e14e4",
+      "description": "Global energy markets experience extreme volatility and price spikes as NATO members scramble for alternative supplies.",
+      "joint_probability": 0.042651228733459355,
+      "pruned_reason": "joint_probability=0.0427 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "41738acd",
+      "description": "NATO activates emergency defense protocols, leading to the militarization and effective closure of the Danube river for commercial traffic.",
+      "joint_probability": 0.03367202268431002,
+      "pruned_reason": "joint_probability=0.0337 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "dfb27626",
+      "description": "Total cessation of agricultural and bulk exports from the Black Sea region as combat zones expand.",
+      "joint_probability": 0.026937618147448016,
+      "pruned_reason": "joint_probability=0.0269 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "893e69e7",
+      "description": "Emergency shift of grain exports to rail and road networks leads to systemic congestion and bottlenecks at the Romanian-Polish and Romanian-Slovakian borders.",
+      "joint_probability": 0.041628122109158186,
+      "pruned_reason": "joint_probability=0.0416 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "eb20d418",
+      "description": "Sharp depreciation of the Romanian Leu (RON) as markets price in the loss of export revenue and increased geopolitical risk.",
+      "joint_probability": 0.03122109158186864,
+      "pruned_reason": "joint_probability=0.0312 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c98c00b7",
+      "description": "Russia launches precision strikes on NATO deployment hubs and Romanian logistics centers to disrupt the rapid response force.",
+      "joint_probability": 0.03885291396854765,
+      "pruned_reason": "joint_probability=0.0389 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a56469f1",
+      "description": "Russia halts kinetic advances to initiate emergency high-level talks, resulting in a high-tension strategic standoff.",
+      "joint_probability": 0.027752081406105463,
+      "pruned_reason": "joint_probability=0.0278 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "9898d49b",
+      "description": "Severe bottlenecks in energy transport lead to regional price spikes and supply shortages in Central and Eastern Europe.",
+      "joint_probability": 0.04187590855028413,
+      "pruned_reason": "joint_probability=0.0419 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ae48caed",
+      "description": "Russian forces target congested rail junctions and road bridges to paralyze NATO reinforcement and supply lines.",
+      "joint_probability": 0.02899101361173517,
+      "pruned_reason": "joint_probability=0.0290 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "57b888e3",
+      "description": "Bulk cargo is diverted to Black Sea ports and Western European hubs, causing secondary congestion in maritime shipping.",
+      "joint_probability": 0.019327342407823443,
+      "pruned_reason": "joint_probability=0.0193 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "41c454ab",
+      "description": "NATO activates Article 5, triggering immediate military mobilization and the establishment of a no-fly zone over the Danube delta.",
+      "joint_probability": 0.026520294669940773,
+      "pruned_reason": "joint_probability=0.0265 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a1a2538c",
+      "description": "Regional energy price shock as Romanian transit hubs are disabled, disrupting fuel flows to Central Europe.",
+      "joint_probability": 0.021840242669362988,
+      "pruned_reason": "joint_probability=0.0218 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "294943c9",
+      "description": "Complete cessation of agricultural and bulk exports via the Danube as insurance underwriters declare the region a war zone.",
+      "joint_probability": 0.018720208002311136,
+      "pruned_reason": "joint_probability=0.0187 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c4b44412",
+      "description": "Global commodity markets react to the total cessation of Black Sea grain and energy exports.",
+      "joint_probability": 0.04001307616868256,
+      "pruned_reason": "joint_probability=0.0400 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "248c4b3f",
+      "description": "NATO activates Article 5 or collective defense protocols following strikes on Romanian Danube infrastructure.",
+      "joint_probability": 0.02118339326577312,
+      "pruned_reason": "joint_probability=0.0212 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "9c199e0c",
+      "description": "Massive redirection of cargo to overland rail and road corridors, causing systemic logistics failure in Central Europe.",
+      "joint_probability": 0.028244524354364163,
+      "pruned_reason": "joint_probability=0.0282 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "bebe7a9d",
+      "description": "Russia launches preemptive strikes on NATO logistics hubs and airbases in Romania and Bulgaria to delay mobilization.",
+      "joint_probability": 0.029489603024574672,
+      "pruned_reason": "joint_probability=0.0295 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "6aff151e",
+      "description": "Global financial markets trigger a massive flight to safety, causing extreme volatility in European currencies and sovereign debt.",
+      "joint_probability": 0.04083175803402647,
+      "pruned_reason": "joint_probability=0.0408 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "fa1eddbd",
+      "description": "Total cessation of commercial shipping in the Danube river and Black Sea due to active combat and mine deployment.",
+      "joint_probability": 0.034026465028355386,
+      "pruned_reason": "joint_probability=0.0340 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

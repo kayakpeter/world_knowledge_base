@@ -1,0 +1,1677 @@
+{
+  "scenario_id": "em-oil-shock-cascade-6-leg-t-20260514-1801-fac027",
+  "trigger_event": "EM oil-shock cascade \u2014 6-leg transmission, rupee/rupiah record lows",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-05-14T18:01:38.659447+00:00",
+  "expires_at": "2026-05-17T18:01:38.659447+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "em-oil-s_root": {
+      "node_id": "em-oil-s_root",
+      "description": "EM oil-shock cascade \u2014 6-leg transmission, rupee/rupiah record lows",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "c1a67d88",
+        "9c684657",
+        "4b52b5f8"
+      ],
+      "pruned_reason": ""
+    },
+    "c1a67d88": {
+      "node_id": "c1a67d88",
+      "description": "Central banks in India and Indonesia implement emergency interest rate hikes and deploy FX reserves to stem currency freefall.",
+      "branch_probability": 0.5,
+      "parent_id": "em-oil-s_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.5,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Extreme volatility despite intervention attempts."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "INDIA_10Y",
+            "INDONESIA_10Y"
+          ],
+          "notes": "Bond prices drop as yields spike due to monetary tightening."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "c832676f",
+        "1033dcff",
+        "1dda4498"
+      ],
+      "pruned_reason": ""
+    },
+    "9c684657": {
+      "node_id": "9c684657",
+      "description": "Fuel price spikes trigger widespread urban protests and strikes, disrupting logistics and port operations.",
+      "branch_probability": 0.3,
+      "parent_id": "em-oil-s_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Port congestion and inland transport delays in SE Asia/South Asia."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "ALLIANZ"
+          ],
+          "notes": "Increase in political risk insurance premiums for EM assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAKARTA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "MUMBAI_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "fd9b5ff4",
+        "d5094002",
+        "3758916c"
+      ],
+      "pruned_reason": ""
+    },
+    "4b52b5f8": {
+      "node_id": "4b52b5f8",
+      "description": "EM nations pivot to bilateral energy credit lines and non-USD payment mechanisms to mitigate dollar liquidity crunch.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "em-oil-s_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.19999999999999998,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Shift toward long-term bilateral supply contracts over spot markets."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Potential rerouting of cargoes to satisfy bilateral swap agreements."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "cc9e2d10",
+        "d638c177"
+      ],
+      "pruned_reason": ""
+    },
+    "c832676f": {
+      "node_id": "c832676f",
+      "description": "Market perceives central bank interventions as decisive, leading to a temporary stabilization of the Rupee and Rupiah.",
+      "branch_probability": 0.4,
+      "parent_id": "c1a67d88",
+      "depth": 2,
+      "parent_joint_probability": 0.5,
+      "joint_probability": 0.2,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Short-term relief as speculative selling pauses."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [],
+          "notes": "Reduced immediate risk of default on short-term obligations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "768ed48b",
+        "63e7a32c",
+        "f08f4f71"
+      ],
+      "pruned_reason": ""
+    },
+    "1033dcff": {
+      "node_id": "1033dcff",
+      "description": "FX reserve depletion accelerates without halting the currency slide, triggering sovereign credit rating warnings.",
+      "branch_probability": 0.35,
+      "parent_id": "c1a67d88",
+      "depth": 2,
+      "parent_joint_probability": 0.5,
+      "joint_probability": 0.175,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased risk of downgrade due to depleted reserves and high debt servicing costs."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Panic selling resumes as intervention is seen as futile."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "CDS spreads for EM sovereign debt spike."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 42.0,
+      "confidence": 0.7,
+      "children": [
+        "ce053183"
+      ],
+      "pruned_reason": ""
+    },
+    "1dda4498": {
+      "node_id": "1dda4498",
+      "description": "Combination of high energy costs and rate hikes triggers domestic social unrest and logistics disruptions in urban hubs.",
+      "branch_probability": 0.25,
+      "parent_id": "c1a67d88",
+      "depth": 2,
+      "parent_joint_probability": 0.5,
+      "joint_probability": 0.125,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Port congestion and trucking delays due to protests."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Local fuel scarcity increases as importers struggle with currency volatility."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAKARTA_PORT_Tanjung_Priok",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "MUMBAI_PORT_JNPT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "f6ad5658"
+      ],
+      "pruned_reason": ""
+    },
+    "fd9b5ff4": {
+      "node_id": "fd9b5ff4",
+      "description": "Widespread port strikes and logistics gridlock lead to the effective closure of major EM shipping hubs.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "9c684657",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.09999999999999999,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Freight rates spike due to congestion and vessel diversion."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War and strike risk premiums increase for EM port calls."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Disruption in raw material exports from affected regions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EM_MAJOR_PORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d5094002": {
+      "node_id": "d5094002",
+      "description": "Governments implement emergency fuel subsidies to quell unrest, triggering a secondary currency collapse and sovereign credit downgrades.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "9c684657",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.13333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "IDR",
+            "INR"
+          ],
+          "notes": "Fiscal slippage accelerates currency devaluation."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Bond yields spike as debt sustainability is questioned."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "78b467d5"
+      ],
+      "pruned_reason": ""
+    },
+    "3758916c": {
+      "node_id": "3758916c",
+      "description": "Protests escalate into violent clashes, forcing military deployment to secure critical energy infrastructure.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "9c684657",
+      "depth": 2,
+      "parent_joint_probability": 0.3,
+      "joint_probability": 0.06666666666666667,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased demand for internal security and riot control equipment."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Local supply shocks as distribution hubs are militarized."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "URBAN_FUEL_DEPOTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "REGIONAL_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cc9e2d10": {
+      "node_id": "cc9e2d10",
+      "description": "Sovereign credit spreads widen sharply as markets interpret the pivot to bilateral credits as a signal of critical USD reserve exhaustion.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "4b52b5f8",
+      "depth": 2,
+      "parent_joint_probability": 0.19999999999999998,
+      "joint_probability": 0.09285714285714285,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Yields on EM bonds spike due to perceived default risk."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Further depreciation as confidence in central bank reserves collapses."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d638c177": {
+      "node_id": "d638c177",
+      "description": "Tanker rates for long-haul, non-traditional routes spike as EM nations redirect imports toward non-USD aligned suppliers.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "4b52b5f8",
+      "depth": 2,
+      "parent_joint_probability": 0.19999999999999998,
+      "joint_probability": 0.06428571428571428,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Increased ton-mile demand for shadow-fleet or non-standard trade lanes."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Inefficiency in logistics adds a premium to landed oil costs."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "768ed48b": {
+      "node_id": "768ed48b",
+      "description": "Central bank reserves hit critical thresholds, triggering a second, more violent wave of currency devaluation as market confidence collapses.",
+      "branch_probability": 0.45,
+      "parent_id": "c832676f",
+      "depth": 3,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.09000000000000001,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Secondary crash following depletion of FX reserves used for stabilization."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "INDIA_10Y",
+            "INDONESIA_10Y"
+          ],
+          "notes": "Yields spike as default risk premiums rise."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increase in CDS premiums for EM sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "280d8364",
+        "0602f2ae",
+        "ea45d47b"
+      ],
+      "pruned_reason": ""
+    },
+    "63e7a32c": {
+      "node_id": "63e7a32c",
+      "description": "Stabilization window is leveraged to secure emergency bilateral currency swaps or IMF liquidity facilities to bolster reserves.",
+      "branch_probability": 0.3,
+      "parent_id": "c832676f",
+      "depth": 3,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.06,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Short-term relief from confirmed liquidity injections."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Market perceives external support as a safety net."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "2484db96",
+        "b2bbcf1a",
+        "54592355"
+      ],
+      "pruned_reason": ""
+    },
+    "f08f4f71": {
+      "node_id": "f08f4f71",
+      "description": "Currency stability fails to mitigate the underlying oil shock, forcing governments to cut fuel subsidies, triggering domestic civil unrest.",
+      "branch_probability": 0.25,
+      "parent_id": "c832676f",
+      "depth": 3,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.05,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Domestic pump prices rise sharply following subsidy removal."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Political instability increases risk premium."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FUEL_DISTRIBUTION_NETWORKS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "456a094a",
+        "8740ba7a",
+        "27568720"
+      ],
+      "pruned_reason": ""
+    },
+    "ce053183": {
+      "node_id": "ce053183",
+      "description": "Accelerated capital flight triggers a systemic liquidity crisis in local banking sectors, forcing emergency capital controls.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "1033dcff",
+      "depth": 3,
+      "parent_joint_probability": 0.175,
+      "joint_probability": 0.06319444444444446,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Rapid devaluation continues despite controls as investors exit EM assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Bond yields spike as credit default swap (CDS) spreads widen."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "33e045af",
+        "b511c007",
+        "99d4a2aa"
+      ],
+      "pruned_reason": ""
+    },
+    "f6ad5658": {
+      "node_id": "f6ad5658",
+      "description": "Governments implement emergency fuel subsidies to quell unrest, leading to rapid fiscal deterioration.",
+      "branch_probability": 0.4583333333333333,
+      "parent_id": "1dda4498",
+      "depth": 3,
+      "parent_joint_probability": 0.125,
+      "joint_probability": 0.057291666666666664,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Increased money printing/borrowing to fund subsidies puts further pressure on exchange rates."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Credit default swap spreads widen as fiscal deficits balloon."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "e841615a",
+        "5c1a7f33",
+        "8e80eca4"
+      ],
+      "pruned_reason": ""
+    },
+    "78b467d5": {
+      "node_id": "78b467d5",
+      "description": "Widespread civil unrest and general strikes erupt in major EM hubs as currency devaluation outpaces the value of fuel subsidies.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "d5094002",
+      "depth": 3,
+      "parent_joint_probability": 0.13333333333333333,
+      "joint_probability": 0.06419753086419752,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "IND",
+            "IDN"
+          ],
+          "notes": "Credit default swap spreads widen sharply amid political instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Surge in political risk insurance premiums for SE Asia and South Asia."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_JAKARTA",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "PORT_MUMBAI",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "2d1d301d",
+        "db9b7b77",
+        "36c976b1"
+      ],
+      "pruned_reason": ""
+    },
+    "280d8364": {
+      "node_id": "280d8364",
+      "description": "Governments implement emergency draconian capital controls to halt reserve depletion and currency freefall.",
+      "branch_probability": 0.5,
+      "parent_id": "768ed48b",
+      "depth": 4,
+      "parent_joint_probability": 0.09000000000000001,
+      "joint_probability": 0.045000000000000005,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Immediate liquidity freeze and widening gap between official and black market rates."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads spike as capital accessibility vanishes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FINANCIAL_SETTLEMENT_SYSTEMS",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0602f2ae": {
+      "node_id": "0602f2ae",
+      "description": "Sovereign credit rating agencies trigger immediate multi-notch downgrades, leading to technical defaults on foreign-denominated debt.",
+      "branch_probability": 0.3,
+      "parent_id": "768ed48b",
+      "depth": 4,
+      "parent_joint_probability": 0.09000000000000001,
+      "joint_probability": 0.027000000000000003,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Bond yields surge as institutional investors are forced to divest."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums spike for all regional assets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ea45d47b": {
+      "node_id": "ea45d47b",
+      "description": "Hyper-inflation of imported fuel and food triggers widespread civil unrest and strikes at critical energy hubs.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "768ed48b",
+      "depth": 4,
+      "parent_joint_probability": 0.09000000000000001,
+      "joint_probability": 0.018000000000000002,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Regional instability adds a geopolitical risk premium to oil prices."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Disruptions in port labor and logistics due to protests."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_REFINERIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "MAJOR_PORT_TERMINALS",
+          "new_status": "DEGRADED",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2484db96": {
+      "node_id": "2484db96",
+      "description": "Successful IMF/bilateral liquidity injection stabilizes currency volatility and restores short-term confidence.",
+      "branch_probability": 0.45,
+      "parent_id": "63e7a32c",
+      "depth": 4,
+      "parent_joint_probability": 0.06,
+      "joint_probability": 0.027,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Reduction in devaluation velocity as reserves are bolstered."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads tighten following liquidity guarantee."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b2bbcf1a": {
+      "node_id": "b2bbcf1a",
+      "description": "Liquidity facilities are insufficient or delayed, triggering a second wave of currency devaluation and sovereign risk spikes.",
+      "branch_probability": 0.3,
+      "parent_id": "63e7a32c",
+      "depth": 4,
+      "parent_joint_probability": 0.06,
+      "joint_probability": 0.018,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR",
+            "IDR"
+          ],
+          "notes": "Panic selling resumes as stabilization window closes without result."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Increased probability of technical default on short-term obligations."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums surge for EM assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EM_ENERGY_IMPORT_TERMINALS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "54592355": {
+      "node_id": "54592355",
+      "description": "IMF loan conditionalities trigger immediate fuel subsidy cuts, sparking widespread civil unrest in urban centers.",
+      "branch_probability": 0.25,
+      "parent_id": "63e7a32c",
+      "depth": 4,
+      "parent_joint_probability": 0.06,
+      "joint_probability": 0.015,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Political instability offsets the benefit of liquidity injections."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Civil commotion and riot coverage costs spike."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "URBAN_LOGISTICS_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "REGIONAL_REFINERIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "456a094a": {
+      "node_id": "456a094a",
+      "description": "Widespread protests escalate into blockades of key port terminals and refineries in affected EM nations.",
+      "branch_probability": 0.45,
+      "parent_id": "f08f4f71",
+      "depth": 4,
+      "parent_joint_probability": 0.05,
+      "joint_probability": 0.022500000000000003,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Disruption in loading/unloading operations at EM hubs."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Local supply shocks drive regional price premiums."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Port congestion and labor strikes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAKARTA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "MUMBAI_REFINERY_COMPLEX",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8740ba7a": {
+      "node_id": "8740ba7a",
+      "description": "Credit rating agencies issue immediate sovereign downgrades due to fiscal instability and social volatility.",
+      "branch_probability": 0.35,
+      "parent_id": "f08f4f71",
+      "depth": 4,
+      "parent_joint_probability": 0.05,
+      "joint_probability": 0.017499999999999998,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Yield spikes on EM government bonds."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Accelerated capital flight from rupee and rupiah."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased political risk insurance premiums."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "27568720": {
+      "node_id": "27568720",
+      "description": "Governments declare states of emergency, deploying military forces to secure critical energy infrastructure.",
+      "branch_probability": 0.3,
+      "parent_id": "f08f4f71",
+      "depth": 4,
+      "parent_joint_probability": 0.05,
+      "joint_probability": 0.015,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for internal security equipment."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk premium added to regional oil supply."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EM_STRATEGIC_RESERVES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "REGIONAL_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "33e045af": {
+      "node_id": "33e045af",
+      "description": "Sovereign credit rating downgrades trigger a wave of technical defaults on foreign-denominated debt.",
+      "branch_probability": 0.35,
+      "parent_id": "ce053183",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444446,
+      "joint_probability": 0.022118055555555557,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Yields on EM bonds spike as risk premiums explode following capital controls."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Further devaluation despite capital controls due to loss of investor confidence."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b511c007": {
+      "node_id": "b511c007",
+      "description": "Hyperinflation of imported fuel and food leads to widespread civil unrest and blockade of key logistics hubs.",
+      "branch_probability": 0.45,
+      "parent_id": "ce053183",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444446,
+      "joint_probability": 0.028437500000000004,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Port congestion and labor strikes disrupt import/export flows."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums surge for assets in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_PORT_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "99d4a2aa": {
+      "node_id": "99d4a2aa",
+      "description": "IMF and regional central banks coordinate an emergency liquidity facility to prevent total systemic collapse.",
+      "branch_probability": 0.3,
+      "parent_id": "ce053183",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444446,
+      "joint_probability": 0.018958333333333337,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Short-term stabilization of the rupee/rupiah on news of a bailout."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Sovereign risk premiums ease slightly as default probability decreases."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e841615a": {
+      "node_id": "e841615a",
+      "description": "Rapid fiscal deterioration triggers sovereign credit rating downgrades and a spike in bond yields.",
+      "branch_probability": 0.45,
+      "parent_id": "f6ad5658",
+      "depth": 4,
+      "parent_joint_probability": 0.057291666666666664,
+      "joint_probability": 0.02578125,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Yields spike as credit risk increases due to unsustainable subsidy spending."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Further devaluation of rupee/rupiah as capital flight accelerates."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5c1a7f33": {
+      "node_id": "5c1a7f33",
+      "description": "Civil unrest escalates despite subsidies, targeting strategic energy distribution hubs.",
+      "branch_probability": 0.3,
+      "parent_id": "f6ad5658",
+      "depth": 4,
+      "parent_joint_probability": 0.057291666666666664,
+      "joint_probability": 0.017187499999999998,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums surge for EM assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Local supply disruptions create regional price premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_REFINERY_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "URBAN_FUEL_DEPOTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8e80eca4": {
+      "node_id": "8e80eca4",
+      "description": "Governments seek emergency IMF liquidity facilities to prevent imminent sovereign default.",
+      "branch_probability": 0.25,
+      "parent_id": "f6ad5658",
+      "depth": 4,
+      "parent_joint_probability": 0.057291666666666664,
+      "joint_probability": 0.014322916666666666,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Short-term stabilization of yields upon confirmation of liquidity support."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Temporary relief in currency volatility."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2d1d301d": {
+      "node_id": "2d1d301d",
+      "description": "General strikes lead to the effective closure of major EM shipping hubs and ports, disrupting global supply chains.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "78b467d5",
+      "depth": 4,
+      "parent_joint_probability": 0.06419753086419752,
+      "joint_probability": 0.02222222222222222,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Port congestion and labor strikes halt cargo movement in key EM hubs."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demurrage costs and vessel idling due to port closures."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PORT_JAKARTA",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "PORT_MUMBAI",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "db9b7b77": {
+      "node_id": "db9b7b77",
+      "description": "Governments announce emergency IMF loan requests to stabilize currencies and restore fuel subsidies, triggering sovereign credit downgrades.",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "78b467d5",
+      "depth": 4,
+      "parent_joint_probability": 0.06419753086419752,
+      "joint_probability": 0.02962962962962962,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Rapid deterioration of creditworthiness as debt-to-GDP ratios spike."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Speculative attacks intensify despite IMF intervention hopes."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "36c976b1": {
+      "node_id": "36c976b1",
+      "description": "Civil unrest escalates to targeted sabotage of fuel depots and refinery infrastructure to protest subsidy cuts.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "78b467d5",
+      "depth": 4,
+      "parent_joint_probability": 0.06419753086419752,
+      "joint_probability": 0.012345679012345677,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Supply disruptions in EM regions tighten global spot markets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Spike in political risk and property damage claims."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EM_REFINERY_CLUSTER",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "EM_FUEL_DEPOTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "0dab5f91",
+      "description": "US Treasury issues warnings on secondary sanctions for non-USD energy settlements, triggering a spike in geopolitical risk premiums.",
+      "joint_probability": 0.04285714285714285,
+      "pruned_reason": "joint_probability=0.0429 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "054c3222",
+      "description": "Severe FX shortages lead to payment defaults on oil imports, prompting suppliers to suspend shipments.",
+      "joint_probability": 0.03888888888888889,
+      "pruned_reason": "joint_probability=0.0389 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "309a7c65",
+      "description": "Hyperinflation of fuel and food prices triggers widespread civil unrest and strikes in major urban centers.",
+      "joint_probability": 0.029166666666666664,
+      "pruned_reason": "joint_probability=0.0292 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "3610b652",
+      "description": "Affected nations formally request emergency liquidity facilities from the IMF to stabilize FX reserves.",
+      "joint_probability": 0.04375,
+      "pruned_reason": "joint_probability=0.0437 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "735a37fa",
+      "description": "Transport unions launch general strikes, paralyzing urban logistics and port access in major EM hubs.",
+      "joint_probability": 0.046875,
+      "pruned_reason": "joint_probability=0.0469 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ac7ea08f",
+      "description": "Social unrest escalates to targeted sabotage of fuel distribution terminals and refineries.",
+      "joint_probability": 0.020833333333333332,
+      "pruned_reason": "joint_probability=0.0208 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "58aff299",
+      "description": "Global commodity price spike as EM export paralysis disrupts energy and agricultural supply chains.",
+      "joint_probability": 0.04814814814814814,
+      "pruned_reason": "joint_probability=0.0481 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "44501435",
+      "description": "Accelerated currency collapse and sovereign credit downgrades as trade revenues vanish.",
+      "joint_probability": 0.033333333333333326,
+      "pruned_reason": "joint_probability=0.0333 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "569b6991",
+      "description": "State deployment of military forces to forcibly reopen ports, leading to urban conflict.",
+      "joint_probability": 0.018518518518518517,
+      "pruned_reason": "joint_probability=0.0185 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "46334625",
+      "description": "IMF and G20 announce emergency liquidity facilities and currency swap lines to prevent a systemic EM contagion.",
+      "joint_probability": 0.03950617283950617,
+      "pruned_reason": "joint_probability=0.0395 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "91bac49d",
+      "description": "Accelerated capital flight triggers a banking liquidity crisis, forcing governments to impose strict capital controls.",
+      "joint_probability": 0.029629629629629627,
+      "pruned_reason": "joint_probability=0.0296 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "713463b6",
+      "description": "Coordinated sabotage attacks target energy terminals despite military presence, causing localized outages.",
+      "joint_probability": 0.02333333333333333,
+      "pruned_reason": "joint_probability=0.0233 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "e0ebd4b3",
+      "description": "Military crackdown leads to a political vacuum and potential coup attempt, paralyzing government functions.",
+      "joint_probability": 0.013333333333333334,
+      "pruned_reason": "joint_probability=0.0133 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "e577ca81",
+      "description": "Military successfully secures infrastructure, but prolonged martial law triggers international sanctions.",
+      "joint_probability": 0.02666666666666667,
+      "pruned_reason": "joint_probability=0.0267 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "322fe2e5",
+      "description": "Rapid acceleration of capital flight triggers emergency capital controls and the abandonment of currency pegs.",
+      "joint_probability": 0.04440993788819876,
+      "pruned_reason": "joint_probability=0.0444 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "161cd10d",
+      "description": "Failure to settle USD-denominated oil invoices triggers force majeure declarations by global energy suppliers.",
+      "joint_probability": 0.02826086956521739,
+      "pruned_reason": "joint_probability=0.0283 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c0f9283f",
+      "description": "Import credit lines for essential grains and fertilizers are revoked by global traders, sparking food security alarms.",
+      "joint_probability": 0.020186335403726708,
+      "pruned_reason": "joint_probability=0.0202 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "f4e672cf",
+      "description": "Insurance premiums for 'grey market' and non-traditional oil routes surge as risk profiles shift toward non-USD aligned suppliers.",
+      "joint_probability": 0.0298469387755102,
+      "pruned_reason": "joint_probability=0.0298 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "682c6969",
+      "description": "Sovereign credit ratings for affected EM nations are downgraded due to unsustainable import costs and currency collapse.",
+      "joint_probability": 0.020663265306122447,
+      "pruned_reason": "joint_probability=0.0207 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c5d69ecf",
+      "description": "EM nations activate emergency strategic petroleum reserves (SPR) to offset logistical delays in non-traditional supply chains.",
+      "joint_probability": 0.013775510204081631,
+      "pruned_reason": "joint_probability=0.0138 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}
