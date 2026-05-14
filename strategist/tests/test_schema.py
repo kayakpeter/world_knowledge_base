@@ -110,6 +110,24 @@ def test_scenario_tree_make_id():
     assert len(sid) > 10
 
 
+def test_scenario_tree_make_id_strips_path_hostile_chars():
+    """make_id must produce a filesystem-safe id — only [a-z0-9-] — regardless
+    of the trigger string. A '/' or paren in the id breaks downstream
+    delta_<id>.json path construction (FileNotFoundError, exit 1)."""
+    import re
+    sid = ScenarioTree.make_id("GCC covert coalition (KSA/UAE/Iraq) strikes")
+    assert re.fullmatch(r"[a-z0-9-]+", sid), f"id has path-hostile chars: {sid!r}"
+    assert "gcc-covert-coalition" in sid
+
+
+def test_scenario_tree_make_id_all_punctuation_event():
+    """A trigger string that slugs to empty must still yield a usable id."""
+    import re
+    sid = ScenarioTree.make_id("/// (((")
+    assert re.fullmatch(r"[a-z0-9-]+", sid), f"id has path-hostile chars: {sid!r}"
+    assert not sid.startswith("-")
+
+
 def test_add_node_no_duplicate_children():
     tree = ScenarioTree(scenario_id="dup-test", trigger_event="e", severity="HIGH", confirmed=True)
     root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
