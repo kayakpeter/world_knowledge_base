@@ -143,7 +143,7 @@ async def gdelt_search(terms: str, timespan: str = "48h", max_records: int = 15)
 # ── Ollama confirmation assessment ───────────────────────────────────────────
 
 OLLAMA_URL   = os.environ.get("OLLAMA_URL", "http://localhost:11434/v1/chat/completions")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:70b")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "gemma4:31b")
 
 CONFIRMATION_PROMPT = """\
 You are a geopolitical intelligence analyst. Your task is to assess whether a specific event has been CONFIRMED based on recent news headlines.
