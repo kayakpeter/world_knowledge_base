@@ -16,3 +16,8 @@ data/graph/financial_kg.json
 *.tar.gz
 lambda_package/
 .worktrees/
+
+# Strategist disposable outputs — per-scenario deltas + orphan current.json,
+# zero production consumers (only strategist tests reference them).
+data/regime_config/delta_*.json
+data/regime_config/current.json
