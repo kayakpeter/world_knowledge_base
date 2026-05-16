@@ -51,6 +51,9 @@ def parse_scenario_json(content: str) -> list[Scenario]:
     """Parse LLM JSON output into Scenario objects. Returns [] on failure."""
     try:
         raw = json.loads(content)
+        if not isinstance(raw, list):
+            logger.warning(f"Expected JSON array from LLM, got {type(raw).__name__} — skipping")
+            return []
         scenarios = []
         for i, item in enumerate(raw, start=max(s.scenario_id for s in SCENARIO_REGISTRY) + 1):  # dynamic IDs continue after the static registry's max ID
             try:
