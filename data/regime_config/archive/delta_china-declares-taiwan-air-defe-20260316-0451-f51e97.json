@@ -1,0 +1,10 @@
+{
+  "scenario_id": "china-declares-taiwan-air-defe-20260316-0451-f51e97",
+  "trigger_event": "China declares Taiwan Air Defense Identification Zone closure \u2014 warplanes breach median line",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T05:02:36.272849+00:00",
+  "defense_bonus": 1.908,
+  "currency_bonus": 1.595,
+  "energy_bonus": 1.527,
+  "sovereign_bonus": 1.031
+}

@@ -7,6 +7,7 @@ import pytest
 from strategist.expander import ScenarioExpander
 from strategist.schema import ScenarioNode, ScenarioTree
 from strategist.config import StrategistConfig
+from processing.llm_interface import LLMResponse
 
 
 def _make_llm_response(branches: list[dict]) -> str:
@@ -17,7 +18,7 @@ def _make_llm_response(branches: list[dict]) -> str:
 def _make_expander(llm_response: str) -> ScenarioExpander:
     cfg = StrategistConfig()
     mock_provider = MagicMock()
-    mock_provider.complete = AsyncMock(return_value=MagicMock(content=llm_response))
+    mock_provider.complete = AsyncMock(return_value=LLMResponse(raw_text=llm_response))
     return ScenarioExpander(cfg, llm_provider=mock_provider)
 
 
@@ -94,7 +95,7 @@ def test_expand_handles_malformed_llm_response():
     """If LLM returns non-JSON, expander returns empty list (graceful degradation)."""
     cfg = StrategistConfig()
     mock_provider = MagicMock()
-    mock_provider.complete = AsyncMock(return_value=MagicMock(content="not json at all"))
+    mock_provider.complete = AsyncMock(return_value=LLMResponse(raw_text="not json at all"))
     expander = ScenarioExpander(cfg, llm_provider=mock_provider)
 
     tree = ScenarioTree(scenario_id="t4", trigger_event="Test", severity="HIGH", confirmed=True)
@@ -105,6 +106,46 @@ def test_expand_handles_malformed_llm_response():
         expander.expand(root, tree, severity="HIGH")
     )
     assert children == []
+
+
+def test_expand_strips_markdown_fenced_json():
+    """gemma4:31b wraps JSON output in ```json ... ``` fences. The expander
+    must strip the fence before parsing or every branch is lost (degenerate
+    1-node trees)."""
+    inner = _make_llm_response([
+        {"description": "Fenced branch", "probability": 0.55,
+         "sector_impacts": [], "infrastructure_effects": [], "time_offset_hours": 0},
+    ])
+    expander = _make_expander(f"```json\n{inner}\n```")
+
+    tree = ScenarioTree(scenario_id="t8", trigger_event="Test", severity="HIGH", confirmed=True)
+    root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
+    tree.add_node(root)
+
+    children = asyncio.get_event_loop().run_until_complete(
+        expander.expand(root, tree, severity="HIGH")
+    )
+    assert len(children) == 1
+    assert children[0].description == "Fenced branch"
+
+
+def test_expand_strips_inline_markdown_fence():
+    """Some models emit the fence with no newline after ```json. Must still parse."""
+    inner = _make_llm_response([
+        {"description": "Inline fenced", "probability": 0.5,
+         "sector_impacts": [], "infrastructure_effects": [], "time_offset_hours": 0},
+    ])
+    expander = _make_expander(f"```json{inner}```")
+
+    tree = ScenarioTree(scenario_id="t9", trigger_event="Test", severity="HIGH", confirmed=True)
+    root = ScenarioNode(node_id="root", description="root", branch_probability=1.0, parent_id=None, depth=0)
+    tree.add_node(root)
+
+    children = asyncio.get_event_loop().run_until_complete(
+        expander.expand(root, tree, severity="HIGH")
+    )
+    assert len(children) == 1
+    assert children[0].description == "Inline fenced"
 
 
 def test_expand_sets_depth():

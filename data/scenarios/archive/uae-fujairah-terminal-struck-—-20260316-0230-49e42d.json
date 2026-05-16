@@ -1,0 +1,394 @@
+{
+  "scenario_id": "uae-fujairah-terminal-struck-\u2014-20260316-0230-49e42d",
+  "trigger_event": "UAE Fujairah terminal struck \u2014 world second-largest bunkering hub offline",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-16T02:30:00.946354+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "uae-fuja_root": {
+      "node_id": "uae-fuja_root",
+      "description": "UAE Fujairah terminal struck \u2014 world second-largest bunkering hub offline",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "b96790d8",
+        "5e301e1b",
+        "92e81635"
+      ],
+      "pruned_reason": ""
+    },
+    "b96790d8": {
+      "node_id": "b96790d8",
+      "description": "Regional maritime traffic reroutes, causing delays and increased costs.",
+      "branch_probability": 0.34,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.34,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for alternative routes and ports."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FUJAIRAH_TERMINAL",
+          "new_status": "CLOSED",
+          "confidence": 1.0
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "8f11622f",
+        "cf3cf846",
+        "bc773c63"
+      ],
+      "pruned_reason": ""
+    },
+    "5e301e1b": {
+      "node_id": "5e301e1b",
+      "description": "Insurance premiums for vessels operating in the Gulf increase due to heightened risk.",
+      "branch_probability": 0.30000000000000004,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.30000000000000004,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Risk assessment adjustments lead to higher premiums."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "24e5eb37",
+        "e72ed234",
+        "ae29a3c5"
+      ],
+      "pruned_reason": ""
+    },
+    "92e81635": {
+      "node_id": "92e81635",
+      "description": "Energy prices spike globally due to supply disruptions.",
+      "branch_probability": 0.36000000000000004,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.36000000000000004,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Shortage of bunker fuel and crude oil supplies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "9df8d7a1",
+        "2efd7bf9",
+        "fe250b78"
+      ],
+      "pruned_reason": ""
+    },
+    "8f11622f": {
+      "node_id": "8f11622f",
+      "description": "Regional shipping rates surge due to increased demand for alternative bunkering locations.",
+      "branch_probability": 0.37777777777777777,
+      "parent_id": "b96790d8",
+      "depth": 2,
+      "parent_joint_probability": 0.34,
+      "joint_probability": 0.12844444444444444,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased costs for bulk carriers"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased costs for tanker operations"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cf3cf846": {
+      "node_id": "cf3cf846",
+      "description": "Insurance premiums for vessels operating in the Gulf increase due to heightened risk.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "b96790d8",
+      "depth": 2,
+      "parent_joint_probability": 0.34,
+      "joint_probability": 0.11333333333333334,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Risk assessment adjustments"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bc773c63": {
+      "node_id": "bc773c63",
+      "description": "Energy prices rise globally as supply chains are disrupted and alternative routes become more expensive.",
+      "branch_probability": 0.28888888888888886,
+      "parent_id": "b96790d8",
+      "depth": 2,
+      "parent_joint_probability": 0.34,
+      "joint_probability": 0.09822222222222222,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Supply chain disruptions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "24e5eb37": {
+      "node_id": "24e5eb37",
+      "description": "Reinsurance companies reassess Gulf region risk, leading to further premium hikes.",
+      "branch_probability": 0.3488372093023256,
+      "parent_id": "5e301e1b",
+      "depth": 2,
+      "parent_joint_probability": 0.30000000000000004,
+      "joint_probability": 0.1046511627906977,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Reinsurers increase premiums to cover higher risk exposure."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e72ed234": {
+      "node_id": "e72ed234",
+      "description": "Shipping companies reroute vessels to avoid the Gulf, causing delays and increased costs.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "5e301e1b",
+      "depth": 2,
+      "parent_joint_probability": 0.30000000000000004,
+      "joint_probability": 0.08372093023255815,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Increased operational costs and delays impact container shipping."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ae29a3c5": {
+      "node_id": "ae29a3c5",
+      "description": "Energy prices spike globally as supply concerns rise due to disrupted bunkering operations.",
+      "branch_probability": 0.37209302325581395,
+      "parent_id": "5e301e1b",
+      "depth": 2,
+      "parent_joint_probability": 0.30000000000000004,
+      "joint_probability": 0.1116279069767442,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT",
+            "WTI"
+          ],
+          "notes": "Disruption at Fujairah leads to global energy price increases."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9df8d7a1": {
+      "node_id": "9df8d7a1",
+      "description": "Global shipping routes are rerouted, causing delays and increased costs.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "92e81635",
+      "depth": 2,
+      "parent_joint_probability": 0.36000000000000004,
+      "joint_probability": 0.1390909090909091,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased shipping costs and delays"
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased shipping costs and delays"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2efd7bf9": {
+      "node_id": "2efd7bf9",
+      "description": "Insurance premiums for ships operating in the Gulf increase significantly.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "92e81635",
+      "depth": 2,
+      "parent_joint_probability": 0.36000000000000004,
+      "joint_probability": 0.12272727272727273,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Higher risk and premiums"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fe250b78": {
+      "node_id": "fe250b78",
+      "description": "Regional tensions escalate, leading to further military deployments in the Gulf.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "92e81635",
+      "depth": 2,
+      "parent_joint_probability": 0.36000000000000004,
+      "joint_probability": 0.09818181818181819,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Increased military activity"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_REGION",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

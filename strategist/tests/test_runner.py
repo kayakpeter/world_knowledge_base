@@ -44,8 +44,9 @@ def _run(coro):
     return asyncio.get_event_loop().run_until_complete(coro)
 
 
-def test_runner_builds_tree():
+def test_runner_builds_tree(tmp_path):
     cfg = StrategistConfig()
+    cfg.scenarios_dir = tmp_path  # don't pollute the real data/scenarios/ dir
     expander = _mock_expander_with_children(2)
     infra_reg = _mock_infra_registry()
 
@@ -61,9 +62,10 @@ def test_runner_builds_tree():
     assert tree.node_count() >= 3
 
 
-def test_runner_prunes_low_probability():
+def test_runner_prunes_low_probability(tmp_path):
     """Nodes with joint_prob below floor should be pruned (added to tombstones)."""
     cfg = StrategistConfig()
+    cfg.scenarios_dir = tmp_path  # don't pollute the real data/scenarios/ dir
     expander = MagicMock()
 
     async def fake_expand(node, tree, *, severity):
@@ -129,9 +131,10 @@ def test_runner_saves_checkpoint(tmp_path):
     assert data["scenario_id"] == tree.scenario_id
 
 
-def test_runner_applies_infra_effects():
+def test_runner_applies_infra_effects(tmp_path):
     """When a node has infrastructure_effects, InfraStateRegistry.update_status() is called."""
     cfg = StrategistConfig()
+    cfg.scenarios_dir = tmp_path  # don't pollute the real data/scenarios/ dir
     expander = MagicMock()
 
     async def fake_expand(node, tree, *, severity):

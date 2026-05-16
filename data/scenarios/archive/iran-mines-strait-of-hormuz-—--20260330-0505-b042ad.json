@@ -1,0 +1,512 @@
+{
+  "scenario_id": "iran-mines-strait-of-hormuz-\u2014--20260330-0505-b042ad",
+  "trigger_event": "Iran mines Strait of Hormuz \u2014 commercial shipping blocked",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T05:05:29.585221+00:00",
+  "expires_at": "2026-04-02T05:05:29.585221+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iran-min_root": {
+      "node_id": "iran-min_root",
+      "description": "Iran mines Strait of Hormuz \u2014 commercial shipping blocked",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "8574f6b1",
+        "03375a79",
+        "7b4c92da"
+      ],
+      "pruned_reason": ""
+    },
+    "8574f6b1": {
+      "node_id": "8574f6b1",
+      "description": "US Navy deploys to clear mines and secure Strait of Hormuz",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4444444444444445,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices surge due to supply chain disruption"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Defense stocks rise on increased tensions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "3bf409dd",
+        "c4e6e487",
+        "8c77d368"
+      ],
+      "pruned_reason": ""
+    },
+    "03375a79": {
+      "node_id": "03375a79",
+      "description": "Saudi Arabia and UAE increase oil production to offset lost Iranian exports",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices stabilize as Saudi Arabia and UAE increase production"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "e7f67248",
+        "f925550e",
+        "7ba1d07c"
+      ],
+      "pruned_reason": ""
+    },
+    "7b4c92da": {
+      "node_id": "7b4c92da",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) threatens to attack any vessel attempting to clear mines",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "iran-min_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22222222222222224,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "LNG"
+          ],
+          "notes": "Insurance premiums for vessels in the region skyrocket"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "d1cfcff4",
+        "7fbe89b2",
+        "515a6420"
+      ],
+      "pruned_reason": ""
+    },
+    "3bf409dd": {
+      "node_id": "3bf409dd",
+      "description": "US Navy successfully clears mines, restores Strait of Hormuz traffic",
+      "branch_probability": 0.7,
+      "parent_id": "8574f6b1",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.3111111111111111,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced risk premium for oil tankers"
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CMA"
+          ],
+          "notes": "Increased container traffic as Strait reopens"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c4e6e487": {
+      "node_id": "c4e6e487",
+      "description": "Iranian naval forces engage US Navy, escalating conflict",
+      "branch_probability": 0.25,
+      "parent_id": "8574f6b1",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.11111111111111112,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems"
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Risk premium surges as conflict escalates"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "IRANIAN_OIL_REFINERY_1",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8c77d368": {
+      "node_id": "8c77d368",
+      "description": "International community condemns Iran's actions, imposes new sanctions",
+      "branch_probability": 0.15,
+      "parent_id": "8574f6b1",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.06666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "IRAN_10Y"
+          ],
+          "notes": "Increased credit risk for Iranian government bonds"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Iranian rial depreciates against major currencies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e7f67248": {
+      "node_id": "e7f67248",
+      "description": "US Navy deploys additional warships to escort commercial vessels through Strait of Hormuz",
+      "branch_probability": 0.38095238095238093,
+      "parent_id": "03375a79",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.12698412698412698,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD"
+          ],
+          "notes": "Increased demand for naval escort services"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f925550e": {
+      "node_id": "f925550e",
+      "description": "Oil prices surge as market reacts to potential supply disruption",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "03375a79",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.14285714285714285,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "CL=F"
+          ],
+          "notes": "Brent crude prices jump above $80/bbl"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7ba1d07c": {
+      "node_id": "7ba1d07c",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) threatens to attack Saudi and UAE oil facilities",
+      "branch_probability": 0.19047619047619047,
+      "parent_id": "03375a79",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.06349206349206349,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruption to Saudi and UAE oil exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_PROCESSING_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d1cfcff4": {
+      "node_id": "d1cfcff4",
+      "description": "US Navy dispatches minesweepers and escorts to Hormuz, sparking Iranian military mobilization",
+      "branch_probability": 0.6,
+      "parent_id": "7b4c92da",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.13333333333333333,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices surge as Hormuz closure threatens global supply"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTN"
+          ],
+          "notes": "Defense contractors see increased demand for naval and mine countermeasures"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "IRANIAN_MILITARY_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.4
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7fbe89b2": {
+      "node_id": "7fbe89b2",
+      "description": "Saudi Arabia and UAE announce emergency oil shipments via alternative routes, mitigating Hormuz closure impact",
+      "branch_probability": 0.3,
+      "parent_id": "7b4c92da",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.06666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices ease as alternative supply routes announced"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Tanker demand surges for emergency shipments"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_OIL_PORTS",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "UAE_OIL_PORTS",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "515a6420": {
+      "node_id": "515a6420",
+      "description": "China condemns US 'aggression' in Hormuz, announces increased naval presence in region",
+      "branch_probability": 0.2,
+      "parent_id": "7b4c92da",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.04444444444444445,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Defense contractors see increased demand for naval and anti-ship missiles"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "USD/CNY"
+          ],
+          "notes": "US-China tensions escalate, yuan surges"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CHINESE_NAVAL_BASES",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

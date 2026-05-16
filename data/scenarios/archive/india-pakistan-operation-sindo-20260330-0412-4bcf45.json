@@ -1,0 +1,435 @@
+{
+  "scenario_id": "india-pakistan-operation-sindo-20260330-0412-4bcf45",
+  "trigger_event": "India-Pakistan Operation Sindoor escalates to artillery exchange across LoC",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:12:59.888765+00:00",
+  "expires_at": "2026-04-02T04:12:59.888765+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-pa_root": {
+      "node_id": "india-pa_root",
+      "description": "India-Pakistan Operation Sindoor escalates to artillery exchange across LoC",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "753f63cc",
+        "e735607c",
+        "6389ef02"
+      ],
+      "pruned_reason": ""
+    },
+    "753f63cc": {
+      "node_id": "753f63cc",
+      "description": "Pakistan closes airspace and suspends all civilian air traffic",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4444444444444445,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "MAERSK.B"
+          ],
+          "notes": "Potential disruptions to global supply chains"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KARACHI_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "LAHORE_INTERNATIONAL_AIRPORT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "854c8bf1",
+        "0859d577",
+        "83e95ae3"
+      ],
+      "pruned_reason": ""
+    },
+    "e735607c": {
+      "node_id": "e735607c",
+      "description": "India imposes economic sanctions on Pakistan, targeting key industries",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "PKR"
+          ],
+          "notes": "Potential currency devaluation and economic instability"
+        },
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CTRM"
+          ],
+          "notes": "Impact on Pakistan's agricultural exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "8c463e0d",
+        "bce9d39d",
+        "c0be4465"
+      ],
+      "pruned_reason": ""
+    },
+    "6389ef02": {
+      "node_id": "6389ef02",
+      "description": "China issues statement calling for calm and restraint from both parties",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22222222222222224,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Potential increase in defense spending and cooperation between China and Pakistan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "d1206b66",
+        "9f58eb2e",
+        "9d17ce71"
+      ],
+      "pruned_reason": ""
+    },
+    "854c8bf1": {
+      "node_id": "854c8bf1",
+      "description": "India retaliates with targeted airstrikes on Pakistani military installations",
+      "branch_probability": 0.3453608247422681,
+      "parent_id": "753f63cc",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.1534936998854525,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Expected increase in demand for defense equipment and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PAF_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0859d577": {
+      "node_id": "0859d577",
+      "description": "Pakistan's airspace closure disrupts global air traffic, causing widespread flight cancellations and delays",
+      "branch_probability": 0.43814432989690727,
+      "parent_id": "753f63cc",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.19473081328751435,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "UPS",
+            "FDX"
+          ],
+          "notes": "Expected decline in air cargo volumes and increased logistics costs"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KARACHI_INTL_AIRPORT",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "83e95ae3": {
+      "node_id": "83e95ae3",
+      "description": "China issues statement calling for restraint and offers to mediate the conflict",
+      "branch_probability": 0.21649484536082475,
+      "parent_id": "753f63cc",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.09621993127147767,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Expected decline in value of Indian and Pakistani currencies due to increased uncertainty"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8c463e0d": {
+      "node_id": "8c463e0d",
+      "description": "Pakistan retaliates with its own economic sanctions on India, affecting bilateral trade",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "e735607c",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.1111111111111111,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "INDIA_CROP_PRICES"
+          ],
+          "notes": "Impact on Indian agricultural exports to Pakistan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bce9d39d": {
+      "node_id": "bce9d39d",
+      "description": "China expresses support for Pakistan and threatens to review its trade agreements with India",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "e735607c",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.07407407407407407,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "COSCO"
+          ],
+          "notes": "Potential impact on Indian container shipping to China"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c0be4465": {
+      "node_id": "c0be4465",
+      "description": "US and other Western countries issue statements calling for calm and restraint from both India and Pakistan",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "e735607c",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.14814814814814814,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian rupee may depreciate due to geopolitical tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d1206b66": {
+      "node_id": "d1206b66",
+      "description": "Pakistan closes airspace to Indian flights, affecting regional air traffic",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "6389ef02",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.10256410256410255,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "MAERSK.B"
+          ],
+          "notes": "Disruption to regional trade and supply chains"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PAKISTAN_AIRSPACE",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9f58eb2e": {
+      "node_id": "9f58eb2e",
+      "description": "India imposes economic sanctions on Pakistan, targeting key industries",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "6389ef02",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.06837606837606838,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "WILMAR"
+          ],
+          "notes": "Impact on Pakistani agricultural exports"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian rupee strengthens against Pakistani rupee"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9d17ce71": {
+      "node_id": "9d17ce71",
+      "description": "China offers to mediate talks between India and Pakistan, hosting emergency diplomatic meeting",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "6389ef02",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.05128205128205127,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Potential for increased defense cooperation between China and Pakistan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

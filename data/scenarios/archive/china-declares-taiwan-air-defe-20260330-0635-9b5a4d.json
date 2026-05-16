@@ -1,0 +1,450 @@
+{
+  "scenario_id": "china-declares-taiwan-air-defe-20260330-0635-9b5a4d",
+  "trigger_event": "China declares Taiwan Air Defense Identification Zone closure \u2014 warplanes breach median line",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T06:35:49.578278+00:00",
+  "expires_at": "2026-04-02T06:35:49.578278+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-de_root": {
+      "node_id": "china-de_root",
+      "description": "China declares Taiwan Air Defense Identification Zone closure \u2014 warplanes breach median line",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "efe82592",
+        "9c8a66f6",
+        "5f3f940e"
+      ],
+      "pruned_reason": ""
+    },
+    "efe82592": {
+      "node_id": "efe82592",
+      "description": "Taiwan scrambles fighter jets, warns of potential military action",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4444444444444445,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "e43ce4a8",
+        "4a2f445b",
+        "4dc1445b"
+      ],
+      "pruned_reason": ""
+    },
+    "9c8a66f6": {
+      "node_id": "9c8a66f6",
+      "description": "US Navy deploys carrier strike group to South China Sea in response",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense equipment"
+        },
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Potential disruption to oil shipments"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "77add991",
+        "d0515a5b",
+        "c75dcbc0"
+      ],
+      "pruned_reason": ""
+    },
+    "5f3f940e": {
+      "node_id": "5f3f940e",
+      "description": "China imposes economic sanctions on Taiwan, including trade restrictions",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "china-de_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22222222222222224,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "CMA"
+          ],
+          "notes": "Reduced trade volumes"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "TWSE"
+          ],
+          "notes": "Economic sanctions impact Taiwan's economy"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "daba97b7",
+        "095809cf",
+        "c82935ca"
+      ],
+      "pruned_reason": ""
+    },
+    "e43ce4a8": {
+      "node_id": "e43ce4a8",
+      "description": "US Navy sends carrier strike group to South China Sea in response",
+      "branch_probability": 0.46853146853146854,
+      "parent_id": "efe82592",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.20823620823620825,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4a2f445b": {
+      "node_id": "4a2f445b",
+      "description": "China imposes economic sanctions on Taiwan and its major trade partners",
+      "branch_probability": 0.38461538461538464,
+      "parent_id": "efe82592",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.17094017094017097,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -25.0,
+          "tickers": [
+            "CMA"
+          ],
+          "notes": "Disrupted supply chains and reduced trade volumes"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TWD"
+          ],
+          "notes": "Taiwanese currency devalues due to economic pressure"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4dc1445b": {
+      "node_id": "4dc1445b",
+      "description": "Taiwanese military shoots down Chinese warplane, escalating conflict",
+      "branch_probability": 0.14685314685314685,
+      "parent_id": "efe82592",
+      "depth": 2,
+      "parent_joint_probability": 0.4444444444444445,
+      "joint_probability": 0.06526806526806526,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased risk of war leads to higher energy prices"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -30.0,
+          "tickers": [
+            "TW"
+          ],
+          "notes": "Taiwanese government bonds suffer due to increased conflict risk"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TAIWAN_AIRSPACE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "77add991": {
+      "node_id": "77add991",
+      "description": "China scrambles fighter jets, intercepts US aircraft, and issues warning to US Navy",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "9c8a66f6",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.1538461538461538,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MAJOR",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions and potential conflict drive up defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d0515a5b": {
+      "node_id": "d0515a5b",
+      "description": "Taiwanese military mobilizes, conducts live-fire drills near disputed islands",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "9c8a66f6",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.10256410256410256,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TWSE"
+          ],
+          "notes": "Increased tensions and potential conflict drive down Taiwanese markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c75dcbc0": {
+      "node_id": "c75dcbc0",
+      "description": "US imposes sanctions on Chinese officials, entities involved in Taiwan ADIZ closure",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "9c8a66f6",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.0769230769230769,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MINOR",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "US sanctions weaken Chinese currency"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "daba97b7": {
+      "node_id": "daba97b7",
+      "description": "Taiwanese government responds with diplomatic countermeasures and requests international support",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "5f3f940e",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.10256410256410255,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TWSE"
+          ],
+          "notes": "Taiwanese stocks decline due to increased tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "095809cf": {
+      "node_id": "095809cf",
+      "description": "China's People's Liberation Army (PLA) Navy begins patrolling the Taiwan Strait, raising concerns of a potential blockade",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "5f3f940e",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.06837606837606838,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Oil prices rise due to concerns of supply disruptions"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Tanker rates increase as shipping companies reroute vessels"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TAIWAN_STRAIT_SHIPPING_LANE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c82935ca": {
+      "node_id": "c82935ca",
+      "description": "United States, Japan, and other regional allies issue statements condemning China's actions and reaffirming support for Taiwan",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "5f3f940e",
+      "depth": 2,
+      "parent_joint_probability": 0.22222222222222224,
+      "joint_probability": 0.05128205128205127,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Defense stocks rise as tensions escalate"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

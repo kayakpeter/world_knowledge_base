@@ -1,6 +1,6 @@
 import json
 import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from processing.dynamic_scenario_generator import (
     DynamicScenarioGenerator,
     parse_scenario_json,
@@ -36,9 +36,9 @@ def test_parse_handles_bad_json():
 
 def test_generator_returns_list():
     gen = DynamicScenarioGenerator(max_scenarios=3)
-    with patch("processing.dynamic_scenario_generator.openai") as mock_openai:
-        mock_client = MagicMock()
-        mock_openai.OpenAI.return_value = mock_client
-        mock_client.chat.completions.create.return_value.choices[0].message.content = SAMPLE_LLM_RESPONSE
+    with patch("processing.dynamic_scenario_generator.requests") as mock_requests:
+        mock_requests.post.return_value.json.return_value = {
+            "message": {"content": SAMPLE_LLM_RESPONSE}
+        }
         results = gen.generate(active_crack_summaries=["US: consumer credit stress active"])
     assert isinstance(results, list)

@@ -1,0 +1,3421 @@
+{
+  "scenario_id": "iron-dome-interceptor-stockpil-20260514-2157-4662fe",
+  "trigger_event": "Iron Dome interceptor stockpile depleted",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-05-14T21:57:22.726332+00:00",
+  "expires_at": "2026-05-17T21:57:22.726332+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iron-dom_root": {
+      "node_id": "iron-dom_root",
+      "description": "Iron Dome interceptor stockpile depleted",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "7fb465d2",
+        "dfb39f6f",
+        "52f45038",
+        "db70bb40"
+      ],
+      "pruned_reason": ""
+    },
+    "7fb465d2": {
+      "node_id": "7fb465d2",
+      "description": "Adversaries launch massive rocket barrages targeting urban centers and critical infrastructure to exploit the defensive gap.",
+      "branch_probability": 0.25,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.25,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Sharp increase in war-risk premiums for assets in the Levant."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Israeli government bonds due to vulnerability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TLV_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "TEL_AVIV_METRO",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "ebc57b28",
+        "e9c88fca",
+        "93b590fb"
+      ],
+      "pruned_reason": ""
+    },
+    "dfb39f6f": {
+      "node_id": "dfb39f6f",
+      "description": "United States initiates emergency strategic airlift of interceptor missiles to replenish stockpiles.",
+      "branch_probability": 0.32692307692307687,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.32692307692307687,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for rapid replenishment and logistics support."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NEVATIM_AIRBASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "7b34762c",
+        "3625df4e",
+        "0dec778d"
+      ],
+      "pruned_reason": ""
+    },
+    "52f45038": {
+      "node_id": "52f45038",
+      "description": "Israel shifts to a preemptive offensive posture, striking rocket launch sites to compensate for lack of interception capability.",
+      "branch_probability": 0.15384615384615385,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.15384615384615385,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Regional escalation risk drives crude oil price volatility."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased operational tempo for offensive munitions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "GAZA_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [
+        "754decd4",
+        "308bc09e",
+        "e31902da"
+      ],
+      "pruned_reason": ""
+    },
+    "db70bb40": {
+      "node_id": "db70bb40",
+      "description": "Immediate financial market volatility and currency devaluation as perceived national security risk spikes.",
+      "branch_probability": 0.26923076923076916,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.26923076923076916,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Rapid depreciation of the Shekel against the USD."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Flight to safety in global bond markets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "eaa7ea8e",
+        "a1aafdb6",
+        "3979baf1"
+      ],
+      "pruned_reason": ""
+    },
+    "ebc57b28": {
+      "node_id": "ebc57b28",
+      "description": "Widespread damage to urban power grids and civilian infrastructure due to lack of interception.",
+      "branch_probability": 0.3488372093023256,
+      "parent_id": "7fb465d2",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.0872093023255814,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Massive spike in claims for urban property and business interruption."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on sovereign debt due to instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CENTRAL_ISRAEL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "TEL_AVIV_METRO_AREA",
+          "new_status": "SMOKE_REPORTED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "57b13ffb"
+      ],
+      "pruned_reason": ""
+    },
+    "e9c88fca": {
+      "node_id": "e9c88fca",
+      "description": "Rapid military escalation involving full-scale counter-offensives to neutralize launch sites.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "7fb465d2",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.06976744186046512,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for replacement interceptors and offensive munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Regional instability driving oil price volatility."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_MILITARY_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "fe5ce3df"
+      ],
+      "pruned_reason": ""
+    },
+    "93b590fb": {
+      "node_id": "93b590fb",
+      "description": "Emergency international airlift of interceptor stockpiles from allied nations.",
+      "branch_probability": 0.37209302325581395,
+      "parent_id": "7fb465d2",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.09302325581395349,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Acceleration of procurement cycles for missile defense systems."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Logistical diversion of air/sea assets for military priority."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "ace1fecf"
+      ],
+      "pruned_reason": ""
+    },
+    "7b34762c": {
+      "node_id": "7b34762c",
+      "description": "Adversaries launch a massive saturation strike to exploit the vulnerability window during airlift transit.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "dfb39f6f",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.10897435897435895,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Surge in demand for short-term missile defense solutions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for regional assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to crude prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "647b9159",
+        "89d01b01"
+      ],
+      "pruned_reason": ""
+    },
+    "3625df4e": {
+      "node_id": "3625df4e",
+      "description": "Successful delivery and integration of interceptors, restoring defensive capabilities.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "dfb39f6f",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.14529914529914525,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [],
+          "notes": "Reduction in immediate existential risk stabilizes bond yields."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NEVATIM_AIRBASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "691498f7",
+        "a71231f5",
+        "f2331a40"
+      ],
+      "pruned_reason": ""
+    },
+    "0dec778d": {
+      "node_id": "0dec778d",
+      "description": "Regional actors perceive the massive US airlift as a signal of imminent escalation, triggering preemptive naval movements.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "dfb39f6f",
+      "depth": 2,
+      "parent_joint_probability": 0.32692307692307687,
+      "joint_probability": 0.07264957264957263,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Increased freight rates due to risk of transit disruption."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Supply chain anxiety regarding regional stability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SUEZ_CANAL",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "BAB_EL_MANDEB",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.5
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "1c558487"
+      ],
+      "pruned_reason": ""
+    },
+    "754decd4": {
+      "node_id": "754decd4",
+      "description": "Adversaries launch saturation rocket volleys to exploit the known depletion of Iron Dome interceptors.",
+      "branch_probability": 0.37142857142857144,
+      "parent_id": "52f45038",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.05714285714285715,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Surge in war-risk premiums for Mediterranean shipping and regional assets."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Urgent demand for missile defense replenishment and alternative systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TLV_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "308bc09e": {
+      "node_id": "308bc09e",
+      "description": "United States initiates emergency airlift of interceptors and deploys additional BMD assets to Israel.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "52f45038",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.06593406593406594,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RTX"
+          ],
+          "notes": "Accelerated delivery schedules for interceptor stockpiles."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel volatility due to heightened conflict risk despite US support."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NEVATIM_AIRBASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e31902da": {
+      "node_id": "e31902da",
+      "description": "Iran activates regional proxies to create a multi-front diversion, increasing pressure on depleted defenses.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "52f45038",
+      "depth": 2,
+      "parent_joint_probability": 0.15384615384615385,
+      "joint_probability": 0.030769230769230767,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk premium added to oil due to potential regional spillover."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased freight rates for high-risk zones."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "eaa7ea8e": {
+      "node_id": "eaa7ea8e",
+      "description": "Rapid acceleration of capital flight and sovereign credit rating downgrades as investors price in a high probability of urban devastation.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "db70bb40",
+      "depth": 2,
+      "parent_joint_probability": 0.26923076923076916,
+      "joint_probability": 0.11538461538461535,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Panic selling of local currency due to perceived vulnerability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Bond yields spike as risk premiums jump."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for regional assets surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FINANCIAL_DISTRICTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "a06966ee",
+        "66cbf9bd"
+      ],
+      "pruned_reason": ""
+    },
+    "a1aafdb6": {
+      "node_id": "a1aafdb6",
+      "description": "Shift to an aggressive preemptive military posture to neutralize launch sites, compensating for the loss of defensive capabilities.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "db70bb40",
+      "depth": 2,
+      "parent_joint_probability": 0.26923076923076916,
+      "joint_probability": 0.09230769230769227,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for offensive munitions and rapid resupply."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Regional instability drives crude oil price premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "9e4f2bf1",
+        "98b1af6a"
+      ],
+      "pruned_reason": ""
+    },
+    "3979baf1": {
+      "node_id": "3979baf1",
+      "description": "Adversaries launch a saturation strike to test the validity of the depletion rumors, targeting critical energy infrastructure.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "db70bb40",
+      "depth": 2,
+      "parent_joint_probability": 0.26923076923076916,
+      "joint_probability": 0.06153846153846152,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Direct threat to regional energy production/transit."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Immediate trigger of force majeure clauses."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "MAJOR_PORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "57b13ffb": {
+      "node_id": "57b13ffb",
+      "description": "Israel initiates massive retaliatory strikes against launch sites and command centers to deter further barrages.",
+      "branch_probability": 0.46875,
+      "parent_id": "ebc57b28",
+      "depth": 3,
+      "parent_joint_probability": 0.0872093023255814,
+      "joint_probability": 0.04087936046511628,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for munitions and replacement air defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Sharp rise in political risk and war risk premiums for the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "6c5ad2c5",
+        "d6f0201d",
+        "0833e19f"
+      ],
+      "pruned_reason": ""
+    },
+    "fe5ce3df": {
+      "node_id": "fe5ce3df",
+      "description": "United States initiates emergency strategic airlift of interceptors to restore the defense shield.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "e9c88fca",
+      "depth": 3,
+      "parent_joint_probability": 0.06976744186046512,
+      "joint_probability": 0.031007751937984496,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "RTX"
+          ],
+          "notes": "Accelerated delivery schedules and emergency procurement contracts."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USDILS"
+          ],
+          "notes": "Market perceives US intervention as a floor against total collapse."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RAMAT_DAVID_AIRBASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "54984165",
+        "f0fad160",
+        "ce2cddf6"
+      ],
+      "pruned_reason": ""
+    },
+    "ace1fecf": {
+      "node_id": "ace1fecf",
+      "description": "Successful integration of airlifted interceptors restores defensive posture to baseline levels.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "93b590fb",
+      "depth": 3,
+      "parent_joint_probability": 0.09302325581395349,
+      "joint_probability": 0.04318936877076412,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Reduction in immediate risk premiums for regional assets."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Confirmation of high demand for rapid-response missile replenishment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRON_DOME_BATTERIES",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "ec471f4b",
+        "d8e14fc7",
+        "e2194862"
+      ],
+      "pruned_reason": ""
+    },
+    "647b9159": {
+      "node_id": "647b9159",
+      "description": "Saturation strike results in successful kinetic impacts on critical energy and power infrastructure.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "7b34762c",
+      "depth": 3,
+      "parent_joint_probability": 0.10897435897435895,
+      "joint_probability": 0.039351851851851846,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply disruption fears due to refinery damage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Surge in war-risk premiums for regional assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HAIFA_REFINERY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "ea353a93",
+        "4585698f",
+        "76ba89d2"
+      ],
+      "pruned_reason": ""
+    },
+    "89d01b01": {
+      "node_id": "89d01b01",
+      "description": "Immediate large-scale retaliatory strikes launched against adversary command and control centers.",
+      "branch_probability": 0.4722222222222222,
+      "parent_id": "7b34762c",
+      "depth": 3,
+      "parent_joint_probability": 0.10897435897435895,
+      "joint_probability": 0.05146011396011395,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and precision munitions."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -1.5,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Flight to safety favoring USD over local currency."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_C2_NODES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "d7a3654c",
+        "d96f9845",
+        "ff6971c4"
+      ],
+      "pruned_reason": ""
+    },
+    "691498f7": {
+      "node_id": "691498f7",
+      "description": "Adversary launches a saturation attack to probe the newly replenished interceptor stocks and test response times.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "3625df4e",
+      "depth": 3,
+      "parent_joint_probability": 0.14529914529914525,
+      "joint_probability": 0.05029585798816567,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for rapid-fire interceptors and sensor upgrades."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Rise in war-risk premiums for regional assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "AIR_DEFENSE_BATTERIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "666cd7f2",
+        "5fccad3a",
+        "3cb46a59"
+      ],
+      "pruned_reason": ""
+    },
+    "a71231f5": {
+      "node_id": "a71231f5",
+      "description": "Tactical pause in hostilities as the adversary recognizes the window of vulnerability has closed.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "3625df4e",
+      "depth": 3,
+      "parent_joint_probability": 0.14529914529914525,
+      "joint_probability": 0.03353057199211044,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Reduction in immediate panic selling of local currency."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 0.5,
+          "tickers": [],
+          "notes": "Stabilization of regional credit default swaps."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "bb53cda5",
+        "2ade3174",
+        "88c78959"
+      ],
+      "pruned_reason": ""
+    },
+    "f2331a40": {
+      "node_id": "f2331a40",
+      "description": "US increases military escort and logistical hardening for future interceptor shipments to ensure supply chain resilience.",
+      "branch_probability": 0.4230769230769231,
+      "parent_id": "3625df4e",
+      "depth": 3,
+      "parent_joint_probability": 0.14529914529914525,
+      "joint_probability": 0.061472715318869144,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Increased focus on logistics and transport security systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LOGISTICS_CORRIDOR_MED",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "579fbf8a",
+        "5ce67773",
+        "f87396a6"
+      ],
+      "pruned_reason": ""
+    },
+    "1c558487": {
+      "node_id": "1c558487",
+      "description": "Global financial markets price in a high probability of regional war, triggering a flight to safe-haven assets and sovereign debt volatility.",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "0dec778d",
+      "depth": 3,
+      "parent_joint_probability": 0.07264957264957263,
+      "joint_probability": 0.03353057199211044,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Flight to safety strengthening USD and CHF."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Regional sovereign bonds sell-off due to increased default risk."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Speculative buying on potential supply disruption."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "cbc4aca7",
+        "6e1a3fd4",
+        "ea1c058f"
+      ],
+      "pruned_reason": ""
+    },
+    "a06966ee": {
+      "node_id": "a06966ee",
+      "description": "Adversaries launch saturation strikes targeting critical energy and transport hubs, exploiting the defensive gap.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "eaa7ea8e",
+      "depth": 3,
+      "parent_joint_probability": 0.11538461538461535,
+      "joint_probability": 0.03947368421052631,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Risk premium spikes due to potential disruption of regional energy infrastructure."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for regional assets surge."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Credit default swaps spike as state capacity is questioned."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_REFINERY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "CENTRAL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "4d980016",
+        "45b55b63",
+        "5449b603"
+      ],
+      "pruned_reason": ""
+    },
+    "66cbf9bd": {
+      "node_id": "66cbf9bd",
+      "description": "US Department of Defense initiates an emergency strategic airlift of interceptors to prevent total defensive collapse.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "eaa7ea8e",
+      "depth": 3,
+      "parent_joint_probability": 0.11538461538461535,
+      "joint_probability": 0.05161943319838055,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for rapid replenishment and sustainment contracts."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Partial stabilization of local currency on news of US intervention."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "862fc82f",
+        "2cd052d5",
+        "6f708a08"
+      ],
+      "pruned_reason": ""
+    },
+    "9e4f2bf1": {
+      "node_id": "9e4f2bf1",
+      "description": "Execution of high-intensity preemptive airstrikes targeting rocket batteries and command-and-control centers.",
+      "branch_probability": 0.3846153846153846,
+      "parent_id": "a1aafdb6",
+      "depth": 3,
+      "parent_joint_probability": 0.09230769230769227,
+      "joint_probability": 0.03550295857988164,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and replenishment of stockpiles."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Sharp rise in war-risk premiums for regional assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "8f367c34",
+        "a23e5c76",
+        "6617b6df"
+      ],
+      "pruned_reason": ""
+    },
+    "98b1af6a": {
+      "node_id": "98b1af6a",
+      "description": "Emergency airlift of interceptor missiles from allied stockpiles to restore defensive capacity and deter further escalation.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "a1aafdb6",
+      "depth": 3,
+      "parent_joint_probability": 0.09230769230769227,
+      "joint_probability": 0.030769230769230757,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Accelerated procurement cycles for missile defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety driving USD strength against regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "MILITARY_LOGISTICS_HUBS",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "373805c5",
+        "61851f86",
+        "ddcfd986"
+      ],
+      "pruned_reason": ""
+    },
+    "6c5ad2c5": {
+      "node_id": "6c5ad2c5",
+      "description": "Adversary launches saturated rocket salvos to exploit the Iron Dome depletion, targeting major population centers.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "57b13ffb",
+      "depth": 4,
+      "parent_joint_probability": 0.04087936046511628,
+      "joint_probability": 0.022142986918604658,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all assets in the Levant."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Urgent demand for interceptor replenishment and alternative air defense systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "TEL_AVIV_CENTRAL",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d6f0201d": {
+      "node_id": "d6f0201d",
+      "description": "Regional proxies in Syria and Iraq initiate coordinated strikes on Israeli logistics hubs to divert military resources.",
+      "branch_probability": 0.2916666666666667,
+      "parent_id": "57b13ffb",
+      "depth": 4,
+      "parent_joint_probability": 0.04087936046511628,
+      "joint_probability": 0.011923146802325583,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium added to Brent crude due to potential for wider regional conflict."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased freight rates for Eastern Mediterranean routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_MED_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0833e19f": {
+      "node_id": "0833e19f",
+      "description": "Significant degradation of adversary command centers leads to a tactical pause and urgent international diplomatic intervention.",
+      "branch_probability": 0.16666666666666669,
+      "parent_id": "57b13ffb",
+      "depth": 4,
+      "parent_joint_probability": 0.04087936046511628,
+      "joint_probability": 0.006813226744186048,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "USD/ILS"
+          ],
+          "notes": "Shekel stabilizes as immediate escalation risk is perceived to peak and plateau."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.5,
+          "tickers": [],
+          "notes": "Yields on Israeli government bonds stabilize."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.5
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "54984165": {
+      "node_id": "54984165",
+      "description": "Successful delivery and integration of interceptors restores the defense shield, stabilizing the immediate security situation.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "fe5ce3df",
+      "depth": 4,
+      "parent_joint_probability": 0.031007751937984496,
+      "joint_probability": 0.016795865633074936,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Reduction in immediate risk of catastrophic urban damage."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Confirmation of high demand for replenishment stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f0fad160": {
+      "node_id": "f0fad160",
+      "description": "Adversaries target the logistical chain, launching strikes against arrival airports to prevent the replenishment of the shield.",
+      "branch_probability": 0.20833333333333334,
+      "parent_id": "fe5ce3df",
+      "depth": 4,
+      "parent_joint_probability": 0.031007751937984496,
+      "joint_probability": 0.006459948320413437,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike due to direct targeting of logistics hubs."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Israeli government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ce2cddf6": {
+      "node_id": "ce2cddf6",
+      "description": "Regional actors perceive the emergency airlift as a direct US military escalation, triggering retaliatory posture in the Persian Gulf.",
+      "branch_probability": 0.25,
+      "parent_id": "fe5ce3df",
+      "depth": 4,
+      "parent_joint_probability": 0.031007751937984496,
+      "joint_probability": 0.007751937984496124,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil due to potential Gulf instability."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD amid regional escalation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ec471f4b": {
+      "node_id": "ec471f4b",
+      "description": "Restoration of defensive capabilities restores deterrence, leading to a temporary reduction in saturation attack attempts.",
+      "branch_probability": 0.65,
+      "parent_id": "ace1fecf",
+      "depth": 4,
+      "parent_joint_probability": 0.04318936877076412,
+      "joint_probability": 0.028073089700996676,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Reduced risk of catastrophic urban damage lowers immediate risk premiums."
+        },
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Short-term dip in urgency for emergency procurement."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_CIVIL_AIRSPACE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d8e14fc7": {
+      "node_id": "d8e14fc7",
+      "description": "Adversaries launch a preemptive high-volume strike to exploit the transition period before the new interceptors are fully calibrated and deployed.",
+      "branch_probability": 0.25,
+      "parent_id": "ace1fecf",
+      "depth": 4,
+      "parent_joint_probability": 0.04318936877076412,
+      "joint_probability": 0.01079734219269103,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for rapid-response munitions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Spike in war-risk premiums for regional assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Regional instability premiums added to crude prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CENTRAL_ISRAEL_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "TEL_AVIV_METRO",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e2194862": {
+      "node_id": "e2194862",
+      "description": "The successful replenishment creates a diplomatic window for third-party mediators to negotiate a ceasefire from a position of stability.",
+      "branch_probability": 0.15,
+      "parent_id": "ace1fecf",
+      "depth": 4,
+      "parent_joint_probability": 0.04318936877076412,
+      "joint_probability": 0.006478405315614617,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Improved outlook on government fiscal stability."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [],
+          "notes": "Reduced volatility in local currency pairs."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ea353a93": {
+      "node_id": "ea353a93",
+      "description": "Target country initiates massive retaliatory kinetic strikes against adversary launch sites and command centers to restore deterrence.",
+      "branch_probability": 0.3488372093023256,
+      "parent_id": "647b9159",
+      "depth": 4,
+      "parent_joint_probability": 0.039351851851851846,
+      "joint_probability": 0.01372739018087855,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Surge in demand for precision munitions and replacement air defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for regional shipping and assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to crude prices due to regional escalation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4585698f": {
+      "node_id": "4585698f",
+      "description": "Widespread power grid failure leads to industrial paralysis and disruption of critical civilian services.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "647b9159",
+      "depth": 4,
+      "parent_joint_probability": 0.039351851851851846,
+      "joint_probability": 0.01098191214470284,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Rapid devaluation of local currency due to economic instability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads widen on sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NATIONAL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "CIVILIAN_TRANSPORT_HUBS",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "76ba89d2": {
+      "node_id": "76ba89d2",
+      "description": "Emergency allied airlift of interceptor stockpiles and technical personnel to prevent total defensive collapse.",
+      "branch_probability": 0.37209302325581395,
+      "parent_id": "647b9159",
+      "depth": 4,
+      "parent_joint_probability": 0.039351851851851846,
+      "joint_probability": 0.014642549526270454,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Immediate drawdown of US strategic reserves."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Increased logistics activity for emergency military transport."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_AIRPORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d7a3654c": {
+      "node_id": "d7a3654c",
+      "description": "Adversary launches saturation strikes targeting critical energy infrastructure and refineries to offset C2 losses.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "89d01b01",
+      "depth": 4,
+      "parent_joint_probability": 0.05146011396011395,
+      "joint_probability": 0.023892195767195763,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock risk due to targeted infrastructure damage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Surge in war-risk premiums for regional assets."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense replenishment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_REFINERY_HUB",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "POWER_GRID_NORTH",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d96f9845": {
+      "node_id": "d96f9845",
+      "description": "Regional proxies initiate asymmetric attacks on maritime shipping lanes to force international intervention.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "89d01b01",
+      "depth": 4,
+      "parent_joint_probability": 0.05146011396011395,
+      "joint_probability": 0.016540750915750912,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Freight rates spike due to risk premiums and rerouting."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Hull and machinery insurance costs surge for Red Sea/Hormuz transit."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Disruption in logistics chains causing spot rate increases."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BAB_EL_MANDEB",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.75
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ff6971c4": {
+      "node_id": "ff6971c4",
+      "description": "Global powers broker an emergency ceasefire to prevent total regional contagion following the C2 strikes.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "89d01b01",
+      "depth": 4,
+      "parent_joint_probability": 0.05146011396011395,
+      "joint_probability": 0.011027167277167274,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Safe-haven flow eases slightly as volatility drops."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Regional bond yields stabilize as immediate war risk recedes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIRSPACE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "666cd7f2": {
+      "node_id": "666cd7f2",
+      "description": "Adversary confirms interceptor depletion and launches a full-scale saturation strike on critical urban and industrial hubs.",
+      "branch_probability": 0.35,
+      "parent_id": "691498f7",
+      "depth": 4,
+      "parent_joint_probability": 0.05029585798816567,
+      "joint_probability": 0.017603550295857983,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Urgent demand for replacement interceptors and missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for regional shipping and assets."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ISRAEL_CENTRAL_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5fccad3a": {
+      "node_id": "5fccad3a",
+      "description": "Probe results in significant civilian casualties, triggering an immediate and massive Israeli retaliatory campaign against adversary command centers.",
+      "branch_probability": 0.4,
+      "parent_id": "691498f7",
+      "depth": 4,
+      "parent_joint_probability": 0.05029585798816567,
+      "joint_probability": 0.02011834319526627,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "GD"
+          ],
+          "notes": "Increased munitions expenditure and operational tempo."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel volatility increases due to escalation risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_AIRPORT",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "DAMASCUS_LOGISTICS_HUB",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3cb46a59": {
+      "node_id": "3cb46a59",
+      "description": "High interception rate during probe suggests replenishment was successful, leading the adversary to pivot to asymmetric ground incursions.",
+      "branch_probability": 0.25,
+      "parent_id": "691498f7",
+      "depth": 4,
+      "parent_joint_probability": 0.05029585798816567,
+      "joint_probability": 0.012573964497041417,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Shift in demand toward ground-based surveillance and border security."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.0,
+          "tickers": [],
+          "notes": "Slight increase in regional sovereign risk spreads."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NORTHERN_BORDER_FENCE",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bb53cda5": {
+      "node_id": "bb53cda5",
+      "description": "Adversary utilizes the pause to synchronize a massive saturation strike intended to overwhelm newly arrived interceptor shipments.",
+      "branch_probability": 0.45,
+      "parent_id": "a71231f5",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.015088757396449697,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for short-to-medium range air defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for regional shipping and aviation."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_METRO",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2ade3174": {
+      "node_id": "2ade3174",
+      "description": "Tactical pause evolves into a diplomatic window, leading to a mediated ceasefire to avoid mutual attrition.",
+      "branch_probability": 0.3,
+      "parent_id": "a71231f5",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.010059171597633131,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Reduced risk of total state collapse or extreme economic shock."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [],
+          "notes": "Local currency stabilizes as immediate war risk recedes."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88c78959": {
+      "node_id": "88c78959",
+      "description": "Target state successfully replenishes stockpiles and launches a preemptive strike against adversary launch sites during the pause.",
+      "branch_probability": 0.2,
+      "parent_id": "a71231f5",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.006706114398422088,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "GD"
+          ],
+          "notes": "Shift toward offensive munitions demand."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Escalation to offensive operations increases regional volatility."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "579fbf8a": {
+      "node_id": "579fbf8a",
+      "description": "Hardened shipments arrive successfully, partially restoring interceptor stockpiles and stabilizing air defense posture.",
+      "branch_probability": 0.65,
+      "parent_id": "f2331a40",
+      "depth": 4,
+      "parent_joint_probability": 0.061472715318869144,
+      "joint_probability": 0.03995726495726495,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for logistical support and replenishment contracts."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [],
+          "notes": "Reduced immediate risk of catastrophic urban failure."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_AIR_DEFENSE_NETWORK",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5ce67773": {
+      "node_id": "5ce67773",
+      "description": "Adversaries attempt to interdict the high-value military escorts, leading to naval skirmishes in the Eastern Mediterranean.",
+      "branch_probability": 0.25,
+      "parent_id": "f2331a40",
+      "depth": 4,
+      "parent_joint_probability": 0.061472715318869144,
+      "joint_probability": 0.015368178829717286,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Mediterranean shipping."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "NOC"
+          ],
+          "notes": "Immediate demand for active combat systems and munitions."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Rerouting costs and risk premiums increase."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_MED_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f87396a6": {
+      "node_id": "f87396a6",
+      "description": "Regional proxies launch asymmetric strikes on energy infrastructure to deter US logistical escalation.",
+      "branch_probability": 0.2,
+      "parent_id": "f2331a40",
+      "depth": 4,
+      "parent_joint_probability": 0.061472715318869144,
+      "joint_probability": 0.01229454306377383,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Supply disruption fears drive crude prices higher."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased volatility in regional shipping rates."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Flight to safety into USD, weakening regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cbc4aca7": {
+      "node_id": "cbc4aca7",
+      "description": "Adversaries launch massive coordinated rocket barrages targeting Israeli energy and transport hubs, exploiting the defensive gap.",
+      "branch_probability": 0.2571428571428571,
+      "parent_id": "1c558487",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.00862214708368554,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Fear of disruption to Eastern Mediterranean gas fields."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "Surge in war-risk premiums for regional assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ISR"
+          ],
+          "notes": "Increased risk premium on Israeli government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ISRAEL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6e1a3fd4": {
+      "node_id": "6e1a3fd4",
+      "description": "United States initiates emergency airlift of interceptor stockpiles and deploys additional carrier strike groups to deter escalation.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "1c558487",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.014370245139475902,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Anticipated increase in munitions procurement and replenishment contracts."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to USD as the primary safe-haven currency."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ea1c058f": {
+      "node_id": "ea1c058f",
+      "description": "Speculative surge in oil prices as markets price in a high probability of Iranian intervention or disruption of the Strait of Hormuz.",
+      "branch_probability": 0.3142857142857143,
+      "parent_id": "1c558487",
+      "depth": 4,
+      "parent_joint_probability": 0.03353057199211044,
+      "joint_probability": 0.010538179768948995,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Geopolitical risk premium spikes on crude oil."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased tanker rates due to anticipated rerouting and risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAIT_OF_HORMUZ",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4d980016": {
+      "node_id": "4d980016",
+      "description": "Successful strikes on key refineries and power grids cause immediate domestic energy shortages and regional price volatility.",
+      "branch_probability": 0.3513513513513513,
+      "parent_id": "a06966ee",
+      "depth": 4,
+      "parent_joint_probability": 0.03947368421052631,
+      "joint_probability": 0.013869132290184917,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock due to infrastructure damage in a volatile region."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Surge in war-risk insurance claims and premium hikes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "NATIONAL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "45b55b63": {
+      "node_id": "45b55b63",
+      "description": "Critical port facilities and airports are disabled, halting commercial shipping and air freight operations.",
+      "branch_probability": 0.2432432432432432,
+      "parent_id": "a06966ee",
+      "depth": 4,
+      "parent_joint_probability": 0.03947368421052631,
+      "joint_probability": 0.00960170697012802,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Complete halt of throughput at primary logistics hubs."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to port closures and rerouting."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PRIMARY_CARGO_PORTS",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "INTERNATIONAL_AIRPORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5449b603": {
+      "node_id": "5449b603",
+      "description": "Israel launches massive retaliatory strikes against adversary command centers and launch sites to deter further saturation attacks.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "a06966ee",
+      "depth": 4,
+      "parent_joint_probability": 0.03947368421052631,
+      "joint_probability": 0.016002844950213365,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for munitions and replacement interceptors."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional government bonds."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Flight to safety favoring USD over regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_C2_NODES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.75
+        },
+        {
+          "infra_id": "MISSILE_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "862fc82f": {
+      "node_id": "862fc82f",
+      "description": "Strategic airlift successfully delivers interceptors, restoring defensive capabilities and stabilizing the security environment.",
+      "branch_probability": 0.52,
+      "parent_id": "66cbf9bd",
+      "depth": 4,
+      "parent_joint_probability": 0.05161943319838055,
+      "joint_probability": 0.026842105263157886,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for replenishment and sustainment contracts."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.5,
+          "tickers": [],
+          "notes": "Reduction in immediate risk of catastrophic urban damage."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2cd052d5": {
+      "node_id": "2cd052d5",
+      "description": "Adversaries launch a saturation strike to exploit the vulnerability window before the airlifted interceptors are operational.",
+      "branch_probability": 0.27999999999999997,
+      "parent_id": "66cbf9bd",
+      "depth": 4,
+      "parent_joint_probability": 0.05161943319838055,
+      "joint_probability": 0.014453441295546552,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium spikes due to potential for wider regional war."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Surge in claims for commercial property and aviation risk."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RTX"
+          ],
+          "notes": "Immediate acceleration of missile procurement cycles."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_METRO",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6f708a08": {
+      "node_id": "6f708a08",
+      "description": "Overt US military logistics trigger a retaliatory posture from regional proxies, increasing threats to maritime shipping.",
+      "branch_probability": 0.2,
+      "parent_id": "66cbf9bd",
+      "depth": 4,
+      "parent_joint_probability": 0.05161943319838055,
+      "joint_probability": 0.01032388663967611,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to risk premiums in the Eastern Med/Red Sea."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Increased yield on regional sovereign debt due to instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SUEZ_CANAL",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8f367c34": {
+      "node_id": "8f367c34",
+      "description": "Preemptive strikes successfully neutralize primary launch sites, reducing the immediate threat of saturation attacks.",
+      "branch_probability": 0.45,
+      "parent_id": "9e4f2bf1",
+      "depth": 4,
+      "parent_joint_probability": 0.03550295857988164,
+      "joint_probability": 0.015976331360946738,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for rapid interceptor replenishment and precision munitions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Short-term reduction in immediate casualty risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_ROCKET_BATTERIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a23e5c76": {
+      "node_id": "a23e5c76",
+      "description": "Adversary executes a saturation barrage bypassing preemptive strikes, causing widespread damage due to depleted interceptors.",
+      "branch_probability": 0.3,
+      "parent_id": "9e4f2bf1",
+      "depth": 4,
+      "parent_joint_probability": 0.03550295857988164,
+      "joint_probability": 0.01065088757396449,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Massive spike in claims for urban infrastructure and civilian property."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional sovereign debt due to instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_METRO",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "BEN_GURION_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6617b6df": {
+      "node_id": "6617b6df",
+      "description": "High-intensity strikes trigger coordinated multi-front escalation from regional proxies to overwhelm remaining defenses.",
+      "branch_probability": 0.2,
+      "parent_id": "9e4f2bf1",
+      "depth": 4,
+      "parent_joint_probability": 0.03550295857988164,
+      "joint_probability": 0.0071005917159763276,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Fear of regional spillover affecting oil production and transit."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "War risk premiums surge for vessels in Eastern Mediterranean and Red Sea."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.5,
+          "tickers": [],
+          "notes": "Flight to safety (USD/CHF) and devaluation of regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "RED_SEA_SHIPPING_LANE",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.5
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "373805c5": {
+      "node_id": "373805c5",
+      "description": "Successful replenishment of interceptors restores defensive umbrella, leading to a tactical stalemate and reduced immediate risk of saturation strikes.",
+      "branch_probability": 0.65,
+      "parent_id": "98b1af6a",
+      "depth": 4,
+      "parent_joint_probability": 0.030769230769230757,
+      "joint_probability": 0.019999999999999993,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Reduction in immediate war-risk premiums for regional assets."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for rapid-response logistics and munitions replenishment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRON_DOME_NETWORK",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "61851f86": {
+      "node_id": "61851f86",
+      "description": "Adversaries target the emergency airlift corridor or receiving airbases to prevent replenishment, escalating the conflict to direct kinetic engagement.",
+      "branch_probability": 0.25,
+      "parent_id": "98b1af6a",
+      "depth": 4,
+      "parent_joint_probability": 0.030769230769230757,
+      "joint_probability": 0.007692307692307689,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "NOC"
+          ],
+          "notes": "Shift toward offensive capabilities and air superiority assets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Spike in aviation and maritime war-risk premiums."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Flight to safety in USD/CHF as regional volatility spikes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIR_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "LOGISTICS_CORRIDORS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ddcfd986": {
+      "node_id": "ddcfd986",
+      "description": "A saturation attack is launched during the replenishment window, causing significant damage to critical infrastructure before defenses are restored.",
+      "branch_probability": 0.15,
+      "parent_id": "98b1af6a",
+      "depth": 4,
+      "parent_joint_probability": 0.030769230769230757,
+      "joint_probability": 0.004615384615384613,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Fear of regional energy infrastructure damage driving price spikes."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional sovereign debt."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Massive increase in claims and risk assessments for fixed assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CIVILIAN_ENERGY_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.75
+        },
+        {
+          "infra_id": "STRATEGIC_FUEL_DEPOTS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "7ea4a114",
+      "description": "Coordinated multi-front escalation as regional adversaries exploit the air defense vulnerability.",
+      "joint_probability": 0.01907703488372093,
+      "pruned_reason": "joint_probability=0.0191 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "a735b451",
+      "description": "Cascading failure of critical civilian services leading to internal instability and emergency international intervention.",
+      "joint_probability": 0.027252906976744186,
+      "pruned_reason": "joint_probability=0.0273 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "e15da47b",
+      "description": "Hezbollah launches massive saturation strikes to exploit the missile defense vulnerability.",
+      "joint_probability": 0.023255813953488372,
+      "pruned_reason": "joint_probability=0.0233 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "18109c3e",
+      "description": "Unintercepted missiles cause significant damage to critical energy and power infrastructure in central Israel.",
+      "joint_probability": 0.015503875968992248,
+      "pruned_reason": "joint_probability=0.0155 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "8c38e490",
+      "description": "Adversary launches saturation attack to exploit the window of vulnerability during replenishment.",
+      "joint_probability": 0.023255813953488372,
+      "pruned_reason": "joint_probability=0.0233 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "498d740f",
+      "description": "Visible allied military logistics trigger preemptive escalation from regional proxies.",
+      "joint_probability": 0.026578073089701,
+      "pruned_reason": "joint_probability=0.0266 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "4cdeec20",
+      "description": "Conflict expands to maritime corridors to disrupt the transit of replacement interceptor shipments.",
+      "joint_probability": 0.018162393162393157,
+      "pruned_reason": "joint_probability=0.0182 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "d9cde013",
+      "description": "Houthi forces launch coordinated strikes on US transport vessels in the Bab el-Mandeb to disrupt the airlift logistics.",
+      "joint_probability": 0.025147928994082833,
+      "pruned_reason": "joint_probability=0.0251 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "582a0bed",
+      "description": "Tactical miscalculation during naval maneuvers in the Eastern Mediterranean leads to a kinetic exchange between Israeli and regional naval assets.",
+      "joint_probability": 0.01397107166337935,
+      "pruned_reason": "joint_probability=0.0140 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "d2633fec",
+      "description": "Saturation volleys cause significant damage to critical urban infrastructure and energy hubs due to lack of interception.",
+      "joint_probability": 0.01954887218045113,
+      "pruned_reason": "joint_probability=0.0195 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "2d5d9a21",
+      "description": "Israel initiates a massive, preemptive kinetic campaign against adversary launch sites to stop the saturation volleys.",
+      "joint_probability": 0.02556390977443609,
+      "pruned_reason": "joint_probability=0.0256 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "56566085",
+      "description": "Regional proxies exploit the defensive gap, launching coordinated attacks from multiple fronts to overstretch remaining assets.",
+      "joint_probability": 0.012030075187969926,
+      "pruned_reason": "joint_probability=0.0120 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "fe898f70",
+      "description": "Adversaries launch a massive saturation strike to exploit the window of vulnerability before US airlift arrives.",
+      "joint_probability": 0.023076923076923075,
+      "pruned_reason": "joint_probability=0.0231 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "a3df25ee",
+      "description": "Visible US military deployment acts as a deterrent, leading to a tactical lull and temporary cessation of large-scale launches.",
+      "joint_probability": 0.029670329670329672,
+      "pruned_reason": "joint_probability=0.0297 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "44a11db7",
+      "description": "Regional proxies initiate diversionary strikes in the Red Sea to distract US assets and test the new BMD deployment.",
+      "joint_probability": 0.016483516483516484,
+      "pruned_reason": "joint_probability=0.0165 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "e1634757",
+      "description": "Proxies successfully strike critical energy and transport hubs due to the lack of interceptor coverage.",
+      "joint_probability": 0.01,
+      "pruned_reason": "joint_probability=0.0100 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "8ad4aa05",
+      "description": "Israel launches preemptive, large-scale strikes against proxy launch sites in Lebanon and Syria to neutralize the threat.",
+      "joint_probability": 0.008461538461538461,
+      "pruned_reason": "joint_probability=0.0085 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "5e1d4122",
+      "description": "US accelerates emergency airlift of interceptors and deploys additional THAAD/Patriot batteries to fill the defensive gap.",
+      "joint_probability": 0.012307692307692308,
+      "pruned_reason": "joint_probability=0.0123 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "9838b325",
+      "description": "Commercial shipping lines implement wide-berth diversions from regional ports to avoid collateral damage from missile strikes.",
+      "joint_probability": 0.024291497975708492,
+      "pruned_reason": "joint_probability=0.0243 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "af6e57ea",
+      "description": "Adversary launches a saturation strike to overwhelm remaining defenses and target critical infrastructure in response to preemptive movements.",
+      "joint_probability": 0.02603550295857987,
+      "pruned_reason": "joint_probability=0.0260 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "41d37dfd",
+      "description": "Saturation strike results in multiple successful hits on energy refineries and power grids due to interceptor shortages.",
+      "joint_probability": 0.01990950226244343,
+      "pruned_reason": "joint_probability=0.0199 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "0a6e4d05",
+      "description": "Immediate retaliatory strikes are launched against adversary command and control centers and launch sites.",
+      "joint_probability": 0.027149321266968313,
+      "pruned_reason": "joint_probability=0.0271 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "977735ba",
+      "description": "Regional instability triggers a sharp increase in war-risk premiums for tankers and container ships in the Eastern Mediterranean.",
+      "joint_probability": 0.014479638009049767,
+      "pruned_reason": "joint_probability=0.0145 < floor=0.0300 (severity=CRITICAL)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

@@ -1,0 +1,3439 @@
+{
+  "scenario_id": "dprk-russia-nuclear-materiel-t-20260514-2033-60eea6",
+  "trigger_event": "DPRK-Russia nuclear-materiel transfer operationalized",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-05-14T20:33:04.286747+00:00",
+  "expires_at": "2026-05-17T20:33:04.286747+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "dprk-rus_root": {
+      "node_id": "dprk-rus_root",
+      "description": "DPRK-Russia nuclear-materiel transfer operationalized",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "ee0867c5",
+        "762f2c9a",
+        "1eb13a65"
+      ],
+      "pruned_reason": ""
+    },
+    "ee0867c5": {
+      "node_id": "ee0867c5",
+      "description": "US and EU implement aggressive secondary sanctions targeting Russian and North Korean financial and logistics networks.",
+      "branch_probability": 0.43589743589743596,
+      "parent_id": "dprk-rus_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.43589743589743596,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rapid devaluation of Ruble due to expanded sanctions regime."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RUS"
+          ],
+          "notes": "Increased risk premium on Russian sovereign debt."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipated increase in Indo-Pacific defense spending."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "0a7ddcb8",
+        "a1fa89c2",
+        "a841d172"
+      ],
+      "pruned_reason": ""
+    },
+    "762f2c9a": {
+      "node_id": "762f2c9a",
+      "description": "US and South Korea initiate unplanned high-readiness joint military exercises in the East Sea to signal deterrence.",
+      "branch_probability": 0.33333333333333337,
+      "parent_id": "dprk-rus_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.33333333333333337,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "HDP"
+          ],
+          "notes": "Increased demand for regional security assets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Spike in political risk and war-risk insurance premiums for East Asia."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KOREA_STR_PORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "793a117e",
+        "c7d7d1b9",
+        "ef4b3c2f"
+      ],
+      "pruned_reason": ""
+    },
+    "1eb13a65": {
+      "node_id": "1eb13a65",
+      "description": "Speculative energy market volatility triggers as traders price in a broader Eurasian geopolitical destabilization.",
+      "branch_probability": 0.2307692307692308,
+      "parent_id": "dprk-rus_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2307692307692308,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil prices."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased rates for high-risk zone shipments."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "3f1f0886",
+        "0b5d0bba",
+        "55731817"
+      ],
+      "pruned_reason": ""
+    },
+    "0a7ddcb8": {
+      "node_id": "0a7ddcb8",
+      "description": "Immediate volatility in Russian sovereign debt and currency markets as secondary sanctions trigger capital flight.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "ee0867c5",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.2361111111111112,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rapid devaluation of Ruble due to restricted access to global financial networks."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RU"
+          ],
+          "notes": "Sharp increase in yields for Russian sovereign bonds as liquidity evaporates."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "f2459044",
+        "9772f34c",
+        "e7aeb624"
+      ],
+      "pruned_reason": ""
+    },
+    "a1fa89c2": {
+      "node_id": "a1fa89c2",
+      "description": "Russia retaliates by restricting Western shipping access or threatening Baltic/Black Sea transit lanes.",
+      "branch_probability": 0.25,
+      "parent_id": "ee0867c5",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.10897435897435899,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for vessels operating in Russian-adjacent waters."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to rerouting and risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "f642b09a",
+        "8ab85178"
+      ],
+      "pruned_reason": ""
+    },
+    "a841d172": {
+      "node_id": "a841d172",
+      "description": "DPRK initiates military provocations or missile tests to signal defiance against expanded financial isolation.",
+      "branch_probability": 0.20833333333333334,
+      "parent_id": "ee0867c5",
+      "depth": 2,
+      "parent_joint_probability": 0.43589743589743596,
+      "joint_probability": 0.09081196581196582,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional missile defense systems in East Asia."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Increased risk premiums for shipping in the Sea of Japan."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KOREA_STRAIT_SHIPPING",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "1ed7d428"
+      ],
+      "pruned_reason": ""
+    },
+    "793a117e": {
+      "node_id": "793a117e",
+      "description": "DPRK launches short-range ballistic missiles into the East Sea as a direct response to the joint exercises.",
+      "branch_probability": 0.41935483870967744,
+      "parent_id": "762f2c9a",
+      "depth": 2,
+      "parent_joint_probability": 0.33333333333333337,
+      "joint_probability": 0.13978494623655915,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.1,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Korean Won weakens due to heightened geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "d1078757",
+        "a2a645f8",
+        "442792c8"
+      ],
+      "pruned_reason": ""
+    },
+    "c7d7d1b9": {
+      "node_id": "c7d7d1b9",
+      "description": "Russia deploys Pacific Fleet assets to the East Sea to conduct joint naval patrols with DPRK forces.",
+      "branch_probability": 0.25806451612903225,
+      "parent_id": "762f2c9a",
+      "depth": 2,
+      "parent_joint_probability": 0.33333333333333337,
+      "joint_probability": 0.08602150537634409,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "War risk premiums increase for vessels operating in the North Pacific."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Increased surveillance and patrol requirements."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NORTH_PACIFIC_NAVAL_CORRIDOR",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "4e36e5f7"
+      ],
+      "pruned_reason": ""
+    },
+    "ef4b3c2f": {
+      "node_id": "ef4b3c2f",
+      "description": "Financial markets trigger a flight-to-safety, increasing volatility in Asian equity markets.",
+      "branch_probability": 0.3225806451612903,
+      "parent_id": "762f2c9a",
+      "depth": 2,
+      "parent_joint_probability": 0.33333333333333337,
+      "joint_probability": 0.10752688172043012,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD strengthens as a safe-haven asset."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -1.2,
+          "tickers": [],
+          "notes": "Yields on South Korean sovereign bonds rise as risk premiums increase."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "f976c2a4",
+        "1f45ca78"
+      ],
+      "pruned_reason": ""
+    },
+    "3f1f0886": {
+      "node_id": "3f1f0886",
+      "description": "US and EU implement 'nuclear-tier' secondary sanctions on Russian energy and financial entities, accelerating the decoupling of Eurasian trade.",
+      "branch_probability": 0.40625,
+      "parent_id": "1eb13a65",
+      "depth": 2,
+      "parent_joint_probability": 0.2307692307692308,
+      "joint_probability": 0.09375000000000001,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rapid devaluation of Ruble due to extreme sanctions pressure."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RU"
+          ],
+          "notes": "Credit default swap spreads spike for Russian sovereign debt."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Price surge driven by anticipated supply disruptions from sanctioned exports."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SWIFT_NETWORK_RU",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "d4a291cf",
+        "9e9d1f09"
+      ],
+      "pruned_reason": ""
+    },
+    "0b5d0bba": {
+      "node_id": "0b5d0bba",
+      "description": "Increased US and South Korean military readiness in the Pacific triggers a spike in maritime insurance premiums and shipping delays.",
+      "branch_probability": 0.25,
+      "parent_id": "1eb13a65",
+      "depth": 2,
+      "parent_joint_probability": 0.2307692307692308,
+      "joint_probability": 0.0576923076923077,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and surveillance systems in East Asia."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "War-risk premiums surge for vessels transiting the Sea of Japan."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Rerouting of cargo to avoid potential conflict zones."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TSUSHIMA_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "BUSAN_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "55731817": {
+      "node_id": "55731817",
+      "description": "Energy markets enter a feedback loop of speculative buying, pricing in a permanent shift in Eurasian energy security architecture.",
+      "branch_probability": 0.34375,
+      "parent_id": "1eb13a65",
+      "depth": 2,
+      "parent_joint_probability": 0.2307692307692308,
+      "joint_probability": 0.07932692307692309,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Speculative premium added for systemic geopolitical risk."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for long-haul voyages to replace Russian supplies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "URAL_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "256cb696"
+      ],
+      "pruned_reason": ""
+    },
+    "f2459044": {
+      "node_id": "f2459044",
+      "description": "US and EU implement comprehensive secondary sanctions targeting shipping and insurance firms facilitating the nuclear transfer.",
+      "branch_probability": 0.5,
+      "parent_id": "0a7ddcb8",
+      "depth": 3,
+      "parent_joint_probability": 0.2361111111111112,
+      "joint_probability": 0.1180555555555556,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LR",
+            "AXA"
+          ],
+          "notes": "War risk premiums spike for all vessels docking at Russian ports."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TNK"
+          ],
+          "notes": "Freight rates increase due to limited available compliant tonnage."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Accelerated RUB devaluation as liquidity dries up in secondary markets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ST_PETERSBURG_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "8101ce76",
+        "ec19cdad",
+        "6a946ad6"
+      ],
+      "pruned_reason": ""
+    },
+    "9772f34c": {
+      "node_id": "9772f34c",
+      "description": "Russia responds to financial instability by restricting energy exports to the EU as a leverage mechanism against sanctions.",
+      "branch_probability": 0.28571428571428575,
+      "parent_id": "0a7ddcb8",
+      "depth": 3,
+      "parent_joint_probability": 0.2361111111111112,
+      "joint_probability": 0.0674603174603175,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "NGS"
+          ],
+          "notes": "Natural gas spot prices surge on supply disruption fears."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LLOY"
+          ],
+          "notes": "Increased premiums for energy infrastructure assets in Eastern Europe."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_PIPELINES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "b34355ee",
+        "4d58dfca",
+        "a03dfa54"
+      ],
+      "pruned_reason": ""
+    },
+    "e7aeb624": {
+      "node_id": "e7aeb624",
+      "description": "China exerts diplomatic pressure on Pyongyang and Moscow to freeze the transfer to prevent regional instability.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "0a7ddcb8",
+      "depth": 3,
+      "parent_joint_probability": 0.2361111111111112,
+      "joint_probability": 0.05059523809523811,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Partial stabilization of the Ruble as market anticipates a diplomatic off-ramp."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "RU_GOV"
+          ],
+          "notes": "Slight recovery in Russian sovereign bond prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "07d545e0",
+        "bcf477ef",
+        "00f06969"
+      ],
+      "pruned_reason": ""
+    },
+    "f642b09a": {
+      "node_id": "f642b09a",
+      "description": "Russia implements 'security inspections' and restrictive transit zones in the Baltic Sea, delaying Western commercial shipping.",
+      "branch_probability": 0.2916666666666667,
+      "parent_id": "a1fa89c2",
+      "depth": 3,
+      "parent_joint_probability": 0.10897435897435899,
+      "joint_probability": 0.03178418803418804,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "MAERSK-B"
+          ],
+          "notes": "Freight rates spike due to delays and rerouting around the Baltic."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for vessels entering the Baltic region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "b20647c2",
+        "120f041d",
+        "bb21154b"
+      ],
+      "pruned_reason": ""
+    },
+    "8ab85178": {
+      "node_id": "8ab85178",
+      "description": "NATO increases naval presence in the Baltic and Black Seas to ensure freedom of navigation, escalating military tension.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "a1fa89c2",
+      "depth": 3,
+      "parent_joint_probability": 0.10897435897435899,
+      "joint_probability": 0.0590277777777778,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime surveillance and rapid-response capabilities."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Euro weakens against USD due to geopolitical instability in Europe."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "BLACK_SEA_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "98eeacdc",
+        "7e70069d",
+        "7f0507a6"
+      ],
+      "pruned_reason": ""
+    },
+    "1ed7d428": {
+      "node_id": "1ed7d428",
+      "description": "US and South Korean forces initiate high-visibility strategic bomber deployments and naval exercises in the East Sea.",
+      "branch_probability": 0.5172413793103449,
+      "parent_id": "a841d172",
+      "depth": 3,
+      "parent_joint_probability": 0.09081196581196582,
+      "joint_probability": 0.046971706454465086,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Increased operational tempo and readiness spending."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased shipping risk premiums in the Sea of Japan."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DMZ_SENSORS",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "OSAN_AIR_BASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "cda3c44c",
+        "9ff6d31d",
+        "6448d396"
+      ],
+      "pruned_reason": ""
+    },
+    "d1078757": {
+      "node_id": "d1078757",
+      "description": "Heightened military alert in the East Sea leads to commercial shipping rerouting and a spike in war-risk insurance premiums.",
+      "branch_probability": 0.3170731707317074,
+      "parent_id": "793a117e",
+      "depth": 3,
+      "parent_joint_probability": 0.13978494623655915,
+      "joint_probability": 0.044322056123787056,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War-risk premiums surge for vessels transiting the East Sea."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased freight costs due to rerouting and delays."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "a303f582",
+        "8a5fbebe",
+        "09330762"
+      ],
+      "pruned_reason": ""
+    },
+    "a2a645f8": {
+      "node_id": "a2a645f8",
+      "description": "US and South Korea deploy additional strategic assets, including carrier strike groups, to the peninsula as a deterrent.",
+      "branch_probability": 0.3658536585365854,
+      "parent_id": "793a117e",
+      "depth": 3,
+      "parent_joint_probability": 0.13978494623655915,
+      "joint_probability": 0.051140833988985064,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems and regional readiness."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "OSAN_AIR_BASE",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "PYEONGTAEK_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "2ca3eda7",
+        "a11ff99c",
+        "edfc7f7c"
+      ],
+      "pruned_reason": ""
+    },
+    "442792c8": {
+      "node_id": "442792c8",
+      "description": "Russia issues a formal diplomatic endorsement of the DPRK's actions, triggering further Western sanctions on Russian financial entities.",
+      "branch_probability": 0.24390243902439027,
+      "parent_id": "793a117e",
+      "depth": 3,
+      "parent_joint_probability": 0.13978494623655915,
+      "joint_probability": 0.03409388932599004,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Russian sovereign debt."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Ruble volatility increases due to anticipated sanctions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "a8d9a77a",
+        "d901fc35",
+        "b5f48be4"
+      ],
+      "pruned_reason": ""
+    },
+    "4e36e5f7": {
+      "node_id": "4e36e5f7",
+      "description": "US-ROK-Japan naval forces initiate coordinated freedom of navigation operations and increased surveillance in the East Sea.",
+      "branch_probability": 0.5,
+      "parent_id": "c7d7d1b9",
+      "depth": 3,
+      "parent_joint_probability": 0.08602150537634409,
+      "joint_probability": 0.043010752688172046,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional surveillance and missile defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.1,
+          "tickers": [
+            "KRW",
+            "JPY"
+          ],
+          "notes": "Flight to safety favoring USD amid heightened regional instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSAN_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "748ea419",
+        "7bee8be5",
+        "e252a36d"
+      ],
+      "pruned_reason": ""
+    },
+    "f976c2a4": {
+      "node_id": "f976c2a4",
+      "description": "US and EU implement secondary sanctions on Russian and DPRK financial entities facilitating the transfer.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "ef4b3c2f",
+      "depth": 3,
+      "parent_joint_probability": 0.10752688172043012,
+      "joint_probability": 0.049923195084485415,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rapid devaluation of Ruble due to expanded sanctions regime."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "RUS"
+          ],
+          "notes": "Increased risk premium on Russian sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "24a6e046",
+        "308aaa42",
+        "81a373ea"
+      ],
+      "pruned_reason": ""
+    },
+    "1f45ca78": {
+      "node_id": "1f45ca78",
+      "description": "US, South Korea, and Japan launch snap joint naval exercises in the Sea of Japan as a deterrent.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "ef4b3c2f",
+      "depth": 3,
+      "parent_joint_probability": 0.10752688172043012,
+      "joint_probability": 0.03456221198156683,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional surveillance and missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "War risk premiums increase for shipping in the North Pacific."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SEA_OF_JAPAN_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "591da824",
+        "b0605b9f",
+        "6c2a1260"
+      ],
+      "pruned_reason": ""
+    },
+    "d4a291cf": {
+      "node_id": "d4a291cf",
+      "description": "Russia retaliates by restricting energy exports to remaining EU partners and threatening undersea pipeline integrity.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "3f1f0886",
+      "depth": 3,
+      "parent_joint_probability": 0.09375000000000001,
+      "joint_probability": 0.036931818181818184,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "NGF"
+          ],
+          "notes": "Immediate supply shock as Russia weaponizes remaining gas flows."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for energy infrastructure in the Baltic and North Seas."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -30.0,
+          "tickers": [],
+          "notes": "Russian sovereign debt becomes virtually untradeable in Western markets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "NORTH_SEA_CABLES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "87ab317c",
+        "243917eb",
+        "67838234"
+      ],
+      "pruned_reason": ""
+    },
+    "9e9d1f09": {
+      "node_id": "9e9d1f09",
+      "description": "US and NATO allies increase military readiness and deployment in the Pacific and Baltics to deter nuclear proliferation.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "3f1f0886",
+      "depth": 3,
+      "parent_joint_probability": 0.09375000000000001,
+      "joint_probability": 0.03125,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipated increase in procurement for missile defense and surveillance systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums rise for operations in East Asia."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d9f1f499",
+        "5a0f03c9",
+        "55b31762"
+      ],
+      "pruned_reason": ""
+    },
+    "256cb696": {
+      "node_id": "256cb696",
+      "description": "G7 implements emergency secondary sanctions on entities facilitating the transfer, accelerating the decoupling of Eurasian energy flows.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "55731817",
+      "depth": 3,
+      "parent_joint_probability": 0.07932692307692309,
+      "joint_probability": 0.031249999999999997,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "UNG"
+          ],
+          "notes": "Supply shock priced in as secondary sanctions restrict Russian export channels."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rubel collapses under weight of new sanctions regime."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RUSSIA_CDS"
+          ],
+          "notes": "Credit default swaps spike as sovereign risk reaches new peaks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "4d8015a1",
+        "f13af4e4",
+        "e5b538e3"
+      ],
+      "pruned_reason": ""
+    },
+    "8101ce76": {
+      "node_id": "8101ce76",
+      "description": "Global insurance providers suspend coverage for vessels docking at Russian and DPRK ports to avoid secondary sanctions exposure.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "f2459044",
+      "depth": 4,
+      "parent_joint_probability": 0.1180555555555556,
+      "joint_probability": 0.05059523809523811,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "PGR",
+            "CB"
+          ],
+          "notes": "Sharp increase in risk premiums and policy cancellations for high-risk zones."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Reduced vessel availability for legitimate trade due to insurance voids."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RUSSIAN_FAR_EAST_PORTS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "DPRK_NAMPO_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ec19cdad": {
+      "node_id": "ec19cdad",
+      "description": "Russia implements retaliatory restrictions and increased military patrols in the Northern Sea Route (NSR) to signal leverage.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "f2459044",
+      "depth": 4,
+      "parent_joint_probability": 0.1180555555555556,
+      "joint_probability": 0.026984126984126992,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Increased geopolitical risk premium on LNG and oil."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for Arctic surveillance and maritime security assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NORTHERN_SEA_ROUTE",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6a946ad6": {
+      "node_id": "6a946ad6",
+      "description": "Rapid operational pivot to 'shadow fleet' vessels and non-Western insurance hubs to bypass sanctions.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "f2459044",
+      "depth": 4,
+      "parent_joint_probability": 0.1180555555555556,
+      "joint_probability": 0.040476190476190485,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased charter rates for older, non-compliant vessels used in shadow fleets."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Increased volatility of the Ruble due to sanctions pressure."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DPRK_PORT_INFRA",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b34355ee": {
+      "node_id": "b34355ee",
+      "description": "Global energy markets experience a violent price spike as EU member states scramble for immediate LNG spot-market alternatives.",
+      "branch_probability": 0.5483870967741935,
+      "parent_id": "9772f34c",
+      "depth": 4,
+      "parent_joint_probability": 0.0674603174603175,
+      "joint_probability": 0.03699436763952895,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "UNG"
+          ],
+          "notes": "Immediate supply shock leads to extreme volatility in natural gas and crude futures."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for LNG and crude tankers to reroute shipments from US and Qatar to EU."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "War-risk premiums increase for vessels operating in the Baltic and Black Seas."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_PIPELINES",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4d58dfca": {
+      "node_id": "4d58dfca",
+      "description": "EU implements emergency seizure of frozen Russian sovereign assets to subsidize energy costs for vulnerable member states.",
+      "branch_probability": 0.2903225806451613,
+      "parent_id": "9772f34c",
+      "depth": 4,
+      "parent_joint_probability": 0.0674603174603175,
+      "joint_probability": 0.01958525345622121,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Total loss of confidence in Russian sovereign debt and asset security."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rubel faces extreme downward pressure due to asset seizures and export revenue instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a03dfa54": {
+      "node_id": "a03dfa54",
+      "description": "Russia initiates coordinated cyber-attacks on EU energy distribution hubs to amplify the impact of the export restrictions.",
+      "branch_probability": 0.16129032258064516,
+      "parent_id": "9772f34c",
+      "depth": 4,
+      "parent_joint_probability": 0.0674603174603175,
+      "joint_probability": 0.010880696364567339,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LHX",
+            "NOC"
+          ],
+          "notes": "Increased demand for cybersecurity and critical infrastructure protection services."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Secondary price spike driven by distribution failures rather than supply shortages."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "07d545e0": {
+      "node_id": "07d545e0",
+      "description": "Russia and DPRK ignore Chinese diplomatic pressure, proceeding with the transfer to solidify strategic military alignment.",
+      "branch_probability": 0.65,
+      "parent_id": "e7aeb624",
+      "depth": 4,
+      "parent_joint_probability": 0.05059523809523811,
+      "joint_probability": 0.03288690476190477,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia and Europe."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Increased risk of secondary sanctions from Western powers."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "RUSSIA_CDS"
+          ],
+          "notes": "Credit default swaps spike due to heightened geopolitical instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DPRK_RUSSIA_BORDER_LOGISTICS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bcf477ef": {
+      "node_id": "bcf477ef",
+      "description": "Russia agrees to a temporary freeze of the transfer to avoid alienating Beijing and maintain the 'no limits' partnership.",
+      "branch_probability": 0.25,
+      "parent_id": "e7aeb624",
+      "depth": 4,
+      "parent_joint_probability": 0.05059523809523811,
+      "joint_probability": 0.012648809523809527,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Short-term relief from immediate sanctions threat."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "RUSSIA_CDS"
+          ],
+          "notes": "Slight reduction in immediate geopolitical risk premium."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DPRK_RUSSIA_BORDER_LOGISTICS",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "00f06969": {
+      "node_id": "00f06969",
+      "description": "China escalates from diplomatic pressure to targeted economic coercion against Pyongyang to force compliance.",
+      "branch_probability": 0.15,
+      "parent_id": "e7aeb624",
+      "depth": 4,
+      "parent_joint_probability": 0.05059523809523811,
+      "joint_probability": 0.007589285714285716,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Reduction in Chinese food aid and agricultural exports to DPRK."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Drop in trade volume across the China-DPRK border."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DAN_EAST_BORDER_CROSSING",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b20647c2": {
+      "node_id": "b20647c2",
+      "description": "Marine insurance underwriters declare the Baltic Sea a high-risk zone, triggering immediate premium spikes and vessel diversions.",
+      "branch_probability": 0.5,
+      "parent_id": "f642b09a",
+      "depth": 4,
+      "parent_joint_probability": 0.03178418803418804,
+      "joint_probability": 0.01589209401709402,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War-risk premiums surge for all Baltic transit."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Freight rates increase due to rerouting and delays."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "120f041d": {
+      "node_id": "120f041d",
+      "description": "NATO activates 'Enhanced Vigilance' protocols, deploying naval escorts for commercial vessels to challenge Russian inspections.",
+      "branch_probability": 0.35294117647058826,
+      "parent_id": "f642b09a",
+      "depth": 4,
+      "parent_joint_probability": 0.03178418803418804,
+      "joint_probability": 0.01121794871794872,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased operational tempo and readiness demand."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased geopolitical risk premium on regional debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bb21154b": {
+      "node_id": "bb21154b",
+      "description": "A kinetic incident occurs during a 'security inspection', leading to the temporary seizure of a Western-flagged vessel.",
+      "branch_probability": 0.14705882352941177,
+      "parent_id": "f642b09a",
+      "depth": 4,
+      "parent_joint_probability": 0.03178418803418804,
+      "joint_probability": 0.0046741452991453,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "Immediate cessation of standard coverage in the region."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Risk premium spikes for energy shipments in the Baltic."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_LANES",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "98eeacdc": {
+      "node_id": "98eeacdc",
+      "description": "Russia responds with large-scale naval exercises in the Baltic and Black Seas, restricting commercial shipping lanes.",
+      "branch_probability": 0.52,
+      "parent_id": "8ab85178",
+      "depth": 4,
+      "parent_joint_probability": 0.0590277777777778,
+      "joint_probability": 0.030694444444444455,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Increased war risk premiums for vessels in the Baltic and Black Sea regions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Sharp rise in hull and machinery insurance for high-risk zones."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Anticipated increase in naval procurement and surveillance systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_CORRIDOR",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "BLACK_SEA_CORRIDOR",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7e70069d": {
+      "node_id": "7e70069d",
+      "description": "Western allies implement severe secondary sanctions on entities facilitating the DPRK-Russia nuclear transfer.",
+      "branch_probability": 0.36000000000000004,
+      "parent_id": "8ab85178",
+      "depth": 4,
+      "parent_joint_probability": 0.0590277777777778,
+      "joint_probability": 0.02125000000000001,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Increased volatility and depreciation of the Ruble due to expanded sanctions."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Credit rating downgrades for Russia as geopolitical risk peaks."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Disruption in trade flows between East Asia and Russia."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7f0507a6": {
+      "node_id": "7f0507a6",
+      "description": "A tactical miscalculation leads to a kinetic skirmish between NATO and Russian naval assets in the Black Sea.",
+      "branch_probability": 0.12,
+      "parent_id": "8ab85178",
+      "depth": 4,
+      "parent_joint_probability": 0.0590277777777778,
+      "joint_probability": 0.007083333333333336,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Fear of wider conflict driving oil price spikes."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "NOC"
+          ],
+          "notes": "Immediate pivot toward active conflict readiness."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Rerouting of tankers away from conflict zones increasing ton-mile demand."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BLACK_SEA_CORRIDOR",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cda3c44c": {
+      "node_id": "cda3c44c",
+      "description": "DPRK conducts short-range ballistic missile (SRBM) tests into the East Sea as a direct response to US-ROK exercises.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "1ed7d428",
+      "depth": 4,
+      "parent_joint_probability": 0.046971706454465086,
+      "joint_probability": 0.022616006811409115,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional missile defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Increased geopolitical risk premium on South Korean Won."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9ff6d31d": {
+      "node_id": "9ff6d31d",
+      "description": "Russia deploys strategic aviation assets to the Far East to signal military solidarity with the DPRK.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "1ed7d428",
+      "depth": 4,
+      "parent_joint_probability": 0.046971706454465086,
+      "joint_probability": 0.013917542653174839,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical tension premium added to global crude prices."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Heightened alert levels for Pacific air defense."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "VLADIVOSTOK_AIR_BASE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6448d396": {
+      "node_id": "6448d396",
+      "description": "Rapid capital flight from South Korean sovereign debt and equity markets due to escalation fears.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "1ed7d428",
+      "depth": 4,
+      "parent_joint_probability": 0.046971706454465086,
+      "joint_probability": 0.010438156989881129,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "KGS"
+          ],
+          "notes": "Yields on South Korean government bonds spike as risk appetite drops."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Increase in political risk insurance premiums for East Asian operations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a303f582": {
+      "node_id": "a303f582",
+      "description": "DPRK conducts provocative missile tests or naval exercises in the East Sea to signal strategic alignment with Russia.",
+      "branch_probability": 0.26923076923076916,
+      "parent_id": "d1078757",
+      "depth": 4,
+      "parent_joint_probability": 0.044322056123787056,
+      "joint_probability": 0.011932861264096511,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War-risk premiums surge for vessels transiting the East Sea."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8a5fbebe": {
+      "node_id": "8a5fbebe",
+      "description": "US, Japan, and South Korea implement a coordinated 'snap-back' sanctions package targeting Russian-DPRK logistics hubs.",
+      "branch_probability": 0.4230769230769231,
+      "parent_id": "d1078757",
+      "depth": 4,
+      "parent_joint_probability": 0.044322056123787056,
+      "joint_probability": 0.018751639129294524,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Russian sovereign debt."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rubles weaken against USD due to sanctions anticipation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "VLADIVOSTOK_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "09330762": {
+      "node_id": "09330762",
+      "description": "Major insurance underwriters designate the East Sea as a 'high-risk zone', triggering a mass rerouting of commercial container and bulk traffic.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "d1078757",
+      "depth": 4,
+      "parent_joint_probability": 0.044322056123787056,
+      "joint_probability": 0.013637555730396017,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Freight rates increase due to longer transit times and fuel costs."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased costs for raw material shipments to Japan and Korea."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Immediate price spikes for hull and machinery insurance."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2ca3eda7": {
+      "node_id": "2ca3eda7",
+      "description": "DPRK conducts short-range ballistic missile tests as a direct response to the carrier strike group deployment.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "a2a645f8",
+      "depth": 4,
+      "parent_joint_probability": 0.051140833988985064,
+      "joint_probability": 0.0164381252107452,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.1,
+          "tickers": [
+            "KRW"
+          ],
+          "notes": "Capital flight from South Korean Won due to heightened kinetic risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSAN_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "INCHEON_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a11ff99c": {
+      "node_id": "a11ff99c",
+      "description": "Russia announces snap joint naval exercises with DPRK in the Sea of Japan to signal strategic alignment.",
+      "branch_probability": 0.25,
+      "parent_id": "a2a645f8",
+      "depth": 4,
+      "parent_joint_probability": 0.051140833988985064,
+      "joint_probability": 0.012785208497246266,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Geopolitical risk premium added to global energy prices."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.5,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Increased insurance premiums for shipping in the North Pacific."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SEA_OF_JAPAN_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "edfc7f7c": {
+      "node_id": "edfc7f7c",
+      "description": "Global financial markets trigger a flight-to-safety, spiking demand for USD and sovereign bonds.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "a2a645f8",
+      "depth": 4,
+      "parent_joint_probability": 0.051140833988985064,
+      "joint_probability": 0.0219175002809936,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.2,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Safe-haven inflows amid escalation in East Asia."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "KRG"
+          ],
+          "notes": "Increased yields on South Korean government bonds."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Rise in political risk insurance premiums."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a8d9a77a": {
+      "node_id": "a8d9a77a",
+      "description": "Russia retaliates against Western sanctions by restricting natural gas flows to Europe, citing technical maintenance.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "442792c8",
+      "depth": 4,
+      "parent_joint_probability": 0.03409388932599004,
+      "joint_probability": 0.011801730920535014,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "NGS",
+            "XLE"
+          ],
+          "notes": "Supply shock leads to immediate spike in European TTF gas prices."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety amid energy instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d901fc35": {
+      "node_id": "d901fc35",
+      "description": "DPRK conducts a high-profile ICBM test to signal the operational success of the nuclear-materiel transfer.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "442792c8",
+      "depth": 4,
+      "parent_joint_probability": 0.03409388932599004,
+      "joint_probability": 0.007867820613690008,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums rise for Northeast Asian operations."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PACIFIC_AIR_CORRIDORS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b5f48be4": {
+      "node_id": "b5f48be4",
+      "description": "Aggressive financial sanctions trigger a liquidity crisis in Russian sovereign debt markets, leading to technical default.",
+      "branch_probability": 0.4230769230769231,
+      "parent_id": "442792c8",
+      "depth": 4,
+      "parent_joint_probability": 0.03409388932599004,
+      "joint_probability": 0.014424337791765019,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Russian bond yields spike as accessibility to Western clearing houses vanishes."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RUB"
+          ],
+          "notes": "Rapid depreciation of the Ruble following financial isolation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RU_FINANCIAL_CLEARING",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "748ea419": {
+      "node_id": "748ea419",
+      "description": "DPRK conducts a series of short-range ballistic missile tests in the East Sea as a direct response to the naval presence.",
+      "branch_probability": 0.5,
+      "parent_id": "4e36e5f7",
+      "depth": 4,
+      "parent_joint_probability": 0.043010752688172046,
+      "joint_probability": 0.021505376344086023,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Rise in war-risk premiums for shipping in the Sea of Japan."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7bee8be5": {
+      "node_id": "7bee8be5",
+      "description": "Tactical miscalculation leads to a non-kinetic naval skirmish or collision between US-ROK and Russian vessels.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "4e36e5f7",
+      "depth": 4,
+      "parent_joint_probability": 0.043010752688172046,
+      "joint_probability": 0.008271298593879239,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "NOC",
+            "GD"
+          ],
+          "notes": "Rapid escalation of regional military readiness."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "KRW",
+            "JPY"
+          ],
+          "notes": "Flight to safety (USD) as regional instability spikes."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Immediate spike in hull and machinery insurance for regional transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_SEA_SHIPPING_LANES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e252a36d": {
+      "node_id": "e252a36d",
+      "description": "Russia and DPRK announce a formal mutual defense pact and initiate joint naval patrols to counter the FONOPs.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "4e36e5f7",
+      "depth": 4,
+      "parent_joint_probability": 0.043010752688172046,
+      "joint_probability": 0.013234077750206784,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -4.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Russian and North Korean state-linked debt."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Long-term structural shift in regional security architecture."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "VLADIVOSTOK_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "24a6e046": {
+      "node_id": "24a6e046",
+      "description": "Russia retaliates by seizing remaining Western corporate assets and restricting natural gas flows to EU members.",
+      "branch_probability": 0.34375,
+      "parent_id": "f976c2a4",
+      "depth": 4,
+      "parent_joint_probability": 0.049923195084485415,
+      "joint_probability": 0.01716109831029186,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "NGF"
+          ],
+          "notes": "Supply shock due to retaliatory export restrictions"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RU"
+          ],
+          "notes": "Increased risk premium on Russian debt"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_PIPELINES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "308aaa42": {
+      "node_id": "308aaa42",
+      "description": "DPRK conducts a high-profile ICBM test to signal nuclear readiness and defiance of secondary sanctions.",
+      "branch_probability": 0.25,
+      "parent_id": "f976c2a4",
+      "depth": 4,
+      "parent_joint_probability": 0.049923195084485415,
+      "joint_probability": 0.012480798771121354,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for shipping in the Sea of Japan"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSAN_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "81a373ea": {
+      "node_id": "81a373ea",
+      "description": "Global financial markets experience a 'flight to safety' as nuclear proliferation risks escalate.",
+      "branch_probability": 0.40625,
+      "parent_id": "f976c2a4",
+      "depth": 4,
+      "parent_joint_probability": 0.049923195084485415,
+      "joint_probability": 0.0202812980030722,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Safe haven demand drives USD strength"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "EM"
+          ],
+          "notes": "Capital outflow from emerging markets due to geopolitical instability"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "591da824": {
+      "node_id": "591da824",
+      "description": "DPRK launches a series of short-range ballistic missiles (SRBMs) over the exercise area to signal defiance.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "1f45ca78",
+      "depth": 4,
+      "parent_joint_probability": 0.03456221198156683,
+      "joint_probability": 0.016641065028161806,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in East Asia."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -1.2,
+          "tickers": [
+            "KRW",
+            "JPY"
+          ],
+          "notes": "Flight to safety favoring USD over regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SEA_OF_JAPAN_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b0605b9f": {
+      "node_id": "b0605b9f",
+      "description": "Russia deploys Pacific Fleet assets to shadow the joint exercises, increasing the risk of tactical miscalculation.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "1f45ca78",
+      "depth": 4,
+      "parent_joint_probability": 0.03456221198156683,
+      "joint_probability": 0.010240655401945726,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "War risk premiums increase for vessels transiting the Sea of Japan."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Heightened alert status for regional air and sea assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SEA_OF_JAPAN_SHIPPING_LANES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6c2a1260": {
+      "node_id": "6c2a1260",
+      "description": "US and allies announce a new package of secondary sanctions targeting Russian financial entities involved in the transfer.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "1f45ca78",
+      "depth": 4,
+      "parent_joint_probability": 0.03456221198156683,
+      "joint_probability": 0.007680491551459295,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Russian sovereign debt."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD strengthens as a safe haven amid geopolitical escalation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "87ab317c": {
+      "node_id": "87ab317c",
+      "description": "Russia executes 'grey zone' sabotage on undersea data cables or remaining gas pipelines in the Baltic/North Sea.",
+      "branch_probability": 0.16129032258064516,
+      "parent_id": "d4a291cf",
+      "depth": 4,
+      "parent_joint_probability": 0.036931818181818184,
+      "joint_probability": 0.0059567448680351905,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "NGF"
+          ],
+          "notes": "Immediate supply shock and risk premium spike."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Surge in war-risk premiums for maritime transit."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased borrowing costs for EU frontier markets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BALTIC_SEA_PIPELINES",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "NORTH_SEA_DATA_CABLES",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "243917eb": {
+      "node_id": "243917eb",
+      "description": "European energy markets enter a volatility spiral, triggering emergency rationing and price caps.",
+      "branch_probability": 0.4838709677419355,
+      "parent_id": "d4a291cf",
+      "depth": 4,
+      "parent_joint_probability": 0.036931818181818184,
+      "joint_probability": 0.017870234604105573,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "UNG"
+          ],
+          "notes": "Panic buying and hedging against total cutoff."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Euro weakens due to industrial production fears."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_GAS_GRID",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "67838234": {
+      "node_id": "67838234",
+      "description": "NATO deploys rapid-response naval assets to the North Sea and Baltic to protect critical undersea infrastructure.",
+      "branch_probability": 0.3548387096774194,
+      "parent_id": "d4a291cf",
+      "depth": 4,
+      "parent_joint_probability": 0.036931818181818184,
+      "joint_probability": 0.01310483870967742,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for maritime surveillance and ASW capabilities."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Higher premiums for shipping in the Baltic region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "NORTH_SEA_CABLES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d9f1f499": {
+      "node_id": "d9f1f499",
+      "description": "US Treasury implements aggressive secondary sanctions on Russian financial institutions and DPRK front companies facilitating the transfer.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "9e9d1f09",
+      "depth": 4,
+      "parent_joint_probability": 0.03125,
+      "joint_probability": 0.015046296296296295,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RUB",
+            "USD"
+          ],
+          "notes": "Increased volatility in RUB due to expanded sanctions regime."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RU"
+          ],
+          "notes": "Risk premium spikes on Russian sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5a0f03c9": {
+      "node_id": "5a0f03c9",
+      "description": "Russia and DPRK conduct joint naval exercises in the Sea of Japan as a counter-signal to NATO deployments.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "9e9d1f09",
+      "depth": 4,
+      "parent_joint_probability": 0.03125,
+      "joint_probability": 0.009259259259259259,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for Pacific-theater surveillance and deterrence systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "War risk premiums increase for shipping in the Sea of Japan."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SEA_OF_JAPAN_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "55b31762": {
+      "node_id": "55b31762",
+      "description": "DPRK conducts a short-range ballistic missile test in response to US strategic asset repositioning in the Pacific.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "9e9d1f09",
+      "depth": 4,
+      "parent_joint_probability": 0.03125,
+      "joint_probability": 0.006944444444444444,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 6.0,
+          "tickers": [
+            "NOC",
+            "GD"
+          ],
+          "notes": "Acceleration of missile defense procurement for regional allies."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Short-term disruption to regional logistics due to heightened alert levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PACIFIC_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4d8015a1": {
+      "node_id": "4d8015a1",
+      "description": "Russia retaliates against G7 sanctions by restricting energy exports to remaining European partners, triggering a price spike.",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "256cb696",
+      "depth": 4,
+      "parent_joint_probability": 0.031249999999999997,
+      "joint_probability": 0.009698275862068964,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "NGF"
+          ],
+          "notes": "Immediate supply shock due to retaliatory curtailments."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for long-haul alternatives to replace pipeline flows."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Eurasian sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EU_RU_GAS_PIPELINES",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f13af4e4": {
+      "node_id": "f13af4e4",
+      "description": "Global financial markets react to the nuclear proliferation risk and sanctions, causing a flight to safe-haven currencies and increased insurance premiums.",
+      "branch_probability": 0.4482758620689656,
+      "parent_id": "256cb696",
+      "depth": 4,
+      "parent_joint_probability": 0.031249999999999997,
+      "joint_probability": 0.014008620689655173,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Flight to safety amid geopolitical instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for shipping in the North Pacific and Baltic."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Speculative buying driven by fear of escalation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e5b538e3": {
+      "node_id": "e5b538e3",
+      "description": "China accelerates energy procurement from Russia to offset G7 sanctions, deepening the strategic Eurasian energy bloc.",
+      "branch_probability": 0.2413793103448276,
+      "parent_id": "256cb696",
+      "depth": 4,
+      "parent_joint_probability": 0.031249999999999997,
+      "joint_probability": 0.0075431034482758615,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Shift in trade flows toward East Asia."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Increased volume of shadow fleet activity to bypass sanctions."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Increased movement of raw materials to support Russian industrialization."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "POWER_OF_SIBERIA_PIPELINES",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "744ed383",
+      "description": "Russia declares the Black Sea a restricted military zone, effectively halting commercial grain and bulk exports.",
+      "joint_probability": 0.018162393162393167,
+      "pruned_reason": "joint_probability=0.0182 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "a1fcfcc7",
+      "description": "DPRK conducts a tactical nuclear or high-altitude EMP test to demonstrate newly acquired Russian capabilities.",
+      "joint_probability": 0.015657235484821695,
+      "pruned_reason": "joint_probability=0.0157 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "8829ce46",
+      "description": "DPRK launches coordinated cyber-attacks against South Korean financial institutions to offset sanctions-driven liquidity shortages.",
+      "joint_probability": 0.02818302387267905,
+      "pruned_reason": "joint_probability=0.0282 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "52b683e3",
+      "description": "A missile landing near a commercial vessel triggers a localized kinetic engagement or boarding operation.",
+      "joint_probability": 0.010228166797797013,
+      "pruned_reason": "joint_probability=0.0102 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "bc023fef",
+      "description": "Tactical naval skirmish or collision occurs between joint DPRK-Russia patrols and monitoring vessels.",
+      "joint_probability": 0.016542597187758478,
+      "pruned_reason": "joint_probability=0.0165 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "b10792ae",
+      "description": "Rapid implementation of targeted maritime sanctions on logistics hubs facilitating the materiel transfer.",
+      "joint_probability": 0.02646815550041357,
+      "pruned_reason": "joint_probability=0.0265 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "5cdc5f6a",
+      "description": "Speculation on further Russian energy export restrictions triggers a spike in global oil prices.",
+      "joint_probability": 0.02304147465437788,
+      "pruned_reason": "joint_probability=0.0230 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "200d5731",
+      "description": "China accelerates the transition to non-USD settlement systems (CIPS) for energy imports to bypass secondary sanctions.",
+      "joint_probability": 0.02556818181818182,
+      "pruned_reason": "joint_probability=0.0256 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "c2e61b60",
+      "description": "Rapid implementation of secondary sanctions by US and G7 targeting Russian logistics and financial entities involved in the transfer.",
+      "joint_probability": 0.02678571428571429,
+      "pruned_reason": "joint_probability=0.0268 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "12a341c2",
+      "description": "A 'gray zone' naval encounter or airspace violation in the East China Sea leads to localized tactical escalation.",
+      "joint_probability": 0.012362637362637364,
+      "pruned_reason": "joint_probability=0.0124 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "6620603e",
+      "description": "Global energy markets react to the perceived risk of a broader conflict involving Russia and North Korea, driving a speculative price rally.",
+      "joint_probability": 0.018543956043956047,
+      "pruned_reason": "joint_probability=0.0185 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "33d6ecba",
+      "description": "Russia and DPRK announce joint strategic naval exercises in the East Sea to signal new military synergy.",
+      "joint_probability": 0.021634615384615384,
+      "pruned_reason": "joint_probability=0.0216 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "b6b3c884",
+      "description": "European energy hubs experience extreme volatility as buyers rush to secure non-Russian LNG to hedge against permanent Eurasian shifts.",
+      "joint_probability": 0.026442307692307696,
+      "pruned_reason": "joint_probability=0.0264 < floor=0.0300 (severity=CRITICAL)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

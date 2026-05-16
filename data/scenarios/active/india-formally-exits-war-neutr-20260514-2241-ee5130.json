@@ -1,0 +1,1600 @@
+{
+  "scenario_id": "india-formally-exits-war-neutr-20260514-2241-ee5130",
+  "trigger_event": "India formally exits war neutrality / Hormuz exemption revoked",
+  "severity": "HIGH",
+  "confirmed": false,
+  "created_at": "2026-05-14T22:41:40.223250+00:00",
+  "expires_at": "2026-05-17T22:41:40.223250+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-fo_root": {
+      "node_id": "india-fo_root",
+      "description": "India formally exits war neutrality / Hormuz exemption revoked",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "1a7448d4",
+        "0b96b466",
+        "5d225887"
+      ],
+      "pruned_reason": ""
+    },
+    "1a7448d4": {
+      "node_id": "1a7448d4",
+      "description": "Immediate disruption of crude oil shipments to India as Hormuz exemption is revoked.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4166666666666667,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "OIL"
+          ],
+          "notes": "Supply shock due to loss of guaranteed transit for Indian tankers"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "War risk premiums spike for vessels in the Gulf"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Hull and Machinery insurance premiums surge for Indian-flagged vessels"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e89eee9b",
+        "52541fdb",
+        "e8077866"
+      ],
+      "pruned_reason": ""
+    },
+    "0b96b466": {
+      "node_id": "0b96b466",
+      "description": "Severe volatility in Indian financial markets and currency devaluation.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Capital flight due to energy insecurity and geopolitical risk"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increase in yield on Indian government bonds"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "a993d392",
+        "a642b329",
+        "a7872d12"
+      ],
+      "pruned_reason": ""
+    },
+    "5d225887": {
+      "node_id": "5d225887",
+      "description": "India accelerates naval deployment to the Arabian Sea to secure strategic sea lines of communication.",
+      "branch_probability": 0.25,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.25,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Increased demand for naval surveillance and escort capabilities"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARABIAN_SEA_SLOC",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "37518480",
+        "a74a70ad",
+        "71401dbd"
+      ],
+      "pruned_reason": ""
+    },
+    "e89eee9b": {
+      "node_id": "e89eee9b",
+      "description": "Global crude oil prices spike sharply as markets price in the loss of secure supply to one of the world's largest importers.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "1a7448d4",
+      "depth": 2,
+      "parent_joint_probability": 0.4166666666666667,
+      "joint_probability": 0.18640350877192982,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium added to Brent and WTI due to Hormuz instability."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian Rupee weakens on energy security fears and projected current account deficit widening."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "91ae6ae4"
+      ],
+      "pruned_reason": ""
+    },
+    "52541fdb": {
+      "node_id": "52541fdb",
+      "description": "Marine insurance underwriters declare the Persian Gulf a high-risk war zone, leading to a halt in commercial tanker traffic.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "1a7448d4",
+      "depth": 2,
+      "parent_joint_probability": 0.4166666666666667,
+      "joint_probability": 0.1425438596491228,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all vessels entering the Gulf."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for available non-Gulf tonnage increase as shippers seek alternatives."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "cb13fa4e"
+      ],
+      "pruned_reason": ""
+    },
+    "e8077866": {
+      "node_id": "e8077866",
+      "description": "India initiates emergency naval deployments to the Arabian Sea to protect strategic energy reserves and escort remaining tankers.",
+      "branch_probability": 0.21052631578947367,
+      "parent_id": "1a7448d4",
+      "depth": 2,
+      "parent_joint_probability": 0.4166666666666667,
+      "joint_probability": 0.08771929824561403,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased demand for naval surveillance and escort capabilities."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased risk profile for Indian sovereign debt due to military escalation."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a993d392": {
+      "node_id": "a993d392",
+      "description": "Immediate spike in maritime insurance premiums and diversion of crude tankers away from Indian ports.",
+      "branch_probability": 0.5,
+      "parent_id": "0b96b466",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.16666666666666666,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "OIL"
+          ],
+          "notes": "Supply shock due to loss of Hormuz exemption"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to risk premiums"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for vessels in the Gulf"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "b68abee6",
+        "d680beec"
+      ],
+      "pruned_reason": ""
+    },
+    "a642b329": {
+      "node_id": "a642b329",
+      "description": "Indian Navy deploys carrier battle groups to the Arabian Sea to secure energy sea lines of communication (SLOCs).",
+      "branch_probability": 0.3,
+      "parent_id": "0b96b466",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.09999999999999999,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased demand for naval logistics and surveillance"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARABIAN_SEA_SLOC",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a7872d12": {
+      "node_id": "a7872d12",
+      "description": "Sovereign credit rating agencies place Indian debt on negative watch due to energy insecurity and currency volatility.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "0b96b466",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.06666666666666665,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Fiscal pressure from energy imports and capital flight"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Accelerated devaluation against USD"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "37518480": {
+      "node_id": "37518480",
+      "description": "Iran conducts aggressive naval exercises and issues warnings against foreign naval presence in the Gulf",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "5d225887",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.08333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Risk premium spikes due to potential for Strait of Hormuz disruption"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "War risk premiums surge for voyages in the Arabian Sea"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Hull and Machinery (H&M) insurance costs spike for Indian-flagged vessels"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a74a70ad": {
+      "node_id": "a74a70ad",
+      "description": "Indian Rupee faces severe downward pressure as markets price in energy insecurity and geopolitical risk",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "5d225887",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.1111111111111111,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.5,
+          "tickers": [
+            "INR=X"
+          ],
+          "notes": "Capital flight due to loss of neutrality and energy import vulnerability"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased yields on Indian government bonds as risk profile shifts"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "3eb89d5c"
+      ],
+      "pruned_reason": ""
+    },
+    "71401dbd": {
+      "node_id": "71401dbd",
+      "description": "India coordinates a joint naval security corridor with US and French forces to protect tankers",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "5d225887",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.05555555555555555,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "HAL",
+            "LMT"
+          ],
+          "notes": "Increased demand for maritime surveillance and escort capabilities"
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Partial mitigation of risk premiums via multilateral security guarantees"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "91ae6ae4": {
+      "node_id": "91ae6ae4",
+      "description": "War risk insurance premiums for tankers in the Persian Gulf surge, leading to immediate vessel diversions and a freeze on new entries.",
+      "branch_probability": 0.3207547169811321,
+      "parent_id": "e89eee9b",
+      "depth": 3,
+      "parent_joint_probability": 0.18640350877192982,
+      "joint_probability": 0.05978980470043033,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "LR",
+            "AXA"
+          ],
+          "notes": "Immediate repricing of war risk premiums for Gulf transit."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates spike due to increased risk and rerouting requirements."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "c5b53e7e",
+        "67ea4ff2",
+        "ed91565c"
+      ],
+      "pruned_reason": ""
+    },
+    "cb13fa4e": {
+      "node_id": "cb13fa4e",
+      "description": "Global crude oil prices spike violently as markets price in a supply vacuum from the Persian Gulf.",
+      "branch_probability": 0.425,
+      "parent_id": "52541fdb",
+      "depth": 3,
+      "parent_joint_probability": 0.1425438596491228,
+      "joint_probability": 0.060581140350877194,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate price shock due to perceived supply outage."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian Rupee weakens due to increased import costs and geopolitical instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAIT_OF_HORMUZ",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "971c4986",
+        "dfae34e9",
+        "f8402a0e"
+      ],
+      "pruned_reason": ""
+    },
+    "b68abee6": {
+      "node_id": "b68abee6",
+      "description": "Sharp increase in domestic fuel prices and depreciation of the Indian Rupee due to crude supply uncertainty.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "a993d392",
+      "depth": 3,
+      "parent_joint_probability": 0.16666666666666666,
+      "joint_probability": 0.06565656565656564,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RELIANCE"
+          ],
+          "notes": "Domestic price volatility as import costs spike"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Pressure on Rupee due to increased import costs and risk premium"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.0,
+          "tickers": [
+            "INDIA_10Y"
+          ],
+          "notes": "Fiscal concerns over energy subsidies"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIAN_REFINERIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "171db0db",
+        "834e54a0",
+        "eadede73"
+      ],
+      "pruned_reason": ""
+    },
+    "d680beec": {
+      "node_id": "d680beec",
+      "description": "Massive rerouting of VLCCs to alternative ports and longer routes, causing freight rate spikes.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "a993d392",
+      "depth": 3,
+      "parent_joint_probability": 0.16666666666666666,
+      "joint_probability": 0.05555555555555555,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Tonnage shortage as vessels take longer routes to avoid risk zones"
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased landed cost of crude due to freight"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIAN_PORTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "408054d0",
+        "d3564500",
+        "f9acc22d"
+      ],
+      "pruned_reason": ""
+    },
+    "3eb89d5c": {
+      "node_id": "3eb89d5c",
+      "description": "Immediate spike in crude oil spot prices and tanker insurance premiums for India-bound vessels due to loss of safe-passage status.",
+      "branch_probability": 0.5,
+      "parent_id": "a74a70ad",
+      "depth": 3,
+      "parent_joint_probability": 0.1111111111111111,
+      "joint_probability": 0.05555555555555555,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Brent crude surges on fears of supply disruption to one of the world's largest importers."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers entering the Persian Gulf skyrocket."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Spot rates for VLCCs increase as shippers seek alternative, longer routes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "4e6e76ca",
+        "0e11f633",
+        "19aea7f8",
+        "ee6dc4df"
+      ],
+      "pruned_reason": ""
+    },
+    "c5b53e7e": {
+      "node_id": "c5b53e7e",
+      "description": "Adversary forces seize Indian-chartered tankers within the Gulf to signal the cost of exiting neutrality.",
+      "branch_probability": 0.2333333333333333,
+      "parent_id": "91ae6ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.05978980470043033,
+      "joint_probability": 0.013950954430100408,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums transition to 'extreme' category for all vessels in the region."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Immediate scarcity of available tonnage willing to enter the zone."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Increased demand for naval escort services."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "67ea4ff2": {
+      "node_id": "67ea4ff2",
+      "description": "India faces acute energy supply shocks, triggering a sharp devaluation of the Rupee and sovereign credit outlook downgrades.",
+      "branch_probability": 0.43333333333333335,
+      "parent_id": "91ae6ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.05978980470043033,
+      "joint_probability": 0.025908915370186476,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Domestic fuel price spikes due to import disruptions."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Capital flight due to energy insecurity and geopolitical instability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Indian government bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ed91565c": {
+      "node_id": "ed91565c",
+      "description": "Emergency pivot to non-Gulf energy sources accelerates, shifting tanker demand toward long-haul Atlantic and Americas routes.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "91ae6ae4",
+      "depth": 4,
+      "parent_joint_probability": 0.05978980470043033,
+      "joint_probability": 0.019929934900143442,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased ton-mile demand as India seeks alternative crude sources."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Global crude price lift due to systemic supply chain reconfiguration."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "971c4986": {
+      "node_id": "971c4986",
+      "description": "War risk insurance premiums for Persian Gulf transits surge to prohibitive levels, causing a de facto shipping halt.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "cb13fa4e",
+      "depth": 4,
+      "parent_joint_probability": 0.060581140350877194,
+      "joint_probability": 0.0252421418128655,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 300.0,
+          "tickers": [],
+          "notes": "Extreme spike in war risk premiums for tankers entering the Gulf."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for VLCCs spike as available tonnage drops due to risk avoidance."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAIT_OF_HORMUZ",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "dfae34e9": {
+      "node_id": "dfae34e9",
+      "description": "Severe currency devaluation in India and other oil-importing emerging markets due to projected balance-of-payment crises.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "cb13fa4e",
+      "depth": 4,
+      "parent_joint_probability": 0.060581140350877194,
+      "joint_probability": 0.020193713450292396,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Rapid depreciation of the Rupee against the USD."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads widen for India and energy-dependent EM nations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f8402a0e": {
+      "node_id": "f8402a0e",
+      "description": "Coordinated release of Strategic Petroleum Reserves (SPR) by IEA members to mitigate the supply vacuum.",
+      "branch_probability": 0.25,
+      "parent_id": "cb13fa4e",
+      "depth": 4,
+      "parent_joint_probability": 0.060581140350877194,
+      "joint_probability": 0.015145285087719298,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Partial price correction as physical supply is injected into the market."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and escort services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "171db0db": {
+      "node_id": "171db0db",
+      "description": "Indian government authorizes emergency release of Strategic Petroleum Reserves (SPR) to stabilize domestic fuel prices.",
+      "branch_probability": 0.4482758620689656,
+      "parent_id": "b68abee6",
+      "depth": 4,
+      "parent_joint_probability": 0.06565656565656564,
+      "joint_probability": 0.0294322535701846,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "RELIANCE"
+          ],
+          "notes": "Short-term supply injection offsets immediate scarcity premium."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Market perceives government action as a stabilizing force."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "834e54a0": {
+      "node_id": "834e54a0",
+      "description": "Accelerated depreciation of the Rupee triggers a spike in sovereign risk premiums and capital flight.",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "b68abee6",
+      "depth": 4,
+      "parent_joint_probability": 0.06565656565656564,
+      "joint_probability": 0.020376175548589337,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Panic selling due to energy insecurity and trade deficit concerns."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "INDIA_10Y"
+          ],
+          "notes": "Yields rise as risk premium increases for Indian government bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "eadede73": {
+      "node_id": "eadede73",
+      "description": "India deploys naval assets to the Arabian Sea to secure tankers, leading to a surge in war risk insurance premiums.",
+      "branch_probability": 0.2413793103448276,
+      "parent_id": "b68abee6",
+      "depth": 4,
+      "parent_joint_probability": 0.06565656565656564,
+      "joint_probability": 0.015848136537791706,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all vessels entering the region."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Increased demand for maritime security and surveillance systems."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Freight rates increase due to risk premiums and rerouting costs."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "408054d0": {
+      "node_id": "408054d0",
+      "description": "Global crude benchmarks spike as markets price in supply chain fragility and India's geopolitical shift.",
+      "branch_probability": 0.5,
+      "parent_id": "d680beec",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.027777777777777776,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium added to Brent and WTI due to supply chain disruption."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers in the Arabian Sea and Indian Ocean surge."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Rupee weakens against USD due to anticipated increase in oil import costs."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d3564500": {
+      "node_id": "d3564500",
+      "description": "Severe congestion at alternative Indian and regional ports leads to massive demurrage costs and delivery delays.",
+      "branch_probability": 0.3,
+      "parent_id": "d680beec",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.016666666666666666,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates for VLCCs climb further as vessel turnaround times increase."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Secondary congestion effects at multi-purpose terminals."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIAN_WEST_COAST_PORTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f9acc22d": {
+      "node_id": "f9acc22d",
+      "description": "Regional actors respond to India's neutrality exit with threats or harassment of shipping in the Gulf of Oman.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "d680beec",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.01111111111111111,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security and escort services."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Hull and Machinery insurance costs spike for vessels entering the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4e6e76ca": {
+      "node_id": "4e6e76ca",
+      "description": "Rapid depreciation of the Indian Rupee and spike in sovereign bond yields due to projected current account deficit widening.",
+      "branch_probability": 0.3571428571428571,
+      "parent_id": "3eb89d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.019841269841269837,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Currency pressure from increased energy import costs."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "INDIA_10Y"
+          ],
+          "notes": "Increased risk premium on Indian government bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0e11f633": {
+      "node_id": "0e11f633",
+      "description": "Tankers divert from Hormuz or anchor offshore awaiting security clearances, causing a surge in VLCC spot rates.",
+      "branch_probability": 0.2857142857142857,
+      "parent_id": "3eb89d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.015873015873015872,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Extreme volatility in tanker rates due to rerouting and risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all India-bound vessels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "19aea7f8": {
+      "node_id": "19aea7f8",
+      "description": "Indian Navy deploys carrier battle groups to the Arabian Sea to provide security escorts for energy shipments.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "3eb89d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.011904761904761904,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Increased operational spending and demand for maritime security assets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ee6dc4df": {
+      "node_id": "ee6dc4df",
+      "description": "Sharp decline in crude oil arrivals at Indian ports as tankers avoid the region, triggering domestic refinery shortages.",
+      "branch_probability": 0.14285714285714285,
+      "parent_id": "3eb89d5c",
+      "depth": 4,
+      "parent_joint_probability": 0.05555555555555555,
+      "joint_probability": 0.007936507936507936,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "RELIANCE"
+          ],
+          "notes": "Domestic fuel price spikes due to supply chain disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "336e7622",
+      "description": "The Indian Rupee faces severe devaluation pressure as markets price in a massive current account deficit spike and energy insecurity.",
+      "joint_probability": 0.045721615359152604,
+      "pruned_reason": "joint_probability=0.0457 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "01d32729",
+      "description": "India deploys naval task forces to the Arabian Sea to secure remaining shipments and signal deterrence against maritime interdiction.",
+      "joint_probability": 0.03165342601787488,
+      "pruned_reason": "joint_probability=0.0317 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "ece24081",
+      "description": "Asian importers aggressively pivot to US and West African crude, causing a surge in long-haul VLCC freight rates.",
+      "joint_probability": 0.04923866269447203,
+      "pruned_reason": "joint_probability=0.0492 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b50f6231",
+      "description": "Major shipping firms and oil producers declare Force Majeure on existing delivery contracts.",
+      "joint_probability": 0.04989035087719298,
+      "pruned_reason": "joint_probability=0.0499 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "1b1b3bf7",
+      "description": "Coalition forces announce the establishment of naval convoys to secure essential energy transit.",
+      "joint_probability": 0.032072368421052634,
+      "pruned_reason": "joint_probability=0.0321 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "e348e147",
+      "description": "Kinetic skirmish occurs between Indian naval escorts and regional proxy forces near the Strait of Hormuz.",
+      "joint_probability": 0.020467836257309937,
+      "pruned_reason": "joint_probability=0.0205 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "a1511a64",
+      "description": "Global insurance markets declare the Arabian Sea a high-risk zone, causing a freeze in non-escorted tanker movements.",
+      "joint_probability": 0.038011695906432746,
+      "pruned_reason": "joint_probability=0.0380 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "d7720027",
+      "description": "India and the US/UK establish a formal Joint Maritime Security Task Force to secure energy corridors.",
+      "joint_probability": 0.029239766081871343,
+      "pruned_reason": "joint_probability=0.0292 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "03b124d5",
+      "description": "Indian Navy deploys assets to the Arabian Sea and Gulf of Oman to provide security for remaining tankers.",
+      "joint_probability": 0.04545454545454545,
+      "pruned_reason": "joint_probability=0.0455 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "70ea64c6",
+      "description": "Marine insurers designate the Arabian Sea as a high-risk zone, triggering immediate spikes in war risk premiums for tankers.",
+      "joint_probability": 0.04814814814814814,
+      "pruned_reason": "joint_probability=0.0481 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "2e1e2b07",
+      "description": "Iranian naval forces engage in 'gray zone' harassment or minor kinetic skirmishes with Indian carrier groups near the Strait.",
+      "joint_probability": 0.02222222222222222,
+      "pruned_reason": "joint_probability=0.0222 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "fd4448f7",
+      "description": "India and the US establish a formal joint maritime security task force, signaling a permanent shift in regional security architecture.",
+      "joint_probability": 0.029629629629629624,
+      "pruned_reason": "joint_probability=0.0296 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "335f4bee",
+      "description": "Rapid depreciation of the Indian Rupee (INR) triggers aggressive RBI intervention and large-scale capital flight.",
+      "joint_probability": 0.030952380952380946,
+      "pruned_reason": "joint_probability=0.0310 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "53cbb8dd",
+      "description": "Immediate disruption of crude oil shipments via Hormuz leads to emergency energy rationing and industrial slowdowns.",
+      "joint_probability": 0.021428571428571425,
+      "pruned_reason": "joint_probability=0.0214 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "45245bac",
+      "description": "India deploys naval assets to the Arabian Sea to secure existing tankers and establish alternative supply corridors.",
+      "joint_probability": 0.014285714285714282,
+      "pruned_reason": "joint_probability=0.0143 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b29753c7",
+      "description": "Iran implements mandatory 'security inspections' for all non-neutral commercial vessels entering the Strait of Hormuz.",
+      "joint_probability": 0.04583333333333334,
+      "pruned_reason": "joint_probability=0.0458 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "e6842e96",
+      "description": "Iran seizes a commercial tanker allegedly linked to a non-neutral state to signal resolve.",
+      "joint_probability": 0.024999999999999998,
+      "pruned_reason": "joint_probability=0.0250 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "9ce0bf79",
+      "description": "A tactical naval skirmish occurs between Iranian fast-attack craft and a foreign naval escort.",
+      "joint_probability": 0.016666666666666666,
+      "pruned_reason": "joint_probability=0.0167 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "9e679fb2",
+      "description": "Accelerated capital flight from Indian equities and sovereign bonds as geopolitical risk premiums peak.",
+      "joint_probability": 0.03333333333333333,
+      "pruned_reason": "joint_probability=0.0333 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "39a0e1ce",
+      "description": "Indian Navy increases presence in the Gulf of Oman to secure remaining shipments and deter aggression.",
+      "joint_probability": 0.02222222222222222,
+      "pruned_reason": "joint_probability=0.0222 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "7273a5bb",
+      "description": "Iran launches asymmetric drone or missile strikes against coalition assets to challenge the security corridor's deterrence.",
+      "joint_probability": 0.024999999999999998,
+      "pruned_reason": "joint_probability=0.0250 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "9242c8f1",
+      "description": "Shipping companies resume standard transit schedules under naval escort, reducing the immediate 'fear premium' on freight rates.",
+      "joint_probability": 0.016666666666666666,
+      "pruned_reason": "joint_probability=0.0167 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "c9a51086",
+      "description": "Iranian-backed proxies target land-based energy infrastructure in the Gulf to pressure the coalition without direct state-on-state war.",
+      "joint_probability": 0.013888888888888888,
+      "pruned_reason": "joint_probability=0.0139 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

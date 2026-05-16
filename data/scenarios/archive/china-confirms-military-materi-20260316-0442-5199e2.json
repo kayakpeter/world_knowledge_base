@@ -1,0 +1,442 @@
+{
+  "scenario_id": "china-confirms-military-materi-20260316-0442-5199e2",
+  "trigger_event": "China confirms military materiel supply to Iran \u2014 US imposes secondary sanctions",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T04:42:00.331769+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-co_root": {
+      "node_id": "china-co_root",
+      "description": "China confirms military materiel supply to Iran \u2014 US imposes secondary sanctions",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "44777000",
+        "a00c3105",
+        "e4c85895"
+      ],
+      "pruned_reason": ""
+    },
+    "44777000": {
+      "node_id": "44777000",
+      "description": "China halts all military aid to Iran under international pressure, easing tensions.",
+      "branch_probability": 0.35,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.35,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NOC",
+            "BA"
+          ],
+          "notes": "Reduced demand for defense stocks due to de-escalation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "700db021",
+        "de2ca6c2",
+        "68ecd771"
+      ],
+      "pruned_reason": ""
+    },
+    "a00c3105": {
+      "node_id": "a00c3105",
+      "description": "US and China engage in diplomatic talks to resolve the issue, leading to a temporary truce.",
+      "branch_probability": 0.45,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.45,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "FXE",
+            "FXA"
+          ],
+          "notes": "Stability in currency markets due to reduced geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "f909e8fd",
+        "8ffa9791",
+        "58ad9b55"
+      ],
+      "pruned_reason": ""
+    },
+    "e4c85895": {
+      "node_id": "e4c85895",
+      "description": "China continues to supply military aid, leading to increased US sanctions and heightened tensions.",
+      "branch_probability": 0.2,
+      "parent_id": "china-co_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to potential disruption in supply routes."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense stocks due to heightened tensions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "35bd9200",
+        "d0dc82d9",
+        "932d5a40"
+      ],
+      "pruned_reason": ""
+    },
+    "700db021": {
+      "node_id": "700db021",
+      "description": "US lifts some of the secondary sanctions as a gesture of goodwill, leading to a temporary easing of tensions.",
+      "branch_probability": 0.45,
+      "parent_id": "44777000",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.1575,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "CNY",
+            "USD"
+          ],
+          "notes": "Strengthening of CNY and USD due to reduced geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "de2ca6c2": {
+      "node_id": "de2ca6c2",
+      "description": "Iran resumes negotiations with the US and its allies, leading to a potential thaw in relations.",
+      "branch_probability": 0.35,
+      "parent_id": "44777000",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.12249999999999998,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "Brent",
+            "WTI"
+          ],
+          "notes": "Oil prices drop due to reduced risk of supply disruptions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "68ecd771": {
+      "node_id": "68ecd771",
+      "description": "China increases economic aid to Iran to compensate for the halt in military aid, maintaining its influence in the region.",
+      "branch_probability": 0.2,
+      "parent_id": "44777000",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.06999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "MINOR",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "SOY"
+          ],
+          "notes": "Increase in Chinese agricultural exports to Iran."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f909e8fd": {
+      "node_id": "f909e8fd",
+      "description": "The temporary truce holds, and both sides agree to a phased reduction in tensions.",
+      "branch_probability": 0.6,
+      "parent_id": "a00c3105",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.27,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Reduced military tensions lead to lower defense spending expectations."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8ffa9791": {
+      "node_id": "8ffa9791",
+      "description": "China and the US fail to reach a consensus, leading to renewed sanctions and increased tensions.",
+      "branch_probability": 0.3,
+      "parent_id": "a00c3105",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.135,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "FXI"
+          ],
+          "notes": "Renewed tensions cause a sharp decline in the Chinese yuan."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "CHINA"
+          ],
+          "notes": "Increased political risk affects Chinese sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SHANGHAI_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "58ad9b55": {
+      "node_id": "58ad9b55",
+      "description": "The truce is used by China to strengthen its position in the region, leading to a covert increase in military aid to Iran.",
+      "branch_probability": 0.1,
+      "parent_id": "a00c3105",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.045000000000000005,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased regional tensions boost defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "35bd9200": {
+      "node_id": "35bd9200",
+      "description": "China retaliates with counter-sanctions against US entities, escalating the conflict.",
+      "branch_probability": 0.35,
+      "parent_id": "e4c85895",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.06999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased defense spending expected"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "USD/CNY"
+          ],
+          "notes": "Weakening USD against CNY"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d0dc82d9": {
+      "node_id": "d0dc82d9",
+      "description": "Iran increases its naval activities in the Strait of Hormuz, threatening oil shipments.",
+      "branch_probability": 0.45,
+      "parent_id": "e4c85895",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.09000000000000001,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices surge due to supply concerns"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "932d5a40": {
+      "node_id": "932d5a40",
+      "description": "US allies in Asia, such as Japan and South Korea, reduce trade with China to avoid secondary sanctions.",
+      "branch_probability": 0.25,
+      "parent_id": "e4c85895",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.05,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "MAERSK",
+            "COSCO"
+          ],
+          "notes": "Reduced shipping volumes"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

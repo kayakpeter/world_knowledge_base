@@ -1,0 +1,503 @@
+{
+  "scenario_id": "iron-dome-interceptor-stockpil-20260316-0249-2b048f",
+  "trigger_event": "Iron Dome interceptor stockpile depleted \u2014 mass Israeli civilian casualties",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T02:49:37.054741+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iron-dom_root": {
+      "node_id": "iron-dom_root",
+      "description": "Iron Dome interceptor stockpile depleted \u2014 mass Israeli civilian casualties",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "6d0957d7",
+        "ddeb8941",
+        "9466eb5e"
+      ],
+      "pruned_reason": ""
+    },
+    "6d0957d7": {
+      "node_id": "6d0957d7",
+      "description": "Israeli military launches a full-scale ground invasion into Gaza, leading to international condemnation.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38636363636363635,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel weakens due to uncertainty and potential sanctions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_BORDER_CROSSINGS",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "3265f976",
+        "f852f92f",
+        "199387ef"
+      ],
+      "pruned_reason": ""
+    },
+    "ddeb8941": {
+      "node_id": "ddeb8941",
+      "description": "Palestinian factions intensify rocket attacks, causing further civilian casualties and infrastructure damage.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3409090909090909,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ALL",
+            "BRK.B"
+          ],
+          "notes": "Increased claims and reinsurance costs."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAELI_POWER_PLANTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "1eacc0d9",
+        "b4eddd9f",
+        "41673295"
+      ],
+      "pruned_reason": ""
+    },
+    "9466eb5e": {
+      "node_id": "9466eb5e",
+      "description": "International community calls for an immediate ceasefire, but tensions escalate further.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "iron-dom_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "IL"
+          ],
+          "notes": "Israel's credit rating may be downgraded due to political instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "fd61def6",
+        "0e760115",
+        "138d2b17"
+      ],
+      "pruned_reason": ""
+    },
+    "3265f976": {
+      "node_id": "3265f976",
+      "description": "UN Security Council convenes an emergency session to discuss the situation, leading to a resolution demanding an immediate ceasefire.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "6d0957d7",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.12878787878787878,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f852f92f": {
+      "node_id": "f852f92f",
+      "description": "Regional powers, including Egypt and Jordan, increase diplomatic efforts to broker a truce, but tensions remain high.",
+      "branch_probability": 0.28888888888888886,
+      "parent_id": "6d0957d7",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.1116161616161616,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Uncertainty leads to currency depreciation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "199387ef": {
+      "node_id": "199387ef",
+      "description": "Humanitarian organizations report severe shortages of medical supplies and food in Gaza, leading to a global outcry and increased aid efforts.",
+      "branch_probability": 0.37777777777777777,
+      "parent_id": "6d0957d7",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.14595959595959596,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "MOS",
+            "POT"
+          ],
+          "notes": "Increased demand for food aid."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_HOSPITALS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1eacc0d9": {
+      "node_id": "1eacc0d9",
+      "description": "Israeli military launches a large-scale ground invasion into Gaza, leading to significant escalation.",
+      "branch_probability": 0.5,
+      "parent_id": "ddeb8941",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.17045454545454544,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense contractors due to military operations."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel weakens due to uncertainty and economic disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_ELECTRICITY_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "TEL_AVIV_AIRPORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b4eddd9f": {
+      "node_id": "b4eddd9f",
+      "description": "International community imposes sanctions on Israel, citing disproportionate force.",
+      "branch_probability": 0.3,
+      "parent_id": "ddeb8941",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.10227272727272727,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "IL"
+          ],
+          "notes": "Israel's credit rating may be downgraded due to international pressure."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Disruption in shipping routes due to potential blockades or boycotts."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "41673295": {
+      "node_id": "41673295",
+      "description": "Palestinian factions declare a temporary ceasefire, leading to a short-term reduction in violence.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "ddeb8941",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.06818181818181818,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced risk to oil tankers in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_AIRPORT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fd61def6": {
+      "node_id": "fd61def6",
+      "description": "UN Security Council convenes an emergency session to discuss the crisis, leading to a resolution demanding an immediate ceasefire.",
+      "branch_probability": 0.4705882352941177,
+      "parent_id": "9466eb5e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.12834224598930483,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense systems and security solutions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0e760115": {
+      "node_id": "0e760115",
+      "description": "Israel launches a retaliatory strike against suspected missile launch sites, causing significant damage to infrastructure in Gaza.",
+      "branch_probability": 0.35294117647058826,
+      "parent_id": "9466eb5e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.0962566844919786,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Concerns over regional stability and potential supply disruptions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ALL",
+            "AIG"
+          ],
+          "notes": "Increased claims and risk assessments."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_POWER_PLANT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "138d2b17": {
+      "node_id": "138d2b17",
+      "description": "Regional powers, including Iran and Saudi Arabia, increase their involvement, leading to a broader conflict.",
+      "branch_probability": 0.17647058823529413,
+      "parent_id": "9466eb5e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.0481283422459893,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO",
+            "BP"
+          ],
+          "notes": "Severe concerns over oil supply routes and regional stability."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ILS",
+            "SAR"
+          ],
+          "notes": "Currency instability due to economic uncertainty."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RED_SEA_SHIPPING_ROUTE",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

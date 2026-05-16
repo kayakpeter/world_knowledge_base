@@ -1,0 +1,511 @@
+{
+  "scenario_id": "us-strikes-kharg-island-20260330-0348-0bf988",
+  "trigger_event": "US strikes Kharg Island",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-30T03:48:02.831348+00:00",
+  "expires_at": "2026-04-02T03:48:02.831348+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "us-strik_root": {
+      "node_id": "us-strik_root",
+      "description": "US strikes Kharg Island",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "57d64e02",
+        "74fa319a",
+        "d8e6d2be"
+      ],
+      "pruned_reason": ""
+    },
+    "57d64e02": {
+      "node_id": "57d64e02",
+      "description": "Iran retaliates with missile strikes on Saudi Aramco facilities",
+      "branch_probability": 0.30188679245283023,
+      "parent_id": "us-strik_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.30188679245283023,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e5cff5fa",
+        "6fd30648",
+        "be6ce9f1"
+      ],
+      "pruned_reason": ""
+    },
+    "74fa319a": {
+      "node_id": "74fa319a",
+      "description": "Global oil prices surge, with Brent crude exceeding $80/bbl",
+      "branch_probability": 0.339622641509434,
+      "parent_id": "us-strik_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.339622641509434,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Sharp increase in oil prices due to supply concerns"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Increased demand for tanker services"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "057be7b4",
+        "a5d2c075",
+        "540f6870"
+      ],
+      "pruned_reason": ""
+    },
+    "d8e6d2be": {
+      "node_id": "d8e6d2be",
+      "description": "US military assets in the region are put on high alert",
+      "branch_probability": 0.3584905660377359,
+      "parent_id": "us-strik_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3584905660377359,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military readiness"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "AL_UDEID_AIR_BASE",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "NAVAL_SUPPORT_ACTIVITY_BAHRAIN",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [
+        "2d4e9401",
+        "6c20ce03",
+        "022589d8"
+      ],
+      "pruned_reason": ""
+    },
+    "e5cff5fa": {
+      "node_id": "e5cff5fa",
+      "description": "Saudi Arabia declares force majeure on oil exports, halting shipments",
+      "branch_probability": 0.4722222222222222,
+      "parent_id": "57d64e02",
+      "depth": 2,
+      "parent_joint_probability": 0.30188679245283023,
+      "joint_probability": 0.14255765199161427,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Global oil prices surge as Saudi exports grind to a halt"
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Tanker rates plummet as Saudi shipments cease"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6fd30648": {
+      "node_id": "6fd30648",
+      "description": "US and Saudi Arabia announce joint military operation to secure Persian Gulf",
+      "branch_probability": 0.3055555555555556,
+      "parent_id": "57d64e02",
+      "depth": 2,
+      "parent_joint_probability": 0.30188679245283023,
+      "joint_probability": 0.09224318658280925,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "US defense contractors see increased demand for military equipment and services"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Global currency markets experience volatility as conflict escalates"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PERSIAN_GULF_SHIPPING_LANE",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "be6ce9f1": {
+      "node_id": "be6ce9f1",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) threatens to target UAE and Israeli oil facilities",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "57d64e02",
+      "depth": 2,
+      "parent_joint_probability": 0.30188679245283023,
+      "joint_probability": 0.06708595387840673,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Global oil prices remain elevated as threat of further attacks looms"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "HIG"
+          ],
+          "notes": "Insurance premiums for Middle East-bound tankers surge"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "Fujairah Oil Terminal",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "057be7b4": {
+      "node_id": "057be7b4",
+      "description": "Iran retaliates with missile strikes on Saudi Aramco facilities",
+      "branch_probability": 0.42758620689655175,
+      "parent_id": "74fa319a",
+      "depth": 2,
+      "parent_joint_probability": 0.339622641509434,
+      "joint_probability": 0.14521795705920626,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Potential disruption to global oil supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a5d2c075": {
+      "node_id": "a5d2c075",
+      "description": "US Navy deploys additional warships to the Persian Gulf",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "74fa319a",
+      "depth": 2,
+      "parent_joint_probability": 0.339622641509434,
+      "joint_probability": 0.10540013012361744,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Increased military presence in the region"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "540f6870": {
+      "node_id": "540f6870",
+      "description": "OPEC emergency meeting convened to discuss output cuts",
+      "branch_probability": 0.2620689655172414,
+      "parent_id": "74fa319a",
+      "depth": 2,
+      "parent_joint_probability": 0.339622641509434,
+      "joint_probability": 0.0890045543266103,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Potential reduction in global oil supply"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2d4e9401": {
+      "node_id": "2d4e9401",
+      "description": "Iran retaliates with missile strikes against Saudi Aramco facilities",
+      "branch_probability": 0.32978723404255317,
+      "parent_id": "d8e6d2be",
+      "depth": 2,
+      "parent_joint_probability": 0.3584905660377359,
+      "joint_probability": 0.11822561220393417,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "ARAMCO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_PROCESSING_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "RAS_TANURA_REFINERY",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6c20ce03": {
+      "node_id": "6c20ce03",
+      "description": "US and Iranian naval vessels engage in a skirmish in the Strait of Hormuz",
+      "branch_probability": 0.2180851063829787,
+      "parent_id": "d8e6d2be",
+      "depth": 2,
+      "parent_joint_probability": 0.3584905660377359,
+      "joint_probability": 0.07818145323163388,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased risk premium for tanker operators"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "022589d8": {
+      "node_id": "022589d8",
+      "description": "International community condemns US actions, leading to a diplomatic crisis",
+      "branch_probability": 0.45212765957446804,
+      "parent_id": "d8e6d2be",
+      "depth": 2,
+      "parent_joint_probability": 0.3584905660377359,
+      "joint_probability": 0.1620835006021678,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased uncertainty and risk aversion"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

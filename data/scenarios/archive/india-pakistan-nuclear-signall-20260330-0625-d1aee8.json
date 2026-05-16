@@ -1,0 +1,410 @@
+{
+  "scenario_id": "india-pakistan-nuclear-signall-20260330-0625-d1aee8",
+  "trigger_event": "India-Pakistan nuclear signalling \u2014 Pakistan places strategic forces on alert",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T06:25:43.375166+00:00",
+  "expires_at": "2026-04-02T06:25:43.375166+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-pa_root": {
+      "node_id": "india-pa_root",
+      "description": "India-Pakistan nuclear signalling \u2014 Pakistan places strategic forces on alert",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "e4a1d70e",
+        "e6f0e87e",
+        "e996046a"
+      ],
+      "pruned_reason": ""
+    },
+    "e4a1d70e": {
+      "node_id": "e4a1d70e",
+      "description": "India responds by placing its own nuclear-capable missiles on high alert, escalating tensions further",
+      "branch_probability": 0.38095238095238093,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38095238095238093,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to a surge in defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "740b9c36",
+        "c8c52305",
+        "083f91eb"
+      ],
+      "pruned_reason": ""
+    },
+    "e6f0e87e": {
+      "node_id": "e6f0e87e",
+      "description": "Global markets react with alarm, causing a sharp spike in oil prices and a decline in the value of the Indian rupee",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.42857142857142855,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Oil prices surge due to concerns over regional stability"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian rupee declines in value due to increased uncertainty"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "b35f4faa",
+        "a37f09ef",
+        "9c16d48f"
+      ],
+      "pruned_reason": ""
+    },
+    "e996046a": {
+      "node_id": "e996046a",
+      "description": "China issues a statement calling for calm and restraint from both India and Pakistan, attempting to mediate the situation",
+      "branch_probability": 0.19047619047619047,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.19047619047619047,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "FXI"
+          ],
+          "notes": "Chinese diplomatic efforts lead to a slight increase in Chinese sovereign bonds"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "64198d19",
+        "02ca46a8",
+        "71907af9"
+      ],
+      "pruned_reason": ""
+    },
+    "740b9c36": {
+      "node_id": "740b9c36",
+      "description": "India and Pakistan engage in a limited conventional conflict along the Line of Control (LoC) in Kashmir",
+      "branch_probability": 0.34710743801652894,
+      "parent_id": "e4a1d70e",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.1322314049586777,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense equipment and services"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c8c52305": {
+      "node_id": "c8c52305",
+      "description": "China issues a statement calling for calm and restraint from both India and Pakistan, while quietly mobilizing its own military assets in the region",
+      "branch_probability": 0.47933884297520657,
+      "parent_id": "e4a1d70e",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.1826052735143644,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "USD/CNY"
+          ],
+          "notes": "Increased uncertainty and risk aversion lead to a decline in the value of the Chinese yuan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "083f91eb": {
+      "node_id": "083f91eb",
+      "description": "The United States offers to mediate talks between India and Pakistan, but is rebuffed by both countries",
+      "branch_probability": 0.17355371900826447,
+      "parent_id": "e4a1d70e",
+      "depth": 2,
+      "parent_joint_probability": 0.38095238095238093,
+      "joint_probability": 0.06611570247933884,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Increased global uncertainty and risk aversion lead to a decline in US Treasury yields"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b35f4faa": {
+      "node_id": "b35f4faa",
+      "description": "India responds by mobilizing its own strategic forces, escalating tensions and prompting a further spike in oil prices",
+      "branch_probability": 0.4366197183098592,
+      "parent_id": "e6f0e87e",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.18712273641851107,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "BP"
+          ],
+          "notes": "Oil price surge accelerates as conflict risk premium skyrockets"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIA_PAKISTAN BORDER CROSSINGS",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a37f09ef": {
+      "node_id": "a37f09ef",
+      "description": "China issues a statement calling for calm and restraint, but also begins to mobilize its own military assets in the region",
+      "branch_probability": 0.24647887323943662,
+      "parent_id": "e6f0e87e",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.1056338028169014,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Defense stocks rise on increased tensions and potential for conflict"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KARAKORAM_HIGHWAY",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9c16d48f": {
+      "node_id": "9c16d48f",
+      "description": "The US and other Western nations issue a joint statement condemning Pakistan's actions and calling for de-escalation, but take no immediate military action",
+      "branch_probability": 0.31690140845070425,
+      "parent_id": "e6f0e87e",
+      "depth": 2,
+      "parent_joint_probability": 0.42857142857142855,
+      "joint_probability": 0.1358148893360161,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian rupee continues to decline on uncertainty and conflict risk"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 9.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "64198d19": {
+      "node_id": "64198d19",
+      "description": "India rejects China's mediation offer, stating it will not engage in talks until Pakistan stands down its strategic forces",
+      "branch_probability": 0.42,
+      "parent_id": "e996046a",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.07999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "02ca46a8": {
+      "node_id": "02ca46a8",
+      "description": "Pakistan accepts China's mediation offer and begins de-escalation, but India remains skeptical and maintains its military alert level",
+      "branch_probability": 0.31,
+      "parent_id": "e996046a",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.05904761904761904,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Indian rupee weakens due to ongoing tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "71907af9": {
+      "node_id": "71907af9",
+      "description": "China's mediation efforts are met with silence from both India and Pakistan, leading to increased uncertainty and market volatility",
+      "branch_probability": 0.27,
+      "parent_id": "e996046a",
+      "depth": 2,
+      "parent_joint_probability": 0.19047619047619047,
+      "joint_probability": 0.05142857142857143,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "GOI"
+          ],
+          "notes": "Indian sovereign bonds see increased yields due to heightened uncertainty"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

@@ -1,0 +1,507 @@
+{
+  "scenario_id": "b61-12-nuclear-gravity-bomb-de-20260316-0317-e12599",
+  "trigger_event": "B61-12 nuclear gravity bomb deployed to Middle East theater",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T03:17:55.378178+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "b61-12-n_root": {
+      "node_id": "b61-12-n_root",
+      "description": "B61-12 nuclear gravity bomb deployed to Middle East theater",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "b5c361ef",
+        "566bd76b",
+        "8dc2cebb",
+        "0b223ad4"
+      ],
+      "pruned_reason": ""
+    },
+    "b5c361ef": {
+      "node_id": "b5c361ef",
+      "description": "Regional tensions escalate, leading to increased military activity and heightened alert statuses.",
+      "branch_probability": 0.31481481481481477,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.31481481481481477,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "346bd454",
+        "8ca6a8d6",
+        "3bba9635"
+      ],
+      "pruned_reason": ""
+    },
+    "566bd76b": {
+      "node_id": "566bd76b",
+      "description": "International condemnation and diplomatic efforts to de-escalate the situation intensify.",
+      "branch_probability": 0.2777777777777778,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2777777777777778,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "EUR"
+          ],
+          "notes": "Uncertainty leads to currency volatility."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d3d10f39",
+        "8a73ff19",
+        "5d10b721"
+      ],
+      "pruned_reason": ""
+    },
+    "8dc2cebb": {
+      "node_id": "8dc2cebb",
+      "description": "Strategic military targets in the region are placed on high alert, increasing the risk of accidental conflict.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2222222222222222,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "SAUD",
+            "IRAN"
+          ],
+          "notes": "Risk of political instability and regime change."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "e7f36aa3",
+        "4dff0c7e",
+        "552c8d9a"
+      ],
+      "pruned_reason": ""
+    },
+    "0b223ad4": {
+      "node_id": "0b223ad4",
+      "description": "Humanitarian organizations prepare for potential large-scale displacement and casualties.",
+      "branch_probability": 0.18518518518518517,
+      "parent_id": "b61-12-n_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.18518518518518517,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "65c2af8d",
+        "99b6a977",
+        "9ec482fd"
+      ],
+      "pruned_reason": ""
+    },
+    "346bd454": {
+      "node_id": "346bd454",
+      "description": "Increased military presence leads to accidental skirmishes between regional forces.",
+      "branch_probability": 0.45,
+      "parent_id": "b5c361ef",
+      "depth": 2,
+      "parent_joint_probability": 0.31481481481481477,
+      "joint_probability": 0.14166666666666666,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8ca6a8d6": {
+      "node_id": "8ca6a8d6",
+      "description": "Regional powers call for emergency UN Security Council meeting to de-escalate tensions.",
+      "branch_probability": 0.35,
+      "parent_id": "b5c361ef",
+      "depth": 2,
+      "parent_joint_probability": 0.31481481481481477,
+      "joint_probability": 0.11018518518518516,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Uncertainty leads to currency volatility in the region."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3bba9635": {
+      "node_id": "3bba9635",
+      "description": "Cyber attacks on critical infrastructure increase as a form of retaliation or pre-emptive strike.",
+      "branch_probability": 0.25,
+      "parent_id": "b5c361ef",
+      "depth": 2,
+      "parent_joint_probability": 0.31481481481481477,
+      "joint_probability": 0.07870370370370369,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Potential disruptions to oil and gas supply chains."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_ARABIA_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d3d10f39": {
+      "node_id": "d3d10f39",
+      "description": "United Nations Security Council convenes an emergency session to address the deployment.",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "566bd76b",
+      "depth": 2,
+      "parent_joint_probability": 0.2777777777777778,
+      "joint_probability": 0.10981912144702842,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8a73ff19": {
+      "node_id": "8a73ff19",
+      "description": "Regional powers increase their military readiness and begin mobilizing forces.",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "566bd76b",
+      "depth": 2,
+      "parent_joint_probability": 0.2777777777777778,
+      "joint_probability": 0.0904392764857881,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for defense stocks due to heightened tensions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5d10b721": {
+      "node_id": "5d10b721",
+      "description": "International sanctions against the deploying nation are proposed and gain momentum.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "566bd76b",
+      "depth": 2,
+      "parent_joint_probability": 0.2777777777777778,
+      "joint_probability": 0.07751937984496124,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Currency depreciation due to economic isolation."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e7f36aa3": {
+      "node_id": "e7f36aa3",
+      "description": "A miscommunication leads to an accidental launch of defensive missiles by a regional power, escalating tensions.",
+      "branch_probability": 0.35,
+      "parent_id": "8dc2cebb",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.07777777777777777,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for missile defense systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_ARABIA_MILITARY_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4dff0c7e": {
+      "node_id": "4dff0c7e",
+      "description": "Regional powers engage in diplomatic negotiations to de-escalate the situation, reducing the immediate risk of conflict.",
+      "branch_probability": 0.45,
+      "parent_id": "8dc2cebb",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.09999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD/SAUDI_RIYAL"
+          ],
+          "notes": "Stabilization efforts reduce market volatility."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "552c8d9a": {
+      "node_id": "552c8d9a",
+      "description": "A cyber-attack on military communication systems disrupts command and control, leading to confusion and potential missteps.",
+      "branch_probability": 0.2,
+      "parent_id": "8dc2cebb",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.044444444444444446,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "CYBR",
+            "PANW"
+          ],
+          "notes": "Increased focus on cybersecurity solutions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "QATAR_MILITARY_COMMAND",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "65c2af8d": {
+      "node_id": "65c2af8d",
+      "description": "Regional governments increase border security and prepare refugee camps.",
+      "branch_probability": 0.3846153846153846,
+      "parent_id": "0b223ad4",
+      "depth": 2,
+      "parent_joint_probability": 0.18518518518518517,
+      "joint_probability": 0.07122507122507121,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for security and military equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "99b6a977": {
+      "node_id": "99b6a977",
+      "description": "International aid organizations deploy additional personnel and resources to the region.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "0b223ad4",
+      "depth": 2,
+      "parent_joint_probability": 0.18518518518518517,
+      "joint_probability": 0.06172839506172839,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MINOR",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "DE",
+            "MON"
+          ],
+          "notes": "Diversion of resources to humanitarian efforts."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9ec482fd": {
+      "node_id": "9ec482fd",
+      "description": "Local healthcare systems become overwhelmed, leading to international calls for medical support.",
+      "branch_probability": 0.28205128205128205,
+      "parent_id": "0b223ad4",
+      "depth": 2,
+      "parent_joint_probability": 0.18518518518518517,
+      "joint_probability": 0.052231718898385564,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Decreased investor confidence in affected regions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

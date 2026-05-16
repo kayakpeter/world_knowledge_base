@@ -1,0 +1,429 @@
+{
+  "scenario_id": "bushehr-nuclear-power-plant-st-20260316-0348-61458d",
+  "trigger_event": "Bushehr nuclear power plant struck \u2014 radioactive release risk",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T03:48:54.393959+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "bushehr-_root": {
+      "node_id": "bushehr-_root",
+      "description": "Bushehr nuclear power plant struck \u2014 radioactive release risk",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "a86e2a01",
+        "7359ee3a",
+        "414e098a"
+      ],
+      "pruned_reason": ""
+    },
+    "a86e2a01": {
+      "node_id": "a86e2a01",
+      "description": "Radiological contamination is confirmed, leading to immediate evacuation of the surrounding area.",
+      "branch_probability": 0.35,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.35,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for military equipment and personnel to manage the crisis."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Iranian rial weakens due to economic uncertainty."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "dcac5a2e",
+        "2caabf29",
+        "1e9a039e"
+      ],
+      "pruned_reason": ""
+    },
+    "7359ee3a": {
+      "node_id": "7359ee3a",
+      "description": "No significant radiological contamination is detected, but the plant is shut down for safety inspections.",
+      "branch_probability": 0.45,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.45,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EXC",
+            "NEE"
+          ],
+          "notes": "Increased demand for alternative energy sources in Iran and neighboring countries."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "ALL",
+            "TRV"
+          ],
+          "notes": "Insurance companies see increased premiums for nuclear-related risks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "694a3e6d",
+        "f2a75338",
+        "b1b1908c"
+      ],
+      "pruned_reason": ""
+    },
+    "414e098a": {
+      "node_id": "414e098a",
+      "description": "The strike is confirmed to be a false alarm, and the plant resumes operations with no significant damage.",
+      "branch_probability": 0.2,
+      "parent_id": "bushehr-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Iranian rial stabilizes as the crisis is averted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "d3b23b1a",
+        "20e439c1",
+        "c322e764"
+      ],
+      "pruned_reason": ""
+    },
+    "dcac5a2e": {
+      "node_id": "dcac5a2e",
+      "description": "Iranian government denies any significant radiological contamination, but international monitoring agencies report elevated radiation levels.",
+      "branch_probability": 0.39999999999999997,
+      "parent_id": "a86e2a01",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.13999999999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Increased tensions and potential for military response."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NUCLEAR_PLANT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2caabf29": {
+      "node_id": "2caabf29",
+      "description": "Regional health authorities initiate emergency protocols, and neighboring countries close borders to prevent the spread of contamination.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "a86e2a01",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.11666666666666665,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Economic uncertainty due to health concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRANIAN_BORDERS",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1e9a039e": {
+      "node_id": "1e9a039e",
+      "description": "International condemnation and calls for an investigation lead to a temporary halt in oil exports from Iran.",
+      "branch_probability": 0.26666666666666666,
+      "parent_id": "a86e2a01",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.09333333333333332,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Disruption in oil supply."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRANIAN_OIL_EXPORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "694a3e6d": {
+      "node_id": "694a3e6d",
+      "description": "Safety inspections confirm no major damage or radiation leak, plant resumes operations within 72 hours.",
+      "branch_probability": 0.6,
+      "parent_id": "7359ee3a",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.27,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f2a75338": {
+      "node_id": "f2a75338",
+      "description": "Minor damage is found, requiring extended shutdown for repairs, causing local power shortages.",
+      "branch_probability": 0.3,
+      "parent_id": "7359ee3a",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.135,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Increased demand for alternative energy sources in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b1b1908c": {
+      "node_id": "b1b1908c",
+      "description": "Significant radiological contamination is detected, leading to an evacuation of the surrounding area and international concern.",
+      "branch_probability": 0.1,
+      "parent_id": "7359ee3a",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.045000000000000005,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Increased military presence and potential for regional tensions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Higher premiums for nuclear-related risks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BUSHEHR_NPP",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d3b23b1a": {
+      "node_id": "d3b23b1a",
+      "description": "Public panic subsides as official statements confirm safety.",
+      "branch_probability": 0.43589743589743596,
+      "parent_id": "414e098a",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.0871794871794872,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "20e439c1": {
+      "node_id": "20e439c1",
+      "description": "Local media continues to report conflicting information, causing minor unrest.",
+      "branch_probability": 0.20512820512820518,
+      "parent_id": "414e098a",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.04102564102564104,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.5,
+          "tickers": [],
+          "notes": "Currency value slightly drops due to uncertainty."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c322e764": {
+      "node_id": "c322e764",
+      "description": "Government launches an investigation into the source of the false alarm.",
+      "branch_probability": 0.358974358974359,
+      "parent_id": "414e098a",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.0717948717948718,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

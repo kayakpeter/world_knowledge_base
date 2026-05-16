@@ -1,0 +1,473 @@
+{
+  "scenario_id": "uae-fujairah-terminal-struck-\u2014-20260330-0401-5b0bb0",
+  "trigger_event": "UAE Fujairah terminal struck \u2014 world second-largest bunkering hub offline",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:01:10.554445+00:00",
+  "expires_at": "2026-04-02T04:01:10.554445+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "uae-fuja_root": {
+      "node_id": "uae-fuja_root",
+      "description": "UAE Fujairah terminal struck \u2014 world second-largest bunkering hub offline",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "fc0463fe",
+        "9b84af01",
+        "661898c4"
+      ],
+      "pruned_reason": ""
+    },
+    "fc0463fe": {
+      "node_id": "fc0463fe",
+      "description": "Global bunker fuel prices surge as traders scramble for alternative supplies",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3953488372093023,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO",
+            "TK"
+          ],
+          "notes": "Bunker fuel prices expected to rise sharply due to reduced supply"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "2c5359b9",
+        "ed886515",
+        "355a0a33"
+      ],
+      "pruned_reason": ""
+    },
+    "9b84af01": {
+      "node_id": "9b84af01",
+      "description": "Tanker traffic diverted from Fujairah, causing congestion in alternative ports",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3255813953488372,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Tanker traffic disruptions expected to reduce earnings for tanker operators"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SINGAPORE_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ROTTERDAM_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e607d0ca",
+        "c7a21793",
+        "30110a89"
+      ],
+      "pruned_reason": ""
+    },
+    "661898c4": {
+      "node_id": "661898c4",
+      "description": "Insurance premiums for tankers and cargo ships increase due to heightened risk",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "uae-fuja_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.27906976744186046,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LNG"
+          ],
+          "notes": "Insurance premiums expected to rise due to increased risk of attacks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "b143f87e",
+        "65c6001f",
+        "693f7003"
+      ],
+      "pruned_reason": ""
+    },
+    "2c5359b9": {
+      "node_id": "2c5359b9",
+      "description": "Saudi Arabia's Ras Tanura terminal increases production to compensate for lost Fujairah capacity, but faces logistical challenges",
+      "branch_probability": 0.47328244274809156,
+      "parent_id": "fc0463fe",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.1871116634120362,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Bunker fuel prices continue to rise, but at a slower pace"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "TK",
+            "FRO"
+          ],
+          "notes": "Increased demand for tanker capacity to transport fuel from alternative sources"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RAS_TANURA_TERMINAL",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "FUJAIRAH_TERMINAL",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ed886515": {
+      "node_id": "ed886515",
+      "description": "Singapore and Malaysia's bunker fuel supplies are drawn down rapidly as traders seek alternative sources, leading to regional shortages",
+      "branch_probability": 0.3129770992366412,
+      "parent_id": "fc0463fe",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.12373513225634651,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Bunker fuel prices skyrocket in the region"
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "CMA CGM",
+            "Maersk"
+          ],
+          "notes": "Container shipping lines face increased costs and potential delays"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SINGAPORE_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "MALAYSIA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "355a0a33": {
+      "node_id": "355a0a33",
+      "description": "US Strategic Petroleum Reserve (SPR) is tapped to stabilize global bunker fuel markets, calming prices",
+      "branch_probability": 0.21374045801526717,
+      "parent_id": "fc0463fe",
+      "depth": 2,
+      "parent_joint_probability": 0.3953488372093023,
+      "joint_probability": 0.08450204154091957,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Bunker fuel prices stabilize as SPR releases calm the market"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "USG"
+          ],
+          "notes": "US government's decision to tap SPR is seen as a positive move for global economic stability"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "US_STRATEGIC_PETROLEUM_RESERVE",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e607d0ca": {
+      "node_id": "e607d0ca",
+      "description": "Saudi Arabia's Ras Tanura terminal experiences increased traffic and operational strain",
+      "branch_probability": 0.4235294117647059,
+      "parent_id": "9b84af01",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.13789329685362517,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased demand for bunkering services at alternative ports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RAS_TANURA_TERMINAL",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c7a21793": {
+      "node_id": "c7a21793",
+      "description": "India's Mangalore port experiences congestion and delays due to diverted tanker traffic",
+      "branch_probability": 0.3294117647058824,
+      "parent_id": "9b84af01",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.10725034199726403,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Delays and increased costs for tanker operators"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "MANGALORE_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "30110a89": {
+      "node_id": "30110a89",
+      "description": "Global bunker fuel prices surge due to supply chain disruptions",
+      "branch_probability": 0.24705882352941178,
+      "parent_id": "9b84af01",
+      "depth": 2,
+      "parent_joint_probability": 0.3255813953488372,
+      "joint_probability": 0.08043775649794802,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Supply chain shockwaves lead to increased fuel costs for global shipping"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b143f87e": {
+      "node_id": "b143f87e",
+      "description": "Reinsurance rates surge, prompting some marine insurers to reconsider coverage for vessels transiting high-risk areas",
+      "branch_probability": 0.4696969696969698,
+      "parent_id": "661898c4",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.13107822410147993,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LNG"
+          ],
+          "notes": "Reinsurers reassess risk appetite"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "65c6001f": {
+      "node_id": "65c6001f",
+      "description": "Tanker owners and operators scramble to reroute vessels, causing congestion at alternative bunkering hubs",
+      "branch_probability": 0.3106060606060606,
+      "parent_id": "661898c4",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.08668076109936575,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased demand for alternative bunkering options"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SINGAPORE_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "693f7003": {
+      "node_id": "693f7003",
+      "description": "International Maritime Organization (IMO) issues advisory on heightened security risks, prompting some flag states to restrict vessel movements",
+      "branch_probability": 0.21969696969696972,
+      "parent_id": "661898c4",
+      "depth": 2,
+      "parent_joint_probability": 0.27906976744186046,
+      "joint_probability": 0.061310782241014807,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MILD",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CMA"
+          ],
+          "notes": "Potential disruptions to container shipping"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

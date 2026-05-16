@@ -1,0 +1,467 @@
+{
+  "scenario_id": "india-formally-exits-iran-war--20260330-0655-466ef7",
+  "trigger_event": "India formally exits Iran war neutrality \u2014 aligns with US coalition",
+  "severity": "HIGH",
+  "confirmed": false,
+  "created_at": "2026-03-30T06:55:33.242985+00:00",
+  "expires_at": "2026-04-02T06:55:33.242985+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-fo_root": {
+      "node_id": "india-fo_root",
+      "description": "India formally exits Iran war neutrality \u2014 aligns with US coalition",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "caa2ea18",
+        "047d3517",
+        "3168e79b"
+      ],
+      "pruned_reason": ""
+    },
+    "caa2ea18": {
+      "node_id": "caa2ea18",
+      "description": "Iran retaliates against Indian interests, targeting oil refineries and ports",
+      "branch_probability": 0.3513513513513513,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3513513513513513,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "IOC.NS"
+          ],
+          "notes": "Indian Oil Corporation refineries at risk"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased demand for tankers to reroute Indian oil imports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAMNAGAR_REFINERY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "MUMBAI_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "074400ff",
+        "bcbdcf6f",
+        "04fdc05d"
+      ],
+      "pruned_reason": ""
+    },
+    "047d3517": {
+      "node_id": "047d3517",
+      "description": "Pakistan, a long-time rival of India, seizes the opportunity to escalate tensions along their shared border",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2162162162162162,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Increased demand for defense equipment and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LINE_OF_CONTROL",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "2181d483",
+        "4a98d27e",
+        "18ea0d91"
+      ],
+      "pruned_reason": ""
+    },
+    "3168e79b": {
+      "node_id": "3168e79b",
+      "description": "Global markets react to the increased tensions, leading to a surge in oil prices and a decline in Indian rupee value",
+      "branch_probability": 0.4324324324324324,
+      "parent_id": "india-fo_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4324324324324324,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "CL=F"
+          ],
+          "notes": "Oil prices increase due to supply concerns"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR="
+          ],
+          "notes": "Indian rupee value declines against major currencies"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "935116ae",
+        "43e499c7",
+        "a76dc7f4"
+      ],
+      "pruned_reason": ""
+    },
+    "074400ff": {
+      "node_id": "074400ff",
+      "description": "Iran launches missile strikes on India's Jamnagar Refinery, causing significant damage and disrupting oil production",
+      "branch_probability": 0.47328244274809156,
+      "parent_id": "caa2ea18",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.16628842583041054,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -25.0,
+          "tickers": [
+            "RELIANCE"
+          ],
+          "notes": "Jamnagar Refinery is a critical oil refining hub in India"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAMNAGAR_REFINERY",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bcbdcf6f": {
+      "node_id": "bcbdcf6f",
+      "description": "India responds with military strikes on Iranian oil infrastructure, targeting the Abadan Refinery and Kharg Island terminal",
+      "branch_probability": 0.3129770992366412,
+      "parent_id": "caa2ea18",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.10996492675881986,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "EXTREME",
+          "magnitude_pct": -50.0,
+          "tickers": [
+            "NIOC"
+          ],
+          "notes": "Abadan Refinery and Kharg Island terminal are critical oil infrastructure in Iran"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABADAN_REFINERY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "KHARG_ISLAND_TERMINAL",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "04fdc05d": {
+      "node_id": "04fdc05d",
+      "description": "India's alignment with the US coalition prompts Pakistan to re-evaluate its own stance, potentially leading to increased tensions in the region",
+      "branch_probability": 0.21374045801526717,
+      "parent_id": "caa2ea18",
+      "depth": 2,
+      "parent_joint_probability": 0.3513513513513513,
+      "joint_probability": 0.0750979987621209,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BAE"
+          ],
+          "notes": "Increased regional tensions could lead to higher defense spending"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2181d483": {
+      "node_id": "2181d483",
+      "description": "Pakistan launches artillery strikes against Indian military outposts in Kashmir, prompting a swift Indian response",
+      "branch_probability": 0.42,
+      "parent_id": "047d3517",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.0908108108108108,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions along the India-Pakistan border may lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LINE_OF_CONTROL_KASHMIR",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4a98d27e": {
+      "node_id": "4a98d27e",
+      "description": "China, a key ally of Pakistan, issues a statement condemning India's decision to exit neutrality and warns of potential consequences",
+      "branch_probability": 0.35,
+      "parent_id": "047d3517",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.07567567567567567,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "India's currency may face pressure due to increased tensions with Pakistan and potential Chinese economic retaliation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "18ea0d91": {
+      "node_id": "18ea0d91",
+      "description": "The US coalition offers military aid and support to India, further escalating the situation",
+      "branch_probability": 0.28,
+      "parent_id": "047d3517",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.06054054054054054,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased US military aid to India may lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "935116ae": {
+      "node_id": "935116ae",
+      "description": "Iran retaliates with missile strikes on Saudi Aramco facilities, disrupting global oil supply",
+      "branch_probability": 0.27,
+      "parent_id": "3168e79b",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.11675675675675676,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "SU"
+          ],
+          "notes": "Potential for long-term supply disruption"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "43e499c7": {
+      "node_id": "43e499c7",
+      "description": "China condemns India's decision, threatening trade retaliation and sparking a decline in Indian stock market",
+      "branch_probability": 0.42,
+      "parent_id": "3168e79b",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.1816216216216216,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "INR"
+          ],
+          "notes": "Potential for further currency devaluation"
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CNH"
+          ],
+          "notes": "Trade tensions may impact container shipping"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a76dc7f4": {
+      "node_id": "a76dc7f4",
+      "description": "US and allies increase military presence in the Persian Gulf, raising concerns about potential miscalculations",
+      "branch_probability": 0.31,
+      "parent_id": "3168e79b",
+      "depth": 2,
+      "parent_joint_probability": 0.4324324324324324,
+      "joint_probability": 0.13405405405405404,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Increased military spending and activity"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

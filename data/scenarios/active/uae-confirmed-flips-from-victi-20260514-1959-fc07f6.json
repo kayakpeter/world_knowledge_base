@@ -1,0 +1,4130 @@
+{
+  "scenario_id": "uae-confirmed-flips-from-victi-20260514-1959-fc07f6",
+  "trigger_event": "UAE confirmed flips from victim to overt belligerent \u2014 Iran retaliates on UAE",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-05-14T19:59:48.058776+00:00",
+  "expires_at": "2026-05-17T19:59:48.058776+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "uae-conf_root": {
+      "node_id": "uae-conf_root",
+      "description": "UAE confirmed flips from victim to overt belligerent \u2014 Iran retaliates on UAE",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "fc118eff",
+        "dd45ab7e",
+        "37eb4eea"
+      ],
+      "pruned_reason": ""
+    },
+    "fc118eff": {
+      "node_id": "fc118eff",
+      "description": "Iran launches coordinated missile and drone strikes targeting UAE oil refineries and export terminals.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "uae-conf_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.39393939393939387,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike in Brent crude due to supply disruption risk."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit surge."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps widen significantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "86d0ea22",
+        "cdaa1036",
+        "8cfea5af"
+      ],
+      "pruned_reason": ""
+    },
+    "dd45ab7e": {
+      "node_id": "dd45ab7e",
+      "description": "Iran implements a partial or effective closure of the Strait of Hormuz to choke UAE exports.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "uae-conf_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme volatility in spot rates for VLCCs."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Global energy panic as 20% of oil transit is threatened."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Hull and machinery insurance costs skyrocket."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "fdaea572",
+        "3022d077",
+        "8043f2a8"
+      ],
+      "pruned_reason": ""
+    },
+    "37eb4eea": {
+      "node_id": "37eb4eea",
+      "description": "Iran executes a massive cyber-offensive targeting UAE financial hubs and port management systems.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "uae-conf_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Logistical paralysis at major transshipment hubs."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Pressure on pegged currencies and regional capital flight."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "82f9d857",
+        "55f22101",
+        "f28aaee4"
+      ],
+      "pruned_reason": ""
+    },
+    "86d0ea22": {
+      "node_id": "86d0ea22",
+      "description": "Successful strikes on UAE refineries and export terminals cause significant production outages and export delays.",
+      "branch_probability": 0.41935483870967744,
+      "parent_id": "fc118eff",
+      "depth": 2,
+      "parent_joint_probability": 0.39393939393939387,
+      "joint_probability": 0.16520039100684258,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to UAE production capacity loss."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Surge in war-risk premiums for Gulf assets."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased rates for high-risk zone transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_RUWAIS_REFINE",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "UAE_EXPORT_TERMINALS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "deafa8ae",
+        "7e9b5af1",
+        "a5240da9"
+      ],
+      "pruned_reason": ""
+    },
+    "cdaa1036": {
+      "node_id": "cdaa1036",
+      "description": "Iran implements a tactical naval blockade or 'security zone' around UAE ports to prevent crude exports.",
+      "branch_probability": 0.25806451612903225,
+      "parent_id": "fc118eff",
+      "depth": 2,
+      "parent_joint_probability": 0.39393939393939387,
+      "joint_probability": 0.1016617790811339,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "TCRT"
+          ],
+          "notes": "Extreme volatility in spot rates as ships are trapped or diverted."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Disruption to Jebel Ali and other major UAE hubs."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Market prices reflect total loss of UAE export flow."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "909a1ce6",
+        "79d2c72d"
+      ],
+      "pruned_reason": ""
+    },
+    "8cfea5af": {
+      "node_id": "8cfea5af",
+      "description": "UAE and coalition forces launch precision retaliatory strikes against Iranian missile launch sites and command centers.",
+      "branch_probability": 0.3225806451612903,
+      "parent_id": "fc118eff",
+      "depth": 2,
+      "parent_joint_probability": 0.39393939393939387,
+      "joint_probability": 0.12707722385141737,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and precision munitions."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional sovereign debt."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety driving USD strength."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_MISSILE_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "cd662851",
+        "6b2431bb"
+      ],
+      "pruned_reason": ""
+    },
+    "fdaea572": {
+      "node_id": "fdaea572",
+      "description": "Global energy markets react violently to the effective closure of the Strait of Hormuz, triggering a massive spike in Brent crude and maritime insurance premiums.",
+      "branch_probability": 0.45238095238095233,
+      "parent_id": "dd45ab7e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.12337662337662335,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium added to oil prices due to supply disruption fears."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers in the Gulf surge to prohibitive levels."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates for VLCCs spike as ships are trapped or rerouted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "6da66c9e",
+        "fdc22e86"
+      ],
+      "pruned_reason": ""
+    },
+    "3022d077": {
+      "node_id": "3022d077",
+      "description": "US Fifth Fleet and coalition forces initiate 'Operation Freedom of Navigation' to break the blockade and secure the Strait.",
+      "branch_probability": 0.3571428571428571,
+      "parent_id": "dd45ab7e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.09740259740259738,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval munitions and surveillance assets."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Insurance costs remain elevated due to active combat operations in the shipping lane."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "dbd3566d",
+        "b2bf4aab"
+      ],
+      "pruned_reason": ""
+    },
+    "8043f2a8": {
+      "node_id": "8043f2a8",
+      "description": "Iran launches precision missile strikes against UAE oil export terminals to prevent the use of bypass pipelines (e.g., Habshan-Fujairah).",
+      "branch_probability": 0.19047619047619047,
+      "parent_id": "dd45ab7e",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.051948051948051945,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Physical loss of export capacity exacerbates the Hormuz closure."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as fiscal stability is threatened by export halts."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "82f9d857": {
+      "node_id": "82f9d857",
+      "description": "UAE port management systems suffer total failure, leading to a physical backlog of vessels and effective closure of Jebel Ali and Khalifa ports.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "37eb4eea",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.16049382716049382,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Spot rates spike due to sudden capacity crunch and diversion of vessels."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO",
+            "Torm"
+          ],
+          "notes": "Demurrage costs surge as tankers are unable to berth or discharge."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf ports increase sharply."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "KHALIFA_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "19eebb25",
+        "24332a03",
+        "46332b5f"
+      ],
+      "pruned_reason": ""
+    },
+    "55f22101": {
+      "node_id": "55f22101",
+      "description": "Disruption of UAE financial hubs triggers a liquidity crisis and rapid capital flight from regional sovereign assets.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "37eb4eea",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.09876543209876543,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "AED"
+          ],
+          "notes": "Pressure on the USD peg as confidence in UAE financial stability wavers."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Credit default swap (CDS) spreads for UAE sovereign debt widen significantly."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "abb8cf1b",
+        "abb94ce1"
+      ],
+      "pruned_reason": ""
+    },
+    "f28aaee4": {
+      "node_id": "f28aaee4",
+      "description": "UAE responds to cyber-offensive with precision kinetic strikes against Iranian cyber-warfare command centers.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "37eb4eea",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.07407407407407407,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional air defense and intelligence systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk premium added to Brent crude due to fear of wider regional war."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_CYBER_CMD",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "7dfc061e"
+      ],
+      "pruned_reason": ""
+    },
+    "deafa8ae": {
+      "node_id": "deafa8ae",
+      "description": "Iran implements a tactical maritime blockade or 'security zone' around UAE export terminals to prevent remaining shipments.",
+      "branch_probability": 0.25,
+      "parent_id": "86d0ea22",
+      "depth": 3,
+      "parent_joint_probability": 0.16520039100684258,
+      "joint_probability": 0.041300097751710646,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Supply shock from UAE outages compounded by transit risk."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Extreme spike in spot rates due to risk premiums and vessel diversions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for Persian Gulf transit surge to prohibitive levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "db9d23b1",
+        "3e27dc42",
+        "6a01aeb7"
+      ],
+      "pruned_reason": ""
+    },
+    "7e9b5af1": {
+      "node_id": "7e9b5af1",
+      "description": "US and coalition forces deploy rapid-response naval assets to secure UAE terminals and establish a defensive perimeter.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "86d0ea22",
+      "depth": 3,
+      "parent_joint_probability": 0.16520039100684258,
+      "joint_probability": 0.05631831511596906,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and maritime security systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as geopolitical risk increases."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_PORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "de6a6b5e",
+        "825b7ab3",
+        "5379e60c"
+      ],
+      "pruned_reason": ""
+    },
+    "a5240da9": {
+      "node_id": "a5240da9",
+      "description": "Global energy markets enter a state of panic, triggering massive price spikes and currency volatility in oil-importing nations.",
+      "branch_probability": 0.40909090909090906,
+      "parent_id": "86d0ea22",
+      "depth": 3,
+      "parent_joint_probability": 0.16520039100684258,
+      "joint_probability": 0.06758197813916288,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Immediate pricing in of UAE production loss and potential regional war."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD as emerging market currencies weaken."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "d1335e34",
+        "d3e712af",
+        "17352332"
+      ],
+      "pruned_reason": ""
+    },
+    "909a1ce6": {
+      "node_id": "909a1ce6",
+      "description": "Global shipping firms and insurers declare force majeure, leading to immediate rerouting of tankers and container ships away from UAE ports.",
+      "branch_probability": 0.48571428571428565,
+      "parent_id": "cdaa1036",
+      "depth": 3,
+      "parent_joint_probability": 0.1016617790811339,
+      "joint_probability": 0.04937857841083646,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all Persian Gulf transit."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates surge due to vessel displacement and risk premiums."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Jebel Ali throughput collapses as ships bypass the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "FUJAIRAH_TERMINAL",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "b33c0c74",
+        "9d374bb2",
+        "7abb3e2c"
+      ],
+      "pruned_reason": ""
+    },
+    "79d2c72d": {
+      "node_id": "79d2c72d",
+      "description": "UAE and coalition naval forces launch precision kinetic strikes against Iranian blockade assets and command centers to reopen shipping lanes.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "cdaa1036",
+      "depth": 3,
+      "parent_joint_probability": 0.1016617790811339,
+      "joint_probability": 0.034855467113531616,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and surveillance."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Fear of wider regional war drives crude prices higher."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NAVAL_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "b74b0444",
+        "011d6ea1",
+        "e72cb1ec"
+      ],
+      "pruned_reason": ""
+    },
+    "cd662851": {
+      "node_id": "cd662851",
+      "description": "Iran launches large-scale drone and missile swarms targeting UAE oil refineries and export terminals in retaliation.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "8cfea5af",
+      "depth": 3,
+      "parent_joint_probability": 0.12707722385141737,
+      "joint_probability": 0.06118533000253429,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Immediate spike in Brent crude due to risk of supply disruption."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf vessels and assets surge."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps widen as geopolitical risk peaks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "98f16c3f",
+        "a153ae60",
+        "be122542"
+      ],
+      "pruned_reason": ""
+    },
+    "6b2431bb": {
+      "node_id": "6b2431bb",
+      "description": "Iran implements a partial or effective closure of the Strait of Hormuz via naval mining and fast-attack craft deployments.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "8cfea5af",
+      "depth": 3,
+      "parent_joint_probability": 0.12707722385141737,
+      "joint_probability": 0.03765251077079033,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme spike in spot rates for VLCCs as transit becomes high-risk."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Market prices in a 'closure premium' scenario."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [],
+          "notes": "Hull and Machinery insurance costs skyrocket for Hormuz transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "b5918636",
+        "878aa813",
+        "de2909aa"
+      ],
+      "pruned_reason": ""
+    },
+    "6da66c9e": {
+      "node_id": "6da66c9e",
+      "description": "Iran launches precision missile and drone strikes against UAE oil export terminals and refineries to solidify the blockade.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "fdaea572",
+      "depth": 3,
+      "parent_joint_probability": 0.12337662337662335,
+      "joint_probability": 0.057282003710575125,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Physical loss of production capacity adds to the scarcity premium."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit reach unprecedented levels."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as revenue streams are threatened."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_EXPORT_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "UAE_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "5e754767",
+        "30497f9b",
+        "a0888fea"
+      ],
+      "pruned_reason": ""
+    },
+    "fdc22e86": {
+      "node_id": "fdc22e86",
+      "description": "US Fifth Fleet initiates a forced-entry naval operation to break the blockade, leading to direct kinetic clashes in the Strait.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "fdaea572",
+      "depth": 3,
+      "parent_joint_probability": 0.12337662337662335,
+      "joint_probability": 0.03965677179962893,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and naval munitions."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Extreme scarcity of available tonnage willing to enter the zone."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [],
+          "notes": "Immediate suspension of standard coverage for the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "befad8f1",
+        "fd095fb0",
+        "f738112b"
+      ],
+      "pruned_reason": ""
+    },
+    "dbd3566d": {
+      "node_id": "dbd3566d",
+      "description": "Direct kinetic engagement between US Fifth Fleet and IRGCN forces within the Strait of Hormuz.",
+      "branch_probability": 0.35,
+      "parent_id": "3022d077",
+      "depth": 3,
+      "parent_joint_probability": 0.09740259740259738,
+      "joint_probability": 0.03409090909090908,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike in Brent crude due to perceived total closure of the chokepoint."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and naval munitions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [],
+          "notes": "War risk premiums for the Persian Gulf reach prohibitive levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "0f22389b",
+        "7f03b11c",
+        "e87769d9"
+      ],
+      "pruned_reason": ""
+    },
+    "b2bf4aab": {
+      "node_id": "b2bf4aab",
+      "description": "Iran deploys naval mines and swarm drone attacks to deter coalition forces and commercial shipping.",
+      "branch_probability": 0.55,
+      "parent_id": "3022d077",
+      "depth": 3,
+      "parent_joint_probability": 0.09740259740259738,
+      "joint_probability": 0.05357142857142856,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Freight rates surge as vessels avoid the Strait or demand high-risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Immediate re-rating of hull and machinery insurance for Gulf transit."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Market prices reflect increased risk of supply disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "2156d0a2",
+        "c9008d35",
+        "f6033cb6"
+      ],
+      "pruned_reason": ""
+    },
+    "19eebb25": {
+      "node_id": "19eebb25",
+      "description": "Iran launches kinetic strikes on UAE oil refineries and storage facilities to amplify economic paralysis.",
+      "branch_probability": 0.28125,
+      "parent_id": "82f9d857",
+      "depth": 3,
+      "parent_joint_probability": 0.16049382716049382,
+      "joint_probability": 0.04513888888888889,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock from UAE production capacity loss"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Gulf region"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RUWAIS_REFINERY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "2750c082",
+        "483d7e0c",
+        "e776bc70"
+      ],
+      "pruned_reason": ""
+    },
+    "24332a03": {
+      "node_id": "24332a03",
+      "description": "Global shipping lines declare force majeure and divert vessels to Oman and Saudi ports, creating regional congestion.",
+      "branch_probability": 0.5,
+      "parent_id": "82f9d857",
+      "depth": 3,
+      "parent_joint_probability": 0.16049382716049382,
+      "joint_probability": 0.08024691358024691,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Spot rates surge due to capacity constraints and rerouting"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Increased premiums for vessels diverting to alternative hubs"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "SALALAH_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "33553714",
+        "84e2d888",
+        "983ac630"
+      ],
+      "pruned_reason": ""
+    },
+    "46332b5f": {
+      "node_id": "46332b5f",
+      "description": "Rapid capital flight from Dubai's financial centers as the UAE's status as a safe-haven trade hub evaporates.",
+      "branch_probability": 0.21875,
+      "parent_id": "82f9d857",
+      "depth": 3,
+      "parent_joint_probability": 0.16049382716049382,
+      "joint_probability": 0.03510802469135802,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Pressure on USD peg despite reserves"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Flight to quality into US Treasuries"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d686d38a",
+        "0eb3d093",
+        "aedd4472"
+      ],
+      "pruned_reason": ""
+    },
+    "abb8cf1b": {
+      "node_id": "abb8cf1b",
+      "description": "Iran launches targeted missile and drone strikes on UAE oil export terminals to exacerbate the financial crisis by cutting revenue streams.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "55f22101",
+      "depth": 3,
+      "parent_joint_probability": 0.09876543209876543,
+      "joint_probability": 0.031746031746031744,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock from UAE export disruption"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Gulf shipments"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to risk premiums"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "849d244b",
+        "07a63de9",
+        "18e20cd2"
+      ],
+      "pruned_reason": ""
+    },
+    "abb94ce1": {
+      "node_id": "abb94ce1",
+      "description": "Capital flight spreads to other GCC sovereign bonds and currencies as investors fear regional contagion and systemic instability.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "55f22101",
+      "depth": 3,
+      "parent_joint_probability": 0.09876543209876543,
+      "joint_probability": 0.04585537918871252,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Sell-off in GCC sovereign debt"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Pressure on pegged currencies and regional liquidity"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "78ed5cb2",
+        "f3979c65",
+        "b54bf584"
+      ],
+      "pruned_reason": ""
+    },
+    "7dfc061e": {
+      "node_id": "7dfc061e",
+      "description": "Iran launches massive retaliatory drone and missile strikes targeting UAE energy infrastructure and ports.",
+      "branch_probability": 0.40625,
+      "parent_id": "f28aaee4",
+      "depth": 3,
+      "parent_joint_probability": 0.07407407407407407,
+      "joint_probability": 0.03009259259259259,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike in Brent crude due to fear of supply disruption."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf waters surge instantly."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on UAE sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "JABEL_ALI_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "f291d000",
+        "4c165412",
+        "6fc747e1"
+      ],
+      "pruned_reason": ""
+    },
+    "db9d23b1": {
+      "node_id": "db9d23b1",
+      "description": "Iran launches targeted drone and missile strikes on UAE oil export terminals to enforce the blockade.",
+      "branch_probability": 0.2916666666666667,
+      "parent_id": "deafa8ae",
+      "depth": 4,
+      "parent_joint_probability": 0.041300097751710646,
+      "joint_probability": 0.01204586184424894,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to physical damage to export capacity."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Persian Gulf transit spike to prohibitive levels."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Extreme volatility in spot rates as vessels are trapped or diverted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_EXPORT_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3e27dc42": {
+      "node_id": "3e27dc42",
+      "description": "US Fifth Fleet and coalition forces initiate 'Operation Freedom of Navigation' to break the blockade.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "deafa8ae",
+      "depth": 4,
+      "parent_joint_probability": 0.041300097751710646,
+      "joint_probability": 0.022370886282176605,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval munitions and surveillance systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "UAE sovereign credit outlook shifts to negative due to conflict risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6a01aeb7": {
+      "node_id": "6a01aeb7",
+      "description": "Iran expands the tactical blockade into a full closure of the Strait of Hormuz to maximize geopolitical leverage.",
+      "branch_probability": 0.16666666666666669,
+      "parent_id": "deafa8ae",
+      "depth": 4,
+      "parent_joint_probability": 0.041300097751710646,
+      "joint_probability": 0.006883349625285109,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Global oil price shock as 20% of global supply is throttled."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Disruption to regional mineral and chemical shipments."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength against regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "de6a6b5e": {
+      "node_id": "de6a6b5e",
+      "description": "Iran launches asymmetric drone and missile swarms targeting UAE oil terminals to bypass the US naval perimeter.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "7e9b5af1",
+      "depth": 4,
+      "parent_joint_probability": 0.05631831511596906,
+      "joint_probability": 0.019494801386296983,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock fears as UAE production capacity is threatened."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Persian Gulf transit spike instantaneously."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Increased rates due to risk premiums and rerouting expectations."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "825b7ab3": {
+      "node_id": "825b7ab3",
+      "description": "Direct kinetic engagement occurs between Iranian naval forces and the US/Coalition defensive perimeter.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "7e9b5af1",
+      "depth": 4,
+      "parent_joint_probability": 0.05631831511596906,
+      "joint_probability": 0.010830445214609434,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems and munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Market prices reflect a full-scale regional war scenario."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "AED"
+          ],
+          "notes": "Rapid devaluation of UAE Dirham as stability collapses."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "US_NAVAL_ASSETS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5379e60c": {
+      "node_id": "5379e60c",
+      "description": "Market panic triggers a massive flight of capital from the region, leading to sovereign credit downgrades.",
+      "branch_probability": 0.46153846153846145,
+      "parent_id": "7e9b5af1",
+      "depth": 4,
+      "parent_joint_probability": 0.05631831511596906,
+      "joint_probability": 0.02599306851506264,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "UAE sovereign bond yields spike as credit risk increases."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Hull and Machinery (H&M) insurance becomes prohibitively expensive."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "MAEU"
+          ],
+          "notes": "Commercial shipping avoids Jebel Ali and other UAE hubs."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d1335e34": {
+      "node_id": "d1335e34",
+      "description": "Iran implements a naval blockade or mining operation in the Strait of Hormuz to sever UAE export capabilities.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "a5240da9",
+      "depth": 4,
+      "parent_joint_probability": 0.06758197813916288,
+      "joint_probability": 0.022527326046387623,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 35.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock as 20% of global oil flow is threatened."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates skyrocket due to extreme risk premiums and rerouting."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "War risk premiums for Persian Gulf transits become prohibitive."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d3e712af": {
+      "node_id": "d3e712af",
+      "description": "Iranian missile and drone swarms target critical UAE oil production and storage facilities in Abu Dhabi.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "a5240da9",
+      "depth": 4,
+      "parent_joint_probability": 0.06758197813916288,
+      "joint_probability": 0.03003643472851683,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Physical loss of production capacity drives prices higher."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in the GCC."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Massive claims for industrial property damage."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_INFRA",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "17352332": {
+      "node_id": "17352332",
+      "description": "Sovereign debt crises emerge in oil-importing emerging markets due to unsustainable energy costs and currency devaluation.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "a5240da9",
+      "depth": 4,
+      "parent_joint_probability": 0.06758197813916288,
+      "joint_probability": 0.015018217364258415,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "INR",
+            "TRY",
+            "EGP"
+          ],
+          "notes": "Rapid devaluation against USD as trade deficits explode."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Credit spreads widen for energy-dependent emerging economies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b33c0c74": {
+      "node_id": "b33c0c74",
+      "description": "Iran launches precision missile and drone strikes against UAE oil export terminals and refineries to physically enforce the shipping halt.",
+      "branch_probability": 0.37142857142857144,
+      "parent_id": "909a1ce6",
+      "depth": 4,
+      "parent_joint_probability": 0.04937857841083646,
+      "joint_probability": 0.018340614838310686,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock from UAE production offline"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums skyrocket for all Persian Gulf transit"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for regional missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9d374bb2": {
+      "node_id": "9d374bb2",
+      "description": "Iran implements a naval blockade or mine-laying operation in the Strait of Hormuz, effectively cutting off all UAE maritime trade.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "909a1ce6",
+      "depth": 4,
+      "parent_joint_probability": 0.04937857841083646,
+      "joint_probability": 0.01128653220819119,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf tankers"
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Global oil prices surge due to Hormuz closure risk"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "UAE sovereign credit spreads widen significantly"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7abb3e2c": {
+      "node_id": "7abb3e2c",
+      "description": "Massive capital flight from Gulf-based assets and extreme volatility in energy-linked currencies as markets price in a prolonged regional war.",
+      "branch_probability": 0.39999999999999997,
+      "parent_id": "909a1ce6",
+      "depth": 4,
+      "parent_joint_probability": 0.04937857841083646,
+      "joint_probability": 0.019751431364334583,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in USD; volatility in pegged currencies"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Sell-off in UAE and regional government bonds"
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Rerouting costs and surcharges applied to all Middle East cargo"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b74b0444": {
+      "node_id": "b74b0444",
+      "description": "Iran launches massive retaliatory ballistic missile and drone strikes against UAE energy infrastructure and coalition airbases.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "79d2c72d",
+      "depth": 4,
+      "parent_joint_probability": 0.034855467113531616,
+      "joint_probability": 0.01618289544556825,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike due to risk of supply disruption from UAE exports."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf waters surge instantly."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps widen as conflict escalates."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "AL_DHAFRA_AIR_BASE",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "011d6ea1": {
+      "node_id": "011d6ea1",
+      "description": "Iran declares a total closure of the Strait of Hormuz in response to the strikes on its command centers.",
+      "branch_probability": 0.25,
+      "parent_id": "79d2c72d",
+      "depth": 4,
+      "parent_joint_probability": 0.034855467113531616,
+      "joint_probability": 0.008713866778382904,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Extreme spike in spot rates for VLCCs as ships are trapped or diverted."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BRENT"
+          ],
+          "notes": "Global oil markets price in a significant supply shock."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Freight rates increase due to rerouting and risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAIT_OF_HORMUZ",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e72cb1ec": {
+      "node_id": "e72cb1ec",
+      "description": "Iran initiates large-scale asymmetric cyber-attacks targeting UAE financial hubs and port logistics systems.",
+      "branch_probability": 0.28571428571428575,
+      "parent_id": "79d2c72d",
+      "depth": 4,
+      "parent_joint_probability": 0.034855467113531616,
+      "joint_probability": 0.009958704889580464,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Volatility in regional currency pegs due to financial instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Cyber-insurance claims and premiums rise."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "DP_WORLD_LOGISTICS",
+          "new_status": "DEGRADED",
+          "confidence": 0.75
+        },
+        {
+          "infra_id": "UAE_BANKING_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "98f16c3f": {
+      "node_id": "98f16c3f",
+      "description": "Successful strikes on Ruwais refinery and Habshan processing plants cause significant UAE production outages.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "cd662851",
+      "depth": 4,
+      "parent_joint_probability": 0.06118533000253429,
+      "joint_probability": 0.020395110000844763,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Immediate supply shock due to UAE export capacity loss."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Gulf assets."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for long-haul alternatives and risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RUWAIS_REFINERY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HABSHAN_PLANT",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a153ae60": {
+      "node_id": "a153ae60",
+      "description": "US Central Command initiates kinetic counter-strikes against Iranian drone launch sites and command centers.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "cd662851",
+      "depth": 4,
+      "parent_joint_probability": 0.06118533000253429,
+      "joint_probability": 0.027193480001126348,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems and munitions."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "AED"
+          ],
+          "notes": "Flight to safety into USD; pressure on regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_LAUNCH_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "be122542": {
+      "node_id": "be122542",
+      "description": "Iran implements a tactical blockade of the Strait of Hormuz to prevent UAE oil exports from reaching global markets.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "cd662851",
+      "depth": 4,
+      "parent_joint_probability": 0.06118533000253429,
+      "joint_probability": 0.013596740000563174,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Global oil price surge due to physical transit blockage."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "TKR"
+          ],
+          "notes": "Extreme volatility in spot rates for VLCCs."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "UAE sovereign credit risk increases due to revenue disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b5918636": {
+      "node_id": "b5918636",
+      "description": "Global energy markets experience a violent price spike and insurance premiums for Gulf transit become prohibitive.",
+      "branch_probability": 0.441860465116279,
+      "parent_id": "6b2431bb",
+      "depth": 4,
+      "parent_joint_probability": 0.03765251077079033,
+      "joint_probability": 0.01663715592197712,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate panic buying and supply chain disruption."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Spot rates skyrocket due to extreme risk and vessel idling."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums for the Persian Gulf reach unprecedented levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "878aa813": {
+      "node_id": "878aa813",
+      "description": "US Fifth Fleet initiates emergency mine-clearing operations and establishes a protected maritime corridor.",
+      "branch_probability": 0.3488372093023256,
+      "parent_id": "6b2431bb",
+      "depth": 4,
+      "parent_joint_probability": 0.03765251077079033,
+      "joint_probability": 0.013134596780508254,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for naval mine countermeasures and escort capabilities."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "de2909aa": {
+      "node_id": "de2909aa",
+      "description": "Iran launches coordinated cruise missile and drone strikes against UAE oil export terminals to cement the blockade.",
+      "branch_probability": 0.20930232558139536,
+      "parent_id": "6b2431bb",
+      "depth": 4,
+      "parent_joint_probability": 0.03765251077079033,
+      "joint_probability": 0.007880758068304952,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Physical loss of production capacity adds to the transit blockade."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as state revenue is threatened."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "UAE_AIRPORTS",
+          "new_status": "SMOKE_REPORTED",
+          "confidence": 0.5
+        }
+      ],
+      "time_offset_hours": 8.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5e754767": {
+      "node_id": "5e754767",
+      "description": "Global energy markets react to the loss of UAE export capacity, triggering a massive spike in Brent crude and maritime insurance premiums.",
+      "branch_probability": 0.53125,
+      "parent_id": "6da66c9e",
+      "depth": 4,
+      "parent_joint_probability": 0.057282003710575125,
+      "joint_probability": 0.030431064471243035,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate price jump due to supply disruption and geopolitical risk premium."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit become prohibitive."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Increased demand for long-haul tonnage as regional shipping halts."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "30497f9b": {
+      "node_id": "30497f9b",
+      "description": "UAE launches immediate retaliatory precision strikes against Iranian oil export facilities, specifically targeting Kharg Island.",
+      "branch_probability": 0.28125,
+      "parent_id": "6da66c9e",
+      "depth": 4,
+      "parent_joint_probability": 0.057282003710575125,
+      "joint_probability": 0.016110563543599254,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and precision munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Secondary supply shock as Iranian exports are threatened."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Credit default swaps for Gulf nations spike."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KHARG_ISLAND_TERMINAL",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a0888fea": {
+      "node_id": "a0888fea",
+      "description": "Combat activity in the Gulf leads to a de facto closure of the Strait of Hormuz as shipping companies declare Force Majeure.",
+      "branch_probability": 0.1875,
+      "parent_id": "6da66c9e",
+      "depth": 4,
+      "parent_joint_probability": 0.057282003710575125,
+      "joint_probability": 0.010740375695732836,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "TKR"
+          ],
+          "notes": "Extreme volatility and spike in spot rates for non-Gulf vessels."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Disruption to regional mineral and grain flows."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "befad8f1": {
+      "node_id": "befad8f1",
+      "description": "Kinetic clashes render the Strait of Hormuz impassable for commercial shipping, triggering a total maritime blockade.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "fdc22e86",
+      "depth": 4,
+      "parent_joint_probability": 0.03965677179962893,
+      "joint_probability": 0.013519354022600771,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 35.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to closure of primary global oil chokepoint."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Spot rates skyrocket as vessels are trapped or rerouted."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "LR"
+          ],
+          "notes": "War risk premiums become prohibitive for Gulf transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fd095fb0": {
+      "node_id": "fd095fb0",
+      "description": "Iran launches asymmetric missile and drone barrages targeting UAE energy infrastructure and US naval assets in Bahrain.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "fdc22e86",
+      "depth": 4,
+      "parent_joint_probability": 0.03965677179962893,
+      "joint_probability": 0.010815483218080617,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems and munitions."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Fear of production facility damage adds volatility premium."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "UAE_BOND"
+          ],
+          "notes": "Credit risk increases for UAE sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "BAHRAIN_NAVAL_BASE",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.6
+        },
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.5
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f738112b": {
+      "node_id": "f738112b",
+      "description": "Global financial markets enter a 'flight to safety' mode, causing extreme currency volatility and a spike in safe-haven assets.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "fdc22e86",
+      "depth": 4,
+      "parent_joint_probability": 0.03965677179962893,
+      "joint_probability": 0.015321934558947542,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF",
+            "JPY"
+          ],
+          "notes": "Rapid appreciation of safe-haven currencies against emerging market peers."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "GCC_BONDS"
+          ],
+          "notes": "Broad sell-off in Gulf Cooperation Council sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0f22389b": {
+      "node_id": "0f22389b",
+      "description": "Iran implements a total maritime blockade of the Strait of Hormuz using naval mines and swarm tactics to pressure the US and UAE.",
+      "branch_probability": 0.28125,
+      "parent_id": "dbd3566d",
+      "depth": 4,
+      "parent_joint_probability": 0.03409090909090908,
+      "joint_probability": 0.009588068181818179,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 35.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate global supply shock due to chokepoint closure."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme spike in spot rates for non-Gulf vessels and war-risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit become prohibitive."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7f03b11c": {
+      "node_id": "7f03b11c",
+      "description": "Iran launches coordinated ballistic missile and drone strikes against UAE oil export terminals and refineries.",
+      "branch_probability": 0.40625,
+      "parent_id": "dbd3566d",
+      "depth": 4,
+      "parent_joint_probability": 0.03409090909090908,
+      "joint_probability": 0.013849431818181815,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Loss of UAE production capacity adds to global supply deficit."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as state assets are targeted."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Massive claims for industrial property damage in UAE."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "JABEL_DHANNA",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e87769d9": {
+      "node_id": "e87769d9",
+      "description": "US Fifth Fleet initiates 'Operation Freedom of Navigation' strikes to neutralize Iranian coastal missile batteries and naval bases.",
+      "branch_probability": 0.3125,
+      "parent_id": "dbd3566d",
+      "depth": 4,
+      "parent_joint_probability": 0.03409090909090908,
+      "joint_probability": 0.010653409090909088,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and missile defense systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength against regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_COASTAL_DEFENSES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "BANDAR_ABBAS_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2156d0a2": {
+      "node_id": "2156d0a2",
+      "description": "A commercial tanker is disabled by a naval mine in the Strait of Hormuz, causing an immediate spike in war-risk insurance premiums.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "b2bf4aab",
+      "depth": 4,
+      "parent_joint_probability": 0.05357142857142856,
+      "joint_probability": 0.02579365079365079,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Immediate surge in spot rates due to risk premium and vessel diversions."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War-risk premiums for Gulf transit skyrocket."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c9008d35": {
+      "node_id": "c9008d35",
+      "description": "Iranian swarm drones penetrate UAE air defenses to strike critical oil export terminals and storage facilities.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "b2bf4aab",
+      "depth": 4,
+      "parent_joint_probability": 0.05357142857142856,
+      "joint_probability": 0.01587301587301587,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply disruption fears drive Brent crude prices higher."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps widen as infrastructure is targeted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f6033cb6": {
+      "node_id": "f6033cb6",
+      "description": "Iran launches ballistic missile strikes against UAE military airbases to neutralize coalition air superiority.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "b2bf4aab",
+      "depth": 4,
+      "parent_joint_probability": 0.05357142857142856,
+      "joint_probability": 0.011904761904761902,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems and rapid replenishment."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Regional instability triggers flight to safe-haven currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_MILITARY_BASES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2750c082": {
+      "node_id": "2750c082",
+      "description": "Iran implements a partial maritime blockade of the Strait of Hormuz to prevent UAE exports and isolate the belligerent.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "19eebb25",
+      "depth": 4,
+      "parent_joint_probability": 0.04513888888888889,
+      "joint_probability": 0.015046296296296295,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock due to transit risk."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Freight rates spike as risk premiums soar."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit become prohibitive."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "483d7e0c": {
+      "node_id": "483d7e0c",
+      "description": "US Central Command launches retaliatory precision strikes against Iranian missile launch sites to deter further UAE attacks.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "19eebb25",
+      "depth": 4,
+      "parent_joint_probability": 0.04513888888888889,
+      "joint_probability": 0.020061728395061727,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and munitions."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Regional instability increases risk premiums on GCC debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_MISSILE_SITES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e776bc70": {
+      "node_id": "e776bc70",
+      "description": "Widespread fire and structural failure at UAE storage facilities lead to a prolonged regional production outage.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "19eebb25",
+      "depth": 4,
+      "parent_joint_probability": 0.04513888888888889,
+      "joint_probability": 0.010030864197530864,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Loss of physical barrels from the market."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Pressure on UAE Dirham peg due to revenue collapse."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_STORAGE",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "UAE_REFINERIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "33553714": {
+      "node_id": "33553714",
+      "description": "Iran launches precision drone and missile strikes on Omani and Saudi port facilities to deter the diversion of UAE-bound traffic.",
+      "branch_probability": 0.2333333333333333,
+      "parent_id": "24332a03",
+      "depth": 4,
+      "parent_joint_probability": 0.08024691358024691,
+      "joint_probability": 0.018724279835390944,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Fear of total Gulf blockade"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all GCC ports"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Extreme scarcity of available tonnage due to risk"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SALALAH_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "DAMMAM_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "84e2d888": {
+      "node_id": "84e2d888",
+      "description": "Global energy markets enter a panic phase as port congestion signals a systemic collapse of Gulf logistics.",
+      "branch_probability": 0.43333333333333335,
+      "parent_id": "24332a03",
+      "depth": 4,
+      "parent_joint_probability": 0.08024691358024691,
+      "joint_probability": 0.03477366255144033,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Speculative buying driven by logistics failure"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on UAE and regional debt"
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "983ac630": {
+      "node_id": "983ac630",
+      "description": "US-led coalition establishes a maritime security corridor and provides logistics support to manage congestion at diversion hubs.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "24332a03",
+      "depth": 4,
+      "parent_joint_probability": 0.08024691358024691,
+      "joint_probability": 0.026748971193415634,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime security assets"
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Partial stabilization of risk premiums due to naval presence"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d686d38a": {
+      "node_id": "d686d38a",
+      "description": "Iran launches precision missile and drone strikes against UAE energy export terminals and refineries.",
+      "branch_probability": 0.41935483870967744,
+      "parent_id": "46332b5f",
+      "depth": 4,
+      "parent_joint_probability": 0.03510802469135802,
+      "joint_probability": 0.014722720031859815,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate supply shock from UAE production disruption."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Gulf-based assets."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps spike as physical assets are targeted."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0eb3d093": {
+      "node_id": "0eb3d093",
+      "description": "Iranian naval forces establish a 'security zone' resulting in an effective blockade of UAE commercial ports.",
+      "branch_probability": 0.3225806451612903,
+      "parent_id": "46332b5f",
+      "depth": 4,
+      "parent_joint_probability": 0.03510802469135802,
+      "joint_probability": 0.01132516925527678,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Extreme scarcity of available tonnage and surge in freight rates."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Rerouting of global trade away from Jebel Ali."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Hull and Machinery insurance costs soar."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "aedd4472": {
+      "node_id": "aedd4472",
+      "description": "Systemic liquidity crisis in UAE financial markets as capital flight triggers a sovereign credit downgrade.",
+      "branch_probability": 0.25806451612903225,
+      "parent_id": "46332b5f",
+      "depth": 4,
+      "parent_joint_probability": 0.03510802469135802,
+      "joint_probability": 0.009060135404221424,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [],
+          "notes": "Loss of safe-haven status leads to rapid rating cuts."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Pressure on the AED peg to the USD."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "849d244b": {
+      "node_id": "849d244b",
+      "description": "Successful strikes on UAE oil export terminals cause significant production outages and widespread fires.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "abb8cf1b",
+      "depth": 4,
+      "parent_joint_probability": 0.031746031746031744,
+      "joint_probability": 0.015285126396237506,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Immediate supply shock due to UAE export capacity loss."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf vessels spike instantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "07a63de9": {
+      "node_id": "07a63de9",
+      "description": "Iran leverages the strike to implement a tactical blockade or harassment campaign in the Strait of Hormuz.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "abb8cf1b",
+      "depth": 4,
+      "parent_joint_probability": 0.031746031746031744,
+      "joint_probability": 0.009406231628453849,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 40.0,
+          "tickers": [
+            "STNG",
+            "TKR"
+          ],
+          "notes": "Freight rates surge as vessels avoid the choke point."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Fear of total transit disruption adds a risk premium to Brent."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "18e20cd2": {
+      "node_id": "18e20cd2",
+      "description": "Financial markets react to the loss of revenue and overt belligerence with a sharp UAE sovereign credit downgrade.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "abb8cf1b",
+      "depth": 4,
+      "parent_joint_probability": 0.031746031746031744,
+      "joint_probability": 0.007054673721340388,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Credit default swaps spike as revenue streams are compromised."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Pressure on the AED peg despite reserves."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "78ed5cb2": {
+      "node_id": "78ed5cb2",
+      "description": "Iran launches targeted strikes on UAE oil export terminals to exacerbate financial instability through production loss.",
+      "branch_probability": 0.45,
+      "parent_id": "abb94ce1",
+      "depth": 4,
+      "parent_joint_probability": 0.04585537918871252,
+      "joint_probability": 0.020634920634920634,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock from UAE production outage"
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Gulf transit"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to risk premiums"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "RUWAIS_TERMINAL",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f3979c65": {
+      "node_id": "f3979c65",
+      "description": "Speculative attacks on the UAE Dirham (AED) peg lead to a liquidity crisis and forced devaluation.",
+      "branch_probability": 0.25,
+      "parent_id": "abb94ce1",
+      "depth": 4,
+      "parent_joint_probability": 0.04585537918871252,
+      "joint_probability": 0.01146384479717813,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Break of USD peg leads to rapid devaluation"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Yields spike as creditworthiness is questioned"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b54bf584": {
+      "node_id": "b54bf584",
+      "description": "US Treasury and Federal Reserve coordinate a liquidity backstop for GCC central banks to halt regional contagion.",
+      "branch_probability": 0.3,
+      "parent_id": "abb94ce1",
+      "depth": 4,
+      "parent_joint_probability": 0.04585537918871252,
+      "joint_probability": 0.013756613756613755,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Stabilization of GCC currencies via swap lines"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Reduction in risk premium following US intervention"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f291d000": {
+      "node_id": "f291d000",
+      "description": "Successful strikes on UAE oil export terminals and processing plants lead to significant production outages.",
+      "branch_probability": 0.5,
+      "parent_id": "7dfc061e",
+      "depth": 4,
+      "parent_joint_probability": 0.03009259259259259,
+      "joint_probability": 0.015046296296296295,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Immediate supply shock due to UAE production capacity loss."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums for Persian Gulf transit spike."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "UAE credit default swaps widen significantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "UAE_OIL_INFRA",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4c165412": {
+      "node_id": "4c165412",
+      "description": "Missile strikes target Jebel Ali port, causing operational paralysis and global shipping diversions.",
+      "branch_probability": 0.3076923076923077,
+      "parent_id": "7dfc061e",
+      "depth": 4,
+      "parent_joint_probability": 0.03009259259259259,
+      "joint_probability": 0.009259259259259259,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Disruption of a primary global transshipment hub."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased demand for long-haul rerouting."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JEBEL_ALI_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6fc747e1": {
+      "node_id": "6fc747e1",
+      "description": "Iran leverages the kinetic window to deploy naval mines or blockships in the Strait of Hormuz.",
+      "branch_probability": 0.1923076923076923,
+      "parent_id": "7dfc061e",
+      "depth": 4,
+      "parent_joint_probability": 0.03009259259259259,
+      "joint_probability": 0.005787037037037036,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "USO"
+          ],
+          "notes": "Panic buying due to potential total blockade of Gulf exports."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Flight to safety; regional currencies weaken against USD."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipation of US/UK naval intervention to reopen the strait."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "3417786c",
+      "description": "Iran expands the 'security zone' to include the Strait of Hormuz, effectively throttling global oil transit to force UAE concessions.",
+      "joint_probability": 0.017427733556765808,
+      "pruned_reason": "joint_probability=0.0174 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "8fbdf33e",
+      "description": "Iran initiates a coordinated cyber-offensive targeting UAE financial hubs and port management systems.",
+      "joint_probability": 0.028239383078092747,
+      "pruned_reason": "joint_probability=0.0282 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "4b2a19d6",
+      "description": "Financial contagion spreads to regional sovereign debt and currencies as global trade halts and risk aversion peaks.",
+      "joint_probability": 0.026437847866419287,
+      "pruned_reason": "joint_probability=0.0264 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "60d8b0f0",
+      "description": "Iran launches retaliatory missile strikes against UAE energy infrastructure to divert coalition attention.",
+      "joint_probability": 0.019480519480519477,
+      "pruned_reason": "joint_probability=0.0195 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "0d6ee095",
+      "description": "Global oil markets experience a massive price spike due to the loss of UAE export capacity and fears of a total Hormuz blockade.",
+      "joint_probability": 0.023976023976023973,
+      "pruned_reason": "joint_probability=0.0240 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "42f60c0c",
+      "description": "UAE and US-led coalition launch immediate retaliatory precision strikes against Iranian missile launch sites and C2 nodes.",
+      "joint_probability": 0.017316017316017313,
+      "pruned_reason": "joint_probability=0.0173 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "272de36a",
+      "description": "Iran initiates a naval interdiction campaign in the Strait of Hormuz to prevent any remaining UAE exports from leaving the region.",
+      "joint_probability": 0.010656010656010654,
+      "pruned_reason": "joint_probability=0.0107 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "a55917d8",
+      "description": "Iran implements an effective closure of the Strait of Hormuz, citing the need to secure its waters against UAE-led belligerence.",
+      "joint_probability": 0.021164021164021163,
+      "pruned_reason": "joint_probability=0.0212 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "6751d3af",
+      "description": "Iran implements a tactical blockade or harassment campaign in the Strait of Hormuz to leverage UAE's kinetic aggression.",
+      "joint_probability": 0.020833333333333332,
+      "pruned_reason": "joint_probability=0.0208 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "4b285fe5",
+      "description": "Iran executes a secondary, high-intensity cyber-offensive targeting UAE financial systems and power grids.",
+      "joint_probability": 0.023148148148148147,
+      "pruned_reason": "joint_probability=0.0231 < floor=0.0300 (severity=CRITICAL)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

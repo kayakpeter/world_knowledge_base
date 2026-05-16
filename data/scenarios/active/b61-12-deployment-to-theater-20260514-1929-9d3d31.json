@@ -1,0 +1,3665 @@
+{
+  "scenario_id": "b61-12-deployment-to-theater-20260514-1929-9d3d31",
+  "trigger_event": "B61-12 deployment to theater",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-05-14T19:29:15.804338+00:00",
+  "expires_at": "2026-05-17T19:29:15.804338+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "b61-12-d_root": {
+      "node_id": "b61-12-d_root",
+      "description": "B61-12 deployment to theater",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "7cba761e",
+        "b2865c75",
+        "c7ad9b5f"
+      ],
+      "pruned_reason": ""
+    },
+    "7cba761e": {
+      "node_id": "7cba761e",
+      "description": "Immediate global market volatility and flight to safety assets due to nuclear escalation rumors.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "b61-12-d_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4473684210526315,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 2.5,
+          "tickers": [
+            "USD",
+            "CHF",
+            "JPY"
+          ],
+          "notes": "Flight to safe-haven currencies amid geopolitical instability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "T-Bonds"
+          ],
+          "notes": "Increased demand for US Treasuries as risk-off sentiment dominates."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LLOYD"
+          ],
+          "notes": "War risk premiums spike for all assets in the affected theater."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "6e1b90a3",
+        "5ded8bed",
+        "3f51b469"
+      ],
+      "pruned_reason": ""
+    },
+    "b2865c75": {
+      "node_id": "b2865c75",
+      "description": "Adversary military counter-mobilization and increase in tactical nuclear readiness.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "b61-12-d_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.34210526315789475,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX",
+            "BA"
+          ],
+          "notes": "Anticipated increase in defense spending and readiness procurement."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XLE",
+            "BRENT"
+          ],
+          "notes": "Risk premium added to oil prices due to potential for regional conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "STRATEGIC_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "cbcc7f4a",
+        "1e108966",
+        "d254d834"
+      ],
+      "pruned_reason": ""
+    },
+    "c7ad9b5f": {
+      "node_id": "c7ad9b5f",
+      "description": "Disruption of commercial shipping and logistics in the theater due to heightened security and insurance costs.",
+      "branch_probability": 0.21052631578947367,
+      "parent_id": "b61-12-d_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.21052631578947367,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Increased freight rates due to risk-adjusted routing."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Operational delays and increased insurance surcharges."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_PORTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "3ee84616",
+        "ffd73f50",
+        "252de3c4"
+      ],
+      "pruned_reason": ""
+    },
+    "6e1b90a3": {
+      "node_id": "6e1b90a3",
+      "description": "Official confirmation of B61-12 deployment, triggering a permanent shift in regional deterrence posture.",
+      "branch_probability": 0.27999999999999997,
+      "parent_id": "7cba761e",
+      "depth": 2,
+      "parent_joint_probability": 0.4473684210526315,
+      "joint_probability": 0.12526315789473683,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for tactical delivery systems and theater defense."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Flight to quality in US Treasuries despite geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "10c8f561",
+        "209809a8"
+      ],
+      "pruned_reason": ""
+    },
+    "5ded8bed": {
+      "node_id": "5ded8bed",
+      "description": "Adversary responds with reciprocal nuclear posture changes or mobilization of strategic forces.",
+      "branch_probability": 0.4,
+      "parent_id": "7cba761e",
+      "depth": 2,
+      "parent_joint_probability": 0.4473684210526315,
+      "joint_probability": 0.17894736842105263,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium spikes on crude oil."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "PBR"
+          ],
+          "notes": "Political risk and war risk insurance premiums surge."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "USD strengthens as the primary global safe haven."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "5b8cfec2",
+        "eeb082f3"
+      ],
+      "pruned_reason": ""
+    },
+    "3f51b469": {
+      "node_id": "3f51b469",
+      "description": "Official denial of deployment by the deploying power, leading to a partial market correction.",
+      "branch_probability": 0.32000000000000006,
+      "parent_id": "7cba761e",
+      "depth": 2,
+      "parent_joint_probability": 0.4473684210526315,
+      "joint_probability": 0.14315789473684212,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Partial reversal of the flight-to-safety rally."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -1.5,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Yields stabilize as immediate panic subsides."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "77d6600c",
+        "4074e9eb",
+        "e1bb984d"
+      ],
+      "pruned_reason": ""
+    },
+    "cbcc7f4a": {
+      "node_id": "cbcc7f4a",
+      "description": "Adversary conducts high-visibility snap exercises with tactical nuclear delivery systems to signal deterrence parity.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "b2865c75",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.16471734892787523,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and surveillance systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.1,
+          "tickers": [
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Flight to safety favoring USD/CHF amid geopolitical instability."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -1.5,
+          "tickers": [
+            "EU_BONDS"
+          ],
+          "notes": "Risk premium increase for nations in the deployment theater."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIR_SPACE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "67c6ab18",
+        "1c8a6ab8",
+        "a90f4b15"
+      ],
+      "pruned_reason": ""
+    },
+    "1e108966": {
+      "node_id": "1e108966",
+      "description": "Coordinated cyber-attacks targeting the logistics and command-and-control (C2) networks supporting the B61-12 deployment.",
+      "branch_probability": 0.2962962962962963,
+      "parent_id": "b2865c75",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.10136452241715399,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Spike in cyber-risk premiums and war-risk clauses."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "PLTR"
+          ],
+          "notes": "Increased focus on cyber-defense and AI-driven threat detection."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "MILITARY_C2_NETWORKS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "0a9ca18f",
+        "8777fdba"
+      ],
+      "pruned_reason": ""
+    },
+    "d254d834": {
+      "node_id": "d254d834",
+      "description": "Adversary implements sudden export restrictions on critical minerals and energy to exert economic pressure.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "b2865c75",
+      "depth": 2,
+      "parent_joint_probability": 0.34210526315789475,
+      "joint_probability": 0.07602339181286549,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Supply shock due to weaponization of energy exports."
+        },
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "BDRY"
+          ],
+          "notes": "Collapse in trade volumes for restricted critical minerals."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Volatility in adversary currency due to trade weaponization."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_PORTS",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [
+        "bf9be9fe"
+      ],
+      "pruned_reason": ""
+    },
+    "3ee84616": {
+      "node_id": "3ee84616",
+      "description": "Major shipping lines declare Force Majeure and implement wide-berth rerouting, leading to an effective closure of primary regional transit corridors.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "c7ad9b5f",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.08293460925039871,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Spot rates spike due to sudden capacity crunch and rerouting costs."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Increased ton-mile demand as vessels avoid the theater."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for commercial transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_SHIPPING_LANES",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "b87cd354"
+      ],
+      "pruned_reason": ""
+    },
+    "ffd73f50": {
+      "node_id": "ffd73f50",
+      "description": "Adversary states respond with symmetric strategic deployments, triggering a rapid increase in regional military readiness and sovereign risk.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "c7ad9b5f",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.057416267942583726,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipated increase in theater procurement and readiness spending."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Credit default swaps spike for regional governments."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "f1be81c0"
+      ],
+      "pruned_reason": ""
+    },
+    "252de3c4": {
+      "node_id": "252de3c4",
+      "description": "Panic-driven capital flight from regional assets into safe-haven currencies and gold, causing severe local currency devaluation.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "c7ad9b5f",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.07017543859649122,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Rapid depreciation of theater-local currencies against USD/CHF."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Sell-off in regional government bonds."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "671f9a44"
+      ],
+      "pruned_reason": ""
+    },
+    "10c8f561": {
+      "node_id": "10c8f561",
+      "description": "Adversary counter-deployment of tactical nuclear assets to border regions to maintain strategic parity.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "6e1b90a3",
+      "depth": 3,
+      "parent_joint_probability": 0.12526315789473683,
+      "joint_probability": 0.05368421052631578,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and surveillance systems."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Flight from regional currencies toward safe-haven assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIR_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "bba426e0",
+        "3a951e9b",
+        "5bfc3f73"
+      ],
+      "pruned_reason": ""
+    },
+    "209809a8": {
+      "node_id": "209809a8",
+      "description": "Global market volatility spike and flight to safety triggering sharp increases in sovereign risk premiums.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "6e1b90a3",
+      "depth": 3,
+      "parent_joint_probability": 0.12526315789473683,
+      "joint_probability": 0.04294736842105262,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "EU_BONDS"
+          ],
+          "notes": "Rapid sell-off of regional government bonds due to escalation risk."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "War risk premiums surge for all regional logistics and assets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "4f161c0d",
+        "c7817271",
+        "88ff3690"
+      ],
+      "pruned_reason": ""
+    },
+    "5b8cfec2": {
+      "node_id": "5b8cfec2",
+      "description": "Global financial markets enter a state of panic due to nuclear brinkmanship, triggering a flight to safe-haven assets.",
+      "branch_probability": 0.65,
+      "parent_id": "5ded8bed",
+      "depth": 3,
+      "parent_joint_probability": 0.17894736842105263,
+      "joint_probability": 0.11631578947368422,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Extreme volatility in non-USD currencies as risk-off sentiment peaks."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Yields spike or crash depending on safe-haven flow velocity."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "War risk premiums surge across all geopolitical zones."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [
+        "9100d824",
+        "227ca29f",
+        "b762802b"
+      ],
+      "pruned_reason": ""
+    },
+    "eeb082f3": {
+      "node_id": "eeb082f3",
+      "description": "Adversary conducts limited conventional 'demonstration' strikes against deployment logistics hubs to signal resolve.",
+      "branch_probability": 0.25,
+      "parent_id": "5ded8bed",
+      "depth": 3,
+      "parent_joint_probability": 0.17894736842105263,
+      "joint_probability": 0.04473684210526316,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for missile defense and tactical response systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Fear of wider conflict drives crude oil prices higher."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_LOGISTICS_HUBS",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "f809be4b",
+        "d035a91f",
+        "45781d58"
+      ],
+      "pruned_reason": ""
+    },
+    "77d6600c": {
+      "node_id": "77d6600c",
+      "description": "Leaked intelligence or satellite imagery contradicts the official denial, confirming the B61-12 deployment.",
+      "branch_probability": 0.35,
+      "parent_id": "3f51b469",
+      "depth": 3,
+      "parent_joint_probability": 0.14315789473684212,
+      "joint_probability": 0.05010526315789474,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Panic returns as denial is revealed as disinformation."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Flight to quality but increased risk premium on regional bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "46e8455b",
+        "b342e604",
+        "2c75f66a"
+      ],
+      "pruned_reason": ""
+    },
+    "4074e9eb": {
+      "node_id": "4074e9eb",
+      "description": "Adversary rejects the denial and initiates high-readiness military exercises as a deterrent response.",
+      "branch_probability": 0.45,
+      "parent_id": "3f51b469",
+      "depth": 3,
+      "parent_joint_probability": 0.14315789473684212,
+      "joint_probability": 0.06442105263157896,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for regional shipping and aviation."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Anticipation of increased theater spending."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BORDER_CROSSINGS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "d199eb3a",
+        "dbbaec8a",
+        "5d42fbe0"
+      ],
+      "pruned_reason": ""
+    },
+    "e1bb984d": {
+      "node_id": "e1bb984d",
+      "description": "International community accepts the denial, leading to a gradual return to baseline tension levels.",
+      "branch_probability": 0.3,
+      "parent_id": "3f51b469",
+      "depth": 3,
+      "parent_joint_probability": 0.14315789473684212,
+      "joint_probability": 0.04294736842105264,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CL1!"
+          ],
+          "notes": "Removal of geopolitical risk premium from oil prices."
+        },
+        {
+          "sector": "currency",
+          "direction": "STABLE",
+          "magnitude": "LOW",
+          "magnitude_pct": 0.5,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Reduction in volatility as safe-haven flows reverse."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "d61ffc39",
+        "08a1ed4d",
+        "130bc9e5"
+      ],
+      "pruned_reason": ""
+    },
+    "67c6ab18": {
+      "node_id": "67c6ab18",
+      "description": "Adversary transitions snap exercises into permanent forward deployment of tactical nuclear assets to create a 'new normal' of deterrence.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "cbcc7f4a",
+      "depth": 3,
+      "parent_joint_probability": 0.16471734892787523,
+      "joint_probability": 0.052944862155388475,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and theater surveillance systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on regional sovereign debt due to heightened nuclear tension."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "5b3f5b25",
+        "ac1d7b39",
+        "5221d6ce"
+      ],
+      "pruned_reason": ""
+    },
+    "1c8a6ab8": {
+      "node_id": "1c8a6ab8",
+      "description": "Coordinated cyber-offensive targeting logistics and command-and-control (C2) networks to disrupt the integration of B61-12 assets.",
+      "branch_probability": 0.25,
+      "parent_id": "cbcc7f4a",
+      "depth": 3,
+      "parent_joint_probability": 0.16471734892787523,
+      "joint_probability": 0.04117933723196881,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Spike in cyber-insurance premiums for government contractors and logistics firms."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "PLTR"
+          ],
+          "notes": "Increased reliance on AI-driven anomaly detection and cyber-defense."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "C2_COMMUNICATIONS_NET",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "f8400149",
+        "131ad6b4",
+        "ab9c72eb"
+      ],
+      "pruned_reason": ""
+    },
+    "a90f4b15": {
+      "node_id": "a90f4b15",
+      "description": "Global market panic triggers a flight to safety and speculative spikes in energy commodities due to perceived instability.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "cbcc7f4a",
+      "depth": 3,
+      "parent_joint_probability": 0.16471734892787523,
+      "joint_probability": 0.07059314954051796,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative buying driven by fear of regional conflict disrupting supply."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safe-haven currencies."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates for high-risk zones."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "0599b524",
+        "e1fe5c23",
+        "af55d0b6"
+      ],
+      "pruned_reason": ""
+    },
+    "0a9ca18f": {
+      "node_id": "0a9ca18f",
+      "description": "Cyber-attacks cause systemic failure of the deployment logistics chain, resulting in a strategic stall of the B61-12 movement.",
+      "branch_probability": 0.4583333333333333,
+      "parent_id": "1e108966",
+      "depth": 3,
+      "parent_joint_probability": 0.10136452241715399,
+      "joint_probability": 0.04645873944119558,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Volatility increases in regional currencies due to perceived strategic weakness."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [],
+          "notes": "Increased focus on cyber-defense and C2 resilience contracts."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "C2_NETWORK_PRIMARY",
+          "new_status": "DEGRADED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "TRANSPORT_LOGISTICS_GRID",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "7bc2f8bd",
+        "453fce02",
+        "de6981c8"
+      ],
+      "pruned_reason": ""
+    },
+    "8777fdba": {
+      "node_id": "8777fdba",
+      "description": "The deploying power initiates a symmetric counter-cyber offensive targeting the adversary's strategic command and control.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "1e108966",
+      "depth": 3,
+      "parent_joint_probability": 0.10136452241715399,
+      "joint_probability": 0.03378817413905133,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Demand for electronic warfare and signal intelligence capabilities."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Cyber-insurance premiums adjusted for systemic geopolitical risk."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_C2_CORE",
+          "new_status": "DEGRADED",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "df90e7eb",
+        "caf2a865",
+        "39a22edf"
+      ],
+      "pruned_reason": ""
+    },
+    "bf9be9fe": {
+      "node_id": "bf9be9fe",
+      "description": "Global energy and critical mineral markets experience immediate price shocks and volatility due to supply uncertainty.",
+      "branch_probability": 0.4838709677419355,
+      "parent_id": "d254d834",
+      "depth": 3,
+      "parent_joint_probability": 0.07602339181286549,
+      "joint_probability": 0.03678551216751556,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "CVX"
+          ],
+          "notes": "Immediate spike in Brent and WTI due to perceived supply shortfall."
+        },
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "USD",
+            "EUR"
+          ],
+          "notes": "Flight to safety in USD; volatility in currencies of mineral-importing nations."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "TIPS"
+          ],
+          "notes": "Inflationary pressure on sovereign bonds in industrialized economies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "14d16f94",
+        "c5ac1286",
+        "da397585"
+      ],
+      "pruned_reason": ""
+    },
+    "b87cd354": {
+      "node_id": "b87cd354",
+      "description": "Global energy markets experience a massive price spike due to the combination of nuclear escalation and the effective closure of strategic transit corridors.",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "3ee84616",
+      "depth": 3,
+      "parent_joint_probability": 0.08293460925039871,
+      "joint_probability": 0.03810509073666967,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium added to crude due to supply chain paralysis."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Spot rates surge for long-haul rerouting and high-risk premiums."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "63c0fb8b",
+        "c18235b6",
+        "3ec79f6e"
+      ],
+      "pruned_reason": ""
+    },
+    "f1be81c0": {
+      "node_id": "f1be81c0",
+      "description": "Global financial markets react to nuclear brinkmanship with a flight to safety and a sharp spike in sovereign risk premiums.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "ffd73f50",
+      "depth": 3,
+      "parent_joint_probability": 0.057416267942583726,
+      "joint_probability": 0.031100478468899524,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Rapid increase in CDS spreads for regional actors."
+        },
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Flight to safe-haven currencies."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all regional transit."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "60a13b92",
+        "a7474380",
+        "f3901355"
+      ],
+      "pruned_reason": ""
+    },
+    "671f9a44": {
+      "node_id": "671f9a44",
+      "description": "Energy markets react to regional instability with a sharp spike in crude prices and maritime insurance premiums.",
+      "branch_probability": 0.48148148148148145,
+      "parent_id": "252de3c4",
+      "depth": 3,
+      "parent_joint_probability": 0.07017543859649122,
+      "joint_probability": 0.03378817413905133,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Risk premium surge due to nuclear posturing and financial instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums for tankers in the region spike immediately."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased spot rates for high-risk zone transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "7450d8c7",
+        "bd11e6c0",
+        "51eac4c1"
+      ],
+      "pruned_reason": ""
+    },
+    "bba426e0": {
+      "node_id": "bba426e0",
+      "description": "Global financial markets react to nuclear brinkmanship with a flight to safety and spike in risk premiums.",
+      "branch_probability": 0.4166666666666667,
+      "parent_id": "10c8f561",
+      "depth": 4,
+      "parent_joint_probability": 0.05368421052631578,
+      "joint_probability": 0.022368421052631576,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Rapid flight to USD/CHF safe havens"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 150.0,
+          "tickers": [
+            "CDS"
+          ],
+          "notes": "Credit default swap spreads widen for regional actors"
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium added to crude"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3a951e9b": {
+      "node_id": "3a951e9b",
+      "description": "Adversary initiates massive conventional force mobilization to secure tactical nuclear deployment sites.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "10c8f561",
+      "depth": 4,
+      "parent_joint_probability": 0.05368421052631578,
+      "joint_probability": 0.01789473684210526,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipation of increased procurement for theater defense"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BORDER_LOGISTICS_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "REGIONAL_AIRSPACE",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5bfc3f73": {
+      "node_id": "5bfc3f73",
+      "description": "Escalation of grey-zone activity including targeted cyber-attacks on strategic command and control (C2) networks.",
+      "branch_probability": 0.25,
+      "parent_id": "10c8f561",
+      "depth": 4,
+      "parent_joint_probability": 0.05368421052631578,
+      "joint_probability": 0.013421052631578945,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "PMRC"
+          ],
+          "notes": "Cyber-insurance premiums spike for regional infrastructure"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "C2_COMMUNICATIONS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4f161c0d": {
+      "node_id": "4f161c0d",
+      "description": "Adversary announces reciprocal deployment of tactical nuclear assets or elevates strategic alert levels.",
+      "branch_probability": 0.325,
+      "parent_id": "209809a8",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105262,
+      "joint_probability": 0.013957894736842103,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and tactical surveillance systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 120.0,
+          "tickers": [],
+          "notes": "Sharp rise in CDS spreads for nations in the deployment theater."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_MILITARY_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c7817271": {
+      "node_id": "c7817271",
+      "description": "Speculative energy price surge driven by fears of theater-wide instability and supply chain disruption.",
+      "branch_probability": 0.275,
+      "parent_id": "209809a8",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105262,
+      "joint_probability": 0.011810526315789473,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Panic buying of crude and natural gas futures."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "War risk insurance premiums spike for vessels in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_OIL_PIPELINES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88ff3690": {
+      "node_id": "88ff3690",
+      "description": "Accelerated flight to safe-haven currencies causing liquidity crunch in emerging market sovereign debt.",
+      "branch_probability": 0.4,
+      "parent_id": "209809a8",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105262,
+      "joint_probability": 0.01717894736842105,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Aggressive move into USD and CHF as risk-off sentiment peaks."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 200.0,
+          "tickers": [],
+          "notes": "Yields on emerging market bonds spike as investors liquidate positions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9100d824": {
+      "node_id": "9100d824",
+      "description": "Energy markets experience a massive price spike as traders price in the risk of strategic infrastructure sabotage.",
+      "branch_probability": 0.39393939393939387,
+      "parent_id": "5b8cfec2",
+      "depth": 4,
+      "parent_joint_probability": 0.11631578947368422,
+      "joint_probability": 0.04582137161084529,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Panic buying and risk premium surge due to nuclear brinkmanship."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for immediate delivery and repositioning of fleets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "227ca29f": {
+      "node_id": "227ca29f",
+      "description": "Rapid capital flight from emerging markets to safe-haven assets triggers a sovereign debt crisis in vulnerable economies.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "5b8cfec2",
+      "depth": 4,
+      "parent_joint_probability": 0.11631578947368422,
+      "joint_probability": 0.03172248803827751,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "USD",
+            "JPY",
+            "CHF"
+          ],
+          "notes": "Extreme flight to quality; collapse of EM currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "EMB"
+          ],
+          "notes": "Yields spike on emerging market bonds as risk appetite vanishes."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b762802b": {
+      "node_id": "b762802b",
+      "description": "Insurance underwriters implement immediate 'War Risk' surcharges and exclude nuclear-threat zones from standard coverage.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "5b8cfec2",
+      "depth": 4,
+      "parent_joint_probability": 0.11631578947368422,
+      "joint_probability": 0.0387719298245614,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LEG"
+          ],
+          "notes": "Premiums skyrocket for maritime and aviation transit in theater."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Shipping delays and cost increases due to insurance gaps."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SUEZ_CANAL",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f809be4b": {
+      "node_id": "f809be4b",
+      "description": "Deploying power launches precision retaliatory strikes against adversary command and control nodes.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "eeb082f3",
+      "depth": 4,
+      "parent_joint_probability": 0.04473684210526316,
+      "joint_probability": 0.014379699248120301,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and air defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike globally for transit and assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_C2_NODES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d035a91f": {
+      "node_id": "d035a91f",
+      "description": "Adversary expands kinetic operations to target regional energy infrastructure to force deployment withdrawal.",
+      "branch_probability": 0.17857142857142858,
+      "parent_id": "eeb082f3",
+      "depth": 4,
+      "parent_joint_probability": 0.04473684210526316,
+      "joint_probability": 0.007988721804511278,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Supply disruption fears drive immediate price surge."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased freight rates due to risk premiums in conflict zone."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_PIPELINES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "ENERGY_TERMINALS",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "45781d58": {
+      "node_id": "45781d58",
+      "description": "Global financial markets trigger a 'flight to safety' response amid fears of nuclear escalation.",
+      "branch_probability": 0.5,
+      "parent_id": "eeb082f3",
+      "depth": 4,
+      "parent_joint_probability": 0.04473684210526316,
+      "joint_probability": 0.02236842105263158,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Safe-haven assets surge as risk appetite collapses."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "T-Bonds"
+          ],
+          "notes": "Yields drop as investors pile into US Treasuries."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "46e8455b": {
+      "node_id": "46e8455b",
+      "description": "Global financial markets trigger a massive flight to safety, causing extreme volatility in sovereign debt and currency markets.",
+      "branch_probability": 0.4390243902439025,
+      "parent_id": "77d6600c",
+      "depth": 4,
+      "parent_joint_probability": 0.05010526315789474,
+      "joint_probability": 0.02199743260590501,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF",
+            "JPY"
+          ],
+          "notes": "Flight to safe-haven currencies following confirmation of nuclear escalation."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -3.5,
+          "tickers": [
+            "EU_BONDS"
+          ],
+          "notes": "Increased risk premium on bonds in the theater of deployment."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Spike in political risk and war-risk insurance premiums."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "b342e604": {
+      "node_id": "b342e604",
+      "description": "Adversary military forces elevate nuclear readiness levels and move strategic assets to forward positions in response.",
+      "branch_probability": 0.3658536585365854,
+      "parent_id": "77d6600c",
+      "depth": 4,
+      "parent_joint_probability": 0.05010526315789474,
+      "joint_probability": 0.018331193838254177,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Anticipated increase in defense spending and rapid procurement of countermeasures."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FORWARD_AIRBASES_THEATER",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2c75f66a": {
+      "node_id": "2c75f66a",
+      "description": "Coordinated cyber-attacks target the logistics and command-and-control (C2) infrastructure supporting the weapon deployment.",
+      "branch_probability": 0.19512195121951223,
+      "parent_id": "77d6600c",
+      "depth": 4,
+      "parent_joint_probability": 0.05010526315789474,
+      "joint_probability": 0.009776636713735562,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Cyber-insurance premiums surge due to heightened state-sponsored threat levels."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRAT_C2_NETWORKS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d199eb3a": {
+      "node_id": "d199eb3a",
+      "description": "Adversary launches coordinated cyber-attacks against critical energy and financial infrastructure to signal resolve.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "4074e9eb",
+      "depth": 4,
+      "parent_joint_probability": 0.06442105263157896,
+      "joint_probability": 0.02070676691729324,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative spike due to perceived risk to energy infrastructure stability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increase in cyber-risk premiums."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Credit risk increase for affected theater nations."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "dbbaec8a": {
+      "node_id": "dbbaec8a",
+      "description": "High-readiness exercises result in a kinetic skirmish in contested maritime or border zones.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "4074e9eb",
+      "depth": 4,
+      "parent_joint_probability": 0.06442105263157896,
+      "joint_probability": 0.013804511278195491,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for tactical munitions and surveillance."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "War risk premiums surge for vessels in the theater."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Rapid adjustment of maritime hull and machinery insurance."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_SHIPPING_LANE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5d42fbe0": {
+      "node_id": "5d42fbe0",
+      "description": "Global financial markets trigger a 'flight to safety' as nuclear escalation risks are priced in.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "4074e9eb",
+      "depth": 4,
+      "parent_joint_probability": 0.06442105263157896,
+      "joint_probability": 0.029909774436090233,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Safe-haven assets surge against theater-local currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -7.0,
+          "tickers": [],
+          "notes": "Sell-off in emerging market bonds within the conflict zone."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d61ffc39": {
+      "node_id": "d61ffc39",
+      "description": "Market volatility subsides and diplomatic channels reopen as the immediate threat of nuclear escalation is perceived to have passed.",
+      "branch_probability": 0.5599999999999999,
+      "parent_id": "e1bb984d",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105264,
+      "joint_probability": 0.024050526315789474,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Reduction in safe-haven demand as tension eases."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 0.5,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Yields stabilize as geopolitical risk premium declines."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "08a1ed4d": {
+      "node_id": "08a1ed4d",
+      "description": "Adversarial states initiate long-term strategic posture adjustments and accelerated modernization to hedge against future deployment risks.",
+      "branch_probability": 0.32000000000000006,
+      "parent_id": "e1bb984d",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105264,
+      "joint_probability": 0.013743157894736846,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased long-term procurement for strategic deterrence systems."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "130bc9e5": {
+      "node_id": "130bc9e5",
+      "description": "A sudden intelligence leak contradicts the denial, revealing the B61-12s remain in theater, triggering a sharp reversal in diplomatic trust.",
+      "branch_probability": 0.12,
+      "parent_id": "e1bb984d",
+      "depth": 4,
+      "parent_joint_probability": 0.04294736842105264,
+      "joint_probability": 0.005153684210526316,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Panic buying returns as the risk of conflict is re-priced."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Immediate shift back to high-alert combat readiness."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety returns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5b3f5b25": {
+      "node_id": "5b3f5b25",
+      "description": "Opposing force initiates symmetric counter-deployment of tactical nuclear assets or elevates strategic alert levels.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "67c6ab18",
+      "depth": 4,
+      "parent_joint_probability": 0.052944862155388475,
+      "joint_probability": 0.018112716000527638,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and strategic deterrence systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Spike in political risk insurance premiums for theater-adjacent assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ac1d7b39": {
+      "node_id": "ac1d7b39",
+      "description": "Global financial markets react to the permanent shift in nuclear posture, triggering a flight to safe-haven assets.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "67c6ab18",
+      "depth": 4,
+      "parent_joint_probability": 0.052944862155388475,
+      "joint_probability": 0.023685859385305368,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "VOLATILE",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF",
+            "JPY"
+          ],
+          "notes": "Rapid movement into safe-haven currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Yield spikes on sovereign debt of nations within the theater of operations."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Geopolitical risk premium added to crude oil prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5221d6ce": {
+      "node_id": "5221d6ce",
+      "description": "Immediate imposition of severe economic sanctions and suspension of critical trade agreements in response to the deployment.",
+      "branch_probability": 0.21052631578947367,
+      "parent_id": "67c6ab18",
+      "depth": 4,
+      "parent_joint_probability": 0.052944862155388475,
+      "joint_probability": 0.011146286769555468,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "ZIM",
+            "MAERSK"
+          ],
+          "notes": "Trade freeze and shipping disruptions due to sanctions."
+        },
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Disruption of raw material flows from the affected region."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -15.0,
+          "tickers": [],
+          "notes": "Credit rating downgrades for the deploying state."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_PORTS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f8400149": {
+      "node_id": "f8400149",
+      "description": "Deploying power interprets cyber-offensive on nuclear C2 as an act of war, initiating kinetic counter-strikes against adversary cyber-infrastructure.",
+      "branch_probability": 0.35,
+      "parent_id": "1c8a6ab8",
+      "depth": 4,
+      "parent_joint_probability": 0.04117933723196881,
+      "joint_probability": 0.014412768031189082,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate surge in demand for electronic warfare and missile defense systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Credit default swap spreads widen for involved nations due to escalation risk."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -3.0,
+          "tickers": [],
+          "notes": "Flight to safety triggers volatility in regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ADVERSARY_C2_NODES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "131ad6b4": {
+      "node_id": "131ad6b4",
+      "description": "Cyber-offensive successfully disrupts transport manifests and synchronization, stalling the physical movement of B61-12 assets.",
+      "branch_probability": 0.55,
+      "parent_id": "1c8a6ab8",
+      "depth": 4,
+      "parent_joint_probability": 0.04117933723196881,
+      "joint_probability": 0.022648635477582845,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Political risk and war-risk premiums spike for regional logistics."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased spending on cybersecurity hardening for military logistics."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "MILITARY_LOGISTICS_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ab9c72eb": {
+      "node_id": "ab9c72eb",
+      "description": "Corruption of C2 data leads to a 'false positive' alert of an incoming strike, triggering a maximum-alert nuclear posture.",
+      "branch_probability": 0.2,
+      "parent_id": "1c8a6ab8",
+      "depth": 4,
+      "parent_joint_probability": 0.04117933723196881,
+      "joint_probability": 0.008235867446393761,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Panic buying and geopolitical risk premium surge in crude oil."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -7.0,
+          "tickers": [],
+          "notes": "Extreme volatility and crash in regional currencies as markets price in nuclear conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_C2_NETWORKS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0599b524": {
+      "node_id": "0599b524",
+      "description": "Symmetric escalation as opposing powers increase tactical nuclear readiness and move assets to forward positions.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "a90f4b15",
+      "depth": 4,
+      "parent_joint_probability": 0.07059314954051796,
+      "joint_probability": 0.02353104984683932,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Rapid increase in demand for missile defense and tactical surveillance systems."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative premium remains high due to increased risk of kinetic conflict."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FORWARD_AIRBASES_EU_ASIA",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e1fe5c23": {
+      "node_id": "e1fe5c23",
+      "description": "Severe contagion in sovereign debt markets leading to a liquidity crisis and rapid currency devaluation in affected regions.",
+      "branch_probability": 0.4444444444444444,
+      "parent_id": "a90f4b15",
+      "depth": 4,
+      "parent_joint_probability": 0.07059314954051796,
+      "joint_probability": 0.03137473312911909,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "BND"
+          ],
+          "notes": "Massive sell-off in bonds of nations adjacent to the deployment theater."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Flight to safety drives extreme strength in USD and CHF."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "PMMC"
+          ],
+          "notes": "War risk premiums spike for all regional logistics."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "af55d0b6": {
+      "node_id": "af55d0b6",
+      "description": "Diplomatic intervention and official clarification of the deployment's deterrent nature lead to a partial market correction.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "a90f4b15",
+      "depth": 4,
+      "parent_joint_probability": 0.07059314954051796,
+      "joint_probability": 0.015687366564559546,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Removal of the immediate 'panic premium' as uncertainty decreases."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Partial reversal of the flight-to-safety surge."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7bc2f8bd": {
+      "node_id": "7bc2f8bd",
+      "description": "Leak of the logistics failure triggers a massive sell-off in sovereign bonds and currency volatility due to perceived command-and-control fragility.",
+      "branch_probability": 0.34375,
+      "parent_id": "0a9ca18f",
+      "depth": 4,
+      "parent_joint_probability": 0.04645873944119558,
+      "joint_probability": 0.01597019168291098,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Market reaction to systemic vulnerability in nuclear deterrent logistics."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Increased risk premium on sovereign debt due to geopolitical instability."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Spike in political risk insurance premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "FINANCIAL_DATA_NETWORKS",
+          "new_status": "DEGRADED",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "453fce02": {
+      "node_id": "453fce02",
+      "description": "Adversary launches opportunistic conventional strikes or hybrid incursions perceiving a window of strategic vulnerability.",
+      "branch_probability": 0.21875,
+      "parent_id": "0a9ca18f",
+      "depth": 4,
+      "parent_joint_probability": 0.04645873944119558,
+      "joint_probability": 0.010162849252761532,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for conventional rapid-response capabilities."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for regional shipping and assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "FORWARD_OPERATING_BASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "de6981c8": {
+      "node_id": "de6981c8",
+      "description": "Military command pivots to manual/analog deployment protocols and emergency air-bridge operations to bypass compromised digital systems.",
+      "branch_probability": 0.4375,
+      "parent_id": "0a9ca18f",
+      "depth": 4,
+      "parent_joint_probability": 0.04645873944119558,
+      "joint_probability": 0.020325698505523064,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased operational tempo for strategic airlift."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Disruption of civilian cargo slots due to military priority."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "df90e7eb": {
+      "node_id": "df90e7eb",
+      "description": "Adversary responds to C2 degradation with a retaliatory cyber-offensive targeting the deploying power's civilian energy grid and financial clearing systems.",
+      "branch_probability": 0.55,
+      "parent_id": "8777fdba",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.018583495776478234,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Market anticipates disruption to energy production and distribution."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety in gold/hard assets as financial infrastructure stability is questioned."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "PGR"
+          ],
+          "notes": "Surge in cyber-insurance premiums and risk re-evaluations."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CIVILIAN_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "caf2a865": {
+      "node_id": "caf2a865",
+      "description": "Adversary, fearing a 'decapitation' strike due to C2 loss, initiates a 'use-it-or-lose-it' kinetic strike on regional military logistics hubs.",
+      "branch_probability": 0.3,
+      "parent_id": "8777fdba",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.010136452241715398,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for munitions and missile defense systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "US10Y"
+          ],
+          "notes": "Increased risk premium on sovereign debt of involved parties."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 18.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "War risk premiums spike for shipping in the theater."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "STRATEGIC_AIRFIELDS",
+          "new_status": "AT_RISK",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "39a22edf": {
+      "node_id": "39a22edf",
+      "description": "C2 degradation creates a communication vacuum, leading to accidental escalation or misinterpreted signals triggering a limited conventional exchange.",
+      "branch_probability": 0.15,
+      "parent_id": "8777fdba",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.005068226120857699,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "CL1!"
+          ],
+          "notes": "Panic buying of crude oil due to imminent conflict risk."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Force majeure declarations across multiple maritime and aviation policies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "THEATER_COMMUNICATIONS_SATELLITES",
+          "new_status": "DEGRADED",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "REGIONAL_OIL_TERMINALS",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "14d16f94": {
+      "node_id": "14d16f94",
+      "description": "Adversary implements restrictive maritime transit protocols in strategic chokepoints as a deterrent signal.",
+      "branch_probability": 0.3,
+      "parent_id": "bf9be9fe",
+      "depth": 4,
+      "parent_joint_probability": 0.03678551216751556,
+      "joint_probability": 0.011035653650254669,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 35.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Freight rates spike due to extreme risk premiums and rerouting."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "War risk premiums for hull and cargo insurance become prohibitive."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Supply chain disruption fears add a geopolitical premium to crude."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c5ac1286": {
+      "node_id": "c5ac1286",
+      "description": "Massive capital flight from emerging markets toward safe-haven assets, triggering currency instability.",
+      "branch_probability": 0.5,
+      "parent_id": "bf9be9fe",
+      "depth": 4,
+      "parent_joint_probability": 0.03678551216751556,
+      "joint_probability": 0.01839275608375778,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to quality drives USD strength against G10 and EM currencies."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Yields spike on EM sovereign debt as risk appetite collapses."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "da397585": {
+      "node_id": "da397585",
+      "description": "Targeted kinetic or cyber strikes on energy export infrastructure to create asymmetric leverage.",
+      "branch_probability": 0.19999999999999998,
+      "parent_id": "bf9be9fe",
+      "depth": 4,
+      "parent_joint_probability": 0.03678551216751556,
+      "joint_probability": 0.007357102433503112,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Physical supply loss triggers immediate price jump."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for integrated air and missile defense systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "OIL_EXPORT_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "63c0fb8b": {
+      "node_id": "63c0fb8b",
+      "description": "Global financial contagion triggers a collapse in maritime insurance availability and a flight to safe-haven currencies.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "b87cd354",
+      "depth": 4,
+      "parent_joint_probability": 0.03810509073666967,
+      "joint_probability": 0.017691649270596632,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 150.0,
+          "tickers": [],
+          "notes": "War risk premiums become prohibitive for all transit in affected corridors."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD",
+            "CHF"
+          ],
+          "notes": "Massive flight to safety as equity markets plummet."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -12.0,
+          "tickers": [],
+          "notes": "Increased yields on emerging market debt due to energy import costs."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c18235b6": {
+      "node_id": "c18235b6",
+      "description": "Adversary leverages market volatility to conduct targeted kinetic strikes on key energy export infrastructure.",
+      "branch_probability": 0.25,
+      "parent_id": "b87cd354",
+      "depth": 4,
+      "parent_joint_probability": 0.03810509073666967,
+      "joint_probability": 0.009526272684167418,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Supply shock intensifies as production capacity is physically destroyed."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Immediate demand for integrated air and missile defense systems."
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -40.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Tanker utilization drops as vessels refuse to enter strike zones."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3ec79f6e": {
+      "node_id": "3ec79f6e",
+      "description": "Coordinated G7 and OPEC+ emergency intervention to release strategic reserves and stabilize price volatility.",
+      "branch_probability": 0.28571428571428575,
+      "parent_id": "b87cd354",
+      "depth": 4,
+      "parent_joint_probability": 0.03810509073666967,
+      "joint_probability": 0.010887168781905621,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "CL"
+          ],
+          "notes": "Artificial supply increase dampens the immediate price spike."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Partial stabilization of European currencies as energy panic eases."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_RESERVES_STORAGE",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "60a13b92": {
+      "node_id": "60a13b92",
+      "description": "Adversary powers respond with symmetric tactical nuclear deployments or heightened alert levels in opposing theaters.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "f1be81c0",
+      "depth": 4,
+      "parent_joint_probability": 0.031100478468899524,
+      "joint_probability": 0.014439507860560493,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense and strategic deterrence systems."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 2.5,
+          "tickers": [],
+          "notes": "Yields spike on regional bonds as geopolitical risk premiums expand."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_AIRBASES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a7474380": {
+      "node_id": "a7474380",
+      "description": "Energy markets enter a speculative frenzy, driving crude prices higher due to anticipated supply chain disruptions.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "f1be81c0",
+      "depth": 4,
+      "parent_joint_probability": 0.031100478468899524,
+      "joint_probability": 0.009996582365003418,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Fear of conflict-driven supply shocks triggers immediate price surge."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "War risk insurance premiums spike for tankers in contested waters."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Rapid increase in political risk and maritime insurance costs."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "STRATEGIC_OIL_RESERVES",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f3901355": {
+      "node_id": "f3901355",
+      "description": "Rapid deterioration of diplomatic relations leads to the imposition of severe cross-border economic sanctions.",
+      "branch_probability": 0.21428571428571427,
+      "parent_id": "f1be81c0",
+      "depth": 4,
+      "parent_joint_probability": 0.031100478468899524,
+      "joint_probability": 0.006664388243335612,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Extreme volatility in non-reserve currencies; flight to USD/CHF."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "MAERSK"
+          ],
+          "notes": "Trade volume projections collapse due to sanctions and shipping rerouting."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INTERNATIONAL_TRADE_HUBS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7450d8c7": {
+      "node_id": "7450d8c7",
+      "description": "Adversary launches coordinated cyber-attacks against regional energy grids and financial hubs to signal asymmetric capability.",
+      "branch_probability": 0.45,
+      "parent_id": "671f9a44",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.0152046783625731,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Cyber-insurance premiums spike due to systemic risk."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.5,
+          "tickers": [
+            "EUR",
+            "JPY"
+          ],
+          "notes": "Flight to safety in USD/CHF as regional stability wavers."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "bd11e6c0": {
+      "node_id": "bd11e6c0",
+      "description": "Proxy forces execute sabotage on critical oil pipelines or refineries to exert immediate economic pressure.",
+      "branch_probability": 0.25,
+      "parent_id": "671f9a44",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.008447043534762833,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Supply shock from physical infrastructure damage."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "STNG"
+          ],
+          "notes": "Increased demand for long-haul shipments to replace lost regional supply."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "PPL"
+          ],
+          "notes": "War-risk premiums applied to all regional energy assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CRITICAL_OIL_PIPELINE",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "51eac4c1": {
+      "node_id": "51eac4c1",
+      "description": "High-level diplomatic channels secure a non-escalation pact or a formal denial of deployment, leading to a partial market correction.",
+      "branch_probability": 0.3,
+      "parent_id": "671f9a44",
+      "depth": 4,
+      "parent_joint_probability": 0.03378817413905133,
+      "joint_probability": 0.010136452241715398,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -8.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Speculative bubble bursts as immediate conflict risk recedes."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Regional currencies recover from the initial shock."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "REGIONAL_LOGISTICS_HUBS",
+          "new_status": "OPERATIONAL",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 60.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "0972dc68",
+      "description": "Retaliatory hybrid warfare campaign targeting critical energy and communication infrastructure.",
+      "joint_probability": 0.028631578947368418,
+      "pruned_reason": "joint_probability=0.0286 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "823b4a5d",
+      "description": "Adversary implements a strategic maritime blockade or restricts access to key chokepoints to force diplomatic reversal.",
+      "joint_probability": 0.026842105263157893,
+      "pruned_reason": "joint_probability=0.0268 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "34f9eafa",
+      "description": "Adversary transitions from cyber-attacks to kinetic precision strikes on deployment hubs to neutralize B61-12 assets.",
+      "joint_probability": 0.021117608836907078,
+      "pruned_reason": "joint_probability=0.0211 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "ffe18a0a",
+      "description": "Deploying power responds with retaliatory financial sanctions and trade embargoes on adversary's remaining exports.",
+      "joint_probability": 0.02697604225617808,
+      "pruned_reason": "joint_probability=0.0270 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "9d55145b",
+      "description": "Adversary escalates from economic pressure to physical sabotage of energy infrastructure to amplify market panic.",
+      "joint_probability": 0.012261837389171854,
+      "pruned_reason": "joint_probability=0.0123 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "641252d6",
+      "description": "Insurance underwriters withdraw all war-risk coverage for the affected region, leading to a total cessation of commercial maritime traffic.",
+      "joint_probability": 0.029139187033923868,
+      "pruned_reason": "joint_probability=0.0291 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "89df2414",
+      "description": "Adversary forces launch preemptive kinetic strikes against regional energy infrastructure to signal deterrence against the B61-12 deployment.",
+      "joint_probability": 0.015690331479805156,
+      "pruned_reason": "joint_probability=0.0157 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "f037f66c",
+      "description": "Adversaries launch coordinated hybrid/cyber-attacks against regional command-and-control and energy grids to signal resolve.",
+      "joint_probability": 0.01674641148325359,
+      "pruned_reason": "joint_probability=0.0167 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "5e995712",
+      "description": "Tactical miscalculation during high-readiness patrols leads to a localized kinetic engagement between naval or air assets.",
+      "joint_probability": 0.009569377990430622,
+      "pruned_reason": "joint_probability=0.0096 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "8356d11d",
+      "description": "Sovereign debt defaults or severe credit rating downgrades as regional governments lose access to international capital markets.",
+      "joint_probability": 0.02079272254710851,
+      "pruned_reason": "joint_probability=0.0208 < floor=0.0300 (severity=CRITICAL)"
+    },
+    {
+      "node_id": "a1b61648",
+      "description": "Adversary responds to economic pressure and nuclear deployment by increasing military activity near critical energy infrastructure to signal leverage.",
+      "joint_probability": 0.015594541910331383,
+      "pruned_reason": "joint_probability=0.0156 < floor=0.0300 (severity=CRITICAL)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

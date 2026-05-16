@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-07T21:00:00+00:00",
+  "generated_by": "prometheus",
+  "source": "Apollo regime escalation — Hermes relay 20260307-141148-6265",
+
+  "regime": {
+    "state": "CRISIS",
+    "escalated_at": "2026-03-07T14:11:48+00:00",
+    "escalated_by": "apollo",
+    "basis": "Hormuz near-closure (~90%) + Tehran bunker strike + Gulf state direct missile attacks",
+    "conflict_flag": true,
+    "nuclear_flag": false
+  },
+
+  "energy_multiplier": {
+    "multiplier": 1.5,
+    "applies_to_regime": ["CRISIS"],
+    "direction": "signal_weight_boost",
+    "note": "Apply 1.5x to position sizing / signal weight for energy-adjacent signals during CRISIS. This is additive over the base regime position-size multiplier — it boosts energy-specific exposure, not general exposure.",
+    "energy_adjacent_stats": [
+      "OIL_WTI", "OIL_BRENT", "LNG_SPOT", "LNG", "CRUDE_OIL",
+      "NATGAS", "EUR_NATGAS", "SHIPPING_RATES", "SAU_ARAMCO",
+      "HORMUZ", "ABQAIQ", "REFINING_MARGIN", "VEN_OIL_EXPORTS",
+      "IRN_OIL_EXPORTS", "IRQ_OIL_STABILITY", "QAT_ECONOMY",
+      "ARE_ECONOMY", "UAE_OIL", "ENERGY", "PETRO"
+    ]
+  },
+
+  "hormuz": {
+    "status": "NEAR_CLOSED",
+    "throughput_pct_of_normal": 10,
+    "normal_flow_mbpd": 21.0,
+    "current_flow_ships_per_24hr": 2,
+    "signal_treatment": "FLOOR_NOT_CEILING",
+    "fade_allowed": false,
+    "note": "Hormuz closure is a structural supply shock, not a temporary spike. Do NOT fade oil price signals against Hormuz closure as the assumed reversal mechanism. Treat current disruption level as floor; any deterioration is incremental upside to oil."
+  },
+
+  "abqaiq_tail_risk": {
+    "risk_level": "EXTREME",
+    "facility": "Abqaiq Processing Facility, Saudi Arabia",
+    "operator": "Saudi Aramco",
+    "global_supply_pct": 7.0,
+    "baseline_scenario": {
+      "reference_event": "2019 Abqaiq-Khurais drone strike",
+      "supply_offline_pct": 6.0,
+      "supply_offline_mbpd": 5.7,
+      "recovery_days_actual": 17,
+      "oil_price_spike_pct_day1": 15
+    },
+    "current_scenario": {
+      "threat_vector": "Iranian drones — 3 intercepted east of Riyadh + Empty Quarter on 2026-03-07",
+      "proximity_to_abqaiq": "eastern Saudi Arabia, same region as Abqaiq",
+      "risk_vs_2019_baseline": "HIGHER — 2019 was non-state actor (Houthi); current is direct Iranian military campaign with active war context",
+      "probability_estimate": "EXTREME — active conflict, demonstrated intent, drone penetration of Saudi air defenses confirmed",
+      "supply_impact_if_hit_mbpd": 5.7,
+      "supply_impact_if_hit_pct_global": 7.0,
+      "recovery_outlook": "SLOWER than 2019 — wartime conditions impede repair crews, repeat strikes likely"
+    },
+    "model_instruction": "Do NOT net Abqaiq risk against Venezuela offset. Venezuela 12-18mo lag. Abqaiq is an immediate tail risk."
+  },
+
+  "dual_supply_shock": {
+    "shock_1": {
+      "source": "Iran/Hormuz",
+      "type": "strait_closure",
+      "status": "ACTIVE",
+      "mbpd_at_risk": 21.0
+    },
+    "shock_2": {
+      "source": "Russia/Ukraine",
+      "type": "energy_infrastructure_strike",
+      "status": "ACTIVE",
+      "note": "Russia massive strike on Ukrainian energy infrastructure 2026-03-07 — European gas/power supply disruption"
+    },
+    "venezuela_offset": {
+      "status": "NOT_YET_APPLICABLE",
+      "lag_months": "12-18",
+      "trigger": "US-Venezuela diplomatic recognition (2026-03-07) → sanctions relief pathway open but not executed",
+      "model_instruction": "Do NOT net Venezuela offset against current Hormuz or Abqaiq shock in near-term models. Apply only to 12-18mo forward curve."
+    }
+  },
+
+  "apollo_positions": {
+    "oil": "EXTREME_LONG",
+    "lng": "EXTREME_LONG",
+    "gold": "LONG",
+    "defense": "LONG",
+    "airlines": "SHORT",
+    "note": "Reference only — Apollo confirmed positions as of 2026-03-07T14:11:48Z"
+  }
+}

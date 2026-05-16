@@ -1,0 +1,1795 @@
+{
+  "scenario_id": "lebanon-front-active-kinetic-20260514-1809-8cdcd8",
+  "trigger_event": "Lebanon front active kinetic \u2014 IDF strike campaign, Haifa rockets",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-05-14T18:09:58.352367+00:00",
+  "expires_at": "2026-05-17T18:09:58.352367+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "lebanon-_root": {
+      "node_id": "lebanon-_root",
+      "description": "Lebanon front active kinetic \u2014 IDF strike campaign, Haifa rockets",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "7fdbf4c1",
+        "f86460cd",
+        "6065db89"
+      ],
+      "pruned_reason": ""
+    },
+    "7fdbf4c1": {
+      "node_id": "7fdbf4c1",
+      "description": "Hezbollah targets Israeli energy infrastructure and gas platforms in the Mediterranean.",
+      "branch_probability": 0.45,
+      "parent_id": "lebanon-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.45,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.5,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Regional supply risk premium spikes due to potential loss of Leviathan/Tamar fields."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "War risk premiums for Mediterranean maritime assets surge."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_MED_GAS_RIGS",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "ac4a7b3b",
+        "1889bdf5",
+        "3d8d359e"
+      ],
+      "pruned_reason": ""
+    },
+    "f86460cd": {
+      "node_id": "f86460cd",
+      "description": "Kinetic activity disrupts operations at Haifa Port and disrupts container shipping lanes.",
+      "branch_probability": 0.35,
+      "parent_id": "lebanon-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.35,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Vessel diversions and port congestion as Haifa becomes a combat zone."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased premiums for cargo entering Eastern Mediterranean."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "0280ccee",
+        "44629f52",
+        "1e810d9c"
+      ],
+      "pruned_reason": ""
+    },
+    "6065db89": {
+      "node_id": "6065db89",
+      "description": "Iranian proxies initiate retaliatory actions in the Persian Gulf to stretch IDF/US resources.",
+      "branch_probability": 0.25,
+      "parent_id": "lebanon-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.25,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Fear of supply shock triggers aggressive oil price rally."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Freight rates spike for VLCCs due to increased risk in Hormuz."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety increases USD demand."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "ae098729",
+        "a2890eeb",
+        "88ebdcaf"
+      ],
+      "pruned_reason": ""
+    },
+    "ac4a7b3b": {
+      "node_id": "ac4a7b3b",
+      "description": "Successful kinetic strikes on Leviathan or Tamar gas platforms lead to immediate production halts and infrastructure damage.",
+      "branch_probability": 0.2333333333333333,
+      "parent_id": "7fdbf4c1",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.105,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XLE",
+            "NGF"
+          ],
+          "notes": "Disruption of Eastern Med gas supply triggers regional price spikes."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Immediate surge in war-risk premiums for Mediterranean offshore assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_GAS_PLATFORMS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1889bdf5": {
+      "node_id": "1889bdf5",
+      "description": "IDF launches massive retaliatory strikes targeting Lebanese power grids and fuel storage facilities.",
+      "branch_probability": 0.43333333333333335,
+      "parent_id": "7fdbf4c1",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.195,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense munitions and surveillance tech."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -8.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Lebanese and regional sovereign debt."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "4a2baf9a",
+        "d8cd543b"
+      ],
+      "pruned_reason": ""
+    },
+    "3d8d359e": {
+      "node_id": "3d8d359e",
+      "description": "Maritime insurance underwriters designate the Eastern Mediterranean as a high-risk zone, causing shipping reroutes.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "7fdbf4c1",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.15,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [
+            "STNG",
+            "TNK"
+          ],
+          "notes": "Higher freight rates due to increased insurance costs and longer routes."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Operational disruptions in Eastern Med ports."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Sharp increase in hull and machinery (H&M) and P&I war risk premiums."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EASTERN_MED_SHIPPING_LANES",
+          "new_status": "AT_RISK",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "9d533b23"
+      ],
+      "pruned_reason": ""
+    },
+    "0280ccee": {
+      "node_id": "0280ccee",
+      "description": "Marine insurers declare the Eastern Mediterranean a high-risk zone, triggering immediate vessel diversions from Haifa to alternative regional hubs.",
+      "branch_probability": 0.40625,
+      "parent_id": "f86460cd",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.1421875,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Freight rates spike due to rerouting and congestion at alternative ports."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums surge for all vessels entering the Levantine Basin."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "0f08aa2e",
+        "3f13ccbf"
+      ],
+      "pruned_reason": ""
+    },
+    "44629f52": {
+      "node_id": "44629f52",
+      "description": "Escalation of kinetic activity leads to threats against offshore gas platforms and energy infrastructure in the Mediterranean.",
+      "branch_probability": 0.25,
+      "parent_id": "f86460cd",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.0875,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Regional instability adds a geopolitical risk premium to Brent crude."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Israeli government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEVIATHAN_GAS_FIELD",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "TEMENOS_GAS_FIELD",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1e810d9c": {
+      "node_id": "1e810d9c",
+      "description": "Rapid depreciation of the Israeli Shekel and flight to safety in currency markets as conflict intensity persists.",
+      "branch_probability": 0.34375,
+      "parent_id": "f86460cd",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.12031249999999999,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": -7.0,
+          "tickers": [
+            "USDILS"
+          ],
+          "notes": "Sharp decline in ILS value against USD due to instability."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "RTX",
+            "LMT"
+          ],
+          "notes": "Increased demand for interceptor missiles and short-term defense contracts."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "21766034"
+      ],
+      "pruned_reason": ""
+    },
+    "ae098729": {
+      "node_id": "ae098729",
+      "description": "Proxy forces deploy sea mines and drone swarms in the Strait of Hormuz to disrupt global oil transit.",
+      "branch_probability": 0.34615384615384615,
+      "parent_id": "6065db89",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.08653846153846154,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate risk premium added to Brent crude due to transit uncertainty."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "STNG",
+            "TCRT"
+          ],
+          "notes": "Spot rates spike as vessels avoid the area or require high-risk premiums."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums for Gulf transit surge instantly."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a2890eeb": {
+      "node_id": "a2890eeb",
+      "description": "Targeted drone strikes hit critical oil processing and export terminals in Saudi Arabia or UAE.",
+      "branch_probability": 0.23076923076923073,
+      "parent_id": "6065db89",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.05769230769230768,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Direct supply shock from infrastructure damage."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "Increased risk profile for GCC sovereign debt."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Claims surge for industrial asset coverage."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OIL_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88ebdcaf": {
+      "node_id": "88ebdcaf",
+      "description": "US CENTCOM initiates preemptive kinetic strikes against proxy launch sites and command centers in the region.",
+      "branch_probability": 0.4230769230769231,
+      "parent_id": "6065db89",
+      "depth": 2,
+      "parent_joint_probability": 0.25,
+      "joint_probability": 0.10576923076923077,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for precision munitions and surveillance assets."
+        },
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 1.5,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "Flight to safety drives USD strength against regional currencies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PROXY_C2_NODES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4a2baf9a": {
+      "node_id": "4a2baf9a",
+      "description": "Hezbollah launches saturation drone and missile strikes targeting Haifa port and Israeli energy refineries in retaliation.",
+      "branch_probability": 0.34210526315789475,
+      "parent_id": "1889bdf5",
+      "depth": 3,
+      "parent_joint_probability": 0.195,
+      "joint_probability": 0.06671052631578948,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.5,
+          "tickers": [
+            "XLE"
+          ],
+          "notes": "Risk premium increase due to potential disruption of Eastern Mediterranean energy hubs."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums for Mediterranean shipping routes spike."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense interceptors."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ISRAEL_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "38124687",
+        "69066108",
+        "56e40c0c"
+      ],
+      "pruned_reason": ""
+    },
+    "d8cd543b": {
+      "node_id": "d8cd543b",
+      "description": "Total collapse of the Lebanese power grid and fuel distribution leads to widespread civil unrest and humanitarian crisis.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "1889bdf5",
+      "depth": 3,
+      "parent_joint_probability": 0.195,
+      "joint_probability": 0.08723684210526315,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Lebanese sovereign debt risk reaches extreme levels as state functionality ceases."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Political risk insurance payouts triggered for regional assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_POWER_GRID",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        },
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "8785263d",
+        "c1f6b06d",
+        "25fd36fa"
+      ],
+      "pruned_reason": ""
+    },
+    "9d533b23": {
+      "node_id": "9d533b23",
+      "description": "Major shipping lines divert container traffic from Haifa to Piraeus and Limassol, leading to immediate port congestion and logistics bottlenecks.",
+      "branch_probability": 0.5416666666666667,
+      "parent_id": "3d8d359e",
+      "depth": 3,
+      "parent_joint_probability": 0.15,
+      "joint_probability": 0.08125,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Increased freight rates due to rerouting and congestion surcharges."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for Eastern Med transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "d8c3c3b2",
+        "81bedc79",
+        "0869f0e4"
+      ],
+      "pruned_reason": ""
+    },
+    "0f08aa2e": {
+      "node_id": "0f08aa2e",
+      "description": "Severe congestion and logistical bottlenecks emerge at alternative regional hubs, specifically Limassol and Piraeus, due to sudden vessel influx.",
+      "branch_probability": 0.36111111111111116,
+      "parent_id": "0280ccee",
+      "depth": 3,
+      "parent_joint_probability": 0.1421875,
+      "joint_probability": 0.051345486111111116,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Spot rates increase due to diversion costs and port congestion surcharges."
+        },
+        {
+          "sector": "bulk",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Increased demand for short-haul shuttle services to move cargo from hubs to Israel."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LIMASSOL_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "PIRAEUS_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [
+        "e9a586cf",
+        "79291605",
+        "625a86d1"
+      ],
+      "pruned_reason": ""
+    },
+    "3f13ccbf": {
+      "node_id": "3f13ccbf",
+      "description": "War risk premiums surge across the entire Eastern Mediterranean basin, leading to a partial 'effective closure' for smaller, non-specialized carriers.",
+      "branch_probability": 0.4444444444444445,
+      "parent_id": "0280ccee",
+      "depth": 3,
+      "parent_joint_probability": 0.1421875,
+      "joint_probability": 0.06319444444444444,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [],
+          "notes": "Rapid adjustment of premiums for all vessels entering the Levant basin."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Increased costs for tankers servicing the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_MED_BASIN",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "4e45cc79",
+        "c073259b",
+        "9d66ed85"
+      ],
+      "pruned_reason": ""
+    },
+    "21766034": {
+      "node_id": "21766034",
+      "description": "Kinetic strikes on or near Haifa port lead to operational suspension and shipping diversions.",
+      "branch_probability": 0.45,
+      "parent_id": "1e810d9c",
+      "depth": 3,
+      "parent_joint_probability": 0.12031249999999999,
+      "joint_probability": 0.054140625,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Disruption of cargo throughput at primary Israeli gateway."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for East Mediterranean transit."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "56a67ca3",
+        "ce845dc3",
+        "9c338073"
+      ],
+      "pruned_reason": ""
+    },
+    "38124687": {
+      "node_id": "38124687",
+      "description": "Successful strikes on Haifa refineries cause significant production outages and regional energy price volatility.",
+      "branch_probability": 0.23684210526315788,
+      "parent_id": "4a2baf9a",
+      "depth": 4,
+      "parent_joint_probability": 0.06671052631578948,
+      "joint_probability": 0.015799861495844877,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.5,
+          "tickers": [
+            "XLE",
+            "USO"
+          ],
+          "notes": "Immediate spike in regional benchmarks due to infrastructure damage."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increase in war-risk premiums for Eastern Mediterranean assets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_REFINERIES",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 4.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "69066108": {
+      "node_id": "69066108",
+      "description": "Haifa port declares force majeure and ceases operations due to direct hits and safety protocols.",
+      "branch_probability": 0.3157894736842105,
+      "parent_id": "4a2baf9a",
+      "depth": 4,
+      "parent_joint_probability": 0.06671052631578948,
+      "joint_probability": 0.021066481994459835,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "ZIM"
+          ],
+          "notes": "Disruption of key Mediterranean hub operations."
+        },
+        {
+          "sector": "bulk",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 4.0,
+          "tickers": [],
+          "notes": "Diversion of bulk shipments to alternative ports."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "56e40c0c": {
+      "node_id": "56e40c0c",
+      "description": "Israel initiates a massive retaliatory air campaign targeting Hezbollah launch sites and logistics hubs in Lebanon.",
+      "branch_probability": 0.4473684210526315,
+      "parent_id": "4a2baf9a",
+      "depth": 4,
+      "parent_joint_probability": 0.06671052631578948,
+      "joint_probability": 0.029844182825484764,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 3.5,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense munitions."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Israeli government bonds."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_LOGISTICS_HUBS",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8785263d": {
+      "node_id": "8785263d",
+      "description": "Hezbollah launches retaliatory strikes against Israeli offshore gas platforms and power infrastructure to mirror the Lebanese collapse.",
+      "branch_probability": 0.32142857142857145,
+      "parent_id": "d8cd543b",
+      "depth": 4,
+      "parent_joint_probability": 0.08723684210526315,
+      "joint_probability": 0.028040413533834588,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XLE",
+            "UNG"
+          ],
+          "notes": "Risk premium spike due to potential disruption of Eastern Mediterranean gas exports."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "War risk premiums for Mediterranean shipping and energy assets surge."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for missile defense systems in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAELI_GAS_PLATFORMS",
+          "new_status": "AT_RISK",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c1f6b06d": {
+      "node_id": "c1f6b06d",
+      "description": "Massive civilian displacement toward the Syrian border and Mediterranean ports creates a regional humanitarian crisis.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "d8cd543b",
+      "depth": 4,
+      "parent_joint_probability": 0.08723684210526315,
+      "joint_probability": 0.03738721804511278,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Lebanese sovereign debt becomes virtually untradeable as state functions cease."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [],
+          "notes": "Hyper-collapse of the Lebanese Pound (LBP) as trust vanishes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_SYRIA_BORDER",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "25fd36fa": {
+      "node_id": "25fd36fa",
+      "description": "Local militias and non-state actors seize control of remaining fuel depots and power hubs to establish parallel governance.",
+      "branch_probability": 0.25,
+      "parent_id": "d8cd543b",
+      "depth": 4,
+      "parent_joint_probability": 0.08723684210526315,
+      "joint_probability": 0.02180921052631579,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Political risk insurance premiums for the Levant region increase."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Reduced throughput at regional ports due to instability and insecurity."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEBANON_FUEL_DEPOTS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.75
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d8c3c3b2": {
+      "node_id": "d8c3c3b2",
+      "description": "Severe congestion at Piraeus and Limassol ports triggers a sharp increase in regional maritime insurance premiums and container freight spot rates.",
+      "branch_probability": 0.4642857142857143,
+      "parent_id": "9d533b23",
+      "depth": 4,
+      "parent_joint_probability": 0.08125,
+      "joint_probability": 0.03772321428571429,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "War risk premiums expand to cover Eastern Mediterranean transit."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Short-term spike in regional spot rates due to capacity constraints."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PIRAEUS_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "LIMASSOL_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "81bedc79": {
+      "node_id": "81bedc79",
+      "description": "Hezbollah escalates kinetic strikes to target Haifa port infrastructure directly, rendering the facility completely non-operational.",
+      "branch_probability": 0.25,
+      "parent_id": "9d533b23",
+      "depth": 4,
+      "parent_joint_probability": 0.08125,
+      "joint_probability": 0.0203125,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased demand for missile defense systems."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Immediate re-rating of all assets in the Levant."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0869f0e4": {
+      "node_id": "0869f0e4",
+      "description": "Prolonged disruption of Israel's primary commercial gateway leads to increased sovereign risk and volatility in the Shekel.",
+      "branch_probability": 0.28571428571428575,
+      "parent_id": "9d533b23",
+      "depth": 4,
+      "parent_joint_probability": 0.08125,
+      "joint_probability": 0.02321428571428572,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -4.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Capital flight due to economic instability and trade paralysis."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -2.0,
+          "tickers": [],
+          "notes": "CDS spreads widen as trade capacity drops."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e9a586cf": {
+      "node_id": "e9a586cf",
+      "description": "Marine insurance underwriters implement emergency 'War Risk' surcharges for the Eastern Mediterranean basin due to kinetic activity and port instability.",
+      "branch_probability": 0.5172413793103449,
+      "parent_id": "0f08aa2e",
+      "depth": 4,
+      "parent_joint_probability": 0.051345486111111116,
+      "joint_probability": 0.026558010057471267,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Rapid increase in premiums for vessels calling at Piraeus and Limassol."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Freight rates increase to cover insurance surcharges."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PIRAEUS_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "LIMASSOL_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "79291605": {
+      "node_id": "79291605",
+      "description": "Shipping lines initiate wide-scale diversion of cargo to Western Mediterranean hubs (e.g., Valencia, Algeciras) to bypass Eastern Med bottlenecks.",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "0f08aa2e",
+      "depth": 4,
+      "parent_joint_probability": 0.051345486111111116,
+      "joint_probability": 0.01593480603448276,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased ton-mile demand and operational costs due to longer routing."
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Secondary impact on regional fuel distribution logistics."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LIMASSOL_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "625a86d1": {
+      "node_id": "625a86d1",
+      "description": "Regional energy price volatility spikes in Cyprus and Greece as logistical bottlenecks delay critical fuel and LNG imports.",
+      "branch_probability": 0.1724137931034483,
+      "parent_id": "0f08aa2e",
+      "depth": 4,
+      "parent_joint_probability": 0.051345486111111116,
+      "joint_probability": 0.008852670019157089,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Local spot prices rise due to supply chain friction."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [],
+          "notes": "Pressure on regional economic stability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LIMASSOL_PORT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4e45cc79": {
+      "node_id": "4e45cc79",
+      "description": "Sustained kinetic strikes on Haifa and Beirut ports lead to total cessation of commercial port operations.",
+      "branch_probability": 0.44000000000000006,
+      "parent_id": "3f13ccbf",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444444,
+      "joint_probability": 0.02780555555555556,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "MAERSK",
+            "ZIM"
+          ],
+          "notes": "Immediate halt of cargo throughput in key Eastern Med hubs."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "War risk premiums spike for all vessels entering the Levant basin."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        },
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "CLOSED",
+          "confidence": 0.85
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c073259b": {
+      "node_id": "c073259b",
+      "description": "Escalation to targeting of offshore energy assets in the Levant Basin to disrupt economic stability.",
+      "branch_probability": 0.24,
+      "parent_id": "3f13ccbf",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444444,
+      "joint_probability": 0.015166666666666665,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Supply risk premium added to regional gas exports."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for maritime and point-defense systems."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "LEVANT_GAS_FIELDS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9d66ed85": {
+      "node_id": "9d66ed85",
+      "description": "Major global carriers implement full diversion of schedules, bypassing the Eastern Mediterranean entirely.",
+      "branch_probability": 0.32000000000000006,
+      "parent_id": "3f13ccbf",
+      "depth": 4,
+      "parent_joint_probability": 0.06319444444444444,
+      "joint_probability": 0.020222222222222225,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Increased ton-mile demand due to rerouting around the conflict zone."
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": 7.0,
+          "tickers": [],
+          "notes": "Operational inefficiency and increased fuel costs for diverted fleets."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "EAST_MED_SHIPPING_LANES",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "56a67ca3": {
+      "node_id": "56a67ca3",
+      "description": "War risk premiums surge for Eastern Mediterranean ports, causing widespread shipping diversions and congestion at alternative hubs.",
+      "branch_probability": 0.5,
+      "parent_id": "21766034",
+      "depth": 4,
+      "parent_joint_probability": 0.054140625,
+      "joint_probability": 0.0270703125,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [],
+          "notes": "Rapid increase in hull and machinery (H&M) and war risk premiums for East Med transit."
+        },
+        {
+          "sector": "container",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [],
+          "notes": "Increased freight rates due to rerouting and port congestion."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ASH DOD_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ce845dc3": {
+      "node_id": "ce845dc3",
+      "description": "Kinetic strikes expand to target fuel storage and energy terminals adjacent to the Haifa port area.",
+      "branch_probability": 0.2333333333333333,
+      "parent_id": "21766034",
+      "depth": 4,
+      "parent_joint_probability": 0.054140625,
+      "joint_probability": 0.012632812499999998,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 12.0,
+          "tickers": [],
+          "notes": "Regional supply shock and risk premium on Mediterranean oil flows."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Specific energy-infrastructure risk premiums triggered."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HAIFA_ENERGY_TERMINALS",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9c338073": {
+      "node_id": "9c338073",
+      "description": "Prolonged suspension of the primary commercial gateway triggers volatility in Israeli sovereign bonds and currency.",
+      "branch_probability": 0.26666666666666666,
+      "parent_id": "21766034",
+      "depth": 4,
+      "parent_joint_probability": 0.054140625,
+      "joint_probability": 0.014437499999999999,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [],
+          "notes": "Increased risk premium on Israeli government bonds due to economic disruption."
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Downward pressure on Shekel due to trade instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "eaa5798f",
+      "description": "Global energy markets react to the loss of Eastern Med gas production, causing a spike in regional LNG spot prices and volatility in the Israeli Shekel.",
+      "joint_probability": 0.04375,
+      "pruned_reason": "joint_probability=0.0437 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "4dece8af",
+      "description": "IDF launches symmetric retaliatory strikes targeting Lebanese power grids and fuel storage facilities to degrade Hezbollah's operational capacity.",
+      "joint_probability": 0.034999999999999996,
+      "pruned_reason": "joint_probability=0.0350 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "1abe2b2c",
+      "description": "Insurance underwriters and shipping firms designate the Eastern Mediterranean as a high-risk zone, leading to rerouting or increased freight costs.",
+      "joint_probability": 0.02625,
+      "pruned_reason": "joint_probability=0.0262 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "2c19dad7",
+      "description": "Iran accelerates shipments of advanced weaponry via Syria to replenish Hezbollah's depleted stockpiles.",
+      "joint_probability": 0.04105263157894737,
+      "pruned_reason": "joint_probability=0.0411 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "d90f7b9f",
+      "description": "Kinetic strikes target Haifa's industrial zone, causing direct damage to energy storage and refinery infrastructure.",
+      "joint_probability": 0.043750000000000004,
+      "pruned_reason": "joint_probability=0.0438 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b87ffdcb",
+      "description": "Non-state actors target a commercial vessel in the designated high-risk zone to signal capability, leading to a temporary maritime blockade.",
+      "joint_probability": 0.025,
+      "pruned_reason": "joint_probability=0.0250 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "6542424f",
+      "description": "Kinetic strikes directly target Haifa port infrastructure, transitioning the risk from financial/insurance-based to physical operational failure.",
+      "joint_probability": 0.027647569444444443,
+      "pruned_reason": "joint_probability=0.0276 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "38e5b51d",
+      "description": "Kinetic strikes successfully target offshore gas platforms, causing immediate production halts and physical damage.",
+      "joint_probability": 0.018229166666666664,
+      "pruned_reason": "joint_probability=0.0182 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "98632052",
+      "description": "Operators implement preemptive operational shutdowns of offshore platforms to protect personnel and assets.",
+      "joint_probability": 0.04010416666666666,
+      "pruned_reason": "joint_probability=0.0401 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "46794d62",
+      "description": "Underwriters declare the Eastern Mediterranean a high-risk zone, leading to shipping rerouting and increased freight costs.",
+      "joint_probability": 0.029166666666666664,
+      "pruned_reason": "joint_probability=0.0292 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "0b082c69",
+      "description": "Sovereign credit rating agencies place Israeli debt on negative watch due to currency instability and war costs.",
+      "joint_probability": 0.036093749999999994,
+      "pruned_reason": "joint_probability=0.0361 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "f2243ef3",
+      "description": "Escalation fears trigger volatility in East Mediterranean gas infrastructure and energy pricing.",
+      "joint_probability": 0.030078124999999997,
+      "pruned_reason": "joint_probability=0.0301 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "f26cd8a8",
+      "description": "Global shipping firms declare Force Majeure and insurance premiums for Persian Gulf transit spike exponentially.",
+      "joint_probability": 0.03976091476091475,
+      "pruned_reason": "joint_probability=0.0398 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "579c63ee",
+      "description": "US Navy and coalition forces initiate large-scale mine-countermeasure (MCM) operations to clear shipping lanes.",
+      "joint_probability": 0.0304054054054054,
+      "pruned_reason": "joint_probability=0.0304 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "b4094952",
+      "description": "Kinetic retaliation by US/IDF targeting Iranian naval command centers and drone launch sites.",
+      "joint_probability": 0.016372141372141366,
+      "pruned_reason": "joint_probability=0.0164 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "919772ea",
+      "description": "Immediate surge in global crude prices and spike in maritime insurance premiums for Persian Gulf transit.",
+      "joint_probability": 0.025809716599190277,
+      "pruned_reason": "joint_probability=0.0258 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "739dfb1d",
+      "description": "Targeted oil processing facilities enter emergency shutdown for damage assessment and repair.",
+      "joint_probability": 0.021255060728744935,
+      "pruned_reason": "joint_probability=0.0213 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "f79d3831",
+      "description": "Regional naval forces implement restrictive transit protocols in the Strait of Hormuz to intercept further drone threats.",
+      "joint_probability": 0.010627530364372468,
+      "pruned_reason": "joint_probability=0.0106 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "27bf67dd",
+      "description": "Proxy forces launch coordinated drone and missile retaliations against US military installations in Iraq and Syria.",
+      "joint_probability": 0.049107142857142856,
+      "pruned_reason": "joint_probability=0.0491 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "1d819744",
+      "description": "Strategic strikes target regional energy infrastructure to leverage US political pressure.",
+      "joint_probability": 0.026442307692307692,
+      "pruned_reason": "joint_probability=0.0264 < floor=0.0500 (severity=HIGH)"
+    },
+    {
+      "node_id": "2d2e5af4",
+      "description": "Iranian-backed naval assets implement a tactical blockade or harassment campaign in the Bab el-Mandeb and Hormuz.",
+      "joint_probability": 0.030219780219780223,
+      "pruned_reason": "joint_probability=0.0302 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

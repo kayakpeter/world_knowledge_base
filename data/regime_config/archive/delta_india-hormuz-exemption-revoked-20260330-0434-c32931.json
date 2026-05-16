@@ -1,0 +1,11 @@
+{
+  "scenario_id": "india-hormuz-exemption-revoked-20260330-0434-c32931",
+  "trigger_event": "India Hormuz exemption revoked \u2014 Indian tankers attacked in Arabian Sea",
+  "severity": "HIGH",
+  "generated_at": "2026-03-30T04:45:46.909766+00:00",
+  "defense_bonus": 1.887,
+  "energy_bonus": 2.825,
+  "currency_bonus": 1.089,
+  "shipping_bonus": 1.35,
+  "sovereign_bonus": 1.065
+}

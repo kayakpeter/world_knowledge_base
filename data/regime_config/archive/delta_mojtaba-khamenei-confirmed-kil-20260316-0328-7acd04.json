@@ -1,0 +1,9 @@
+{
+  "scenario_id": "mojtaba-khamenei-confirmed-kil-20260316-0328-7acd04",
+  "trigger_event": "Mojtaba Khamenei confirmed killed \u2014 IRGC succession crisis",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-16T03:37:56.003091+00:00",
+  "defense_bonus": 1.798,
+  "energy_bonus": 2.256,
+  "currency_bonus": 1.0
+}

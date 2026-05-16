@@ -1,0 +1,11 @@
+{
+  "scenario_id": "india-pakistan-operation-sindo-20260330-0412-4bcf45",
+  "trigger_event": "India-Pakistan Operation Sindoor escalates to artillery exchange across LoC",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T04:23:12.062084+00:00",
+  "shipping_bonus": 1.816,
+  "sovereign_bonus": 1.735,
+  "agriculture_bonus": 1.444,
+  "defense_bonus": 1.274,
+  "currency_bonus": 1.244
+}

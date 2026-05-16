@@ -1,0 +1,57 @@
+{
+  "scenario_id": "test-20260315-1945-a26470",
+  "trigger_event": "Test",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-15T19:45:40.369677+00:00",
+  "expires_at": "2026-03-18T19:45:40.369677+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "test-202_root": {
+      "node_id": "test-202_root",
+      "description": "Test",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "test-202_root_high"
+      ],
+      "pruned_reason": ""
+    },
+    "test-202_root_high": {
+      "node_id": "test-202_root_high",
+      "description": "High prob child",
+      "branch_probability": 0.8,
+      "parent_id": "test-202_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.8,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [
+    {
+      "node_id": "test-202_root_low",
+      "description": "Low prob child",
+      "joint_probability": 0.01,
+      "pruned_reason": "joint_probability=0.0100 < floor=0.0500 (severity=HIGH)"
+    }
+  ],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

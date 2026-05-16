@@ -1,0 +1,12 @@
+{
+  "scenario_id": "iran-ballistic-missile-salvo-b-20260330-0423-c1de2c",
+  "trigger_event": "Iran ballistic missile salvo breaches Israeli air defenses \u2014 mass civilian casualties",
+  "severity": "HIGH",
+  "generated_at": "2026-03-30T04:34:40.435114+00:00",
+  "defense_bonus": 1.848,
+  "energy_bonus": 1.858,
+  "currency_bonus": 1.649,
+  "insurance_bonus": 1.313,
+  "sovereign_bonus": 1.196,
+  "shipping_bonus": 1.074
+}

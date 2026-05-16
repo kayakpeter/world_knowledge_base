@@ -1,0 +1,432 @@
+{
+  "scenario_id": "mojtaba-khamenei-confirmed-kil-20260316-0328-7acd04",
+  "trigger_event": "Mojtaba Khamenei confirmed killed \u2014 IRGC succession crisis",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-16T03:28:32.120130+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "mojtaba-_root": {
+      "node_id": "mojtaba-_root",
+      "description": "Mojtaba Khamenei confirmed killed \u2014 IRGC succession crisis",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "003254cf",
+        "102659bb",
+        "d51b4f2b"
+      ],
+      "pruned_reason": ""
+    },
+    "003254cf": {
+      "node_id": "003254cf",
+      "description": "IRGC leadership quickly consolidates around a single successor, minimizing internal conflict.",
+      "branch_probability": 0.35,
+      "parent_id": "mojtaba-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.35,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military spending expected as new leader seeks to assert authority."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "2df61d4b",
+        "df3a6966",
+        "d36376a1"
+      ],
+      "pruned_reason": ""
+    },
+    "102659bb": {
+      "node_id": "102659bb",
+      "description": "Internal power struggles within the IRGC lead to a prolonged period of instability and indecision.",
+      "branch_probability": 0.45,
+      "parent_id": "mojtaba-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.45,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices spike due to uncertainty over Iran's role in regional stability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "e02bb108",
+        "7af7feba",
+        "2f8f7f7e"
+      ],
+      "pruned_reason": ""
+    },
+    "d51b4f2b": {
+      "node_id": "d51b4f2b",
+      "description": "External powers (e.g., Saudi Arabia, Israel) exploit the power vacuum to increase pressure on Iran.",
+      "branch_probability": 0.2,
+      "parent_id": "mojtaba-_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "USD/IRR"
+          ],
+          "notes": "Iranian rial plummets as foreign intervention looms."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NUCLEAR_FACILITIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.6
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "9c08d5d5",
+        "3c4bed70",
+        "74f30291"
+      ],
+      "pruned_reason": ""
+    },
+    "2df61d4b": {
+      "node_id": "2df61d4b",
+      "description": "The chosen successor faces immediate challenges from rival factions within the IRGC, leading to a power struggle.",
+      "branch_probability": 0.45,
+      "parent_id": "003254cf",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.1575,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased defense spending and military readiness."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "df3a6966": {
+      "node_id": "df3a6966",
+      "description": "The new leader successfully quells any dissent and stabilizes the IRGC, leading to a show of unity and strength.",
+      "branch_probability": 0.35,
+      "parent_id": "003254cf",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.12249999999999998,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MINOR",
+          "magnitude_pct": 5.0,
+          "tickers": [],
+          "notes": "Stability in the Iranian rial as the situation is perceived as under control."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "d36376a1": {
+      "node_id": "d36376a1",
+      "description": "Regional tensions escalate as Saudi Arabia and Israel perceive the new leadership as a threat, leading to increased military posturing.",
+      "branch_probability": 0.25,
+      "parent_id": "003254cf",
+      "depth": 2,
+      "parent_joint_probability": 0.35,
+      "joint_probability": 0.0875,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Concerns over potential disruptions to oil supplies."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PERSIAN_GULF",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e02bb108": {
+      "node_id": "e02bb108",
+      "description": "A faction within the IRGC gains control and imposes martial law to stabilize the situation.",
+      "branch_probability": 0.35,
+      "parent_id": "102659bb",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.1575,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military spending and internal security measures."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_ELECTRIC_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7af7feba": {
+      "node_id": "7af7feba",
+      "description": "Rival factions within the IRGC engage in open conflict, leading to widespread violence and unrest.",
+      "branch_probability": 0.25,
+      "parent_id": "102659bb",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.1125,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Currency devaluation due to political instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_OIL_REFINERIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "2f8f7f7e": {
+      "node_id": "2f8f7f7e",
+      "description": "International sanctions are imposed on Iran, exacerbating economic and political tensions.",
+      "branch_probability": 0.3,
+      "parent_id": "102659bb",
+      "depth": 2,
+      "parent_joint_probability": 0.45,
+      "joint_probability": 0.135,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices rise due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9c08d5d5": {
+      "node_id": "9c08d5d5",
+      "description": "Saudi Arabia launches a series of cyberattacks targeting Iran's critical infrastructure.",
+      "branch_probability": 0.25925925925925924,
+      "parent_id": "d51b4f2b",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.05185185185185185,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for cybersecurity solutions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3c4bed70": {
+      "node_id": "3c4bed70",
+      "description": "Israel conducts targeted airstrikes on suspected Iranian nuclear facilities.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "d51b4f2b",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.06666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices surge due to supply concerns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NUCLEAR_FACILITIES",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "74f30291": {
+      "node_id": "74f30291",
+      "description": "The United States deploys additional naval forces to the Persian Gulf to monitor the situation.",
+      "branch_probability": 0.40740740740740744,
+      "parent_id": "d51b4f2b",
+      "depth": 2,
+      "parent_joint_probability": 0.2,
+      "joint_probability": 0.08148148148148149,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD",
+            "RTX"
+          ],
+          "notes": "Increased military presence boosts defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

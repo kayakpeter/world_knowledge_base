@@ -1,0 +1,595 @@
+{
+  "scenario_id": "abqaiq-oil-processing-facility-20260316-0142-91ea9a",
+  "trigger_event": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-16T01:42:45.323311+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "abqaiq-o_root": {
+      "node_id": "abqaiq-o_root",
+      "description": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "0c032514",
+        "3e2f8f84",
+        "79ae4711",
+        "94324899"
+      ],
+      "pruned_reason": ""
+    },
+    "0c032514": {
+      "node_id": "0c032514",
+      "description": "Saudi Arabia increases military presence in the region, leading to heightened tensions.",
+      "branch_probability": 0.25757575757575757,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.25757575757575757,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "GD"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "299a5098",
+        "1dca5406",
+        "1bb8c7f4"
+      ],
+      "pruned_reason": ""
+    },
+    "3e2f8f84": {
+      "node_id": "3e2f8f84",
+      "description": "Global oil prices surge due to supply concerns, impacting energy markets.",
+      "branch_probability": 0.2878787878787879,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2878787878787879,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX",
+            "BP"
+          ],
+          "notes": "Immediate spike in oil prices due to reduced supply from Saudi Arabia."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 1.0
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "93fd6548",
+        "97ea5339",
+        "88ff739a"
+      ],
+      "pruned_reason": ""
+    },
+    "79ae4711": {
+      "node_id": "79ae4711",
+      "description": "Insurance premiums for oil-related assets in the Middle East rise sharply.",
+      "branch_probability": 0.24242424242424243,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.24242424242424243,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "ALL",
+            "BRK.B",
+            "AIG"
+          ],
+          "notes": "Increased risk assessment and premium adjustments for oil-related assets."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "5e0bdeca",
+        "f8f30e6f",
+        "0cb6788b"
+      ],
+      "pruned_reason": ""
+    },
+    "94324899": {
+      "node_id": "94324899",
+      "description": "International condemnation and calls for a diplomatic response increase, potentially leading to sanctions against Iran.",
+      "branch_probability": 0.21212121212121213,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.21212121212121213,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "IRAN"
+          ],
+          "notes": "Potential economic sanctions and diplomatic isolation of Iran."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "8632c54d",
+        "211147f9",
+        "580375b1"
+      ],
+      "pruned_reason": ""
+    },
+    "299a5098": {
+      "node_id": "299a5098",
+      "description": "Saudi Arabia launches retaliatory strikes against Iranian targets, escalating conflict.",
+      "branch_probability": 0.45,
+      "parent_id": "0c032514",
+      "depth": 2,
+      "parent_joint_probability": 0.25757575757575757,
+      "joint_probability": 0.1159090909090909,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices surge due to supply concerns."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for military equipment and services."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KHARG_ISLAND",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "SAUDI_ARAMCO_REFINERIES",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1dca5406": {
+      "node_id": "1dca5406",
+      "description": "International condemnation and calls for de-escalation, but no immediate action taken.",
+      "branch_probability": 0.35,
+      "parent_id": "0c032514",
+      "depth": 2,
+      "parent_joint_probability": 0.25757575757575757,
+      "joint_probability": 0.09015151515151515,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Uncertainty leads to currency fluctuations."
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "SAUDI_DEBT"
+          ],
+          "notes": "Sovereign debt ratings may be affected due to regional instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1bb8c7f4": {
+      "node_id": "1bb8c7f4",
+      "description": "Iranian cyberattacks target Saudi critical infrastructure, causing disruptions.",
+      "branch_probability": 0.2,
+      "parent_id": "0c032514",
+      "depth": 2,
+      "parent_joint_probability": 0.25757575757575757,
+      "joint_probability": 0.051515151515151514,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Further disruption to oil supply chains."
+        },
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "ALL"
+          ],
+          "notes": "Increased premiums for cyber insurance."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "93fd6548": {
+      "node_id": "93fd6548",
+      "description": "Saudi Arabia increases military presence in the region, leading to heightened tensions.",
+      "branch_probability": 0.3846153846153847,
+      "parent_id": "3e2f8f84",
+      "depth": 2,
+      "parent_joint_probability": 0.2878787878787879,
+      "joint_probability": 0.11072261072261075,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "97ea5339": {
+      "node_id": "97ea5339",
+      "description": "International condemnation and calls for a response from the US and its allies.",
+      "branch_probability": 0.43589743589743596,
+      "parent_id": "3e2f8f84",
+      "depth": 2,
+      "parent_joint_probability": 0.2878787878787879,
+      "joint_probability": 0.1254856254856255,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "USD"
+          ],
+          "notes": "US dollar weakens due to potential economic instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88ff739a": {
+      "node_id": "88ff739a",
+      "description": "Further attacks on Saudi oil infrastructure, causing additional disruptions.",
+      "branch_probability": 0.1794871794871795,
+      "parent_id": "3e2f8f84",
+      "depth": 2,
+      "parent_joint_probability": 0.2878787878787879,
+      "joint_probability": 0.05167055167055167,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices spike further due to sustained supply issues."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_OIL_PIPELINE",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5e0bdeca": {
+      "node_id": "5e0bdeca",
+      "description": "Major international insurers announce temporary suspension of new policies for Middle Eastern oil assets.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "79ae4711",
+      "depth": 2,
+      "parent_joint_probability": 0.24242424242424243,
+      "joint_probability": 0.08264462809917356,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Reduced coverage availability leads to market uncertainty."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f8f30e6f": {
+      "node_id": "f8f30e6f",
+      "description": "Saudi Arabia increases security measures at all major oil facilities, leading to operational delays.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "79ae4711",
+      "depth": 2,
+      "parent_joint_probability": 0.24242424242424243,
+      "joint_probability": 0.06611570247933884,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased security costs and potential production slowdowns."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_FACILITY",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0cb6788b": {
+      "node_id": "0cb6788b",
+      "description": "Global oil prices spike due to heightened risk perceptions and potential supply disruptions.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "79ae4711",
+      "depth": 2,
+      "parent_joint_probability": 0.24242424242424243,
+      "joint_probability": 0.09366391184573003,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Market reacts to increased risk of further attacks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8632c54d": {
+      "node_id": "8632c54d",
+      "description": "US imposes additional sanctions on Iran, targeting key economic sectors.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "94324899",
+      "depth": 2,
+      "parent_joint_probability": 0.21212121212121213,
+      "joint_probability": 0.08599508599508598,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "IRR"
+          ],
+          "notes": "Iranian rial weakens due to economic pressure."
+        },
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM"
+          ],
+          "notes": "Oil prices rise as supply concerns grow."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "211147f9": {
+      "node_id": "211147f9",
+      "description": "Saudi Arabia increases its military presence in the region, heightening tensions.",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "94324899",
+      "depth": 2,
+      "parent_joint_probability": 0.21212121212121213,
+      "joint_probability": 0.0687960687960688,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Defense stocks rise as regional tensions escalate."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SAUDI_ARABIA_AIRSPACE",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "580375b1": {
+      "node_id": "580375b1",
+      "description": "International oil companies reduce operations in the Gulf, citing security concerns.",
+      "branch_probability": 0.27027027027027023,
+      "parent_id": "94324899",
+      "depth": 2,
+      "parent_joint_probability": 0.21212121212121213,
+      "joint_probability": 0.057330057330057325,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "CVX"
+          ],
+          "notes": "Oil prices spike as production cuts are anticipated."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GULF_OF_OMAN",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "active"
+}

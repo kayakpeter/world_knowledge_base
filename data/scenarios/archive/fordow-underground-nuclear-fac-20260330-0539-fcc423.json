@@ -1,0 +1,470 @@
+{
+  "scenario_id": "fordow-underground-nuclear-fac-20260330-0539-fcc423",
+  "trigger_event": "Fordow underground nuclear facility struck \u2014 enrichment status unknown",
+  "severity": "CRITICAL",
+  "confirmed": false,
+  "created_at": "2026-03-30T05:39:50.887461+00:00",
+  "expires_at": "2026-04-02T05:39:50.887461+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "fordow-u_root": {
+      "node_id": "fordow-u_root",
+      "description": "Fordow underground nuclear facility struck \u2014 enrichment status unknown",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "12e917d7",
+        "9cef5373",
+        "33c753f0"
+      ],
+      "pruned_reason": ""
+    },
+    "12e917d7": {
+      "node_id": "12e917d7",
+      "description": "Iran announces retaliation against Israeli or US military assets",
+      "branch_probability": 0.3684210526315789,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3684210526315789,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense stocks"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "aa377733",
+        "6c3f0c6a",
+        "9e083ac7"
+      ],
+      "pruned_reason": ""
+    },
+    "9cef5373": {
+      "node_id": "9cef5373",
+      "description": "Oil prices surge as market fears disruption to Iranian oil exports",
+      "branch_probability": 0.42105263157894735,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.42105263157894735,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Supply concerns drive up oil prices"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "3e37331a",
+        "9c275537",
+        "02794ca8"
+      ],
+      "pruned_reason": ""
+    },
+    "33c753f0": {
+      "node_id": "33c753f0",
+      "description": "Iranian government confirms enrichment activities at Fordow, vows to continue nuclear program",
+      "branch_probability": 0.21052631578947367,
+      "parent_id": "fordow-u_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.21052631578947367,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MEDIUM",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Escalating tensions lead to currency market volatility"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [
+        "4980005e",
+        "1d1e7fb5",
+        "fe939ff1"
+      ],
+      "pruned_reason": ""
+    },
+    "aa377733": {
+      "node_id": "aa377733",
+      "description": "Iran launches missile strikes on US bases in Iraq and Kuwait",
+      "branch_probability": 0.4769230769230769,
+      "parent_id": "12e917d7",
+      "depth": 2,
+      "parent_joint_probability": 0.3684210526315789,
+      "joint_probability": 0.17570850202429147,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions and potential for escalation"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "AL_ASAD_AIRBASE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "AHMED_AL_JABER_AIRBASE",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6c3f0c6a": {
+      "node_id": "6c3f0c6a",
+      "description": "Iran announces closure of Strait of Hormuz to all oil tankers",
+      "branch_probability": 0.3153846153846153,
+      "parent_id": "12e917d7",
+      "depth": 2,
+      "parent_joint_probability": 0.3684210526315789,
+      "joint_probability": 0.11619433198380563,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Potential disruption to global oil supplies"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Increased demand for tanker services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9e083ac7": {
+      "node_id": "9e083ac7",
+      "description": "US and Israel issue joint statement condemning Iran's actions, but do not announce military response",
+      "branch_probability": 0.20769230769230768,
+      "parent_id": "12e917d7",
+      "depth": 2,
+      "parent_joint_probability": 0.3684210526315789,
+      "joint_probability": 0.07651821862348177,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EUR/USD"
+          ],
+          "notes": "Reduced tensions and potential for de-escalation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3e37331a": {
+      "node_id": "3e37331a",
+      "description": "Iranian retaliation against Saudi Aramco facilities, disrupting global oil supply",
+      "branch_probability": 0.42758620689655175,
+      "parent_id": "9cef5373",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.18003629764065335,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Potential for significant supply disruption"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions may boost defense stocks"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARAMCO_ABQAIQ_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ARAMCO_KHURAYS_FACILITY",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "9c275537": {
+      "node_id": "9c275537",
+      "description": "US and EU impose additional sanctions on Iran, targeting oil exports",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "9cef5373",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.1306715063520871,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO",
+            "TOT"
+          ],
+          "notes": "Sanctions may further restrict Iranian oil exports"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Sanctions may weaken the Euro"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "02794ca8": {
+      "node_id": "02794ca8",
+      "description": "Iranian enrichment activities confirmed to be severely disrupted",
+      "branch_probability": 0.2620689655172414,
+      "parent_id": "9cef5373",
+      "depth": 2,
+      "parent_joint_probability": 0.42105263157894735,
+      "joint_probability": 0.1103448275862069,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced enrichment capacity may ease oil price pressures"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4980005e": {
+      "node_id": "4980005e",
+      "description": "Iranian retaliation against Israeli or US military assets",
+      "branch_probability": 0.45,
+      "parent_id": "33c753f0",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.09473684210526316,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased tensions could lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1d1e7fb5": {
+      "node_id": "1d1e7fb5",
+      "description": "Iranian closure of Strait of Hormuz",
+      "branch_probability": 0.3,
+      "parent_id": "33c753f0",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.0631578947368421,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Disruption to global oil supplies could lead to price spikes"
+        },
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -30.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Closure of Strait would severely impact tanker traffic"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "fe939ff1": {
+      "node_id": "fe939ff1",
+      "description": "International condemnation and diplomatic efforts to de-escalate",
+      "branch_probability": 0.25,
+      "parent_id": "33c753f0",
+      "depth": 2,
+      "parent_joint_probability": 0.21052631578947367,
+      "joint_probability": 0.05263157894736842,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "EUR"
+          ],
+          "notes": "Global uncertainty could lead to currency fluctuations"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

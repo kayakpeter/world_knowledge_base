@@ -1,0 +1,564 @@
+{
+  "scenario_id": "india-pakistan-operation-sindo-20260316-0358-9833a3",
+  "trigger_event": "India-Pakistan Operation Sindoor escalates to artillery exchange across LoC",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-16T03:58:12.491907+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-pa_root": {
+      "node_id": "india-pa_root",
+      "description": "India-Pakistan Operation Sindoor escalates to artillery exchange across LoC",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "b94105e2",
+        "1d9316d3",
+        "80813dd1",
+        "f570f90c"
+      ],
+      "pruned_reason": ""
+    },
+    "b94105e2": {
+      "node_id": "b94105e2",
+      "description": "Artillery exchange leads to significant civilian casualties, prompting international condemnation.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3333333333333333,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense equipment and services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "0ef564ec",
+        "0bc6bfb4",
+        "983ba752"
+      ],
+      "pruned_reason": ""
+    },
+    "1d9316d3": {
+      "node_id": "1d9316d3",
+      "description": "Pakistani forces launch a counter-operation, leading to a broader military engagement.",
+      "branch_probability": 0.26666666666666666,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.26666666666666666,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Currency devaluation due to increased instability."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KASHMIR_ROADS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "493794d8",
+        "785b6c50",
+        "69c5b3d4"
+      ],
+      "pruned_reason": ""
+    },
+    "80813dd1": {
+      "node_id": "80813dd1",
+      "description": "India imposes economic sanctions on Pakistan, affecting bilateral trade.",
+      "branch_probability": 0.2222222222222222,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2222222222222222,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -3.0,
+          "tickers": [
+            "MOS"
+          ],
+          "notes": "Disruption in agricultural trade between the two countries."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "05772dde",
+        "334c6e55",
+        "00b7ba5f"
+      ],
+      "pruned_reason": ""
+    },
+    "f570f90c": {
+      "node_id": "f570f90c",
+      "description": "International mediators, including the US and China, intervene to de-escalate tensions.",
+      "branch_probability": 0.17777777777777778,
+      "parent_id": "india-pa_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.17777777777777778,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "IND",
+            "PAK"
+          ],
+          "notes": "Stabilization efforts boost sovereign ratings."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "eea3432e",
+        "f7d78344",
+        "e225dede"
+      ],
+      "pruned_reason": ""
+    },
+    "0ef564ec": {
+      "node_id": "0ef564ec",
+      "description": "India and Pakistan agree to a ceasefire under international pressure, reducing tensions.",
+      "branch_probability": 0.45,
+      "parent_id": "b94105e2",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.15,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Ceasefire reduces immediate demand for defense stocks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "0bc6bfb4": {
+      "node_id": "0bc6bfb4",
+      "description": "The conflict intensifies, leading to a full-scale military mobilization by both sides.",
+      "branch_probability": 0.35,
+      "parent_id": "b94105e2",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.11666666666666665,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Increased tensions boost oil prices due to supply concerns."
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 25.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Mobilization increases demand for defense stocks."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KASHMIR_ROADWAYS",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "INDIAN_AIRSPACE",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "983ba752": {
+      "node_id": "983ba752",
+      "description": "Regional allies (e.g., China, USA) intervene to mediate, leading to a temporary de-escalation.",
+      "branch_probability": 0.2,
+      "parent_id": "b94105e2",
+      "depth": 2,
+      "parent_joint_probability": 0.3333333333333333,
+      "joint_probability": 0.06666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Mediation efforts stabilize regional currencies."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "493794d8": {
+      "node_id": "493794d8",
+      "description": "Artillery exchanges intensify, causing significant civilian casualties and infrastructure damage.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "1d9316d3",
+      "depth": 2,
+      "parent_joint_probability": 0.26666666666666666,
+      "joint_probability": 0.11428571428571428,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT",
+            "RTX"
+          ],
+          "notes": "Increased demand for defense equipment and support."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KASHMIR_ELECTRICITY_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "KASHMIR_ROADS",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "785b6c50": {
+      "node_id": "785b6c50",
+      "description": "International condemnation leads to diplomatic pressure for a ceasefire, but fighting continues.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "1d9316d3",
+      "depth": 2,
+      "parent_joint_probability": 0.26666666666666666,
+      "joint_probability": 0.09142857142857141,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "INR",
+            "PKR"
+          ],
+          "notes": "Currency devaluation due to instability."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "69c5b3d4": {
+      "node_id": "69c5b3d4",
+      "description": "Regional allies (China, USA) intervene to mediate, temporarily reducing tensions.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "1d9316d3",
+      "depth": 2,
+      "parent_joint_probability": 0.26666666666666666,
+      "joint_probability": 0.06095238095238095,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "INDIA",
+            "PAKISTAN"
+          ],
+          "notes": "Sovereign credit ratings may be downgraded due to conflict."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "05772dde": {
+      "node_id": "05772dde",
+      "description": "Pakistan responds by imposing reciprocal economic sanctions, further disrupting regional trade.",
+      "branch_probability": 0.5151515151515151,
+      "parent_id": "80813dd1",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.11447811447811447,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Disruption in cross-border agricultural trade"
+        },
+        {
+          "sector": "container",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Reduction in container traffic between India and Pakistan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "334c6e55": {
+      "node_id": "334c6e55",
+      "description": "India and Pakistan engage in diplomatic talks mediated by China to de-escalate tensions.",
+      "branch_probability": 0.27272727272727276,
+      "parent_id": "80813dd1",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.06060606060606061,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "00b7ba5f": {
+      "node_id": "00b7ba5f",
+      "description": "The conflict spills over into cyber warfare, with both countries launching cyberattacks against critical infrastructure.",
+      "branch_probability": 0.21212121212121213,
+      "parent_id": "80813dd1",
+      "depth": 2,
+      "parent_joint_probability": 0.2222222222222222,
+      "joint_probability": 0.04713804713804714,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "L&T",
+            "BHEL"
+          ],
+          "notes": "Increased demand for cybersecurity and defense solutions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIA_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "PAKISTAN_TELECOM",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "eea3432e": {
+      "node_id": "eea3432e",
+      "description": "Mediation efforts succeed, leading to a temporary ceasefire and reduction in hostilities.",
+      "branch_probability": 0.6,
+      "parent_id": "f570f90c",
+      "depth": 2,
+      "parent_joint_probability": 0.17777777777777778,
+      "joint_probability": 0.10666666666666667,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Reduced military tensions lower defense stock prices."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f7d78344": {
+      "node_id": "f7d78344",
+      "description": "Mediation fails, and both sides increase their military presence along the LoC, leading to further skirmishes.",
+      "branch_probability": 0.3,
+      "parent_id": "f570f90c",
+      "depth": 2,
+      "parent_joint_probability": 0.17777777777777778,
+      "joint_probability": 0.05333333333333334,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased military tensions boost defense stock prices."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KASHMIR_ROADWAYS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e225dede": {
+      "node_id": "e225dede",
+      "description": "Regional allies (e.g., Russia, Iran) offer additional support to Pakistan, complicating mediation efforts.",
+      "branch_probability": 0.1,
+      "parent_id": "f570f90c",
+      "depth": 2,
+      "parent_joint_probability": 0.17777777777777778,
+      "joint_probability": 0.017777777777777778,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "INR=X"
+          ],
+          "notes": "Increased regional tensions lead to a weaker Indian Rupee."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

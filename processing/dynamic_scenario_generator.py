@@ -5,7 +5,7 @@ Takes current crack detector output and asks local Ollama to generate new scenar
 beyond the 50 pre-coded ones. These are stored as JSON for inspection and used
 in the current run's scenario analysis.
 
-Model: qwen2.5-coder:32b at http://localhost:11434/v1
+Model: gemma4:31b via ollama native API at http://localhost:11434/api/chat
 """
 from __future__ import annotations
 
@@ -16,15 +16,15 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-import openai
+import requests
 
-from processing.scenario_engine import Scenario
+from processing.scenario_engine import Scenario, SCENARIO_REGISTRY
 
 logger = logging.getLogger(__name__)
 
 DYNAMIC_DIR = Path(__file__).parent.parent / "data" / "dynamic_scenarios"
-OLLAMA_BASE_URL = "http://localhost:11434/v1"
-OLLAMA_MODEL = "qwen2.5-coder:32b"
+OLLAMA_BASE_URL = "http://localhost:11434"
+OLLAMA_MODEL = "gemma4:31b"
 
 SYSTEM_PROMPT = """\
 You are a sovereign economic analyst. Given a list of active crack patterns,
@@ -51,8 +51,11 @@ def parse_scenario_json(content: str) -> list[Scenario]:
     """Parse LLM JSON output into Scenario objects. Returns [] on failure."""
     try:
         raw = json.loads(content)
+        if not isinstance(raw, list):
+            logger.warning(f"Expected JSON array from LLM, got {type(raw).__name__} — skipping")
+            return []
         scenarios = []
-        for i, item in enumerate(raw, start=51):  # start IDs after the 50 static ones
+        for i, item in enumerate(raw, start=max(s.scenario_id for s in SCENARIO_REGISTRY) + 1):  # dynamic IDs continue after the static registry's max ID
             try:
                 scenarios.append(Scenario(
                     scenario_id=i,
@@ -101,18 +104,22 @@ class DynamicScenarioGenerator:
             + "\n".join(f"- {s}" for s in active_crack_summaries)
         )
 
-        client = openai.OpenAI(base_url=self.base_url, api_key="ollama")
         try:
-            response = client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": user_content},
-                ],
-                temperature=0.7,
-                max_tokens=4096,
+            response = requests.post(
+                f"{self.base_url}/api/chat",
+                json={
+                    "model": self.model,
+                    "messages": [
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": user_content},
+                    ],
+                    "stream": False,
+                    "options": {"temperature": 0.7, "num_predict": 4096},
+                },
+                timeout=300,
             )
-            content = response.choices[0].message.content
+            response.raise_for_status()
+            content = response.json()["message"]["content"]
             scenarios = parse_scenario_json(content)
             logger.info(f"Dynamic scenario generator: produced {len(scenarios)} scenarios")
             return scenarios

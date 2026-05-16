@@ -1,0 +1,419 @@
+{
+  "scenario_id": "abqaiq-oil-processing-facility-20260330-0337-d733f7",
+  "trigger_event": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-30T03:37:26.092641+00:00",
+  "expires_at": "2026-04-02T03:37:26.092641+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "abqaiq-o_root": {
+      "node_id": "abqaiq-o_root",
+      "description": "Abqaiq oil processing facility struck by IRGC autonomous drones",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "9bdee24f",
+        "20af89e1",
+        "a3424aed"
+      ],
+      "pruned_reason": ""
+    },
+    "9bdee24f": {
+      "node_id": "9bdee24f",
+      "description": "Saudi Aramco declares force majeure on all crude oil exports",
+      "branch_probability": 0.346938775510204,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.346938775510204,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "ARAMCO"
+          ],
+          "notes": "Immediate halt to all crude oil exports"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "d7c6ff01",
+        "c8fd7440",
+        "7fed0382"
+      ],
+      "pruned_reason": ""
+    },
+    "20af89e1": {
+      "node_id": "20af89e1",
+      "description": "US Navy deploys additional warships to Persian Gulf in response",
+      "branch_probability": 0.28571428571428564,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.28571428571428564,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NOC"
+          ],
+          "notes": "Increased military presence in the region"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "ab84dedf",
+        "6892589b",
+        "3e5647d9"
+      ],
+      "pruned_reason": ""
+    },
+    "a3424aed": {
+      "node_id": "a3424aed",
+      "description": "Abqaiq oil processing facility suffers significant damage, reducing Saudi crude production by 50%",
+      "branch_probability": 0.36734693877551017,
+      "parent_id": "abqaiq-o_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.36734693877551017,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced crude production will impact global oil supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_OIL_PROCESSING_FACILITY",
+          "new_status": "DEGRADED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 6.0,
+      "confidence": 0.7,
+      "children": [
+        "5f693da6",
+        "71dec4d3",
+        "e181f6e0"
+      ],
+      "pruned_reason": ""
+    },
+    "d7c6ff01": {
+      "node_id": "d7c6ff01",
+      "description": "Global oil prices surge as markets react to Saudi export halt",
+      "branch_probability": 0.427906976744186,
+      "parent_id": "9bdee24f",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.14845752254390124,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "BNO",
+            "DBO"
+          ],
+          "notes": "Brent and WTI prices spike on supply concerns"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c8fd7440": {
+      "node_id": "c8fd7440",
+      "description": "US Navy deploys additional warships to Persian Gulf in response to Abqaiq attack",
+      "branch_probability": 0.31162790697674414,
+      "parent_id": "9bdee24f",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.10811580446131938,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Defense contractors see increased demand for naval assets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7fed0382": {
+      "node_id": "7fed0382",
+      "description": "Iranian oil exports severely disrupted as US and allies impose retaliatory sanctions",
+      "branch_probability": 0.26046511627906976,
+      "parent_id": "9bdee24f",
+      "depth": 2,
+      "parent_joint_probability": 0.346938775510204,
+      "joint_probability": 0.09036544850498338,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "IOC"
+          ],
+          "notes": "Iranian oil exports grind to a halt"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ab84dedf": {
+      "node_id": "ab84dedf",
+      "description": "Saudi Aramco declares Force Majeure on oil exports, citing production disruptions",
+      "branch_probability": 0.37777777777777777,
+      "parent_id": "20af89e1",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.1079365079365079,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "RDSB"
+          ],
+          "notes": "Global oil prices surge as Saudi Arabia's production capacity is severely impacted"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ABQAIQ_OIL_PROCESSING_FACILITY",
+          "new_status": "STRUCK_OIL_INFRA",
+          "confidence": 1.0
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6892589b": {
+      "node_id": "6892589b",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) threatens to target US warships in the Persian Gulf",
+      "branch_probability": 0.26666666666666666,
+      "parent_id": "20af89e1",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.07619047619047617,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "LMT",
+            "RTN"
+          ],
+          "notes": "US defense contractors see increased demand for naval defense systems"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3e5647d9": {
+      "node_id": "3e5647d9",
+      "description": "Hormuz Strait maritime traffic slows due to increased military presence and security concerns",
+      "branch_probability": 0.35555555555555557,
+      "parent_id": "20af89e1",
+      "depth": 2,
+      "parent_joint_probability": 0.28571428571428564,
+      "joint_probability": 0.10158730158730156,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Tanker rates increase due to reduced vessel traffic and increased risk premium"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5f693da6": {
+      "node_id": "5f693da6",
+      "description": "Saudi Arabia declares emergency and invokes OPEC cooperation to stabilize global oil markets",
+      "branch_probability": 0.44973544973544977,
+      "parent_id": "a3424aed",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.1652089407191448,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "WTI",
+            "BRENT"
+          ],
+          "notes": "Global oil prices surge as Saudi production cuts ripple through the market"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "71dec4d3": {
+      "node_id": "71dec4d3",
+      "description": "US military assets in the region are put on high alert, with Patriot missile defense systems activated to counter potential Iranian aggression",
+      "branch_probability": 0.3280423280423281,
+      "parent_id": "a3424aed",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.12050534499514091,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "NOC",
+            "RTX"
+          ],
+          "notes": "US defense contractors see increased demand for missile defense systems"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "PRINCE_SULTAN_AIR_BASE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "e181f6e0": {
+      "node_id": "e181f6e0",
+      "description": "Iranian oil exports are targeted by the US in response to the Abqaiq attack, with sanctions imposed on Iranian oil tankers and ports",
+      "branch_probability": 0.22222222222222224,
+      "parent_id": "a3424aed",
+      "depth": 2,
+      "parent_joint_probability": 0.36734693877551017,
+      "joint_probability": 0.08163265306122448,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Iranian oil exports are severely curtailed due to US sanctions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "KHARG_ISLAND_OIL_TERMINAL",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

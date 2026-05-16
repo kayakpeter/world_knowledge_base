@@ -1,0 +1,414 @@
+{
+  "scenario_id": "idf-launches-lebanon-ground-in-20260316-0300-6e9e23",
+  "trigger_event": "IDF launches Lebanon ground invasion \u2014 2006-scale operation",
+  "severity": "CRITICAL",
+  "confirmed": true,
+  "created_at": "2026-03-16T03:00:55.024557+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "idf-laun_root": {
+      "node_id": "idf-laun_root",
+      "description": "IDF launches Lebanon ground invasion \u2014 2006-scale operation",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "d2033c26",
+        "6ec082f8",
+        "0db03ffe"
+      ],
+      "pruned_reason": ""
+    },
+    "d2033c26": {
+      "node_id": "d2033c26",
+      "description": "Hezbollah launches widespread rocket attacks on northern Israel, causing civilian casualties and infrastructure damage.",
+      "branch_probability": 0.38636363636363635,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.38636363636363635,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense systems and military equipment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_NORTH_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "ISRAEL_NORTH_WATER_SUPPLY",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "37c0e2ea",
+        "cf668e48",
+        "4ff5e49f"
+      ],
+      "pruned_reason": ""
+    },
+    "6ec082f8": {
+      "node_id": "6ec082f8",
+      "description": "International condemnation and calls for an immediate ceasefire, leading to increased diplomatic pressure on both sides.",
+      "branch_probability": 0.3409090909090909,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3409090909090909,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Weakening of the Israeli shekel due to uncertainty and potential sanctions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "7b71ded3",
+        "c9f85575",
+        "8fe61384"
+      ],
+      "pruned_reason": ""
+    },
+    "0db03ffe": {
+      "node_id": "0db03ffe",
+      "description": "Syria and Iran provide additional military support to Hezbollah, escalating the conflict further.",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "idf-laun_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Oil prices surge due to fears of supply disruptions in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SYRIA\u8fb9\u5883\u57fa\u7840\u8bbe\u65bd",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "LEBANON_OIL_FACILITIES",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "8cb834dd",
+        "88768fcb",
+        "61bbd930"
+      ],
+      "pruned_reason": ""
+    },
+    "37c0e2ea": {
+      "node_id": "37c0e2ea",
+      "description": "Israel intensifies air strikes on Hezbollah strongholds, causing significant civilian casualties and infrastructure destruction.",
+      "branch_probability": 0.42857142857142855,
+      "parent_id": "d2033c26",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.16558441558441558,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for military equipment and services."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_INTL_AIRPORT",
+          "new_status": "CLOSED",
+          "confidence": 0.85
+        },
+        {
+          "infra_id": "LEBANON_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "cf668e48": {
+      "node_id": "cf668e48",
+      "description": "International condemnation leads to emergency UN Security Council meeting, but no immediate resolution is reached.",
+      "branch_probability": 0.3428571428571428,
+      "parent_id": "d2033c26",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.13246753246753246,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "4ff5e49f": {
+      "node_id": "4ff5e49f",
+      "description": "Hezbollah captures key border towns, leading to a humanitarian crisis and increased refugee flows into neighboring countries.",
+      "branch_probability": 0.22857142857142856,
+      "parent_id": "d2033c26",
+      "depth": 2,
+      "parent_joint_probability": 0.38636363636363635,
+      "joint_probability": 0.08831168831168831,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "MON"
+          ],
+          "notes": "Disruption in agricultural production and supply chains."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_NORTH_BORDER_CROSSINGS",
+          "new_status": "CLOSED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7b71ded3": {
+      "node_id": "7b71ded3",
+      "description": "UN Security Council convenes an emergency session to discuss the situation, potentially leading to a resolution demanding an immediate ceasefire.",
+      "branch_probability": 0.3953488372093023,
+      "parent_id": "6ec082f8",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.1347780126849894,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "c9f85575": {
+      "node_id": "c9f85575",
+      "description": "Regional powers, such as Saudi Arabia and Egypt, increase their diplomatic efforts to mediate between Israel and Lebanon, possibly leading to a temporary truce.",
+      "branch_probability": 0.27906976744186046,
+      "parent_id": "6ec082f8",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.09513742071881606,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense contracts and military support."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8fe61384": {
+      "node_id": "8fe61384",
+      "description": "Humanitarian organizations face challenges in delivering aid due to the ongoing conflict, leading to a rise in humanitarian crisis concerns.",
+      "branch_probability": 0.3255813953488372,
+      "parent_id": "6ec082f8",
+      "depth": 2,
+      "parent_joint_probability": 0.3409090909090909,
+      "joint_probability": 0.11099365750528539,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "agriculture",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "MON",
+            "DE"
+          ],
+          "notes": "Disruption in agricultural supply chains and food distribution."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8cb834dd": {
+      "node_id": "8cb834dd",
+      "description": "Israel expands air strikes into Syrian territory, targeting supply lines.",
+      "branch_probability": 0.28125,
+      "parent_id": "0db03ffe",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.07670454545454544,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SYRIA_AIRSPACE",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "88768fcb": {
+      "node_id": "88768fcb",
+      "description": "Hezbollah launches a significant number of rockets into Israeli civilian areas, causing widespread panic and casualties.",
+      "branch_probability": 0.375,
+      "parent_id": "0db03ffe",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.10227272727272727,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "ILS"
+          ],
+          "notes": "Shekel depreciates due to increased uncertainty and economic disruption."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ISRAEL_CIVILIAN_INFRA",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "61bbd930": {
+      "node_id": "61bbd930",
+      "description": "International condemnation leads to urgent UN Security Council meetings and calls for a ceasefire.",
+      "branch_probability": 0.34375,
+      "parent_id": "0db03ffe",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.09375,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete",
+  "confirmation": {
+    "confirmed_at": "2026-03-30T14:50:41.257214+00:00",
+    "confidence": 0.8,
+    "evidence": "Multiple headlines report Israeli troops entering Lebanon, with phrases such as 'Israel to widen invasion of Lebanon', 'Israeli troops ski into Lebanon', and 'multi-front war' suggesting a significant military operation.",
+    "key_headline": "Israel to widen invasion of Lebanon",
+    "source": "scenario_confirmation_check"
+  }
+}

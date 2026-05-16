@@ -1,0 +1,10 @@
+{
+  "scenario_id": "china-dprk-military-coordinati-20260316-0502-a43d59",
+  "trigger_event": "China-DPRK military coordination confirmed \u2014 DPRK fires ballistic missiles toward Japan",
+  "severity": "HIGH",
+  "generated_at": "2026-03-16T05:13:40.071669+00:00",
+  "defense_bonus": 2.898,
+  "currency_bonus": 1.741,
+  "shipping_bonus": 1.1,
+  "sovereign_bonus": 1.008
+}

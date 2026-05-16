@@ -1,0 +1,477 @@
+{
+  "scenario_id": "iran-ballistic-missile-salvo-b-20260330-0423-c1de2c",
+  "trigger_event": "Iran ballistic missile salvo breaches Israeli air defenses \u2014 mass civilian casualties",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:23:12.153738+00:00",
+  "expires_at": "2026-04-02T04:23:12.153738+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "iran-bal_root": {
+      "node_id": "iran-bal_root",
+      "description": "Iran ballistic missile salvo breaches Israeli air defenses \u2014 mass civilian casualties",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "87213376",
+        "7736fa6d",
+        "9517bf08"
+      ],
+      "pruned_reason": ""
+    },
+    "87213376": {
+      "node_id": "87213376",
+      "description": "Israel launches retaliatory airstrikes against Iranian military targets",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4594594594594594,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for defense systems and services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IMAM_KHOMEINI_AIRBASE",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 2.0,
+      "confidence": 0.7,
+      "children": [
+        "c107195f",
+        "de34cddb",
+        "a273341e"
+      ],
+      "pruned_reason": ""
+    },
+    "7736fa6d": {
+      "node_id": "7736fa6d",
+      "description": "US and EU impose severe economic sanctions on Iran in response to the attack",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3243243243243243,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Reduced Iranian oil exports"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Iranian Rial devaluation"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "f29122a8",
+        "00e13108",
+        "8792b098"
+      ],
+      "pruned_reason": ""
+    },
+    "9517bf08": {
+      "node_id": "9517bf08",
+      "description": "Hamas and Hezbollah launch coordinated rocket attacks against Israeli cities",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "iran-bal_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2162162162162162,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "TRV"
+          ],
+          "notes": "Increased demand for insurance services"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "5f84d56f",
+        "a0448e5e",
+        "ed820f2d"
+      ],
+      "pruned_reason": ""
+    },
+    "c107195f": {
+      "node_id": "c107195f",
+      "description": "Iran responds with missile strikes on Israeli cities, prompting further escalation",
+      "branch_probability": 0.3618090452261306,
+      "parent_id": "87213376",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.16623658834714106,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Increased demand for missile defense systems"
+        },
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "TOT"
+          ],
+          "notes": "Potential disruptions to Israeli natural gas exports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "TEL_AVIV_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        },
+        {
+          "infra_id": "HAIFA_REFINERY",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "de34cddb": {
+      "node_id": "de34cddb",
+      "description": "US and EU condemn Iranian actions, impose new sanctions on Tehran",
+      "branch_probability": 0.42713567839195976,
+      "parent_id": "87213376",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.1962515279098193,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased tensions lead to safe-haven demand for USD"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "TLT"
+          ],
+          "notes": "Flight to quality in bond markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a273341e": {
+      "node_id": "a273341e",
+      "description": "Hezbollah launches rocket attacks on Israeli border towns, drawing Lebanon into the conflict",
+      "branch_probability": 0.21105527638190952,
+      "parent_id": "87213376",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.09697134320249895,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "LMT"
+          ],
+          "notes": "Increased demand for air defense systems and munitions"
+        },
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -12.0,
+          "tickers": [
+            "TRV"
+          ],
+          "notes": "Potential losses from property damage and business interruption"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "BEIRUT_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f29122a8": {
+      "node_id": "f29122a8",
+      "description": "Iranian oil exports plummet as international buyers shun Iranian crude",
+      "branch_probability": 0.45810055865921784,
+      "parent_id": "7736fa6d",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.1485731541597463,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "WTI"
+          ],
+          "notes": "Global oil prices surge as Iranian supply dries up"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "00e13108": {
+      "node_id": "00e13108",
+      "description": "Hezbollah launches retaliatory rocket attacks on Israeli cities from Lebanon",
+      "branch_probability": 0.3128491620111732,
+      "parent_id": "7736fa6d",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.1014645930847048,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "RTN"
+          ],
+          "notes": "Israeli defense stocks rise on increased tensions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8792b098": {
+      "node_id": "8792b098",
+      "description": "Iranian Revolutionary Guard Corps (IRGC) seizes a British-flagged oil tanker in the Strait of Hormuz",
+      "branch_probability": 0.22905027932960892,
+      "parent_id": "7736fa6d",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.07428657707987316,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Tanker rates surge on increased risk premium"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "5f84d56f": {
+      "node_id": "5f84d56f",
+      "description": "Israel launches retaliatory airstrikes against Iranian military targets, including nuclear facilities",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "9517bf08",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.0993425858290723,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RTN",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems and munitions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "IRAN_NATANZ_NUCLEAR_FACILITY",
+          "new_status": "STRUCK_MILITARY",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a0448e5e": {
+      "node_id": "a0448e5e",
+      "description": "US and EU impose severe economic sanctions on Iran, targeting oil exports and financial transactions",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "9517bf08",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.07012417823228632,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "XOM",
+            "CVX"
+          ],
+          "notes": "Potential supply disruptions in global oil markets"
+        },
+        {
+          "sector": "currency",
+          "direction": "DOWN",
+          "magnitude": "SIGNIFICANT",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "EURUSD"
+          ],
+          "notes": "Increased volatility in currency markets"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ed820f2d": {
+      "node_id": "ed820f2d",
+      "description": "Hamas and Hezbollah intensify rocket attacks on Israeli cities, prompting a large-scale IDF ground invasion of Gaza",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "9517bf08",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.046749452154857554,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "RTN",
+            "LMT"
+          ],
+          "notes": "Increased demand for defense systems and munitions"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "GAZA_STRIP_INFRASTRUCTURE",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

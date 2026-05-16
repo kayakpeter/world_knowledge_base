@@ -1,0 +1,445 @@
+{
+  "scenario_id": "china-fuel-export-ban-expands--20260330-0454-f3d34a",
+  "trigger_event": "China fuel export ban expands \u2014 Asia-Pacific energy crisis accelerates",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:54:52.292604+00:00",
+  "expires_at": "2026-04-02T04:54:52.292604+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "china-fu_root": {
+      "node_id": "china-fu_root",
+      "description": "China fuel export ban expands \u2014 Asia-Pacific energy crisis accelerates",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "1781f9a3",
+        "5ec9637a",
+        "adf9f051"
+      ],
+      "pruned_reason": ""
+    },
+    "1781f9a3": {
+      "node_id": "1781f9a3",
+      "description": "Regional refining capacity is severely strained, leading to a surge in fuel prices and shortages",
+      "branch_probability": 0.4594594594594594,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.4594594594594594,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "FRO",
+            "TK"
+          ],
+          "notes": "Refining margins skyrocket as regional demand outstrips supply"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SINGAPORE_REFINERY_COMPLEX",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "4edbd900",
+        "45fbabcc",
+        "7fee6f17"
+      ],
+      "pruned_reason": ""
+    },
+    "5ec9637a": {
+      "node_id": "5ec9637a",
+      "description": "Japan and South Korea scramble to secure alternative fuel supplies, sparking a diplomatic row with China",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3243243243243243,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "6753.T"
+          ],
+          "notes": "Japanese energy stocks rise on hopes of increased imports"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "CNY=USD"
+          ],
+          "notes": "Chinese yuan weakens as diplomatic tensions escalate"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "1e6dd703",
+        "850e7741",
+        "32c2e066"
+      ],
+      "pruned_reason": ""
+    },
+    "adf9f051": {
+      "node_id": "adf9f051",
+      "description": "Indonesian and Malaysian governments impose fuel rationing to mitigate the crisis, sparking civil unrest",
+      "branch_probability": 0.2162162162162162,
+      "parent_id": "china-fu_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2162162162162162,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "Petrobras"
+          ],
+          "notes": "Regional energy demand destruction accelerates"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "JAKARTA_PORT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "7b5d7d19",
+        "68bf0029",
+        "8f4eb3de"
+      ],
+      "pruned_reason": ""
+    },
+    "4edbd900": {
+      "node_id": "4edbd900",
+      "description": "Regional governments impose fuel rationing measures to mitigate shortages",
+      "branch_probability": 0.3618090452261306,
+      "parent_id": "1781f9a3",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.16623658834714106,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "SINOPEC"
+          ],
+          "notes": "Increased demand for fuel drives up prices"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "45fbabcc": {
+      "node_id": "45fbabcc",
+      "description": "Tanker rates skyrocket as Asian buyers scramble to secure alternative fuel supplies",
+      "branch_probability": 0.42713567839195976,
+      "parent_id": "1781f9a3",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.1962515279098193,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Emergency shipments drive up demand for tanker capacity"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7fee6f17": {
+      "node_id": "7fee6f17",
+      "description": "South Korea and Japan activate emergency oil stockpiles to stabilize fuel supplies",
+      "branch_probability": 0.21105527638190952,
+      "parent_id": "1781f9a3",
+      "depth": 2,
+      "parent_joint_probability": 0.4594594594594594,
+      "joint_probability": 0.09697134320249895,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -10.0,
+          "tickers": [
+            "SKINNOVATION"
+          ],
+          "notes": "Release of strategic reserves eases price pressure"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1e6dd703": {
+      "node_id": "1e6dd703",
+      "description": "Japan and South Korea successfully negotiate emergency fuel imports from the United States, easing energy shortages",
+      "branch_probability": 0.42,
+      "parent_id": "5ec9637a",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.13621621621621618,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Reduced demand for spot market fuels"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "850e7741": {
+      "node_id": "850e7741",
+      "description": "China seizes a Japanese-flagged tanker in the South China Sea, escalating tensions and disrupting global shipping",
+      "branch_probability": 0.28,
+      "parent_id": "5ec9637a",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.09081081081081081,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 50.0,
+          "tickers": [
+            "TK"
+          ],
+          "notes": "Increased risk premium for tanker operators"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SOUTH_CHINA_SEA_SHIPPING_LANE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "32c2e066": {
+      "node_id": "32c2e066",
+      "description": "South Korea's energy shortages lead to widespread power outages, prompting a state of emergency declaration",
+      "branch_probability": 0.35,
+      "parent_id": "5ec9637a",
+      "depth": 2,
+      "parent_joint_probability": 0.3243243243243243,
+      "joint_probability": 0.11351351351351349,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 80.0,
+          "tickers": [
+            "KEP"
+          ],
+          "notes": "Severe energy shortages impact Korean economy"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SOUTH_KOREA_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.9
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "7b5d7d19": {
+      "node_id": "7b5d7d19",
+      "description": "Singapore declares a state of emergency and deploys military units to maintain order as fuel riots spread",
+      "branch_probability": 0.42,
+      "parent_id": "adf9f051",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.0908108108108108,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Fuel prices surge as regional supplies dwindle"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Increased demand for security services and equipment"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SINGAPORE_REFINERY",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "68bf0029": {
+      "node_id": "68bf0029",
+      "description": "Australia offers emergency fuel aid to Indonesia and Malaysia, easing tensions but straining its own energy supplies",
+      "branch_probability": 0.31,
+      "parent_id": "adf9f051",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.06702702702702702,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "STO"
+          ],
+          "notes": "Australian fuel prices stabilize as exports increase"
+        },
+        {
+          "sector": "agriculture",
+          "direction": "UP",
+          "magnitude": "SLIGHT",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "AGU"
+          ],
+          "notes": "Increased demand for Australian agricultural products"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "8f4eb3de": {
+      "node_id": "8f4eb3de",
+      "description": "The Philippines and Vietnam announce plans to increase domestic fuel production, reducing reliance on imports",
+      "branch_probability": 0.21,
+      "parent_id": "adf9f051",
+      "depth": 2,
+      "parent_joint_probability": 0.2162162162162162,
+      "joint_probability": 0.0454054054054054,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 12.0,
+          "tickers": [
+            "PBR"
+          ],
+          "notes": "Regional energy companies see increased investment opportunities"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

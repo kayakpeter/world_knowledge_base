@@ -1,0 +1,10 @@
+{
+  "scenario_id": "uae-fujairah-terminal-struck-\u2014-20260330-0401-5b0bb0",
+  "trigger_event": "UAE Fujairah terminal struck \u2014 world second-largest bunkering hub offline",
+  "severity": "CRITICAL",
+  "generated_at": "2026-03-30T04:12:59.781167+00:00",
+  "energy_bonus": 2.609,
+  "shipping_bonus": 1.643,
+  "insurance_bonus": 1.279,
+  "sovereign_bonus": 1.0
+}

@@ -1,0 +1,530 @@
+{
+  "scenario_id": "india-hormuz-exemption-revoked-20260316-0421-7dab57",
+  "trigger_event": "India Hormuz exemption revoked \u2014 Indian tankers attacked in Arabian Sea",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-16T04:21:24.697764+00:00",
+  "expires_at": "2026-04-06T03:14:24.588059+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-ho_root": {
+      "node_id": "india-ho_root",
+      "description": "India Hormuz exemption revoked \u2014 Indian tankers attacked in Arabian Sea",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "33bb3e08",
+        "8582c6d2",
+        "f8b9b631",
+        "1e6ab92e"
+      ],
+      "pruned_reason": ""
+    },
+    "33bb3e08": {
+      "node_id": "33bb3e08",
+      "description": "India increases naval presence in the Arabian Sea to protect its shipping lanes.",
+      "branch_probability": 0.27868852459016397,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.27868852459016397,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "L&T",
+            "HAL"
+          ],
+          "notes": "Increased demand for naval assets and security services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "d51f7f6c",
+        "ca35fde0",
+        "ae7718ec"
+      ],
+      "pruned_reason": ""
+    },
+    "8582c6d2": {
+      "node_id": "8582c6d2",
+      "description": "Insurance premiums for Indian vessels operating in the Arabian Sea surge due to heightened risk.",
+      "branch_probability": 0.2950819672131148,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2950819672131148,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "TATA_AIG",
+            "BAJAJ_ALLIANZ"
+          ],
+          "notes": "Significant increase in premiums to cover higher risk of attacks."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "a026986a",
+        "3df3f262",
+        "731dd841"
+      ],
+      "pruned_reason": ""
+    },
+    "f8b9b631": {
+      "node_id": "f8b9b631",
+      "description": "India imposes sanctions on entities suspected of involvement in the attacks, leading to diplomatic tensions.",
+      "branch_probability": 0.22950819672131148,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.22950819672131148,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Potential economic and political fallout from sanctions."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [
+        "aecf18f3",
+        "46cf6880",
+        "53414e73"
+      ],
+      "pruned_reason": ""
+    },
+    "1e6ab92e": {
+      "node_id": "1e6ab92e",
+      "description": "The Strait of Hormuz sees increased traffic disruptions as a result of heightened tensions and security measures.",
+      "branch_probability": 0.19672131147540986,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.19672131147540986,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "HIGH",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "RELIANCE",
+            "ONGC"
+          ],
+          "notes": "Disruptions in oil supply routes lead to price spikes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [
+        "eab2d836",
+        "6aa39d9b",
+        "1a57253e"
+      ],
+      "pruned_reason": ""
+    },
+    "d51f7f6c": {
+      "node_id": "d51f7f6c",
+      "description": "Indian naval forces successfully deter further attacks, stabilizing the situation.",
+      "branch_probability": 0.5,
+      "parent_id": "33bb3e08",
+      "depth": 2,
+      "parent_joint_probability": 0.27868852459016397,
+      "joint_probability": 0.13934426229508198,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [],
+          "notes": "Reduced risk premium for tanker operations in the region."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ca35fde0": {
+      "node_id": "ca35fde0",
+      "description": "Further attacks occur despite increased naval presence, leading to heightened tensions.",
+      "branch_probability": 0.3,
+      "parent_id": "33bb3e08",
+      "depth": 2,
+      "parent_joint_probability": 0.27868852459016397,
+      "joint_probability": 0.08360655737704918,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [],
+          "notes": "Increased risk premium for tanker operations in the region."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARABIAN_SEA_SHIPPING_LANE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "ae7718ec": {
+      "node_id": "ae7718ec",
+      "description": "India and regional powers initiate diplomatic talks to de-escalate the situation.",
+      "branch_probability": 0.2,
+      "parent_id": "33bb3e08",
+      "depth": 2,
+      "parent_joint_probability": 0.27868852459016397,
+      "joint_probability": 0.055737704918032795,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [],
+          "notes": "Increased demand for defense contracts and equipment."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a026986a": {
+      "node_id": "a026986a",
+      "description": "Indian government deploys naval assets to escort and protect commercial shipping in the Arabian Sea.",
+      "branch_probability": 0.4054054054054054,
+      "parent_id": "8582c6d2",
+      "depth": 2,
+      "parent_joint_probability": 0.2950819672131148,
+      "joint_probability": 0.11962782454585734,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "L&T",
+            "BEL"
+          ],
+          "notes": "Increased demand for naval equipment and services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "3df3f262": {
+      "node_id": "3df3f262",
+      "description": "International shipping companies reroute vessels to avoid the Arabian Sea, leading to increased transit times and costs.",
+      "branch_probability": 0.3243243243243243,
+      "parent_id": "8582c6d2",
+      "depth": 2,
+      "parent_joint_probability": 0.2950819672131148,
+      "joint_probability": 0.09570225963668587,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "DSV",
+            "EURN"
+          ],
+          "notes": "Higher demand for longer routes and alternative shipping lanes."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "SUEZ_CANAL",
+          "new_status": "AT_RISK",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "731dd841": {
+      "node_id": "731dd841",
+      "description": "Insurance companies impose a moratorium on new policies for Indian vessels in the Arabian Sea, further increasing operational costs.",
+      "branch_probability": 0.27027027027027023,
+      "parent_id": "8582c6d2",
+      "depth": 2,
+      "parent_joint_probability": 0.2950819672131148,
+      "joint_probability": 0.07975188303057155,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "insurance",
+          "direction": "DOWN",
+          "magnitude": "SEVERE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "TATAAIG",
+            "ICICI"
+          ],
+          "notes": "Reduced availability of insurance coverage for high-risk areas."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 36.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "aecf18f3": {
+      "node_id": "aecf18f3",
+      "description": "India and Iran engage in a series of retaliatory cyberattacks, disrupting critical infrastructure.",
+      "branch_probability": 0.25925925925925924,
+      "parent_id": "f8b9b631",
+      "depth": 2,
+      "parent_joint_probability": 0.22950819672131148,
+      "joint_probability": 0.059502125075895564,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "LMT",
+            "BA"
+          ],
+          "notes": "Increased demand for cybersecurity solutions."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "INDIA_POWER_GRID",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        },
+        {
+          "infra_id": "IRAN_TELECOMS",
+          "new_status": "DEGRADED",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "46cf6880": {
+      "node_id": "46cf6880",
+      "description": "International condemnation leads to a UN Security Council meeting, but no immediate action is taken.",
+      "branch_probability": 0.3333333333333333,
+      "parent_id": "f8b9b631",
+      "depth": 2,
+      "parent_joint_probability": 0.22950819672131148,
+      "joint_probability": 0.07650273224043716,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "53414e73": {
+      "node_id": "53414e73",
+      "description": "India increases naval presence in the Arabian Sea, leading to a heightened risk of further confrontations.",
+      "branch_probability": 0.40740740740740744,
+      "parent_id": "f8b9b631",
+      "depth": 2,
+      "parent_joint_probability": 0.22950819672131148,
+      "joint_probability": 0.09350333940497876,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "DSG",
+            "EURN"
+          ],
+          "notes": "Increased insurance premiums and operational costs."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARABIAN_SEA_NAVIGATION",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "eab2d836": {
+      "node_id": "eab2d836",
+      "description": "Increased naval presence by regional powers leads to further maritime confrontations.",
+      "branch_probability": 0.35,
+      "parent_id": "1e6ab92e",
+      "depth": 2,
+      "parent_joint_probability": 0.19672131147540986,
+      "joint_probability": 0.06885245901639345,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "DSG"
+          ],
+          "notes": "Naval tensions increase insurance premiums for tanker operations."
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "DEGRADED",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "6aa39d9b": {
+      "node_id": "6aa39d9b",
+      "description": "India imposes additional sanctions on Iran, escalating regional tensions.",
+      "branch_probability": 0.25,
+      "parent_id": "1e6ab92e",
+      "depth": 2,
+      "parent_joint_probability": 0.19672131147540986,
+      "joint_probability": 0.049180327868852465,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 30.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Sanctions disrupt oil flows through the Strait of Hormuz."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "1a57253e": {
+      "node_id": "1a57253e",
+      "description": "International condemnation and diplomatic efforts to de-escalate the situation.",
+      "branch_probability": 0.4,
+      "parent_id": "1e6ab92e",
+      "depth": 2,
+      "parent_joint_probability": 0.19672131147540986,
+      "joint_probability": 0.07868852459016396,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA"
+          ],
+          "notes": "Increased demand for defense equipment and services."
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 72.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

@@ -1,0 +1,469 @@
+{
+  "scenario_id": "india-hormuz-exemption-revoked-20260330-0434-c32931",
+  "trigger_event": "India Hormuz exemption revoked \u2014 Indian tankers attacked in Arabian Sea",
+  "severity": "HIGH",
+  "confirmed": true,
+  "created_at": "2026-03-30T04:34:40.528777+00:00",
+  "expires_at": "2026-04-02T04:34:40.528777+00:00",
+  "window_hours": 72,
+  "nodes": {
+    "india-ho_root": {
+      "node_id": "india-ho_root",
+      "description": "India Hormuz exemption revoked \u2014 Indian tankers attacked in Arabian Sea",
+      "branch_probability": 1.0,
+      "parent_id": null,
+      "depth": 0,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 1.0,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [],
+      "infrastructure_effects": [],
+      "time_offset_hours": 0.0,
+      "confidence": 0.7,
+      "children": [
+        "a80f865c",
+        "85497e6a",
+        "01d5aec9"
+      ],
+      "pruned_reason": ""
+    },
+    "a80f865c": {
+      "node_id": "a80f865c",
+      "description": "India retaliates with naval deployment to Arabian Sea, escalating tensions",
+      "branch_probability": 0.3181818181818182,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.3181818181818182,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "HINDALCO"
+          ],
+          "notes": "Increased military spending expected"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [
+        "dee68b28",
+        "f59e18d4",
+        "09294b62"
+      ],
+      "pruned_reason": ""
+    },
+    "85497e6a": {
+      "node_id": "85497e6a",
+      "description": "Global oil prices surge as market reacts to potential supply disruptions",
+      "branch_probability": 0.40909090909090906,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.40909090909090906,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Brent crude price expected to rise significantly"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 3.0,
+      "confidence": 0.7,
+      "children": [
+        "49642f37",
+        "a7824399",
+        "51cb7cf3"
+      ],
+      "pruned_reason": ""
+    },
+    "01d5aec9": {
+      "node_id": "01d5aec9",
+      "description": "Indian government imposes retaliatory trade restrictions on Iranian oil imports",
+      "branch_probability": 0.2727272727272727,
+      "parent_id": "india-ho_root",
+      "depth": 1,
+      "parent_joint_probability": 1.0,
+      "joint_probability": 0.2727272727272727,
+      "status": "expanded",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "IOC"
+          ],
+          "notes": "Indian refineries may face supply disruptions"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [
+        "f1b9a7fe",
+        "726ff57a",
+        "a267780c"
+      ],
+      "pruned_reason": ""
+    },
+    "dee68b28": {
+      "node_id": "dee68b28",
+      "description": "Iran responds with missile strikes on Indian naval vessels",
+      "branch_probability": 0.42,
+      "parent_id": "a80f865c",
+      "depth": 2,
+      "parent_joint_probability": 0.3181818181818182,
+      "joint_probability": 0.13363636363636364,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 15.0,
+          "tickers": [
+            "BAESY"
+          ],
+          "notes": "Increased tensions lead to higher demand for defense equipment"
+        },
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": -20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Disruption of Indian naval presence in the Arabian Sea may impact oil imports"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "CHABAHAR_PORT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f59e18d4": {
+      "node_id": "f59e18d4",
+      "description": "China offers to mediate the conflict, potentially easing tensions",
+      "branch_probability": 0.28,
+      "parent_id": "a80f865c",
+      "depth": 2,
+      "parent_joint_probability": 0.3181818181818182,
+      "joint_probability": 0.0890909090909091,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "currency",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 5.0,
+          "tickers": [
+            "CNY"
+          ],
+          "notes": "Chinese mediation efforts may lead to increased confidence in the yuan"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "09294b62": {
+      "node_id": "09294b62",
+      "description": "US Navy announces plans to escort Indian tankers through the Arabian Sea",
+      "branch_probability": 0.35,
+      "parent_id": "a80f865c",
+      "depth": 2,
+      "parent_joint_probability": 0.3181818181818182,
+      "joint_probability": 0.11136363636363636,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "GD"
+          ],
+          "notes": "Increased US naval presence in the region may lead to higher demand for defense equipment"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "EFFECTIVE_CLOSURE",
+          "confidence": 0.7
+        }
+      ],
+      "time_offset_hours": 30.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "49642f37": {
+      "node_id": "49642f37",
+      "description": "Iranian naval forces blockade Hormuz Strait, halting all tanker traffic",
+      "branch_probability": 0.42758620689655175,
+      "parent_id": "85497e6a",
+      "depth": 2,
+      "parent_joint_probability": 0.40909090909090906,
+      "joint_probability": 0.17492163009404388,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "EXTREME",
+          "magnitude_pct": 60.0,
+          "tickers": [
+            "FRO",
+            "VLCCF"
+          ],
+          "notes": "Tanker rates skyrocket as supply chain disruptions intensify"
+        },
+        {
+          "sector": "tanker",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 80.0,
+          "tickers": [
+            "TK",
+            "FRO"
+          ],
+          "notes": "Vessel owners scramble to reroute or secure vessels in the region"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "CLOSED",
+          "confidence": 0.95
+        }
+      ],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a7824399": {
+      "node_id": "a7824399",
+      "description": "US Navy deploys additional warships to the Arabian Sea, escalating tensions with Iran",
+      "branch_probability": 0.3103448275862069,
+      "parent_id": "85497e6a",
+      "depth": 2,
+      "parent_joint_probability": 0.40909090909090906,
+      "joint_probability": 0.12695924764890282,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "GD",
+            "LMT"
+          ],
+          "notes": "Defense contractors see increased demand for naval assets and security services"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "ARABIAN_SEA SHIPPING_LANE",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "51cb7cf3": {
+      "node_id": "51cb7cf3",
+      "description": "OPEC emergency meeting convened to address supply disruptions and price volatility",
+      "branch_probability": 0.2620689655172414,
+      "parent_id": "85497e6a",
+      "depth": 2,
+      "parent_joint_probability": 0.40909090909090906,
+      "joint_probability": 0.10721003134796238,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -15.0,
+          "tickers": [
+            "FRO",
+            "VLCCF"
+          ],
+          "notes": "Potential for OPEC to increase production or provide additional supply assurances"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 48.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "f1b9a7fe": {
+      "node_id": "f1b9a7fe",
+      "description": "Iran responds with military mobilization along Strait of Hormuz",
+      "branch_probability": 0.52,
+      "parent_id": "01d5aec9",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.14181818181818182,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "UP",
+          "magnitude": "CRITICAL",
+          "magnitude_pct": 20.0,
+          "tickers": [
+            "FRO"
+          ],
+          "notes": "Increased tensions may lead to supply disruptions"
+        },
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 10.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Potential for increased military spending"
+        }
+      ],
+      "infrastructure_effects": [
+        {
+          "infra_id": "HORMUZ_STRAIT",
+          "new_status": "AT_RISK",
+          "confidence": 0.8
+        }
+      ],
+      "time_offset_hours": 12.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "726ff57a": {
+      "node_id": "726ff57a",
+      "description": "China offers to mediate India-Iran dispute, proposes alternative oil supply arrangements",
+      "branch_probability": 0.27999999999999997,
+      "parent_id": "01d5aec9",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.07636363636363636,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "energy",
+          "direction": "DOWN",
+          "magnitude": "MODERATE",
+          "magnitude_pct": -5.0,
+          "tickers": [
+            "PTR"
+          ],
+          "notes": "Potential for reduced tensions and increased Chinese influence"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "UP",
+          "magnitude": "LOW",
+          "magnitude_pct": 2.0,
+          "tickers": [
+            "FXI"
+          ],
+          "notes": "Increased diplomatic clout for China"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 24.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    },
+    "a267780c": {
+      "node_id": "a267780c",
+      "description": "US offers military escort for Indian tankers in Arabian Sea",
+      "branch_probability": 0.2,
+      "parent_id": "01d5aec9",
+      "depth": 2,
+      "parent_joint_probability": 0.2727272727272727,
+      "joint_probability": 0.05454545454545454,
+      "status": "pending",
+      "attempt_model": null,
+      "sector_impacts": [
+        {
+          "sector": "defense",
+          "direction": "UP",
+          "magnitude": "MODERATE",
+          "magnitude_pct": 8.0,
+          "tickers": [
+            "BA",
+            "LMT"
+          ],
+          "notes": "Potential for increased military cooperation and spending"
+        },
+        {
+          "sector": "sovereign",
+          "direction": "DOWN",
+          "magnitude": "LOW",
+          "magnitude_pct": -1.5,
+          "tickers": [
+            "SPY"
+          ],
+          "notes": "Increased tensions may lead to market volatility"
+        }
+      ],
+      "infrastructure_effects": [],
+      "time_offset_hours": 18.0,
+      "confidence": 0.7,
+      "children": [],
+      "pruned_reason": ""
+    }
+  },
+  "tombstones": [],
+  "infrastructure_deps": [],
+  "status": "complete"
+}

@@ -1,6 +1,7 @@
 # strategist/schema.py
 from __future__ import annotations
 import json
+import re
 import uuid
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
@@ -221,6 +222,8 @@ class ScenarioTree:
     @classmethod
     def make_id(cls, trigger_event: str) -> str:
         ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
-        slug = trigger_event[:30].lower().replace(" ", "-").replace("'", "")
+        # Slugify to [a-z0-9-] only. A '/', paren, etc. left in the id breaks
+        # downstream path construction (e.g. delta_<id>.json → FileNotFoundError).
+        slug = re.sub(r"[^a-z0-9]+", "-", trigger_event[:30].lower()).strip("-") or "event"
         uid = uuid.uuid4().hex[:6]
         return f"{slug}-{ts}-{uid}"
