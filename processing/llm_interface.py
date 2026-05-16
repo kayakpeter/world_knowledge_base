@@ -162,7 +162,7 @@ class LocalModelProvider(BaseLLMProvider):
         max_tokens: int = 4000,  # gemma4:31b thinking model — thinking tokens share this budget
     ) -> LLMResponse:
         import httpx
-        async with httpx.AsyncClient(timeout=120.0) as client:
+        async with httpx.AsyncClient(timeout=600.0) as client:
             resp = await client.post(
                 f"{self._base_url}/chat/completions",
                 headers={"Authorization": f"Bearer {self._api_key}"},
