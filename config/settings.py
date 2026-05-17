@@ -300,10 +300,10 @@ STAT_REGISTRY: list[StatDefinition] = [
     ),
     StatDefinition(
         stat_id=29, name="shipping_cost_index", category="Trade/External",
-        source_type="api", primary_source="Freightos Baltic Index",
+        source_type="api", primary_source="BLS PPI Deep Sea Freight (via FRED)",
         api_provider="fred",
-        fred_series={"USA": "FBXGLOBAL"},  # proxy — Freightos on FRED
-        unit="usd_per_feu", description="Global container freight rate index",
+        fred_series={"USA": "PCU483111483111"},
+        unit="index", description="Producer price index for deep sea freight transportation (FRED dropped Freightos mirror)",
     ),
     StatDefinition(
         stat_id=30, name="trade_concentration", category="Trade/External",
@@ -315,10 +315,10 @@ STAT_REGISTRY: list[StatDefinition] = [
     # ── Energy/Commodity (31-40) ─────────────────────────────────────────
     StatDefinition(
         stat_id=31, name="crude_output", category="Energy/Commodity",
-        source_type="api", primary_source="EIA",
+        source_type="api", primary_source="FRB Industrial Production: Crude Oil (via FRED)",
         api_provider="fred",
-        fred_series={"USA": "MCRFPUS2"},
-        unit="mbpd", description="Crude oil field production (million barrels/day)",
+        fred_series={"USA": "IPG21112S"},
+        unit="index_2017_100", description="Industrial Production: Mining: Crude Oil (NAICS 21112); FRED dropped EIA mbpd mirror",
     ),
     StatDefinition(
         stat_id=32, name="wti_brent_spread", category="Energy/Commodity",
@@ -350,10 +350,8 @@ STAT_REGISTRY: list[StatDefinition] = [
     ),
     StatDefinition(
         stat_id=37, name="carbon_price", category="Energy/Commodity",
-        source_type="api", primary_source="ICAP / EU ETS",
-        api_provider="fred",
-        fred_series={"USA": "EUETSACALEGP"},  # EU ETS on FRED as proxy
-        unit="eur_per_ton", description="Carbon credit price (EU ETS benchmark)",
+        source_type="llm", primary_source="ICAP / EU ETS → LLM",
+        unit="eur_per_ton", description="Carbon credit price (EU ETS benchmark); no FRED equivalent — LLM-derived",
     ),
     StatDefinition(
         stat_id=38, name="refining_margin", category="Energy/Commodity",
@@ -363,10 +361,8 @@ STAT_REGISTRY: list[StatDefinition] = [
     ),
     StatDefinition(
         stat_id=39, name="inventory_levels", category="Energy/Commodity",
-        source_type="api", primary_source="EIA Weekly Petroleum Status",
-        api_provider="fred",
-        fred_series={"USA": "WCESTUS1"},
-        unit="million_barrels", description="US crude oil commercial inventory",
+        source_type="llm", primary_source="EIA Weekly Petroleum Status → LLM",
+        unit="million_barrels", description="US crude oil commercial inventory; FRED dropped EIA mirror — LLM-derived",
     ),
     StatDefinition(
         stat_id=40, name="subsidies_gdp", category="Energy/Commodity",
