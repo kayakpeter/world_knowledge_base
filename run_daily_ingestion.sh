@@ -11,7 +11,7 @@
 set -euo pipefail
 
 PROJ="/media/peter/fast-storage/projects/world_knowledge_base/global_financial_kb"
-PYTHON="/home/peter/anaconda3/envs/rapids-25.10/bin/python"
+PYTHON="/home/peter/miniconda3/envs/rapids-26.04/bin/python"
 LOGDIR="${PROJ}/data/logs"
 LOCKFILE="/tmp/kb_daily_ingestion.lock"
 
