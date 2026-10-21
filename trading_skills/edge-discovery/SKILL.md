@@ -61,9 +61,9 @@ Generate hypotheses from four sources, in this priority:
    Then try two-feature interactions only for features that mattered alone.
 2. **The playbook.** SMB-style setups extracted into
    `references/playbook/` (one file per setup, rules made explicit). If the
-   folder is thin, extract more from the SMB course material (location in
-   `data_locations.md`) — turn discretionary language into testable conditions
-   and list which conditions are ambiguous.
+   folder is thin, extract more from the SMB course material following
+   `references/smb_extraction.md` (inventory → per-module extraction →
+   discretion-to-proxy translation). Resume from `smb_inventory.md`.
 3. **The ledger.** For every failed test, ask: which layer failed, and is there
    a neighbouring hypothesis the failure points to? (e.g. "entry failed because
    MAE hit 8% before the move" → test a later, tighter entry on the same days.)
@@ -121,4 +121,5 @@ hypothesis to investigate.
 - `references/research_ledger.md` — the ledger (template + entries).
 - `references/data_locations.md` — fixed paths; fill once.
 - `references/playbook/` — one explicit spec per setup.
+- `references/smb_extraction.md` — how SMB course material becomes playbook files.
 - Conventions: `trading-conventions` (Polars only, absolute paths, `_df`/`_lf`).
